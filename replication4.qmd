@@ -6,7 +6,7 @@ Let's remind ourselves what Reproducibility and Replicability mean. As you see i
 
 ![Reproducibility and Replicability.](Images/rep.png){#fig-rep3}
 
-## Stirrings of a Crisis
+## Stirrings of a Crisis {#sec-stirr}
 
 For a long time, there was concern about the replicability and reproducibility of findings in the social sciences. In 2005, physician-scientist John Ioannidis published a provocative and worrying essay entitled [*Why Most Published Research Findings are False*](https://upload.wikimedia.org/wikipedia/commons/8/8e/Ioannidis_%282005%29_Why_Most_Published_Research_Findings_Are_False.pdf), which outlined several methodological shortcomings plaguing most published research using statistics, including an over-reliance on p-values, low statistical power, and biases in study design, data collection, and analysis.
 

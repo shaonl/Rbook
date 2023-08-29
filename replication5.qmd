@@ -38,7 +38,7 @@ It's also worth noting that authors have since noting some variants of HARKing, 
 | RHARKing | Retrieving Hypotheses After Results are Known   | Let's say the researchers had previously proposed some hypotheses but then dropped them. After the fact, they might revive those hypotheses and present them as having been known *a priori*.                      |
 | SHARKing | Suppressing Hypotheses After Results are Known  | Not reporting *a priori* hypotheses that were not supported by the results. This could also be not reporting *a priori* hypotheses supported by results just because the researchers didn't like these hypotheses. |
 
-: Variations of HARKing. {tbl-harkvars}
+: Variations of HARKing. {#tbl-harkvars}
 
 A key problem of all variations of HARKing is that they can lead to theories that are *overfit* by the results. @lishner_harking_2021 This means that the theories can become too bound up in the results of individual sample results, and thus are less useful at more general explanations of a phenomenon when applied to other samples and contexts.
 

@@ -41,8 +41,11 @@ Ok, it looks like we have a variables corresponding to whether the dog is lost, 
 
 You can import an Excel file easily into R using the `readxl` package. The corresponding `read_xls()` and `read_xlsx()` functions will help you import .xls (older Excel files) and .xlsx files, respectively. The main argument is the file path.
 
-```{r, warning = F}
+```{r, warning = F, message = F}
+
 library(readxl)
+
+# Read a Microsoft Excel file.
 
 df1 <- read_xlsx("~/R Book/Datasets/Lost__found__adoptable_pets_excel.xlsx")
 
@@ -52,7 +55,9 @@ df1 <- read_xlsx("~/R Book/Datasets/Lost__found__adoptable_pets_excel.xlsx")
 
 To import a text file (a file with the extension .txt), we first need to know how data are separated. Usually, this is done by tabs (think of the 'tab' key on your keyboard). In such cases, the `read.table()` function is useful where the arguments should be the URL or file path, followed by the type of separator using the `sep =` argument. For tabs, it should be `sep = '\t'`. For comma-separated data, it should be `sep = ','` and for period-separated data, it should be `sep = '.'`. Since, this data frame is tab-separated (I know because I saved it as such), we will use the tab separator.
 
-```{r, message = F}
+```{r, warning = F, message = F}
+
+# Read a tab-separated text file.
 mydata2 <- read.table("~/R Book/Datasets/zoo.txt", sep = '\t')
 
 dim(mydata2)
@@ -67,7 +72,9 @@ head(mydata2, n = 10)
 
 Uh oh, it looks like the first row of data is the name of the variables! That's no good. The solution is simply to include the argument `header = TRUE` in the `read.table()` function. So let's try that data import of a text file again with the new argument.
 
-```{r}
+```{r, warning = F, message = F}
+
+# Read a tab-separated text file and keep the headers.
 mydata2 <- read.table("~/R Book/Datasets/zoo.txt", sep = '\t', header = TRUE)
 
 dim(mydata2)
@@ -97,7 +104,7 @@ First, it's important to know the file extension for each software program. Once
 
 Let's give each of these a shot with the relevant data format. Remember to install the `haven` package if you haven't done that already with `install.packages("haven")` and then load the package using `library(haven)`.
 
-```{r, warning = FALSE, eval = FALSE}
+```{r, warning = FALSE, message = FALSE, eval = FALSE}
 library(haven)
 
 # Read a sas7bdat file.
@@ -108,9 +115,10 @@ mydata3 <- read_sas("~/R Book/Datasets/naws_all.sas7bdat")
 
 When a SAS data file is exported, you may see the file extension .xpt. As seen in @tbl-progsdata, this is not a problem for the formidable `haven` package. Let's import an XPT file now.
 
-```{r}
+```{r, warning = FALSE, message = FALSE}
 library(haven)
 
+# Read a SAS xpt file.
 mydata4 <- read_xpt("~/R Book/Datasets/P_DEMO.xpt")
 
 dim(mydata4)

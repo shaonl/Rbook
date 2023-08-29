@@ -1,0 +1,110 @@
+# Potential Solutions & the Way Forward {#sec-rep6}
+
+![Wise capybaras feel motivated and encouraged by advances in Open Science, and I agree with them!](images/capytea.png){fig-align="left" width="728"}
+
+If you've made it this far having read all the previous chapters, I hope you are not dismayed at the state of research transparency and reproducibility (RT2) in science. If you are, I don't blame you. It's easy to feel helpless at the state of research. However, there are many advances that have been made, and that will be made to improve things. Consider this, about 15 years ago, RT2 was not really a thing. Most folks had no idea about problems with replicating and reproducing results of empirical studies. Sure, some folks like John Ioannidis were already sounding the alarms for a while as we say in @sec-stirr, but I think it's safe to say most researchers either didn't know or didn't care about RT2 problems (many still don't).
+
+Since that time, there have been a number of changes to the RT2 landscape, and a push toward Open Science has been increasing. Let's review some of the potential solutions to the problems we've seen.
+
+## A Partial List
+
+First, let's look at a table of potential solutions advanced in an excellent *Nature* article entitled *A manifesto for reproducible science* @munafo_manifesto_2017 in @tbl-sols.
+
++-------------------------------------------+------------------------------------------------------------------------------------+
+| Potential Solution Area                   | Example(s) of Potential Solutions                                                  |
++===========================================+====================================================================================+
+| Protecting against cognitive biases       | Blinding                                                                           |
++-------------------------------------------+------------------------------------------------------------------------------------+
+| Improved methodological training          | Rigorous training in statistics and research methods for future researchers.       |
+|                                           |                                                                                    |
+|                                           | Rigorous continuing education in statistics and methods for current researchers.   |
++-------------------------------------------+------------------------------------------------------------------------------------+
+| Independent methodological support        | Involvement of methodologists in research.                                         |
+|                                           |                                                                                    |
+|                                           | Independent oversight.                                                             |
++-------------------------------------------+------------------------------------------------------------------------------------+
+| Collaboration and team science            | Multi-site studies/distributed data collection.                                    |
+|                                           |                                                                                    |
+|                                           | Team-science consortia.                                                            |
++-------------------------------------------+------------------------------------------------------------------------------------+
+| Promoting study pre-registration          | Registered Reports.                                                                |
+|                                           |                                                                                    |
+|                                           | Open Science Framework use.                                                        |
++-------------------------------------------+------------------------------------------------------------------------------------+
+| Improving the quality of reporting        | Using reporting checklists.                                                        |
+|                                           |                                                                                    |
+|                                           | Protocol checklists.                                                               |
++-------------------------------------------+------------------------------------------------------------------------------------+
+| Protecting against conflicts of interest  | Disclosure of conflicts of interest.                                               |
+|                                           |                                                                                    |
+|                                           | Exclusion/containment of financial and non-financial conflicts of interest.        |
++-------------------------------------------+------------------------------------------------------------------------------------+
+| Encouraging transparency and open science | Open data, code, and related materials.                                            |
+|                                           |                                                                                    |
+|                                           | Pre-registration.                                                                  |
++-------------------------------------------+------------------------------------------------------------------------------------+
+| Diversifying peer review                  | Preprints.                                                                         |
+|                                           |                                                                                    |
+|                                           | Pre- and post-publication peer review such as Publons and PubMed Commons.          |
++-------------------------------------------+------------------------------------------------------------------------------------+
+| Rewarding open and reproducible practices | Badges.                                                                            |
+|                                           |                                                                                    |
+|                                           | Transparency and Openness Promotion Guidelines.                                    |
+|                                           |                                                                                    |
+|                                           | Funding replication studies.                                                       |
+|                                           |                                                                                    |
+|                                           | Registered Reports.                                                                |
+|                                           |                                                                                    |
+|                                           | Open science practices in hiring and promotion.                                    |
++-------------------------------------------+------------------------------------------------------------------------------------+
+
+: A partial list of potential solutions. Adapted from Table 1 in the original article by Munafò et al. @munafo_manifesto_2017 {#tbl-sols}
+
+That's a pretty good list. It's not complete, nor could it be, as advances are continually being made, but it's summarizes potential solutions across a number of areas nicely. Let's now explore some potential solutions in detail.
+
+## Pre-registration
+
+### General Description
+
+Pre-registration refers to *specifying your research plan in advance of your study and submitting it to a registry.* @center_for_open_science_preregistration_nodate It's basically saying what you plan to do and how you plan to do it, and then publishing those details in the public domain before you conduct your study. In this way, pre-registration separates **hypothesis-testing** (confirmatory) research from **hypothesis-generating** (exploratory) research as shown in @fig-prereg.
+
+![Pre-registration is not a straitjacket; you can still conduct exploratory analyses and try things out. It's just that you should be clear which analyses will be confirmatory and which will be exploratory.](images/prereg.png){#fig-prereg}
+
+As we saw in @sec-rep5, humans are prone to several cognitive biases which can affect our ability to separate *a priori* from *a posteriori* thinking, even if we do not mean to conflate the two. Pre-registration can mitigate these biases by clearly stating at the outset what analyses will be used to confirm or falsify hypotheses, and which analyses will be exploratory. Then, the reader can judge the merit of the work for themselves. Ideally before a researcher collects any data, they should pre-register their confirmatory hypotheses and related analyses in the public domain. There are several benefits of doing so in terms of reducing bias due to:
+
+-   Selective reporting of outcomes.
+-   Different analytic decisions that can lead to different results.
+-   Publication bias, because it corrects the denominator of studies and hypotheses out there.
+-   Cognitive biases like apophenia, hindsight bias, and confirmation bias.
+
+### Common Apprehensions 
+
+Now, let's say you followed my advice above and pre-registered your study in the public domain prior to data collection. Then, in the course of the research process, you discover that something you said you would do in your pre-registration isn't working, and you have to pivot to a different strategy. Is that OK? Yes! As long as you clearly state any deviations from your pre-registered plan, it's totally fine if you need to adjust something. It's all about being transparent about what you did. Additionally, even if you already have a dataframe you want to analyze, you can still pre-register your analysis plan prior to analyzing the data. This is not the ideal scenario as it still leaves a researcher degree of freedom to cheat and peek at the data, but at least it shows people exactly what you did and readers can judge the veracity of the pre-registration for themselves.
+
+You may wonder, *Won't someone steal my ideas if I pre-register my ideas?* This is a valid concern, and though I don't believe this happens frequently, the point is that it *can* happen. The solution is therefore to **embargo** the pre-registration, which keeps it private for a certain amount of time (up to four years on some platforms) before it is made public. This allows researchers plenty of time to conduct a pre-registered study without worrying about their ideas being stolen (also known as **getting scooped**). Additionally, once the researcher's ideas are pre-registered and public, that provides a timestamp to lay claim to their ideas. That is, if someone else steals your exact set of analyses, data, and code, you have a record of having registered these in the public domain prior to their study being published. In my experience, getting your ideas stolen due to preregistration doesn't really happen. In fact, some believe that the fear of being scooped is not a legitimate drawback against pre-registration as papers are unlikely to be rejected due to scooping alone, no two scooped studies can be the same, and if someone uses your methods on a different sample, that's actually a good thing for science! @schwarzkopf_its_2016 Of course, if one is still afraid, the embargo period is an elegant solution.
+
+### What Should Be Included & Where to Pre-register
+
+You can be as detailed as you want in a pre-registration, but there are a few elements that should be described as a minimum. For instance, you should describe the hypotheses, planned analyses, and criteria for falsifying or supporting the hypotheses. In general, a reader should be able to replicate the methodology used, and the pre-registration should minimize as many researcher degrees of freedom as possible for confirmatory analyses. Personally, I treat the pre-registration as the bulk of my Methods section that will eventually end up in the published manuscript (save any deviations from the pre-registration which I include later in the final manuscript). This includes information about the variables being measured, a detailed analysis plan, and several back-up plans if what I want to do fails for some reason. If possible, the actual code that will be used to conduct the analyses should be included as well.
+
+The pre-registration platform [*aspredicted.org*](https://aspredicted.org) provides perhaps the simplest template for create a pre-registration, wherein researchers need to answer the following eight questions:
+
+1.  Have any data been collected for this study already?
+
+2.  What's the main question being asked or hypothesis being tested in this study?
+
+3.  Describe the key dependent variable(s) specifying how they will be measured.
+
+4.  How many and which conditions will participants be assigned to?
+
+5.  Specify exactly which analyses you will conduct to examine the main question/hypothesis.
+
+6.  Any secondary analyses?
+
+7.  How many observations will be collected or what will determine sample size?
+
+8.  Anything else you would like to pre-register (e.g., data exclusions, variables collected for exploratory purposes, unusual analyses planned)?
+
+My favorite platform for pre-registration and posting all research materials in the public domain is the [**Open Science Framework (OSF)**](https://osf.io/dashboard).You can pre-register any study on the OSF, and it's a great place to also put all your de-identified data, code, and materials used to generate your analyses. Besides having an excellent repository of study materials and pre-registrations, the site also provides several resources for learning more about pre-registration and Open Science. It also has an embargo period of four years should you wish to maintain privacy of the pre-registration for a certain period of time.
+
+There are also study design-specific registries. For instance, the American Economic Association has a [registry for Randomized Controlled Trials only](https://www.socialscienceregistry.org/site/about). The [PROSPERO registry](https://www.crd.york.ac.uk/prospero/) hosted by York University in the UK is THE go-to place to register systematic reviews, meta-analyses, rapid reviews, and umbrella reviews. Clinical trials in the US have to registered on [clinicaltrials.gov](https://clinicaltrials.gov), but this registry is also applicable to any social science randomized controlled trial. The International Initiative for Impact Evaluation (3ie) hosts the [Registry for International Development Impact Evaluations](https://ridie.3ieimpact.org). Thus, there are many places to pre-register a study! If you're at a loss for where to register, I suggest trying the Open Science Framework.
