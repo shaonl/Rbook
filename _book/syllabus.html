@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Research Transparency, Reproducibility, and Basic Data Analysis in R! - Syllabus</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./installation.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syllabus.html">Syllabus</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Research Transparency, Reproducibility, and Basic Data Analysis in R!</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./syllabus.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing R and RStudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./getstarted.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Accustomed to R Studio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./datatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./stringscomps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Strings &amp; Comparisons</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataimport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Importing Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./datajoin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Merging (Joining) and Reshaping Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Cleaning</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataexp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Exploration with <code>dplyr</code></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataviz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Visualization - A Brief Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">A Very Brief History of Replication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mertonian Norms and Counter-Norms</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Some Statistical Preliminaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Crises of Replication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appintroex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="intro.html#sec-introex"><span>Section&nbsp;3.8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appdatatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="datatypes.html#sec-dtex"><span>Section&nbsp;4.7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appstringcomp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="stringscomps.html#sec-sboex"><span>Section&nbsp;5.3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appdatajoin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="datajoin.html#sec-joinex"><span>Section&nbsp;7.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appdataclean.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="cleaning.html#sec-cleanex"><span>Section&nbsp;8.8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./apptidyex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="dataexp.html#sec-tidyex"><span>Section&nbsp;9.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appkahneman.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Kahneman’s Open Letter to Priming Researchers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#what-are-the-course-details" id="toc-what-are-the-course-details" class="nav-link active" data-scroll-target="#what-are-the-course-details">What are the course details?</a></li>
+  <li><a href="#whats-this-course-about" id="toc-whats-this-course-about" class="nav-link" data-scroll-target="#whats-this-course-about">What’s this course about?</a></li>
+  <li><a href="#are-there-any-prerequisites-for-this-course" id="toc-are-there-any-prerequisites-for-this-course" class="nav-link" data-scroll-target="#are-there-any-prerequisites-for-this-course">Are there any prerequisites for this course?</a></li>
+  <li><a href="#why-should-i-take-this-course" id="toc-why-should-i-take-this-course" class="nav-link" data-scroll-target="#why-should-i-take-this-course">Why should I take this course?</a></li>
+  <li><a href="#what-are-the-requirements-of-this-course" id="toc-what-are-the-requirements-of-this-course" class="nav-link" data-scroll-target="#what-are-the-requirements-of-this-course">What are the requirements of this course?</a>
+  <ul class="collapse">
+  <li><a href="#class-participation-20" id="toc-class-participation-20" class="nav-link" data-scroll-target="#class-participation-20">Class participation (20%)</a></li>
+  <li><a href="#class-presentations-20" id="toc-class-presentations-20" class="nav-link" data-scroll-target="#class-presentations-20">Class presentations (20%)</a></li>
+  <li><a href="#monthly-quizzes-10-each-40-total" id="toc-monthly-quizzes-10-each-40-total" class="nav-link" data-scroll-target="#monthly-quizzes-10-each-40-total">Monthly quizzes (10% each; 40% total)</a></li>
+  <li><a href="#weekly-discussion-board-posts-20" id="toc-weekly-discussion-board-posts-20" class="nav-link" data-scroll-target="#weekly-discussion-board-posts-20">Weekly Discussion Board posts (20%)</a></li>
+  </ul></li>
+  <li><a href="#what-is-the-grading-scale-for-this-course" id="toc-what-is-the-grading-scale-for-this-course" class="nav-link" data-scroll-target="#what-is-the-grading-scale-for-this-course">What is the grading scale for this course?</a></li>
+  <li><a href="#what-materials-do-i-need-to-buy-for-this-course" id="toc-what-materials-do-i-need-to-buy-for-this-course" class="nav-link" data-scroll-target="#what-materials-do-i-need-to-buy-for-this-course">What materials do I need to buy for this course?</a></li>
+  <li><a href="#do-you-have-an-email-policy" id="toc-do-you-have-an-email-policy" class="nav-link" data-scroll-target="#do-you-have-an-email-policy">Do you have an “Email Policy”?</a></li>
+  <li><a href="#what-are-you-doing-to-make-the-course-more-accessible-and-inclusive" id="toc-what-are-you-doing-to-make-the-course-more-accessible-and-inclusive" class="nav-link" data-scroll-target="#what-are-you-doing-to-make-the-course-more-accessible-and-inclusive">What are you doing to make the course more accessible and inclusive?</a></li>
+  <li><a href="#how-are-you-handling-names-and-pronouns-in-the-course" id="toc-how-are-you-handling-names-and-pronouns-in-the-course" class="nav-link" data-scroll-target="#how-are-you-handling-names-and-pronouns-in-the-course">How are you handling names and pronouns in the course?</a></li>
+  <li><a href="#is-cheating-in-the-course-ok" id="toc-is-cheating-in-the-course-ok" class="nav-link" data-scroll-target="#is-cheating-in-the-course-ok">Is cheating in the course ok?</a></li>
+  <li><a href="#sec-outline" id="toc-sec-outline" class="nav-link" data-scroll-target="#sec-outline">Outline of classes</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-syllabus" class="quarto-section-identifier">Syllabus</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src=".\Images/welcome.png" class="img-fluid figure-img" width="874"></p>
+</figure>
+</div>
+<p>It’s a pleasure to have you in this course. I mean it! Without you, this course would not exist, and my job would be in jeopardy. So I’m glad to have you here, and not just because I need this job to purchase food and shelter, but also because teaching Research Transparency and Reproducibility (RT2) and R are my passions! Don’t believe me? Consider this: I wrote this free textbook during my summer vacation, for no money, and with no expectations of making any money from it in the future. Why? I love R, RT2, and teaching these topics!</p>
+<section id="what-are-the-course-details" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-the-course-details">What are the course details?</h2>
+<p><strong>Course Title:</strong> Research in PPE: Research Transparency, Reproducibility and Basic Data Analysis in R</p>
+<p><strong>Course Instructor:</strong> <a href="https://www.shaonlahiri.com">Shaon Lahiri, PhD, MPH (he/him)</a></p>
+<p><strong>Course Instructor Email:</strong> <a href="mailto:shaonl@sas.upenn.edu">shaonl@sas.upenn.edu</a></p>
+<p><strong>Course Number:</strong> PPE 4000-301</p>
+<p><strong>CRN:</strong> 60098</p>
+<p><strong>Schedule:</strong> Thursdays, 12pm - 3pm (August 29, 2023 - December 11, 2023)</p>
+<p><strong>Location:</strong> Fisher-Bennett Hall 017</p>
+</section>
+<section id="whats-this-course-about" class="level2">
+<h2 class="anchored" data-anchor-id="whats-this-course-about">What’s this course about?</h2>
+<p>A great question! Here’s the deal: across the sciences, there are often problems with published research and the way in which research is conducted. Some of these problems are pretty major, like fabricating data and images. Others are not as scandalous but still problematic, such as not providing the full details of your study. These problems are bad for science. They hold us back from solving problems and understanding complex phenomena. They give us distorted or incorrect insights that can then lead to bad policies and programs.</p>
+<p>In this course we will discuss many issues related to the conduct of research, including bad or unethical approaches to research, how to think about replication and reproducibility, incentives to produce research, and solutions for making the research world a better place. You will hear stories of scandal and lies, but also tales of hope for a better future.</p>
+<p>But this course is not just about learning <em>about</em> research, but also learning how to <em>do</em> research with code. We will learn basic data preparation, management, analysis, and reporting in R. Finally, when it comes to data analysis, we will go over basic statistical analysis from descriptives, bivariate analyses, and to multivariable analyses staying mainly within the General Linear Model family of techniques. We will also get a little taste of more advanced techniques in R, and Bayesian probability and inference. All in all, it’s going to be a good time!</p>
+<p><em>TL;DR - this course is about learning R, research transparency &amp; replication, and basic data analysis. The instructor is reasonably competent, motivated, and chill.</em></p>
+</section>
+<section id="are-there-any-prerequisites-for-this-course" class="level2">
+<h2 class="anchored" data-anchor-id="are-there-any-prerequisites-for-this-course">Are there any prerequisites for this course?</h2>
+<p><strong>If you’ve never used R in your life, nor have even heard of RT2, that’s fine!</strong> I assume no prior knowledge of these concepts. It would be helpful to have completed at least a high school level course in statistics before taking this one. But if you haven’t, that’s no problem as we will go over the necessary statistical concepts.</p>
+<p>The only thing you really need for this course is a modicum of motivation to learn R and RT2! But also a computer with enough memory to download R, R Studio, and maybe a few other things (~300 MB in total).</p>
+</section>
+<section id="why-should-i-take-this-course" class="level2">
+<h2 class="anchored" data-anchor-id="why-should-i-take-this-course">Why should I take this course?</h2>
+<p>Millions of people use the statistical programming language R to solve complex issues every day. If you have any interest in using data to understand the world, and visualize data in a way that communicates information succinctly and impactfully, this course is for you!</p>
+<p>Need a programming skill to add to that resume to be more competitive on the job market? This course is for you!</p>
+<p>Besides being a highly marketable skill, learning R is incredibly useful to undertake quantitative research. If you have any interest in doing research, having R in your aRsenal can help you quickly and efficiently write reproducible code to import, clean, analyze, and interpret data in various forms. Finally, doing good research means doing ethical research. I will teach you how to avoid bad practices and malignant influences in order to conduct research in a reproducible, ethical, and rigorous manner.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+If you want to impress potential romantic partners, R is also useful to have in your back pocket. I once went on a date where the subject of R came up (I brought it up), and my date asked how much it cost. When I said it was free, she was shocked and intrigued. I then explained all the things R can do. The relationship never went anywhere, but still…she was impressed.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+<section id="what-are-the-requirements-of-this-course" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-the-requirements-of-this-course">What are the requirements of this course?</h2>
+<p>The pie chart breaks down the grade distribution for this course. Each component is described in detail below.</p>
+<p><img src=".\Images/piechart.png" class="img-fluid"></p>
+<section id="class-participation-20" class="level3">
+<h3 class="anchored" data-anchor-id="class-participation-20">Class participation (20%)</h3>
+<p>To receive an ‘A’ for this component, you must not accure more than two (2) unexcused absences during the semester. If you miss class due to religious holiday, illness, or an emergency, those are excused absences and do not count toward your two miss-able class limit. You must also complete all assignments prior to class, and be ready to engage in discussion, ask questions, engage in activities, and generally be ready to contribute. I run this class as a seminar, so it’s going to be quite interactive. If you feel sick, please <u>do not</u> come to class. Instead, please email me and we can set up a time to meet if you have any questions about the course material. No documentation is required by me for illness or emergencies because I trust you. Beyond the two excused absences, each missed class will decrease your Class Participation grade by 10%.</p>
+</section>
+<section id="class-presentations-20" class="level3">
+<h3 class="anchored" data-anchor-id="class-presentations-20">Class presentations (20%)</h3>
+<p>Over the course of the semester, each student will deliver two presentations to the class lasting approximately 15 minutes, followed by five minutes of Q&amp;A. The first of these presentations will cover a recent or emerging topic within the world of research transparency and reproducibility. The second presentation will be an introduction and demonstration of a particular R package. I’m happy to help you come up with topics or troubleshoot for any of the presentations. All presentation topics must be approved by me before you proceed with the preparation.</p>
+</section>
+<section id="monthly-quizzes-10-each-40-total" class="level3">
+<h3 class="anchored" data-anchor-id="monthly-quizzes-10-each-40-total">Monthly quizzes (10% each; 40% total)</h3>
+<p>Four quizzes will be administered in class during the semester. Each quiz will include a section on research transparency &amp; reproducibility (Section 1), and a section involving completing tasks in R (Section 2). Section 1 is ‘closed-book’ and will be administered on paper (no notes or digital media will be allowed during the completion of this section). Students will then complete Section 2 on their laptops, and will be permitted to use their notes and the Internet (including Chat GPT or similar natural language processing tools). The content covered in each quiz is listed in the Outline of classes section below. Each quiz is worth 10%, for a total of 40% of one’s grade for the course. There are no make-up quizzes except in case of emergency. All quizzes must be completed alone. If you receive a poor grade in Quizzes 1-3, you can substitute another RT2 presentation for it during our November 30th class.</p>
+</section>
+<section id="weekly-discussion-board-posts-20" class="level3">
+<h3 class="anchored" data-anchor-id="weekly-discussion-board-posts-20">Weekly Discussion Board posts (20%)</h3>
+<p>Prior to class each week (except the first and last week of class), students are required to post a question, comment, or reflection on the Discussion Board on Canvas about a topic related to research transparency &amp; reproducibility, OR about R (either is fine with me). <strong>The post should be made on the appropriate Discussion Board on Canvas by 11am on the day we have class.</strong> Posts made after this time will not count toward the student’s grade. This is essentially a chance for you to explore, critique, or reflect on the class content or any related content from outside the class.</p>
+<p>The content of Discussion Board posts should be reasonably substantive. For example, a post saying “this was really hard to do, and I think there should be a better way” is not very substantive, whereas a post saying “this was challenging, but I found some other code online that accomplishes this task in a better way. Here it is. . .” is a much more substantive post. Use your judgment and always feel free to check with me if you have any questions or doubts. Multiple posts are permitted. Students may miss posting for up to two (2) weeks (i.e.&nbsp;two posts) without penalty. Outside of this allowance, missed discussion posts will subtract 10% of a student’s grade for this component per week of missed posts.</p>
+</section>
+</section>
+<section id="what-is-the-grading-scale-for-this-course" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-the-grading-scale-for-this-course">What is the grading scale for this course?</h2>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 77%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Percentage</th>
+<th>Letter Grade</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>93-100%</td>
+<td>A</td>
+<td>Outstanding work. Meets all expectations of the assignment with excellent command of material.</td>
+</tr>
+<tr class="even">
+<td>90-92%</td>
+<td>A-</td>
+<td>High-quality work. Meets nearly all expectations of the assignment, but is lacking in 1-2 areas.</td>
+</tr>
+<tr class="odd">
+<td>87-89%</td>
+<td>B+</td>
+<td>Good work. Meets most expectations of the assignment, but is lacking in 3 or more areas.</td>
+</tr>
+<tr class="even">
+<td>83-86%</td>
+<td>B</td>
+<td>Adequate work. Meets the majority of expectations of the assignment, but is weak in 1-2 areas.</td>
+</tr>
+<tr class="odd">
+<td>80-82%</td>
+<td>B-</td>
+<td>Below average work. Meets some expectations of the assignment, but is weak in 3 or more areas.</td>
+</tr>
+<tr class="even">
+<td>77-79%</td>
+<td>C+</td>
+<td>Did not meet the expectations of the assignment. Please meet with me.</td>
+</tr>
+<tr class="odd">
+<td>73-76%</td>
+<td>C</td>
+<td>Did not meet the expectations of the assignment. Please meet with me.</td>
+</tr>
+<tr class="even">
+<td>70-72%</td>
+<td>C-</td>
+<td>Did not meet the expectations of the assignment. Please meet with me.</td>
+</tr>
+<tr class="odd">
+<td>67-69%</td>
+<td>D</td>
+<td>Did not meet the expectations of the assignment. Please meet with me.</td>
+</tr>
+<tr class="even">
+<td>&lt;67%</td>
+<td>F</td>
+<td>Did not meet the expectations of the assignment. Please meet with me.</td>
+</tr>
+</tbody>
+</table>
+<p>Grades will be calculated using standard rounding rules, in which a number in the tenths decimal place will be rounded down to the nearest integer if it is between 0-4, and rounded up to the nearest integer if it is between 5-9. For example, a grade of 89.4% will be rounded to 89%, and a grade of 89.5% will be rounded to 90%. For all quizzes, I provide an answer key after it has been completed. For all assignments, I provide a rubric.</p>
+</section>
+<section id="what-materials-do-i-need-to-buy-for-this-course" class="level2">
+<h2 class="anchored" data-anchor-id="what-materials-do-i-need-to-buy-for-this-course">What materials do I need to buy for this course?</h2>
+<p>Nothing beyond what you use normally for other courses at Penn (i.e.&nbsp;a personal computer or laptop, internet access, word processing software, and pdf reading software). We will primarily be using the free e-textbook that I have written for this class. All other materials will be provided on Canvas. Please make sure R and RStudio are downloaded and installed on your laptop before the first class following the directions in <a href="installation.html"><span>Chapter&nbsp;1</span></a>. If you have trouble installing either of them, please email me.</p>
+</section>
+<section id="do-you-have-an-email-policy" class="level2">
+<h2 class="anchored" data-anchor-id="do-you-have-an-email-policy">Do you have an “Email Policy”?</h2>
+<p>I do! Please allow me up to two business days (i.e.&nbsp;M-F except holidays) to get back to your emails. In most cases, I will get back to you as soon as possible. If I haven’t replied to you in two business days, please follow-up. I stick to traditional work hours (i.e 9am - 5pm) when responding to emails. I request that you to begin all emails to me with “Hi Shaon,” because I prefer personalized emails addressing me by name. If you have any questions about course material, or if there is anything I can do to help you succeed in the course, please email me. I am here to support your growth and nurture your interests. Additionally, if anything at all in the course does not sit right with you at any point, please get in touch.</p>
+</section>
+<section id="what-are-you-doing-to-make-the-course-more-accessible-and-inclusive" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-you-doing-to-make-the-course-more-accessible-and-inclusive">What are you doing to make the course more accessible and inclusive?</h2>
+<p>I strive to create a welcoming environment for all, and have a zero tolerance policy regarding bullying, harassment, or threatening behavior. Part of creating an inclusive environment can involve occasionally hearing a viewpoint contrary to your own. I expect all of us to engage in respectful civil discourse, especially when disagreeing with one another. This is usually not an issue in my courses, but as we sometimes deal with sensitive subject matter, please remember it is encouraged to share your thoughts and opinions, but please accord the same respect to others as you would have them accord to you. If you feel at any point that I or someone in the class has violated that trust, please contact me as soon as possible.</p>
+<p>Part of inclusion means supporting our classmates who are breastfeeding or have gaps in child-care. Babies are always welcome in the class, and I ask students who bring babies to sit near a door in case you need to step out briefly to provide special attention to your little one. For young children, while not a long-term child care solution, occasionally bringing a child to class is perfectly fine. I ask that all students work together with me to support our classmates who bring babies or young children to class. While I hold all students to the same high-quality standards for the work submitted in this course, if you are a student-parent, I will be happy to work with you to support you however I can.</p>
+<p>Service animals are always welcome in the classroom.</p>
+<p>If you require any other accommodations, please let me know and I will do my best to make them happen. Additionally, please contact me if you ever just want to talk.</p>
+<p>If you’re an international student, I feel your pain (#relatable)! Let’s talk about it.</p>
+</section>
+<section id="how-are-you-handling-names-and-pronouns-in-the-course" class="level2">
+<h2 class="anchored" data-anchor-id="how-are-you-handling-names-and-pronouns-in-the-course">How are you handling names and pronouns in the course?</h2>
+<p>It is essential that we refer to everyone by their names and pronouns. Pronouns can be a way to affirm someone’s gender identity, but they can also be unrelated to a person’s identity. They are simply a public way in which people are referred to in place of their name (e.g.&nbsp;‘he’ or ‘she’; ‘they’ or ‘ze’; or others). In my classroom, you are invited, but not required to, share the pronouns you use (or the pronouns you want to use in a particular space), and I ask that all of us commit to being attentive to and using each other’s pronouns. If you accidentally misgender someone or use an incorrect pronoun for them, please simply correct yourself to their pronoun. If during the course, you would like to change the pronoun that we are using for you, please let me know.</p>
+<p>In support of the University of Pennsylvania’s commitment to providing an equitable and safe experience for students whose birth name and/or legal name does not reflect their gender identity and/or gender expression, Penn accepts requests from any student seeking to use a first and/or middle name that differs from the name currently in University records. A student’s requested name can and will be used where feasible in all University systems unless the student’s birth name and/or legal name use is required by law or the student’s requested name use if intent of misrepresentation.</p>
+<p>Any student, including transgender, genderfluid, genderqueer, gender diverse, non-cisgender and cisgender students who wish to designate a different name can do so by editing their Personal Information page in Path@Penn. For additional Preferred First Name, Pronouns, and Gender Identity Information, see this page: <a href="https://srfs.upenn.edu/student-records/update-data" class="uri">https://srfs.upenn.edu/student-records/update-data</a>.</p>
+</section>
+<section id="is-cheating-in-the-course-ok" class="level2">
+<h2 class="anchored" data-anchor-id="is-cheating-in-the-course-ok">Is cheating in the course ok?</h2>
+<p>No! Please familiarize yourself with Penn’s Code of Academic Integrity if you have not already done so <a href="https://catalog.upenn.edu/pennbook/code-of-academic-integrity/">here</a>. I have a zero tolerance policy for cheating and plagiarism. If you are ever unsure what the line is between plagiarism and appropriate citation/reference, please contact me BEFORE submitting your work! If you feel that cannot succeed in this course without cheating, please contact me and we can speak confidentially. I will never punish you for the temptation, and we can develop a plan together to figure out a plan for avoiding the temptation. Please always work alone on all quizzes and written assignments in this course, and never copy a sentence or phrase from another work without appropriate citations and references.</p>
+</section>
+<section id="sec-outline" class="level2">
+<h2 class="anchored" data-anchor-id="sec-outline">Outline of classes</h2>
+<p>Below is an outline of our course material over the semester. Please note that the <em>Assignments</em> are things you should complete BEFORE class. The <em>Chapters</em> listed under <em>Assignments</em> refer to sections of this e-textbook. While we have a defined curriculum and textbook for this course, there is some room to tailor some of the class content to your interests. So, if you have something you want to learn in R, please let me know! If we cannot get to it in class, I will provide resources for you to learn more, and you can incorporate any special topics into presentations.</p>
+<table class="table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 56%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Date</th>
+<th>Topics and Events</th>
+<th>Assignments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>August 31</td>
+<td><ul>
+<li>Research Transparency and Reproducibility (RT2) Story: Bolivian National Election.</li>
+<li>RT2 Story: Hydroxychloroquine.</li>
+<li>Introduction to Base R and RStudio (arithmetic operations, objects, functions, packages, R Studio).</li>
+<li>Introduction to RT2 - what it is and a brief history of replication.</li>
+</ul></td>
+<td><ul>
+<li><p>Successful installation of R and R Studio.</p></li>
+<li><p>Chapters 1 - 3 and 21.</p></li>
+<li><p>Chapter 3 exercises (optional).</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>September 7</td>
+<td><ul>
+<li>RT2 Story: A nutrition researcher’s arrogance becomes his downfall.</li>
+<li>Discussion board post discussion.</li>
+<li>Data types (vectors, matrices, dataframes, lists, arrays).</li>
+<li>Mertonian norms and counter-norms of science.</li>
+</ul></td>
+<td><ul>
+<li>Chapters 4 and 22.</li>
+<li>Chapter 3 and 4 exercises.</li>
+<li>Discussion board post.</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>September 14</td>
+<td><ul>
+<li>RT2 Story: Worm Wars.</li>
+<li>Discussion board post discussion.</li>
+<li>Working with strings and comparisons (including conditional statements to evaluate comparisons).</li>
+<li>Statistical preliminaries (hypothesis testing, p-values, power, confidence intervals, sample statistics and population parameters).</li>
+</ul></td>
+<td><ul>
+<li>Chapters 5 and 11.</li>
+<li>Chapter 5 exercises.</li>
+<li>Discussion board post.</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>September 21</td>
+<td><p><strong>QUIZ #1 in class</strong> (covers material from Aug 31, Sept 7, and Sep 14).</p>
+<ul>
+<li>RT2 Story: A dishonesty researcher is allegedly dishonest.</li>
+<li>Discussion board post discussion.</li>
+<li>Importing data.</li>
+<li>Introduction to data cleaning (folder structure, detecting illogical and extreme values, subsetting, variable transformation, data export).</li>
+<li>Crises of replication and the domino effect.</li>
+</ul></td>
+<td><ul>
+<li>Chapters 6, 7, and 23.</li>
+<li>Discussion board post.</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>September 28</td>
+<td><ul>
+<li>RT2 Story: Another dishonesty researcher is allegedly dishonest!</li>
+<li>Discussion board post discussion.</li>
+<li>Data cleaning continued.</li>
+<li>Introduction to the <code>tidyverse</code> (esp.&nbsp;<code>dplyr</code> for data management and exploration)</li>
+<li>Mitigating researcher degrees of freedom.</li>
+</ul></td>
+<td><ul>
+<li>Chapters 7 and 8.</li>
+<li>Chapter 7 exercises.</li>
+<li>Chapter 8 exercises (optional).</li>
+<li>Discussion board post.</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>October 5</td>
+<td><ul>
+<li>RT2 Story: Fertility research + data integrity = terrorism?</li>
+<li>Discussion board post discussion.</li>
+<li>Possible guest lecture: Daniel Putman, PhD on Many Economists project.</li>
+<li>Data visualization (base R, <code>ggplot2</code> and some related packages).</li>
+<li>Mitigating researcher degrees of freedom continued.</li>
+</ul></td>
+<td><ul>
+<li>Chapter 9.</li>
+<li>Chapter 8 exercises.</li>
+<li>Chapter 9 exercises (optional).</li>
+<li>Hadley, W. (2014). Tidy data.&nbsp;<em>Journal of Statistical Software</em>,&nbsp;<em>59</em>(10), 1-23.</li>
+<li>Discussion board post.</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>October 12</td>
+<td><h3 id="fall-break-no-class" class="anchored">Fall Break (No Class)</h3></td>
+<td><ul>
+<li>Enjoy Fall Break and youth, in general.</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>October 19</td>
+<td><p><strong>QUIZ #2 in class</strong> (covers material from Sep 21, Sep 28, and Oct 5).</p>
+<ul>
+<li>RT2 Story: A student newspaper brings down a president.</li>
+<li>Discussion board post discussion.</li>
+<li>Univariate and bivariate analyses (descriptive statistics, correlations, related plots).</li>
+</ul></td>
+<td><ul>
+<li>Chapters 12 and 13.</li>
+<li>Chapter 9 exercises.</li>
+<li>Chapter 12 and 13 exercises (optional).</li>
+<li>Discussion board post.</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>October 26</td>
+<td><ul>
+<li>RT2 Story: What the heck is going on with Anesthesia research?!</li>
+<li>Discussion board post discussion.</li>
+<li>Introduction to probability (basics of probability theory, common distributions, Bayesian vs Frequentist paradigms).</li>
+</ul></td>
+<td><ul>
+<li><p>Chapter 14.</p></li>
+<li><p>Chapter 12 and 13 exercises.</p></li>
+<li><p>Discussion board post.</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>November 2</td>
+<td><ul>
+<li>RT2 Story: Paper mills and predatory journals.</li>
+<li>Discussion board post discussion.</li>
+<li>Categorical data analysis, comparing <span class="math inline">\(n\)</span> means (t-tests, ANOVA), non-parametric tests.</li>
+<li>Random assignment.</li>
+</ul></td>
+<td><ul>
+<li>Chapters 15 and 16.</li>
+<li>Chapter 15 and 16 exercises (optional).</li>
+<li>Discussion board post.</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>November 9</td>
+<td><h3 id="student-presentations---round-1" class="anchored"><strong>Student Presentations - Round 1</strong></h3></td>
+<td><ul>
+<li>No additional work beyond preparing for your presentation.</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>November 16</td>
+<td><p><strong>QUIZ #3 in class</strong> (covers material from Oct 19, Oct 26, and Nov 2).</p>
+<ul>
+<li>Discussion board post discussion.</li>
+<li>Linear regression and ANCOVA.</li>
+<li>Possible guest lecture: Pei-Hsun Hsieh, PhD on simple scraping and text analysis.</li>
+<li>Tabulating and preparing results with R Markdown.</li>
+</ul></td>
+<td><ul>
+<li>Chapters 10 and 17.</li>
+<li>Chapter 10 and 17 exercises (optional).</li>
+<li>Chapter 15 and 16 exercises.</li>
+<li>Discussion board post.</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>November 21 (Tuesday)</td>
+<td><p><strong>Thur-Fri class schedule on Tue-Wed.</strong></p>
+<ul>
+<li>Discussion board post discussion.</li>
+<li>Logistic regression and interactions.</li>
+<li>More on R Markdown (maybe even a little Quarto).</li>
+</ul></td>
+<td><ul>
+<li>Chapters 18 and 19.</li>
+<li>Chapter 10 and 17 exercises.</li>
+<li>Chapter 18 and 19 exercises (optional).</li>
+<li>Discussion board post.</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>November 30</td>
+<td><p><strong>QUIZ #4 in class</strong> (covers material from Nov 16, Nov 21, and Nov 30).</p>
+<ul>
+<li>Discussion board post discussion.</li>
+<li>Introduction to Bayesian inference (analysis of contingency tables, t-tests, ANOVAs, and regressions).</li>
+</ul>
+<p><strong><em>Students who wish to improve their grade can do another RT2 presentation on this day.</em></strong></p></td>
+<td><ul>
+<li>Chapter 20.</li>
+<li>Chapter 18 and 19 exercises.</li>
+<li>Discussion board post.</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>December 7</td>
+<td><p>Last Day of Class.</p>
+<h3 id="student-presentations---round-2." class="anchored"><strong>Student Presentations - Round 2.</strong></h3></td>
+<td><ul>
+<li>No additional work beyond preparing for your presentation.</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./installation.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing R and RStudio</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

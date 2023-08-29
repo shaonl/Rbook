@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Research Transparency, Reproducibility, and Basic Data Analysis in R! - A Very Brief History of Replication</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Research Transparency, Reproducibility, and Basic Data Analysis in R!
+      </li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Research Transparency, Reproducibility, and Basic Data Analysis in R!</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="//Chapters/syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Syllabus</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="//Chapters/outline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Outline of Classes</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="//Chapters/installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing R and RStudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="//Chapters/getstarted.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Accustomed to R Studio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="//Chapters/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="//Chapters/replication1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">A Very Brief History of Replication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="//Chapters/replication2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Mertonian Norms and Counter-Norms</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="//Chapters/datatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="//Chapters/replication3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Crises of Replication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="//Chapters/references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="//Chapters/app1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Exercise 5.8 Answers.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="//Chapters/app2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Exercise 8.6 Answers.</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#what-is-research-transparency-reproducibility-and-replication" id="toc-what-is-research-transparency-reproducibility-and-replication" class="nav-link active" data-scroll-target="#what-is-research-transparency-reproducibility-and-replication">What is Research Transparency, Reproducibility, and Replication?</a></li>
+  <li><a href="#replication-origins" id="toc-replication-origins" class="nav-link" data-scroll-target="#replication-origins">Replication Origins</a>
+  <ul class="collapse">
+  <li><a href="#ibn-al-haytham" id="toc-ibn-al-haytham" class="nav-link" data-scroll-target="#ibn-al-haytham">Ibn al Haytham</a></li>
+  <li><a href="#abu-rayhan-al-biruni" id="toc-abu-rayhan-al-biruni" class="nav-link" data-scroll-target="#abu-rayhan-al-biruni">Abu Rayhan Al Biruni</a></li>
+  <li><a href="#roger-bacon" id="toc-roger-bacon" class="nav-link" data-scroll-target="#roger-bacon">Roger Bacon</a></li>
+  <li><a href="#andries-van-wesel" id="toc-andries-van-wesel" class="nav-link" data-scroll-target="#andries-van-wesel">Andries van Wesel</a></li>
+  <li><a href="#francis-bacon" id="toc-francis-bacon" class="nav-link" data-scroll-target="#francis-bacon">Francis Bacon</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-rep1" class="quarto-section-identifier">A Very Brief History of Replication</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="what-is-research-transparency-reproducibility-and-replication" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-research-transparency-reproducibility-and-replication">What is Research Transparency, Reproducibility, and Replication?</h2>
+<p>By now, you should be swimming along in understanding the preliminaries of R. Hopefully, you are practicing and ensuring you have nailed down all the basics.</p>
+<p>While it can be tempting to continue along this road, and immediately jump to the next topic in R, this is actually a good time to slow things down, and understand what we are doing in this course. This is not a course in how to code in R, at least not entirely. This course is also about the very consequential problems and solutions involved in <strong>Research Transparency &amp; Reproducibility (RT2)</strong>. Let’s begin with some definitions of these terms from the United States National Academies of Sciences, Engineering, and Medicine.<span class="citation" data-cites="national_academies_of_sciences_reproducibility_2019"><sup><a href="references.html#ref-national_academies_of_sciences_reproducibility_2019" role="doc-biblioref">1</a></sup></span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definitions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Reproducibility</strong> - Obtaining consistent computational results using the sample input data, computational steps, methods, code, and conditions of analysis.</p>
+<p><strong>Replicability</strong> - Obtaining consistent results across studies aimed at answering the same scientific question, each of which has obtained its own data.</p>
+</div>
+</div>
+<p>Think of reproducibility as checking the results of the original study. If a researcher gave you their code and data, could you reproduce or recreate their analyses and have them match? That’s the hope anyway, but you would be surprised how often that does not happen.</p>
+<p>Think of replication as conducting multiple studies, using the same methods and procedures as the original study. If you arrive at similar results, that’s good and shows that the underlying theory seems to hold. If not, then it could be a) a problem with the underlying theory, b) a problem with the methods or procedures, or c) both.</p>
+<p>Finally, as stated by the National Academies, “Reproducibility is strongly associated with transparency; a study’s data and code have to be available in order for others to reproduce and confirm results.”<span class="citation" data-cites="national_academies_of_sciences_reproducibility_2019"><sup><a href="references.html#ref-national_academies_of_sciences_reproducibility_2019" role="doc-biblioref">1</a></sup></span> Thus, transparency typically refers to availability of data, code, and materials used to produce the results of a study. However, the term conveys more than that. Another definition of research transparency is as the <em>obligation</em> to “make data, analysis, methods, and interpretive choices underlying their claims visible in a way that allows others to evaluation them - as a fundamental ethical obligation.”<span class="citation" data-cites="moravcsik_transparency_2020"><sup><a href="references.html#ref-moravcsik_transparency_2020" role="doc-biblioref">2</a></sup></span> This extends beyond mere availability of data and code to a <em>fundamental</em> way of doing ethical research.</p>
+<p>The definitions are illustrated in the <a href="#fig-rt2">Figure&nbsp;<span class="quarto-unresolved-ref">fig-rt2</span></a>.</p>
+<div id="fig-rt2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="..\Images/rep.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Transparency is ideal for replication efforts, but often materials are not provided by authors.</figcaption>
+</figure>
+</div>
+<p>Now that we’ve got definitions for the terms, let’s have a look at some key (and in some cases oft-forgotten) players in the history of replication and reproducibility.</p>
+</section>
+<section id="replication-origins" class="level2">
+<h2 class="anchored" data-anchor-id="replication-origins">Replication Origins</h2>
+<p>The history of replication is closely tied to the history of the Scientific Method. Many individuals over time likely contributed to it, but let’s have a look at a few key figures throughout history. The focus here is not on the Scientific Method per se, but rather on the use of replication or repeated experimentation.</p>
+<section id="ibn-al-haytham" class="level3">
+<h3 class="anchored" data-anchor-id="ibn-al-haytham">Ibn al Haytham</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://light2015blogdotorg.files.wordpress.com/2015/05/alhazen.jpg"><img src="..\Images/alhaytham.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Portrait of Ibn Al Haytham by Zargar Zahoor.</figcaption>
+</figure>
+</div>
+<p>One of the earliest proponents of an approach we later would know as the Scientific Method was Ibn al-Haytham, a mathematician, astronomer, physicist, and all-around scholar who lived from 965-1040 CE. Born in Basra, modern-day Iraq, Al Haytham is known as the Father of Optics for his pioneering work on the subject in his famous work <em>كتاب المناظر (Kitab al-Manazir or Book of Optics)</em>, which provided empirical evidence that vision occurred when light entered the eyes (intromission), rather than light being emitted by the eyes (extramission), which was argued by Euclid in <em>Optica.</em></p>
+<p>Besides his many scientific contributions, particularly to the field of Optics, al Haytham made use of <em>repeated</em> systematic observation of natural phenomena to argue his points. Even in his magnum opus <em>Book of Optics</em>, he often ends a description of an experiment with the phrase “this is always found to be so, with no variation or change”, emphasizing that repetition was a central argument of his experimental findings.<span class="citation" data-cites="steinle_stability_2016"><sup><a href="references.html#ref-steinle_stability_2016" role="doc-biblioref">3</a></sup></span></p>
+<p>While this may not seem that impressive to us today, consider that Al Haytham was working in his way before we had the term <em>Scientific Method</em>, and about 500 years before Galileo started looking through telescopes! The important takeaway from Al Haytham is that accidental conditions might distort one’s observation of a phenomenon, and we’re better off making multiple observations before making any grand claims.</p>
+</section>
+<section id="abu-rayhan-al-biruni" class="level3">
+<h3 class="anchored" data-anchor-id="abu-rayhan-al-biruni">Abu Rayhan Al Biruni</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\Images/albiruni.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Al Biruni on the cover of the UNESCO Courier magazine in 1974.</figcaption>
+</figure>
+</div>
+<p>Abu Rayhan Muhammad ibn Ahmad al-Biruni was a Muslim polymath who lived from 973 - 1050 CE. He was known to have authored 146 books, with the majority written on mathematics, astronomy, and related subjects. He was also one of the earliest scholars to offer a formal refutation of astrology in contradistinction to astronomy, which he considered a legitimate science based on empiricism. He made contributions to many fields such as physics, astronomy, geography, and Indology (the study of India).</p>
+<p>Importantly, al Biruni contributed to the development of the scientific method, and was one of the first documented scientists who thought about how to separate measurement of a phenomenon from errors in the measurement device. This was remarkably foresighted, as the issue of measurement error is unavoidable in the natural and social sciences. Al Biruni noted that measurement errors can come from different sources such as measurement tools and human judgment, and can compound.<span class="citation" data-cites="glick_routledge_2017"><sup><a href="references.html#ref-glick_routledge_2017" role="doc-biblioref">4</a></sup></span> To address the issue, he recommended taking multiple measurements of a phenomenon and then quantitatively combining them to arrive at a common-sense estimate. This is an approach we still take today with a number of applications, but especially in the use of multiple survey questions to study latent or unobserved phenomena like attitudes, emotions, and perceptions.</p>
+</section>
+<section id="roger-bacon" class="level3">
+<h3 class="anchored" data-anchor-id="roger-bacon">Roger Bacon</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\Images/bacon.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Bacon in his observatory in Merton College, Oxford by Ernest Board.</figcaption>
+</figure>
+</div>
+<p>Picking up where Ibn al Haytham left off, Roger Bacon was a philosopher and Franciscan friar from England who lived from 1219 - 1292 CE. He took al Haytham’s scientific method and applied it to works by Aristotle. He was the first person in Europe to describe the formula for gunpowder (it was invented and known about in China already). Crucial for our purposes, he was an early proponent of a method of observation, hypothesis, experimentation, and the need for independent verification as noted in his <em>Opus Tertium,</em> published in 1267. Regarding the latter, he kept very meticulous notes about his experiments, permitting reproducibility by others. This is exactly what we try to do today!</p>
+</section>
+<section id="andries-van-wesel" class="level3">
+<h3 class="anchored" data-anchor-id="andries-van-wesel">Andries van Wesel</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\Images/av.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Andries van Wesel revolutionized our understanding of human anatomy.</figcaption>
+</figure>
+</div>
+<p>Andries van Wesel (also known as Andreas Vesalius) as a Flemish anatomist who lived from 1514-1564 CE. He is most famous for creating detailed drawings of human anatomy that provided new insights into the subject, correcting a number of errors made by the Greek physician Galen (129-216 CE), and followed by physicians for centuries.</p>
+<p>In the summer of 1542, he published his magnum opus <em>De humani coporis fabrica libri septem (On the Fabric of the Human Body in Seven Books)</em>, which was based on a collection of his lectures delivered at the University of Padua, where he was a professor. Based on his own experiences dissecting corpses (not a common practice among physicians at the time), he was able to show that the Galen never dissected a human corpse because he made many errors in human anatomy.<span class="citation" data-cites="zampieri_andreas_2015"><sup><a href="references.html#ref-zampieri_andreas_2015" role="doc-biblioref">5</a></sup></span> Galen instead had relied on dissections of animal corpses, and assumed humans had the same anatomy. Van Wesel was able to show that Galen made 300 errors in human anatomy. Finally, van Wesel was able to create detailed visualizations leveraging newer techniques of printing with woodcut engravings. This was huge, because it allowed other physicians to dissect corpses and verify what van Wesel was claiming. This is one of the earliest examples that I’ve seen of <em>evidence-based</em> medicine triumphing over <em>eminence-based</em> medicine. This meant that you didn’t have to take his word for it, you could actually dissect a corpse and check if what you saw lined up with his illustrations. This is very much in line with how we think about replication today!</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Bans on (Dead) Bodies
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Did you know that dissecting human corpses was strictly prohibited by the Catholic Church in the 16th century? Andries van Wesel had to secretly ‘steal’ the bodies of executed criminals to perform his dissections. This allowed him to correct many of Galen’s errors of anatomy. Have a look at his illustrations <a href="https://www.metmuseum.org/art/collection/search/358129">here</a>.</p>
+</div>
+</div>
+</section>
+<section id="francis-bacon" class="level3">
+<h3 class="anchored" data-anchor-id="francis-bacon">Francis Bacon</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\Images/fb.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Portrait of Francis Bacon by Paul van Somer I.</figcaption>
+</figure>
+</div>
+<p>Sir Francis Bacon was an English philosopher and statesman who lived from 1561 - 1626 CE. He is sometimes called the father of empiricism, but of course we know that he stood on the shoulders of giants who came before him. He put forward a method of inductive reasoning in his magnum opus <em>Novum Organum (New Method)</em> which stressed the importance of making systematic observations of phenomena, and then to generalize the observations to a few axioms. He also noted that it was important to have a skeptical and methodological approach, so that scientists would not mislead themselves, and to not generalize beyond what the facts demonstrate. The latter sentiment is particularly relevant today as authors of scientific papers frequently discuss broad-reaching implications of their findings, which really cannot generalize beyond their samples. In fact, some have suggested adding a “Constraints on Generality” section to the discussion section of every paper, in which authors clearly state the specific population to which their findings apply.<span class="citation" data-cites="simons_constraints_2017"><sup><a href="references.html#ref-simons_constraints_2017" role="doc-biblioref">6</a></sup></span> I feel like Sir Francis would approve.</p>
+<p>In addition to his many contributions to the formation of the Scientific Method, Bacon also stressed the need for repeated experimentation to create an increasingly complex knowledge base that is always supported by observable facts. This is highly in line with how we think about replication today, as we aim to support or reject theories of how things work. Finally, Bacon also listed several “idols of the mind”, which he noted as obscuring the path of correct scientific reasoning. These include the human tendency to perceive more order in a system than actually exists, confusion arising from the scientific use of certain words compared with their common usage, and the tendency to follow dogma and not ask questions about the world. These are what we would today refer to as <strong>cognitive biases</strong>, and they have an important role in inhibiting research transparency and replication, which we will discuss later.</p>
+<p>In short, Sir Francis reaffirmed the need for repeated experimentation, careful observation, and meticulous record-keeping in the conduct of science.</p>
+<p>While many others contributed to the refinement of the Scientific Method over the next 500 years or so, for our purposes to will skip to the 20th century.</p>
+
+
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-national_academies_of_sciences_reproducibility_2019" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">National Academies of Sciences E. <em>Reproducibility and <span>Replicability</span> in <span>Science</span></em>.; 2019. doi:<a href="https://doi.org/10.17226/25303">10.17226/25303</a></div>
+</div>
+<div id="ref-moravcsik_transparency_2020" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Moravcsik A. <em>Transparency in Qualitative Research</em>. SAGE Publications Limited; 2020.</div>
+</div>
+<div id="ref-steinle_stability_2016" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Steinle F. Stability and <span>Replication</span> of <span>Experimental</span> <span>Results</span>: <span>A</span> <span>Historical</span> <span>Perspective</span>. In: <em>Reproducibility : <span>Principles</span>, <span>Problems</span>, <span>Practices</span>, and <span>Prospects</span></em>. John Wiley &amp; Sons, Incorporated; 2016. <a href="http://ebookcentral.proquest.com/lib/upenn-ebooks/detail.action?docID=4547409">http://ebookcentral.proquest.com/lib/upenn-ebooks/detail.action?docID=4547409</a></div>
+</div>
+<div id="ref-glick_routledge_2017" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Glick TF, Livesey SJ, Wallis F. <em>Routledge <span>Revivals</span>: <span>Medieval</span> <span>Science</span>, <span>Technology</span> and <span>Medicine</span> (2006): <span>An</span> <span>Encyclopedia</span></em>. Taylor &amp; Francis; 2017.</div>
+</div>
+<div id="ref-zampieri_andreas_2015" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Zampieri F, ElMaghawry M, Zanatta A, Thiene G. Andreas <span>Vesalius</span>: <span>Celebrating</span> 500 years of dissecting nature. <em>Global Cardiology Science &amp; Practice</em>. 2015;2015(5):66. doi:<a href="https://doi.org/10.5339/gcsp.2015.66">10.5339/gcsp.2015.66</a></div>
+</div>
+<div id="ref-simons_constraints_2017" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Simons DJ, Shoda Y, Lindsay DS. Constraints on <span>Generality</span> (<span>COG</span>): <span>A</span> <span>Proposed</span> <span>Addition</span> to <span>All</span> <span>Empirical</span> <span>Papers</span>. <em>Perspectives on Psychological Science</em>. 2017;12(6):1123-1128. doi:<a href="https://doi.org/10.1177/1745691617708630">10.1177/1745691617708630</a></div>
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
