@@ -1,0 +1,184 @@
+{
+  "index.qmd": {
+    "index.html": "ca8a2c6b"
+  },
+  "intro.qmd": {
+    "intro.html": "9c2c9d20"
+  },
+  "summary.qmd": {
+    "summary.html": "8287b70a"
+  },
+  "references.qmd": {
+    "references.html": "0194a9cc"
+  },
+  "syllabus.qmd": {
+    "syllabus.html": "4285f44e"
+  },
+  "outline.qmd": {
+    "outline.html": "43c9c929"
+  },
+  "installation.qmd": {
+    "installation.html": "bf2921b6",
+    "Installation.html": "adff3ec9"
+  },
+  "getstarted.qmd": {
+    "getstarted.html": "112d3966"
+  },
+  "Installation.qmd": {
+    "installation.html": "2230f49b",
+    "Installation.html": "35249d31"
+  },
+  "replication1.qmd": {
+    "replication1.html": "22c7f254"
+  },
+  "replication2.qmd": {
+    "replication2.html": "c5becf5a"
+  },
+  "app1.qmd": {
+    "app1.html": "13723782"
+  },
+  "datatypes.qmd": {
+    "datatypes.html": "e616e322"
+  },
+  "app2.qmd": {
+    "app2.html": "10dcda86"
+  },
+  "replication3.qmd": {
+    "replication3.html": "e2b1ee13"
+  },
+  "Chapters/intro.qmd": {
+    "intro.html": "ba6ded0f"
+  },
+  "../../../../Chapters/syllabus.qmd": {
+    "syllabus.html": "edf04a9e"
+  },
+  "../../../../Chapters/outline.qmd": {
+    "outline.html": "bea67d9d"
+  },
+  "../../../../Chapters/installation.qmd": {
+    "installation.html": "7b0b361c"
+  },
+  "../../../../Chapters/getstarted.qmd": {
+    "getstarted.html": "d7389a54"
+  },
+  "../../../../Chapters/intro.qmd": {
+    "intro.html": "e2f6be62"
+  },
+  "../../../../Chapters/replication1.qmd": {
+    "replication1.html": "4993ccd6"
+  },
+  "../../../../Chapters/replication2.qmd": {
+    "replication2.html": "cc397e4f"
+  },
+  "../../../../Chapters/datatypes.qmd": {
+    "datatypes.html": "bd14fa8f"
+  },
+  "../../../../Chapters/replication3.qmd": {
+    "replication3.html": "ba334d39"
+  },
+  "../../../../Chapters/references.qmd": {
+    "references.html": "ac10fc85"
+  },
+  "../../../../Chapters/app1.qmd": {
+    "app1.html": "f022cecd"
+  },
+  "../../../../Chapters/app2.qmd": {
+    "app2.html": "f06c3053"
+  },
+  "Chapters/syllabus.qmd": {
+    "syllabus.html": "e3fc48ed"
+  },
+  "Chapters/outline.qmd": {
+    "outline.html": "89542803"
+  },
+  "Chapters/installation.qmd": {
+    "installation.html": "ed584bfb"
+  },
+  "Chapters/getstarted.qmd": {
+    "getstarted.html": "ddfe82da"
+  },
+  "Chapters/replication1.qmd": {
+    "replication1.html": "a4da8ff8"
+  },
+  "Chapters/replication2.qmd": {
+    "replication2.html": "ff3e8989"
+  },
+  "Chapters/datatypes.qmd": {
+    "datatypes.html": "6bcc7b16"
+  },
+  "Chapters/replication3.qmd": {
+    "replication3.html": "1ce6f297"
+  },
+  "Chapters/references.qmd": {
+    "references.html": "4e924ea6"
+  },
+  "Chapters/app1.qmd": {
+    "app1.html": "38d24a96"
+  },
+  "Chapters/app2.qmd": {
+    "app2.html": "5d58494d"
+  },
+  "replication4.qmd": {
+    "replication4.html": "f0b53d1e"
+  },
+  "app3.qmd": {
+    "app3.html": "49f41f7c"
+  },
+  "dataimport.qmd": {
+    "dataimport.html": "382dd38d"
+  },
+  "cleaning.qmd": {
+    "cleaning.html": "337188f1"
+  },
+  "Operations.qmd": {
+    "Operations.html": "8d1ad16a"
+  },
+  "app4.qmd": {
+    "app4.html": "6f1deb1d"
+  },
+  "app5.qmd": {
+    "app5.html": "2b9b7ba5"
+  },
+  "dataexp.qmd": {
+    "dataexp.html": "6f16b460"
+  },
+  "stringscomps.qmd": {
+    "stringscomps.html": "0a3187f2"
+  },
+  "app6.qmd": {
+    "app6.html": "48100092"
+  },
+  "datajoin.qmd": {
+    "datajoin.html": "c78728f9"
+  },
+  "app7.qmd": {
+    "app7.html": "0136e7f8"
+  },
+  "appintroex.qmd": {
+    "appintroex.html": "6b8f6efc"
+  },
+  "appdatatypes.qmd": {
+    "appdatatypes.html": "d8f6c928"
+  },
+  "appkahneman.qmd": {
+    "appkahneman.html": "a06ac717"
+  },
+  "appstringcomp.qmd": {
+    "appstringcomp.html": "11a6e0e1"
+  },
+  "appdataclean.qmd": {
+    "appdataclean.html": "848dc952"
+  },
+  "apptidyex.qmd": {
+    "apptidyex.html": "52071a39"
+  },
+  "appdatajoin.qmd": {
+    "appdatajoin.html": "9e90c5d4"
+  },
+  "dataviz.qmd": {
+    "dataviz.html": "960e1d7e"
+  },
+  "replication5.qmd": {
+    "replication5.html": "3e7da122"
+  }
+}

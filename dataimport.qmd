@@ -97,21 +97,14 @@ First, it's important to know the file extension for each software program. Once
 
 Let's give each of these a shot with the relevant data format. Remember to install the `haven` package if you haven't done that already with `install.packages("haven")` and then load the package using `library(haven)`.
 
-```{r, warning = FALSE}
+```{r, warning = FALSE, eval = FALSE}
 library(haven)
 
+# Read a sas7bdat file.
 mydata3 <- read_sas("~/R Book/Datasets/naws_all.sas7bdat")
 
-dim(mydata3)
+
 ```
-
-We see that the dataframe contains 71,311 observational units and 357 columns or variables. Let's just have a quick look at the first 10 rows and first 6 columns. Notice how the `head()` function can easily retrieve $n$ rows of observational units with the `n =` argument. However, to retrieve specific columns, we can use some subsetting we learned about earlier and retrieve the first six columns.
-
-```{r}
-head(mydata3[, c(1:6)], n = 10)
-```
-
-It looks like this dataframe has a number of missing values, indicated by *NA*. This might be a problem, but it might be fine. If the data are missing by design, due to a skip pattern in a survey for instance, then we would actually expect some missing values. For example, the variable `SPOUSARR` indicates the year one's spouse arrived in the US, and a missing value makes sense here if one does not have a spouse. With any dataframe, we always want to look for a codebook that explains the meaning of each variable and pattern of responses.
 
 When a SAS data file is exported, you may see the file extension .xpt. As seen in @tbl-progsdata, this is not a problem for the formidable `haven` package. Let's import an XPT file now.
 

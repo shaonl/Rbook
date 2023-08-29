@@ -1,0 +1,16 @@
+{
+  "hash": "ea199b116ff516226e148ccf8cc0de85",
+  "result": {
+    "markdown": "# Answers for @sec-introex {#sec-appendixa}\n\n1.  Calculate $89+9/(4*5)^2$ and assign the value to the object `solution1`. Then print `solution1`.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsolution1 <- (89+9)/(4*5)^2 \nprint(solution1)\n```\n:::\n\n\n2.  What is the difference between R and R Studio?\n\n*Base R refers to the statistical programming language and application installed on your computer to process the R programming language. RStudio is an Integrated Development Environment (IDE) that integrates with R to provide much more functionality. You can use base R without RStudio, but not the other way around.*\n\n3.  How do you add a comment to a Script file?\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Just add a hash/pound sign to the left. \n#### You can add more hashes for aesthetic purposes ####\n\n# Multi-line comments require a hash \n# starting on the left of each line.\n```\n:::\n\n\n4.  What are packages in R, and how do you install them?\n\n*R packages are user-written collections of functions, compiled code, and sample data. There are over 9000+ packages in R and counting. We use packages for specific things we want to do that we cannot accomplish with the functions in base R, or to do things easier or more efficiently than base R functions.*\n\n*Most packages that have been vetted and checked are available on the Comprehensive R Archive Network (CRAN), which is the central R package repository.\" \"In most cases, installing a package in R is accomplished with the following code* `install.packages(\"name of package\")`.\n\n5.  Install and load the package `rstudioapi`.\n\n\n::: {.cell}\n\n```{.r .cell-code}\ninstall.packages(\"rstudioapi\")\nlibrary(rstudioapi)\n```\n:::\n\n\n6.  How do you modify the appearance of R Studio?\n\n*Tools --\\> Global Options --\\> Appearance --\\> Editor Theme.*\n\n7.  Assign the value of `365` to an object called `year`. Then, create another object called `months` and assign it the value `year * 0.032854884083862`.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nyear <- 365\nmonth <- year * 0.032854884083862\n```\n:::\n\n\n8.  Create three variables named `Cowboys`, `Giants`, and `Commanders` and assign them all the value `\"Inferior Team\"` using multiple assignment operators.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nCowboys <- Giants <- Commanders <- \"Inferior Team\"\n```\n:::\n",
+    "supporting": [
+      "app1_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

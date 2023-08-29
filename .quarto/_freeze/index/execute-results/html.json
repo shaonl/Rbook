@@ -1,0 +1,14 @@
+{
+  "hash": "59aa57e2e66eefb48a0052df2c52fc6b",
+  "result": {
+    "markdown": "# Preface {.unnumbered}\n\nThis is a Quarto book prepared in R for *PPE 4000 - Research in PPE: Research Transparency, Reproducibility and Basic Data Analysis in R*.\n\nTo learn more about Quarto books visit <https://quarto.org/docs/books>.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
