@@ -1,4 +1,4 @@
-# Answers for @sec-introex {#sec-appendixa}
+# Answers for Section 3.8. {#sec-appendixa}
 
 1.  Calculate $89+9/(4*5)^2$ and assign the value to the object `solution1`. Then print `solution1`.
 

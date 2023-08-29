@@ -18,7 +18,6 @@ book:
     - cleaning.qmd
     - dataexp.qmd
     - dataviz.qmd
-    - dataanalysis.qmd
     - replication1.qmd
     - replication2.qmd
     - replication3.qmd

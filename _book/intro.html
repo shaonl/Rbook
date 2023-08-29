@@ -95,8 +95,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 </head>
 
@@ -202,32 +216,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./dataanalysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Univariate, Bivariate &amp; Multivariable Analysis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./replication1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">A Very Brief History of Replication</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">A Very Brief History of Replication</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./replication2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mertonian Norms and Counter-Norms</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Mertonian Norms and Counter-Norms</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./replication3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Some Statistical Preliminaries</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Some Statistical Preliminaries</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./replication4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Crises of Replication</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Crises of Replication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Common Problems that Hamper Reproducibility</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Potential Solutions &amp; the Way Forward</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">References</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -483,7 +515,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1] 1e+05</code></pre>
 </div>
 </div>
-<p>As you see, the answer is given following the <code>[1]</code>, which just refers to the first position in a vector (to be discussed shortly). Note also that R uses scientific notation, so instead of printing <code>10^5=1000000</code>, R will print <code>10^5 = 1e+05</code>. The <code>e</code> here is completely unrelated to the number <span class="math inline">\(e\)</span> (Euler’s number). It just means “10 to the power of.”</p>
+<p>As you see, the answer is given following the <code>[1]</code>, which just refers to the first position in a vector (to be discussed shortly). Note also that R uses scientific notation, so instead of printing <code>10^5=1000000</code>, R will print <code>10^5 = 1e+05</code>. The <code>e</code> here is completely unrelated to the number <span class="math inline">e</span> (Euler’s number). It just means “10 to the power of.”</p>
 <p>You can also easily round a number to a given place using the <code>round()</code> function, in which the first argument is the number or numeric vector to round, and the second argument <code>digits =</code> is the number of decimal places to which you want to round.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">log</span>(<span class="dv">100</span>)<span class="sc">*</span><span class="fl">2.45</span></span>
@@ -704,7 +736,7 @@ You can’t name an object just anything!
 <h2 data-number="3.8" class="anchored" data-anchor-id="sec-introex"><span class="header-section-number">3.8</span> Exercises</h2>
 <p>It’s a good idea to attempt these right away after reading this section while the content is fresh. You can find the answers in <a href="appintroex.html"><span>Appendix&nbsp;A</span></a>.</p>
 <ol type="1">
-<li><p>Calculate <span class="math inline">\(89+9/(4*5)^2\)</span> and assign the value to the object <code>solution1</code>. Then print <code>solution1</code>.</p></li>
+<li><p>Calculate <span class="math inline">89+9/(4*5)^2</span> and assign the value to the object <code>solution1</code>. Then print <code>solution1</code>.</p></li>
 <li><p>What is the difference between R and R Studio?</p></li>
 <li><p>How do you add a comment to a Script file?</p></li>
 <li><p>What are packages in R, and how do you install them?</p></li>

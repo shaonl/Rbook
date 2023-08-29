@@ -1,4 +1,4 @@
-# Answers for @sec-dtex {#sec-appendixb}
+# Answers for Section 4.7. {#sec-appendixb}
 
 1.  Create a numeric vector called `vec1` comprising the elements `3, -12, 532, 0, -100, 55,` and `-42`. Then, find the median and lowest value in the vector.
 

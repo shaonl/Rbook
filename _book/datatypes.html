@@ -54,7 +54,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -95,8 +114,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 </head>
 
@@ -226,8 +259,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./replication5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Common Problems that Hamper Reproducibility</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Potential Solutions &amp; the Way Forward</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">References</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -333,7 +378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="fig-dts" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src=".\Images/datatypes.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4.1: Five types of data in R. Adapted from Grolemund (2014).<span class="citation" data-cites="grolemund_hands-programming_2014"><sup><a href="references.html#ref-grolemund_hands-programming_2014" role="doc-biblioref"><strong>grolemund_hands-programming_2014?</strong></a></sup></span></figcaption>
+<figcaption class="figure-caption">Figure&nbsp;4.1: Five types of data in R. Adapted from Grolemund (2014).<span class="citation" data-cites="grolemund_hands-programming_2014"><sup><a href="references.html#ref-grolemund_hands-programming_2014" role="doc-biblioref">1</a></sup></span></figcaption>
 </figure>
 </div>
 <p>What do we mean by different types of data? Well, data can be many things - text, images, video, recordings, numbers, etc. For our purposes, data will comprise numbers and text. Within these two broad classes, there are five main types of objects used to store data in R, as shown in <a href="#fig-dts">Figure&nbsp;<span>4.1</span></a>. Let’s break each of these down with an emphasis on vectors and dataframes, since we will work with these types most often.</p>
@@ -593,7 +638,7 @@ c 0.65 0.45 0.37</code></pre>
 [3,]    3    6    9</code></pre>
 </div>
 </div>
-<p>You can also change the names of the rows and columns of the matrix using the <code>rownames()</code> and <code>colnames()</code> functions. Let’s try using the <code>matrix()</code> function to input a correlation matrix into R. A correlation matrix is a type of matrix which displays correlation coefficients between variables. Essentially, it shows you the strength of a relationship between pairs of variables ranging from -1 to 1. There are many types of correlation coefficients, but typically Pearson’s <span class="math inline">\(r\)</span> is used. When you look at a correlation matrix, you will notice that 1s are on the diagonal, because a variable is always perfectly correlated with itself. The upper triangle (above the diagonal) is a mirror image of the bottom triangle (below the diagonal), so you only need to focus on one. Personally, I like focusing on the lower triangle, but it doesn’t much matter.</p>
+<p>You can also change the names of the rows and columns of the matrix using the <code>rownames()</code> and <code>colnames()</code> functions. Let’s try using the <code>matrix()</code> function to input a correlation matrix into R. A correlation matrix is a type of matrix which displays correlation coefficients between variables. Essentially, it shows you the strength of a relationship between pairs of variables ranging from -1 to 1. There are many types of correlation coefficients, but typically Pearson’s <span class="math inline">r</span> is used. When you look at a correlation matrix, you will notice that 1s are on the diagonal, because a variable is always perfectly correlated with itself. The upper triangle (above the diagonal) is a mirror image of the bottom triangle (below the diagonal), so you only need to focus on one. Personally, I like focusing on the lower triangle, but it doesn’t much matter.</p>
 <p>Imagine a study on exam performance and study habits with the following variables:</p>
 <ul>
 <li>Hours spent studying</li>
@@ -604,7 +649,7 @@ c 0.65 0.45 0.37</code></pre>
 </ul>
 <p>Now let us examine the correlation matrix of the variables of this hypothetical study illustrated in <span class="quarto-unresolved-ref">?fig-cormat1</span>.</p>
 <p><img src=".\Images/corrmat.jpg" id="fig-cormat1" class="img-fluid"></p>
-<p>It looks like there is a strong correlation (<span class="math inline">\(r = 0.82\)</span>) between hours spent studying and exam score, which makes sense. We also have smaller correlations between IQ and exam score <span class="math inline">\((r = 0.33)\)</span> and school rating and exam score <span class="math inline">\((r = 0.23)\)</span>. All other correlations with exam score are negligible. Let’s now input this correlation matrix into R.</p>
+<p>It looks like there is a strong correlation (<span class="math inline">r = 0.82</span>) between hours spent studying and exam score, which makes sense. We also have smaller correlations between IQ and exam score <span class="math inline">(r = 0.33)</span> and school rating and exam score <span class="math inline">(r = 0.23)</span>. All other correlations with exam score are negligible. Let’s now input this correlation matrix into R.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Input correlations </span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1019,6 +1064,11 @@ Levels: Gross &lt; Delicious</code></pre>
 </ol>
 
 
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-grolemund_hands-programming_2014" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Grolemund G. <em>Hands-on Programming with <span>R</span>: <span>Write</span> Your Own Functions and Simulations</em>. " O’Reilly Media, Inc."; 2014.</div>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
