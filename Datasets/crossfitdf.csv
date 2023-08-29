@@ -1,0 +1,1715 @@
+"id","name","gender","age","height","weight","country","year","score_overall","rank_overall","height_feet","weight_lbs"
+"1616","Russ Greene","M",20,178,83,"",2007,232,11,5.8,183
+"1616","Russ Greene","M",21,178,83,"",2008,21,53,5.8,183
+"1685","Christopher Woods","M",29,163,82,"",2008,19,32,5.3,181
+"1690","Travis Mayer","M",23,181,93,"United States",2014,483,29,5.9,205
+"1690","Travis Mayer","M",25,181,93,"United States",2016,702,10,5.9,205
+"1690","Travis Mayer","M",26,181,93,"United States",2017,674,12,5.9,205
+"1690","Travis Mayer","M",28,181,93,"United States",2019,368,12,5.9,205
+"1690","Travis Mayer","M",29,181,93,"United States",2020,0,19,5.9,205
+"1690","Travis Mayer","M",30,181,93,"United States",2021,822,12,5.9,205
+"1690","Travis Mayer","M",31,181,93,"United States",2022,685,18,5.9,205
+"1721","Jeremy Mghenyi","M",28,173,90,"Kenya",2019,0,87,5.7,198
+"1812","Miranda Oldroyd","F",25,166,64,"",2008,27,22,5.4,141
+"1819","Justin Allen","M",25,183,95,"United States",2012,397,26,6,209
+"1819","Justin Allen","M",27,183,95,"United States",2013,607,17,6,209
+"1910","Emily Beers","F",30,165.3748252,65.66385373,"Canada",2014,310,37,5.4,145
+"2006","Eric Jones","M",22,173,84,"",2008,30,101,5.7,185
+"2088","Camilla Salomonsson Hellman","F",27,165,69,"Sweden",2018,482,24,5.4,152
+"2088","Camilla Salomonsson Hellman","F",28,165,69,"Sweden",2019,208,28,5.4,152
+"2088","Camilla Salomonsson Hellman","F",29,165,69,"Sweden",2020,0,23,5.4,152
+"2099","Harriet Roberts","F",28,171,68,"New Zealand",2020,0,28,5.6,150
+"2386","Trish Davis","F",27,173,70,"",2008,29,28,5.7,154
+"2476","Luke Schafer","M",26,173,84,"United States",2020,0,22,5.7,185
+"2517","Elvar Þór Karlsson","M",20,177.3722892,88.37544696,"Iceland",2011,92,42,5.8,195
+"2519","Michele Fumagalli","F",30,166,71,"United States",2018,28,40,5.4,157
+"2536","Samantha Briggs","F",28,170,62,"",2010,105,19,5.6,137
+"2536","Samantha Briggs","F",29,170,62,"United Kingdom",2011,752,4,5.6,137
+"2536","Samantha Briggs","F",31,170,62,"",2013,920,1,5.6,137
+"2536","Samantha Briggs","F",33,170,62,"United States",2015,735,4,5.6,137
+"2536","Samantha Briggs","F",34,170,62,"United Kingdom",2016,874,4,5.6,137
+"2536","Samantha Briggs","F",35,170,62,"United Kingdom",2017,762,9,5.6,137
+"2536","Samantha Briggs","F",37,170,62,"United Kingdom",2019,318,17,5.6,137
+"2536","Samantha Briggs","F",38,170,62,"United Kingdom",2020,0,25,5.6,137
+"2536","Samantha Briggs","F",39,170,62,"United Kingdom",2021,436,21,5.6,137
+"2559","Steven Fawcett","M",27,173,85,"United Kingdom",2015,454,26,5.7,187
+"2564","Breanne Feudale","F",28,153,55,"",2009,145,45,5,121
+"2615","Daniel Hershey","M",25,188,103,"Japan",2011,92,43,6.2,227
+"2615","Daniel Hershey","M",25,188,103,"",2012,357,33,6.2,227
+"2687","Jessica Core","F",30,158,62,"United States",2015,367,34,5.2,137
+"2698","Colin Jenkins","M",20,176,82,"",2008,24,77,5.8,181
+"2725","Noah Ohlsen","M",23,171,87,"United States",2014,761,8,5.6,192
+"2725","Noah Ohlsen","M",24,171,87,"United States",2015,693,8,5.6,192
+"2725","Noah Ohlsen","M",25,171,87,"United States",2016,608,15,5.6,192
+"2725","Noah Ohlsen","M",26,171,87,"United States",2017,788,4,5.6,192
+"2725","Noah Ohlsen","M",27,171,87,"United States",2018,786,6,5.6,192
+"2725","Noah Ohlsen","M",28,171,87,"United States",2019,949,2,5.6,192
+"2725","Noah Ohlsen","M",29,171,86,"United States",2020,540,4,5.6,190
+"2725","Noah Ohlsen","M",30,171,86,"United States",2021,873,10,5.6,190
+"2725","Noah Ohlsen","M",31,171,87,"United States",2022,780,12,5.6,192
+"2725","Noah Ohlsen","M",32,171,87,"United States",2023,0,0,5.6,192
+"2766","Lukas Esslinger","M",23,181,91,"Switzerland",2016,511,21,5.9,201
+"2766","Lukas Esslinger","M",24,181,91,"Switzerland",2017,530,18,5.9,201
+"2766","Lukas Esslinger","M",25,181,91,"Switzerland",2018,648,17,5.9,201
+"2766","Lukas Esslinger","M",26,181,91,"Switzerland",2019,191,34,5.9,201
+"2770","Candice Howe","F",26,168,69,"United Arab Emirates",2011,83,44,5.5,152
+"2918","Jeff Leonard","M",33,191,109,"",2009,111,14,6.3,240
+"2942","Kara Saunders","F",21,162,74,"Australia",2012,527,19,5.3,163
+"2942","Kara Saunders","F",23,162,74,"Australia",2013,685,12,5.3,163
+"2942","Kara Saunders","F",24,162,74,"Australia",2014,645,31,5.3,163
+"2942","Kara Saunders","F",25,162,74,"Australia",2015,703,5,5.3,163
+"2942","Kara Saunders","F",26,162,74,"Australia",2016,794,7,5.3,163
+"2942","Kara Saunders","F",27,162,74,"Australia",2017,992,2,5.3,163
+"2942","Kara Saunders","F",28,162,74,"Australia",2018,1006,4,5.3,163
+"2942","Kara Saunders","F",30,162,74,"Australia",2020,0,8,5.3,163
+"2942","Kara Saunders","F",31,162,74,"Australia",2021,93,36,5.3,163
+"2942","Kara Saunders","F",32,162,74,"Australia",2022,890,7,5.3,163
+"3008","Brian Quinlan","M",34,183,100,"United States",2012,166,45,6,220
+"3180","Joshua Bridges","M",28,181,98,"United States",2011,763,2,5.9,216
+"3200","Dani Horan","F",25,168,69,"United States",2013,642,18,5.5,152
+"3200","Dani Horan","F",26,168,69,"United States",2014,626,18,5.5,152
+"3200","Dani Horan","F",27,168,69,"United States",2015,0,40,5.5,152
+"3200","Dani Horan","F",29,168,69,"United States",2017,518,20,5.5,152
+"3200","Dani Horan","F",30,168,69,"United States",2018,360,33,5.5,152
+"3217","Jennifer Jones","F",26,166,64,"United States",2012,378,28,5.4,141
+"3217","Jennifer Astle","F",28,166,64,"United States",2013,790,6,5.4,141
+"3217","Jennifer Astle","F",29,166,64,"United States",2014,680,10,5.4,141
+"3217","Jennifer Astle","F",30,166,64,"United States",2015,441,29,5.4,141
+"3381","Phil Hesketh","M",24,180,96,"United Arab Emirates",2015,400,29,5.9,212
+"3407","Michele Letendre","F",25,155,59,"Canada",2011,246,25,5.1,130
+"3407","Michele Letendre","F",25,155,59,"Canada",2012,483,24,5.1,130
+"3407","Michele Letendre","F",27,155,59,"Canada",2013,671,13,5.1,130
+"3407","Michele Letendre","F",28,155,59,"Canada",2014,787,4,5.1,130
+"3407","Michele Letendre","F",29,155,59,"Canada",2015,562,18,5.1,130
+"3407","Michele Letendre","F",30,155,59,"Canada",2016,613,16,5.1,130
+"3532","Kimberly Malz","F",38,158,59,"",2009,186,56,5.2,130
+"3678","Margaux Alvarez","F",28,171,69,"United States",2013,520,26,5.6,152
+"3678","Margaux Alvarez","F",29,171,69,"United States",2014,377,34,5.6,152
+"3678","Margaux Alvarez","F",30,171,69,"United States",2015,620,9,5.6,152
+"3678","Margaux Alvarez","F",31,171,69,"United States",2016,542,22,5.6,152
+"3678","Margaux Alvarez","F",32,171,69,"United States",2017,478,24,5.6,152
+"3678","Margaux Alvarez","F",33,171,69,"United States",2018,522,22,5.6,152
+"3991","Lauren Brooks","F",27,171,73,"United States",2014,695,7,5.6,161
+"4045","Robert Corson","M",43,186,84,"",2008,20,45,6.1,185
+"4105","Jason Boag","M",27,173,82,"",2008,19,38,5.7,181
+"4105","Jason Boag","M",28,173,82,"",2009,176,47,5.7,181
+"4158","Blair Morrison","M",27,183,87,"",2009,111,7,6,192
+"4158","Blair Morrison","M",28,183,87,"",2010,116,23,6,192
+"4158","Blair Morrison","M",29,183,87,"United States",2011,708,5,6,192
+"4322","Megan Smith","F",38,172,75,"",2010,119,35,5.6,165
+"4388","Chad Furey","M",21,173,87,"",2009,223,55,5.7,192
+"4406","Matt Hathcock","M",28,176,91,"United States",2013,540,29,5.8,201
+"4422","Holly Mata","F",32,163,69,"United States",2013,318,37,5.3,152
+"4732","Rick Frausto","M",30,166,73,"",2008,15,6,5.4,161
+"4732","Ricky Frausto","M",31,166,73,"",2009,196,38,5.4,161
+"4820","Noah Pester","M",29,183,89,"United States",2011,123,39,6,196
+"4895","Jordan Troyan","M",29,178,84,"United States",2013,572,24,5.8,185
+"4895","Jordan Troyan","M",30,178,84,"United States",2014,598,20,5.8,185
+"4925","Emily Bridgers","F",27,155,62,"United States",2014,705,6,5.1,137
+"4925","Emily Bridgers","F",28,155,62,"United States",2015,539,24,5.1,137
+"4925","Emily Bridgers","F",29,155,62,"United States",2016,433,29,5.1,137
+"4925","Emily Bridgers","F",30,155,62,"United States",2017,580,16,5.1,137
+"4925","Emily Bridgers","F",31,155,62,"United States",2018,104,39,5.1,137
+"4945","James Hobart","M",23,173,84,"",2009,112,70,5.7,185
+"4945","James Hobart","M",24,173,84,"",2010,105,18,5.7,185
+"4945","James Hobart","M",28,173,84,"United States",2014,576,21,5.7,185
+"4992","Bjorn Albrecht-walker","M",30,183,83,"",2010,127,38,6,183
+"5013","Alex Anderson","M",25,178,93,"United States",2015,583,13,5.8,205
+"5013","Alex Anderson","M",26,178,93,"United States",2016,696,11,5.8,205
+"5013","Alex Anderson","M",27,178,93,"United States",2017,702,8,5.8,205
+"5013","Alex Anderson","M",28,178,93,"United States",2018,676,13,5.8,205
+"5046","Douglas Oberbeck","M",23,188,84,"",2010,167,45,6.2,185
+"5111","Bryan Miller","M",22,186,96,"United States",2013,416,31,6.1,212
+"5186","Wes Piatt","M",27,181,85,"United States",2013,376,35,5.9,187
+"5200","Pat Barber","M",22,171,80,"",2008,15,4,5.6,176
+"5200","Patrick Barber","M",23,171,80,"",2009,180,36,5.6,176
+"5200","Patrick Barber","M",25,171,80,"New Zealand",2011,678,8,5.6,176
+"5231","Tia Mcdougall","F",25,159,69,"",2009,109,67,5.2,152
+"5284","Daniel Tyminski","M",25,176,89,"United States",2011,262,25,5.8,196
+"5284","Daniel Tyminski","M",25,176,89,"United States",2012,701,14,5.8,196
+"5284","Daniel Tyminski","M",27,176,89,"United States",2013,379,34,5.8,196
+"5284","Daniel Tyminski","M",29,176,89,"United States",2015,381,31,5.8,196
+"5296","Jeremy Meredith","M",24,183,96,"Canada",2011,90,45,6,212
+"5296","Jeremy Meredith","M",24,183,96,"Canada",2012,247,40,6,212
+"5312","Nick Urankar","M",27,178,88,"United States",2011,147,36,5.8,194
+"5312","Nicholas Urankar","M",31,178,88,"United States",2015,417,28,5.8,194
+"5312","Nicholas Urankar","M",34,178,88,"United States",2018,590,20,5.8,194
+"5512","Stacie Tovar","F",24,166,65,"",2009,195,36,5.4,143
+"5512","Stacie Tovar","F",25,166,65,"",2010,126,14,5.4,143
+"5512","Stacie Tovar","F",26,166,65,"United States",2011,146,37,5.4,143
+"5512","Stacie Tovar","F",26,166,65,"United States",2012,805,12,5.4,143
+"5512","Stacie Tovar","F",28,166,65,"United States",2013,634,20,5.4,143
+"5512","Stacie Tovar","F",30,166,65,"United States",2015,606,11,5.4,143
+"5512","Stacie Tovar","F",31,166,65,"United States",2016,454,28,5.4,143
+"5512","Stacie Tovar","F",32,166,65,"United States",2017,442,27,5.4,143
+"5718","Jason Hoggan","M",27,178,87,"United States",2012,284,38,5.8,192
+"5785","Brista Mayfield","F",30,158,67,"United States",2018,416,29,5.2,148
+"5922","Joshua Lewis","M",34,178,89,"",2008,22,60,5.8,196
+"6023","J.c. Nessa","M",29,178,87,"",2009,119,20,5.8,192
+"6109","Michelle Kinney","F",29,163,64,"United States",2013,724,8,5.3,141
+"6109","Michelle Kinney","F",30,163,64,"United States",2014,674,12,5.3,141
+"6115","James Cebedo","M",26,161,69,"",2008,29,99,5.3,152
+"6122","Christian Lucero","M",23,176,87,"United States",2016,569,18,5.8,192
+"6139","Samantha Petersen","F",23,173,80,"United States",2011,128,39,5.7,176
+"6139","Samantha Petersen","F",23,173,80,"United States",2012,317,36,5.7,176
+"6147","Sam Ek","M",24,181,84,"",2008,26,86,5.9,185
+"6169","Jerome Perryman","M",35,191,100,"",2009,115,17,6.3,220
+"6169","Jerome Perryman","M",36,191,100,"",2010,117,34,6.3,220
+"6346","Sam Stewart","M",24,176,87,"Ireland",2021,108,37,5.8,192
+"6913","Lindy Barber","F",24,171,67,"United States",2013,452,28,5.6,148
+"6913","Lindy Barber","F",26,171,67,"United States",2015,357,35,5.6,148
+"7173","Breck Berry","M",31,171,78,"",2007,252,5,5.6,172
+"7173","Breck Berry","M",32,171,78,"",2008,17,15,5.6,172
+"7173","Breck Berry","M",33,171,78,"",2009,157,28,5.6,172
+"7173","Breck Berry","M",34,171,78,"",2010,110,21,5.6,172
+"7197","Dj Wickham","M",25,188,103,"",2009,127,10,6.2,227
+"7197","Dj Wickham","M",26,188,103,"",2010,115,22,6.2,227
+"7285","Rob Forte","M",24,174,89,"Australia",2011,225,30,5.7,196
+"7285","Rob Forte","M",24,174,89,"Australia",2012,345,35,5.7,196
+"7285","Rob Forte","M",26,174,89,"Australia",2013,382,33,5.7,196
+"7285","Rob Forte","M",27,174,89,"Australia",2014,649,12,5.7,196
+"7285","Rob Forte","M",28,174,89,"Australia",2015,472,23,5.7,196
+"7285","Rob Forte","M",29,174,89,"Australia",2016,573,17,5.7,196
+"7285","Rob Forte","M",30,174,89,"Australia",2017,456,25,5.7,196
+"7287","Amy Dracup","F",30,160,62,"Australia",2011,624,11,5.2,137
+"7314","Brandon Swan","M",20,175,89,"Australia",2012,242,41,5.7,196
+"7314","Brandon Swan","M",22,175,89,"Australia",2013,192,45,5.7,196
+"7314","Brandon Swan","M",23,175,89,"Australia",2014,480,30,5.7,196
+"7336","Benjamin Garard","M",26,165,82,"Australia",2015,540,15,5.4,181
+"7747","Azadeh Boroumand","F",25,178,78,"United States",2012,605,18,5.8,172
+"7965","Elisabeth Akinwale","F",32,171,72,"United States",2011,401,13,5.6,159
+"7965","Elisabeth Akinwale","F",32,171,72,"United States",2012,859,7,5.6,159
+"7965","Elisabeth Akinwale","F",34,171,72,"United States",2013,697,10,5.6,159
+"7965","Elisabeth Akinwale","F",35,171,72,"United States",2014,658,14,5.6,159
+"7965","Elisabeth Akinwale","F",36,171,72,"United States",2015,495,25,5.6,159
+"8015","Rebecca Voigt","F",27,176,69,"",2008,23,7,5.8,152
+"8015","Rebecca Voigt","F",28,176,69,"",2009,126,20,5.8,152
+"8015","Rebecca Voigt (miller)","F",29,176,69,"",2010,77,7,5.8,152
+"8015","Rebecca Voigt (miller)","F",30,176,69,"United States",2011,775,3,5.8,152
+"8015","Rebecca Voigt Miller","F",30,176,69,"United States",2012,836,10,5.8,152
+"8015","Rebecca Voigt","F",32,176,69,"United States",2013,696,11,5.8,152
+"8015","Rebecca Voigt","F",33,176,69,"United States",2014,579,24,5.8,152
+"8015","Rebecca Voigt","F",34,176,69,"United States",2015,428,31,5.8,152
+"8015","Rebecca Voigt","F",35,176,69,"United States",2016,350,35,5.8,152
+"8015","Rebecca Voigt","F",37,176,69,"United States",2018,450,27,5.8,152
+"8018","Nelly Fernanda Rodriguez","F",31,160,60,"",2010,162,41,5.2,132
+"8027","Libby Dibiase","F",21,161,59,"",2009,154,47,5.3,130
+"8067","Brandon Phillips","M",27,181,98,"",2010,121,11,5.9,216
+"8067","Brandon Phillips","M",28,181,98,"United States",2011,207,31,5.9,216
+"8067","Brandon Phillips","M",28,181,98,"United States",2012,233,42,5.9,216
+"8233","Robert Gerdes","M",25,186,98,"",2009,116,72,6.1,216
+"8325","Nick Bloch","M",33,183,100,"United States",2019,116,41,6,220
+"8335","Caity Matter","F",25,176,65.66385373,"",2008,19,1,5.8,145
+"8335","Caity Matter (henniger)","F",26,176,65.66385373,"",2009,105,62,5.8,145
+"8342","Elyse Umeda-korth","F",25,158,57,"",2010,112,11,5.2,126
+"8342","Elyse Umeda-korth","F",26,158,57,"United States",2011,303,23,5.2,126
+"8356","Paul Tremblay","M",27,178,91,"Canada",2014,392,31,5.8,201
+"8404","Camille Leblanc-bazinet","F",21,158,59,"",2010,94,9,5.2,130
+"8404","Camille Leblanc-bazinet","F",22,158,59,"Canada",2011,651,8,5.2,130
+"8404","Camille Leblanc-Bazinet","F",22,158,59,"Canada",2012,866,6,5.2,130
+"8404","Camille Leblanc-Bazinet","F",24,158,59,"Canada",2013,656,16,5.2,130
+"8404","Camille Leblanc-Bazinet","F",25,158,59,"Canada",2014,918,1,5.2,130
+"8404","Camille Leblanc-Bazinet","F",26,158,59,"United States",2015,586,13,5.2,130
+"8404","Camille Leblanc-Bazinet","F",27,158,59,"United States",2016,561,21,5.2,130
+"8404","Camille Leblanc-Bazinet","F",28,158,59,"United States",2017,58,39,5.2,130
+"8404","Camille Leblanc-Bazinet","F",29,158,59,"United States",2018,708,13,5.2,130
+"8496","Gabe Subry","M",29,176,87,"",2010,122,24,5.8,192
+"8496","Gabe Subry","M",30,176,87,"United States",2011,246,27,5.8,192
+"8496","Gabe Subry","M",30,176,87,"United States",2012,604,18,5.8,192
+"8522","Chris Hogan","M",23,179,91,"",2009,172,31,5.9,201
+"8522","Chris Hogan","M",24,179,91,"",2010,93,26,5.9,201
+"8522","Chris Hogan","M",25,179,91,"Australia",2011,364,17,5.9,201
+"8597","Denise Serrano","F",40,165.3748252,65.66385373,"",2007,249,10,5.4,145
+"8668","Tim Dymmel","M",32,178,84,"",2008,26,85,5.8,185
+"8690","Dean Linder-Leighton","M",27,172,87,"Australia",2018,668,14,5.6,192
+"8690","Dean Linder-Leighton","M",28,172,87,"Australia",2019,170,36,5.6,192
+"8741","Angie Pye (hay)","F",35,168,71,"Canada",2011,642,10,5.5,157
+"8741","Angie Hay","F",35,168,71,"Canada",2012,631,16,5.5,157
+"8743","David Levey","M",33,178,91,"",2012,323,36,5.8,201
+"8743","David Levey","M",35,178,91,"",2013,388,32,5.8,201
+"8746","Tommy Hackenbruck","M",27,186,97,"",2009,83,2,6.1,214
+"8746","Tommy Hackenbruck","M",28,186,97,"",2010,111,9,6.1,214
+"8746","Tommy Hackenbruck","M",29,186,97,"United States",2011,320,23,6.1,214
+"8746","Tommy Hackenbruck","M",32,186,97,"United States",2014,781,6,6.1,214
+"8755","Dan Schmieding","M",24,173,84,"",2008,29,98,5.7,185
+"8770","Cheryl Brost","F",39,158,60,"",2010,125,13,5.2,132
+"8770","Cheryl Brost","F",40,158,60,"United States",2011,660,7,5.2,132
+"8770","Cheryl Brost","F",40,158,60,"United States",2012,706,15,5.2,132
+"8795","Judd Xavier","M",34,173,84,"",2008,27,87,5.7,185
+"8797","Ryan Swobody","M",29,178,83,"United States",2013,182,44,5.8,183
+"8859","Ragnheiður Sara Sigmundsdottir","F",22,173,69,"Iceland",2015,743,3,5.7,152
+"8859","Ragnheiður Sara Sigmundsdottir","F",23,173,69,"Iceland",2016,919,3,5.7,152
+"8859","Ragnheiður Sara Sigmundsdottir","F",24,173,69,"United States",2017,944,4,5.7,152
+"8859","Ragnheiður Sara Sigmundsdottir","F",25,173,69,"Iceland",2018,504,37,5.7,152
+"8859","Ragnheiður Sara Sigmundsdottir","F",26,173,69,"Iceland",2019,294,19,5.7,152
+"8859","Ragnheiður Sara Sigmundsdottir","F",27,173,69,"Iceland",2020,0,21,5.7,152
+"8873","Danie Du Preez","M",42,178,96,"South Africa",2011,70,47,5.8,212
+"8896","Rasmus Andersen","M",24,183,98,"United States",2016,497,25,6,216
+"8896","Rasmus Andersen","M",26,183,98,"United Arab Emirates",2018,734,8,6,216
+"8921","Kate Rawlings","F",28,161,64,"",2010,103,29,5.3,141
+"9121","Christy Phillips (adkins)","F",24,163,62,"",2009,124,6,5.3,137
+"9121","Christy Phillips (adkins)","F",25,163,62,"",2010,75,6,5.3,137
+"9121","Christy Phillips (adkins)","F",26,163,62,"United States",2011,328,21,5.3,137
+"9121","Christy Adkins","F",26,163,62,"United States",2012,827,11,5.3,137
+"9121","Christy Adkins","F",28,163,62,"United States",2013,775,7,5.3,137
+"9121","Christy Adkins","F",29,163,62,"United States",2014,595,21,5.3,137
+"9121","Christy Adkins","F",31,163,62,"United States",2016,519,24,5.3,137
+"9193","Jeff Germond","M",33,173,89,"United States",2014,230,41,5.7,196
+"9230","Jason Cain","M",33,168,81,"Canada",2011,130,38,5.5,179
+"9241","Chase Daniels","M",25,181,87,"United States",2011,365,16,5.9,192
+"9241","Chase Daniels","M",25,181,87,"United States",2012,531,19,5.9,192
+"9258","Kelley Hennigan","F",23,163,71,"United States",2012,352,33,5.3,157
+"9353","Cj Martin","M",29,171,71,"",2007,216,20,5.6,157
+"9359","Justin Riley","M",27,176,91,"",2008,20,44,5.8,201
+"9359","Justin Riley","M",28,176,91,"",2009,109,69,5.8,201
+"9428","Jordan Holland","M",20,181,96,"",2008,19,36,5.9,212
+"9428","Jordan Holland","M",21,181,96,"",2009,143,24,5.9,212
+"9440","Anna Tobias","F",30,167,65,"United States",2013,706,9,5.5,143
+"9440","Anna Tobias","F",31,167,65,"United States",2014,590,22,5.5,143
+"9440","Anna Tobias","F",32,167,65,"United States",2015,552,22,5.5,143
+"9440","Anna Tobias","F",33,167,65,"United States",2016,738,10,5.5,143
+"9440","Anna Tobias","F",34,167,65,"United States",2017,450,25,5.5,143
+"9446","Skip Miller","M",39,178,96,"",2008,28,92,5.8,212
+"9468","Nicholas Luppino","M",27,177.3722892,88.37544696,"",2008,23,70,5.8,195
+"9624","Tarasa Barnett","F",27,171,64,"Cayman Islands",2011,100,43,5.6,141
+"9624","Tarasa Barnett","F",27,171,64,"",2012,192,42,5.6,141
+"9644","Matthew Barnett","M",31,186,94,"Cayman Islands",2011,91,44,6.1,207
+"9759","Cheryl Nasso","F",26,163,62,"United States",2011,109,42,5.3,137
+"9759","Cheryl Nasso","F",34,163,62,"United States",2019,122,39,5.3,137
+"9839","Andre Alipate","M",36,177,81,"Tonga",2019,0,93,5.8,179
+"9983","Roch Proteau","M",28,180,80,"",2009,101,65,5.9,176
+"10091","Josh Everett","M",32,176,84,"",2007,267,3,5.8,185
+"10091","Josh Everett","M",33,176,84,"",2008,14,2,5.8,185
+"10091","Josh Everett","M",34,176,84,"",2009,180,35,5.8,185
+"10169","Austin Malleolo","M",23,166,80,"",2010,84,6,5.4,176
+"10169","Austin Malleolo","M",24,166,80,"United States",2011,352,18,5.4,176
+"10169","Austin Malleolo","M",24,166,80,"United States",2012,840,8,5.4,176
+"10169","Austin Malleolo","M",26,166,80,"United States",2013,273,41,5.4,176
+"10169","Austin Malleolo","M",28,166,80,"United States",2015,301,34,5.4,176
+"10181","Michael Giardina","M",28,178,85,"",2008,18,20,5.8,187
+"10181","Michael Giardina","M",29,178,85,"",2009,114,71,5.8,187
+"10181","Michael Giardina","M",30,178,85,"",2010,120,35,5.8,187
+"10463","Nelson Barriga","M",22,159,63,"",2009,142,74,5.2,139
+"10484","Adrian Conway","M",29,178,92,"United States",2015,493,21,5.8,203
+"10593","Zach Forrest","M",23,171,82,"",2009,106,66,5.6,181
+"10593","Zach Forrest","M",25,171,82,"United States",2011,625,12,5.6,181
+"10593","Zachary Forrest","M",27,171,82,"United States",2013,248,42,5.6,181
+"10760","Kirsten Pedri","F",35,176,69,"United States",2017,408,28,5.8,152
+"10822","Mikko Aronpää","M",27,178,92,"Finland",2011,192,34,5.8,203
+"10822","Mikko Aronpää","M",27,178,92,"",2012,374,32,5.8,203
+"10822","Mikko Aronpaa","M",29,178,92,"",2013,495,30,5.8,203
+"10886","Sammy Wood","F",27,165,68,"Australia",2015,590,12,5.4,150
+"10892","Neil Scholtz","M",25,179,82,"",2010,138,42,5.9,181
+"10917","Eric Magee","M",29,181,93,"United States",2013,309,39,5.9,205
+"11068","Rika Geyser","F",32,182,82,"",2012,178,43,6,181
+"11156","Mariah Provost","F",27,161,59,"",2009,107,39,5.3,130
+"11215","Kaleena Ladeairous","F",27,173,69,"United States",2013,639,19,5.7,152
+"11218","Jaime Gold","F",25,161,62,"United States",2011,246,26,5.3,137
+"11218","Jaime Gold","F",25,161,62,"United States",2012,374,31,5.3,137
+"11232","Zeph Littleton","M",25,178,82,"United States",2011,182,35,5.8,181
+"11267","Jared Davis","M",28,181,87,"United States",2011,326,22,5.9,192
+"11279","Talayna Fortunato","F",30,171,69,"United States",2012,973,3,5.6,152
+"11279","Talayna Fortunato","F",32,171,69,"United States",2013,811,5,5.6,152
+"11279","Talayna Fortunato","F",33,171,69,"United States",2014,380,33,5.6,152
+"11321","Jessa Lemoine","F",25,163,62,"United States",2012,523,20,5.3,137
+"11337","Brandon Pastorek","M",24,181,93,"",2009,147,27,5.9,205
+"11337","Brandon Pastorek","M",26,181,93,"United States",2011,337,21,5.9,205
+"11350","Dan Rogers","M",26,183,89,"",2010,103,29,6,196
+"11391","Númi Snær Katrínarson","M",31,182,83,"",2012,471,24,6,183
+"11435","Rich Froning Jr.","M",22,176,88,"",2010,51,2,5.8,194
+"11435","Rich Froning","M",23,176,88,"United States",2011,856,1,5.8,194
+"11435","Richard Froning Jr.","M",23,176,88,"United States",2012,1089,1,5.8,194
+"11435","Richard Froning Jr.","M",25,176,88,"United States",2013,962,1,5.8,194
+"11435","Richard Froning Jr.","M",26,176,88,"United States",2014,925,1,5.8,194
+"11451","Graham Holmberg","M",26,181,87,"United States",2011,717,4,5.9,192
+"11451","Graham Holmberg","M",26,181,87,"United States",2012,813,10,5.9,192
+"11457","Sean Provost","M",23,183,78,"",2009,202,51,6,172
+"11460","Candice Wagner","F",26,161,61,"United States",2012,377,29,5.3,134
+"11460","Candice Savage-Wagner","F",31,161,61,"United States",2016,471,27,5.3,134
+"11586","Chase Ingraham","M",27,188,91,"",2010,116,33,6.2,201
+"11626","Heather Welsh","F",29,176,67,"United States",2012,506,22,5.8,148
+"11644","Joey Warren","M",26,181,82,"",2009,181,54,5.9,181
+"11644","Joey Warren","M",27,181,82,"",2010,126,13,5.9,181
+"11644","Joey Warren","M",28,181,82,"United States",2012,396,27,5.9,181
+"11708","Amanda Goodman","F",22,153,65,"United States",2013,323,35,5,143
+"11708","Amanda Goodman","F",23,153,65,"United States",2014,598,20,5,143
+"11708","Amanda Goodman","F",24,153,65,"United States",2015,616,10,5,143
+"11788","Josh Wagner","M",28,191,91,"",2008,20,46,6.3,201
+"11826","Phillip Kniep","M",28,183,91,"United States",2011,145,37,6,201
+"11826","Phillip Kniep","M",28,183,91,"United States",2012,394,28,6,201
+"11866","Chris Harrison","M",29,181,96,"",2008,28,91,5.9,212
+"11881","Heather Keenan (bergeron)","F",32,166,62,"",2009,117,17,5.4,137
+"11881","Heather Bergeron","F",33,166,62,"",2010,84,8,5.4,137
+"12104","Jason Hill","M",35,173,77,"",2008,29,100,5.7,170
+"12336","Kelley Jackson","F",30,158,59,"United States",2014,518,27,5.2,130
+"12336","Kelley Jackson","F",31,158,59,"United States",2015,345,37,5.2,130
+"12448","Mike Asher","M",40,183,107,"",2008,42,119,6,236
+"12485","Jason Khalipa","M",22,176,96,"",2008,13,1,5.8,212
+"12485","Jason Khalipa","M",23,176,96,"",2009,106,5,5.8,212
+"12485","Jason Khalipa","M",24,176,96,"",2010,136,16,5.8,212
+"12485","Jason Khalipa","M",25,176,96,"United States",2011,694,7,5.8,212
+"12485","Jason Khalipa","M",25,176,96,"United States",2012,885,5,5.8,212
+"12485","Jason Khalipa","M",27,176,96,"United States",2013,890,2,5.8,212
+"12485","Jason Khalipa","M",28,176,96,"United States",2014,844,3,5.8,212
+"12489","Nolan Foster","M",27,181,89,"",2008,19,30,5.9,196
+"12701","Mandi Janowitz","F",28,166,66,"United States",2014,553,26,5.4,146
+"12969","Hillari Eaton","F",26,161,54,"",2009,105,63,5.3,119
+"13061","Chad Cole","M",25,173,82,"United States",2015,508,20,5.7,181
+"13082","Freddy Camacho","M",42,173,87,"",2007,226,13,5.7,192
+"13082","Freddy Camacho","M",43,173,87,"",2008,18,25,5.7,192
+"13119","Mark Rosen","M",46,176,80,"",2007,205,24,5.8,176
+"13132","Scott Lewis","M",33,176,90,"",2009,157,44,5.8,198
+"13372","Michelle Crawford","F",36,171,58,"United States",2013,338,33,5.6,128
+"13383","Gretchen Kittelberger","F",25,158,63,"United States",2011,594,12,5.2,139
+"13383","Gretchen Kittelberger","F",25,158,63,"United States",2012,391,26,5.2,139
+"13383","Gretchen Kittelberger","F",27,158,63,"United States",2013,338,34,5.2,139
+"13383","Gretchen Kittelberger","F",28,158,63,"United States",2014,348,36,5.2,139
+"13439","Leah Polaski","F",31,168,64,"United States",2011,225,30,5.5,141
+"13503","Wanda Brenton","F",39,166,64,"",2014,32,42,5.4,141
+"13506","Nicole Holcomb","F",27,171,69,"United States",2014,397,32,5.6,152
+"13506","Nicole Holcomb","F",28,171,69,"United States",2015,575,15,5.6,152
+"13632","Erin Light","F",26,171,71,"Canada",2013,505,27,5.6,157
+"13643","Jeremy Jones","M",26,168,74,"",2008,19,29,5.5,163
+"13666","Andy Lewis","M",23,178,88,"United States",2011,87,46,5.8,194
+"13832","Rebecca Ballstaedt","F",28,168,69,"",2008,30,29,5.5,152
+"13913","Marcus Filly","M",28,178,89,"United States",2013,361,37,5.8,196
+"13913","Marcus Filly","M",29,178,89,"United States",2014,531,25,5.8,196
+"13913","Marcus Filly","M",31,178,89,"United States",2016,683,12,5.8,196
+"14093","Deborah Cordner (carson)","F",31,166,66,"United States",2011,11,46,5.4,146
+"14093","Deborah Carson","F",31,166,66,"United States",2012,718,13,5.4,146
+"14093","Deborah Carson","F",33,166,66,"United States",2013,627,21,5.4,146
+"14100","Jesse Ward","M",27,188,105,"",2008,31,112,6.2,231
+"14130","Mike Minium","M",36,178,80,"",2008,23,66,5.8,176
+"14149","Jenny Labaw","F",29,171,69,"United States",2011,719,6,5.6,152
+"14149","Jennifer LaBaw","F",29,171,69,"United States",2012,382,37,5.6,152
+"14319","Emmalee Teribery","F",27,163,62,"United States",2013,265,40,5.3,137
+"14354","Rory Long-Zambard","F",22,178,75,"United States",2013,670,14,5.8,165
+"14354","Rory Long-Zambard","F",23,178,75,"United States",2014,0,40,5.8,165
+"14459","Helga Torfadóttir","F",34,165.3748252,65.66385373,"Iceland",2011,11,47,5.4,145
+"14467","Evan Samuel","M",36,199,107,"",2008,38,118,6.5,236
+"14512","Connor Martin","M",16,178,75,"",2007,182,32,5.8,165
+"14512","Connor Martin","M",17,178,75,"",2008,34,116,5.8,165
+"14832","Amanda Schwartz","F",34,168,62,"United States",2014,501,29,5.5,137
+"14935","David Leys","M",28,176,91,"",2008,20,49,5.8,201
+"14960","Travis Williams","M",23,176,92,"United States",2015,370,32,5.8,203
+"14960","Travis Williams","M",24,176,92,"United States",2016,535,19,5.8,203
+"14960","Travis Williams","M",25,176,92,"United States",2017,476,23,5.8,203
+"15026","David Millar","M",22,181,84,"",2009,116,9,5.9,185
+"15033","Joshua Glover","M",24,177.3722892,88.37544696,"",2008,31,110,5.8,195
+"15481","Michael Lee","M",28,163,62,"",2008,31,108,5.3,137
+"15547","Cherie Chan","F",34,168,63,"",2008,26,15,5.5,139
+"15547","Cherie Chan","F",37,168,63,"United States",2011,123,40,5.5,139
+"15607","Dale Saran","M",37,168,87,"",2007,226,12,5.5,192
+"15607","Dale Saran","M",38,168,87,"",2008,20,47,5.5,192
+"15617","Patrick Burke","M",27,178,84,"",2008,18,24,5.8,185
+"15617","Patrick Burke","M",28,178,84,"",2009,112,8,5.8,185
+"15617","Patrick Burke","M",29,178,84,"",2010,91,7,5.8,185
+"15617","Patrick Burke","M",30,178,84,"United States",2011,406,13,5.8,185
+"15617","Patrick Burke","M",30,178,84,"United States",2012,608,16,5.8,185
+"15617","Patrick Burke","M",33,178,84,"United States",2014,380,33,5.8,185
+"15679","Brandon Banks","M",31,150,84,"",2007,163,37,4.9,185
+"15679","Brandon Banks","M",32,150,84,"",2008,19,37,4.9,185
+"15794","Tamara Holmes","F",34,176,83,"",2008,21,4,5.8,183
+"15794","Tamara Holmes","F",35,176,83,"",2009,118,16,5.8,183
+"15834","Kirez Reynolds","M",34,176,100,"",2008,31,106,5.8,220
+"15996","Allison King","F",32,166,66,"United States",2012,0,44,5.4,146
+"16057","Ryan Hunt","M",38,181,89,"",2007,179,33,5.9,196
+"16080","James Newbury","M",25,177,87,"Australia",2016,503,24,5.8,192
+"16080","James Newbury","M",26,177,87,"Australia",2017,436,26,5.8,192
+"16080","James Newbury","M",27,177,87,"Australia",2018,616,18,5.8,192
+"16080","James Newbury","M",28,177,87,"Australia",2019,728,5,5.8,192
+"16173","Jessica Coughlan","F",28,166,66,"Australia",2017,284,36,5.4,146
+"16421","Marcus Hendren","M",22,178,91,"United States",2012,846,7,5.8,201
+"16421","Marcus Hendren","M",24,178,91,"United States",2013,742,6,5.8,201
+"16581","Denae Brown","F",31,165,58,"Australia",2012,0,44,5.4,128
+"16581","Denae Brown","F",34,165,58,"Australia",2014,629,17,5.4,128
+"16581","Denae Brown","F",35,165,58,"Australia",2015,552,23,5.4,128
+"16738","Feng Chew","F",23,157,50,"",2009,108,65,5.2,110
+"16897","Dawn Hutchison","F",24,173,73,"",2009,162,31,5.7,161
+"16973","Carleen Mathews","F",31,158,64,"United States",2015,347,36,5.2,141
+"16973","Carleen Mathews","F",32,158,64,"United States",2016,532,23,5.2,141
+"16973","Carleen Mathews","F",33,158,64,"United States",2017,38,38,5.2,141
+"17309","Linda Leipper","F",40,163,57,"",2008,25,12,5.3,126
+"17309","Linda Leipper","F",41,163,57,"",2009,120,40,5.3,126
+"17329","Marlene Andersson","F",30,165,59,"",2014,244,40,5.4,130
+"17339","Candace Hamilton","F",26,166,71,"",2008,24,11,5.4,157
+"17339","Candace Hamilton (hester)","F",27,166,71,"",2009,179,53,5.4,157
+"17339","Candace Hester","F",29,166,71,"United States",2012,380,27,5.4,157
+"17606","Eric O'connor","M",27,178,83,"",2008,18,23,5.8,183
+"17606","Eric O'connor","M",28,178,83,"",2009,145,26,5.8,183
+"17606","Eric O'connor","M",29,178,83,"",2010,105,19,5.8,183
+"17703","Matt Chan","M",30,176,99,"",2008,16,8,5.8,218
+"17703","Matt Chan","M",31,176,99,"",2009,116,18,5.8,218
+"17703","Matt Chan","M",32,176,99,"",2010,73,4,5.8,218
+"17703","Matt Chan","M",33,176,99,"United States",2011,670,10,5.8,218
+"17703","Matt Chan","M",33,176,99,"United States",2012,975,2,5.8,218
+"17703","Matt Chan","M",35,176,99,"United States",2013,589,21,5.8,218
+"17774","Carla Nunes da Costa","F",37,174,70,"",2013,309,38,5.7,154
+"18006","Matthew Lefave","M",30,183,93,"Canada",2012,257,39,6,205
+"18061","Armand Mccormick","M",29,178,84,"United States",2011,320,24,5.8,185
+"18199","Chong Tseng","M",33,183,82,"",2008,30,104,6,181
+"18274","Bjork Odinsdottir","F",26,160,63,"",2014,616,19,5.2,139
+"18543","Frederik Aegidius","M",24,174,84,"",2012,382,30,5.7,185
+"18543","Frederik Aegidius","M",26,174,84,"",2013,612,15,5.7,185
+"18543","Frederik Aegidius","M",30,174,84,"Denmark",2017,462,24,5.7,185
+"18543","Frederick Aegidius","M",31,174,84,"Iceland",2018,586,21,5.7,185
+"18543","Frederik Aegidius","M",32,174,84,"Denmark",2019,0,140,5.7,185
+"18588","Annie Thorisdottir","F",19,170,69,"",2009,54,11,5.6,152
+"18588","Annie Thorisdottir","F",20,170,69,"",2010,43,2,5.6,152
+"18588","Annie Thorisdottir","F",21,170,69,"Iceland",2011,842,1,5.6,152
+"18588","Annie Thorisdottir","F",21,170,69,"",2012,1062,1,5.6,152
+"18588","Annie Thorisdottir","F",24,170,69,"",2014,878,2,5.6,152
+"18588","Annie Thorisdottir","F",25,170,69,"Iceland",2015,410,38,5.6,152
+"18588","Annie Thorisdottir","F",26,170,69,"Iceland",2016,682,13,5.6,152
+"18588","Annie Thorisdottir","F",27,170,69,"Iceland",2017,964,3,5.6,152
+"18588","Annie Thorisdottir","F",28,170,69,"Iceland",2018,866,5,5.6,152
+"18588","Annie Thorisdottir","F",29,170,69,"Iceland",2019,370,11,5.6,152
+"18588","Annie Thorisdottir","F",31,170,69,"Iceland",2021,1099,3,5.6,152
+"18588","Annie Thorisdottir","F",33,170,69,"Iceland",2023,0,0,5.6,152
+"18641","Carey Kepler","F",34,171,63,"",2009,75,3,5.6,139
+"18641","Carey Kepler","F",35,171,63,"",2010,131,16,5.6,139
+"18641","Carey Kepler","F",36,171,63,"United States",2011,244,28,5.6,139
+"19058","Nancy Mckeage","F",38,175,68,"",2010,114,32,5.7,150
+"19117","Lauren Fisher","F",20,166,64,"United States",2014,681,9,5.4,141
+"19117","Lauren Fisher","F",22,166,64,"United States",2016,495,25,5.4,141
+"19117","Lauren Fisher","F",23,166,64,"United States",2017,386,30,5.4,141
+"19117","Lauren Fisher","F",24,166,64,"United Arab Emirates",2018,392,31,5.4,141
+"19155","Jesse Disch","M",26,178,91,"United States",2011,229,29,5.8,201
+"19269","Cody Anderson","M",22,171,78,"United States",2014,564,22,5.6,172
+"19269","Cody Anderson","M",25,171,78,"United States",2017,574,15,5.6,172
+"19269","Cody Anderson","M",26,171,78,"United States",2018,712,10,5.6,172
+"19412","Ashley Carriveau","F",29,161,65.66385373,"United States",2013,261,41,5.3,145
+"19501","Thuridur Erla Helgadottir","F",19,164,59,"",2012,319,35,5.4,130
+"19501","Thuridur Erla Helgadottir","F",23,164,59,"Iceland",2015,451,28,5.4,130
+"19501","Thuridur Erla Helgadottir","F",24,164,59,"Iceland",2016,563,19,5.4,130
+"19501","Thuridur Erla Helgadottir","F",25,164,59,"Iceland",2017,556,18,5.4,130
+"19501","Thuridur Erla Helgadottir","F",27,164,59,"Iceland",2019,611,9,5.4,130
+"19501","Thuridur Erla Helgadottir","F",29,164,59,"Iceland",2021,723,13,5.4,130
+"19501","Thuridur Erla Helgadottir","F",30,164,59,"Iceland",2022,582,22,5.4,130
+"19575","Lance Cantu","M",27,181,82,"",2009,176,34,5.9,181
+"19837","Russell Berger","M",23,177.3722892,88.37544696,"",2009,172,46,5.8,195
+"19941","Simon Paquette","M",24,181,93,"Canada",2013,561,26,5.9,205
+"19999","Darren Rosten","M",27,186,98,"",2008,22,56,6.1,216
+"19999","Darren Rosten","M",28,186,98,"",2009,196,39,6.1,216
+"20514","Geoffrey Tudisco","M",33,177.3722892,88.37544696,"",2009,197,59,5.8,195
+"20514","Geoffrey Tudisco","M",34,177.3722892,88.37544696,"",2010,166,44,5.8,195
+"20612","Rachel Martinez","F",30,155,61,"United States",2014,502,28,5.1,134
+"20698","Tim Paulson","M",27,186,98,"United States",2017,514,19,6.1,216
+"20698","Tim Paulson","M",28,186,98,"United States",2018,480,29,6.1,216
+"20698","Tim Paulson","M",29,186,98,"United States",2019,0,105,6.1,216
+"20698","Tim Paulson","M",30,186,98,"United States",2020,0,14,6.1,216
+"20698","Timothy Paulson","M",31,186,98,"United States",2021,326,28,6.1,216
+"20698","Timothy Paulson","M",32,186,98,"United States",2022,541,23,6.1,216
+"20717","Bryan Diaz","M",28,176,91,"United States",2012,199,43,5.8,201
+"20900","Lisa Ray","F",37,165.3748252,65.66385373,"",2009,141,44,5.4,145
+"21087","Amanda Allen","F",40,167,70,"Australia",2011,348,19,5.5,154
+"21152","Maria Corvin","F",44,153,50,"",2008,37,36,5,110
+"21292","Anonymous Anonymous","M",22,177.3722892,88.37544696,"United States",2013,765,5,5.8,195
+"21292","Anonymous Anonymous","M",25,177.3722892,88.37544696,"United States",2016,530,20,5.8,195
+"21292","Anonymous Anonymous","M",26,177.3722892,88.37544696,"United States",2017,666,13,5.8,195
+"21298","Mike Hom","M",24,177.3722892,88.37544696,"",2007,223,15,5.8,195
+"21298","Mike Hom","M",25,177.3722892,88.37544696,"",2008,24,72,5.8,195
+"21343","Kenneth Leverich","M",23,173,84,"United States",2012,604,17,5.7,185
+"21343","Kenneth Leverich","M",25,173,84,"United States",2013,547,28,5.7,185
+"21343","Kenneth Leverich","M",26,173,84,"United States",2014,599,19,5.7,185
+"21379","Jason Feudale","M",29,158,71,"",2008,24,76,5.2,157
+"21556","Madeline Sturt","F",19,159,63,"Australia",2016,147,39,5.2,139
+"21556","Madeline Sturt","F",20,159,63,"Australia",2017,298,35,5.2,139
+"21556","Madeline Sturt","F",21,159,63,"Australia",2018,580,20,5.2,139
+"21556","Madeline Sturt","F",22,159,63,"Australia",2019,244,22,5.2,139
+"21566","Anthony Bainbridge","M",29,171,76,"",2008,17,16,5.6,168
+"21658","Michael Mogard","M",29,176,81,"",2013,159,46,5.8,179
+"21682","Lisa Thiel","F",33,173,67,"United States",2011,218,32,5.7,148
+"21868","Charlie Dunifer","M",30,171,75,"",2009,211,52,5.6,165
+"21901","Lisa Shiu","F",29,163,62,"United States",2011,353,18,5.3,137
+"22026","Josh Wagner","M",27,176,83,"",2009,200,40,5.8,183
+"22340","Katie Hogan","F",26,176,78,"",2009,118,18,5.8,172
+"22340","Katie Hogan","F",28,176,78,"United States",2011,343,20,5.8,172
+"22357","Julie Cleghorn","F",42,166,54,"",2008,28,23,5.4,119
+"22982","Emily Carothers","F",31,158,59,"United States",2013,596,23,5.2,130
+"22982","Emily Carothers","F",32,158,59,"United States",2014,664,13,5.2,130
+"23344","Pat Sherwood","M",33,173,88.37544696,"",2009,195,58,5.7,195
+"23452","Travis Cassidy","M",25,171,82,"",2008,19,28,5.6,181
+"23655","Ant Haynes","M",29,179,89,"China",2019,218,27,5.9,196
+"23655","Ant Haynes","M",33,179,89,"China",2023,0,0,5.9,196
+"23820","Shana Alverson","F",33,163,63,"",2009,137,25,5.3,139
+"23820","Shana Alverson","F",34,163,63,"",2010,102,28,5.3,139
+"23820","Shana Alverson","F",35,163,63,"United States",2011,146,36,5.3,139
+"23820","Shana Alverson","F",35,163,63,"United States",2012,265,38,5.3,139
+"23856","Sheila Barden","F",26,153,59,"United States",2014,554,25,5,130
+"23856","Sheila Barden","F",28,153,59,"United States",2016,363,34,5,130
+"24092","Michael Fitzgerald","M",23,186,91,"",2009,137,11,6.1,201
+"24092","Michael Fitzgerald","M",24,186,91,"",2010,122,37,6.1,201
+"24156","Neal Maddox","M",32,178,98,"",2010,93,25,5.8,216
+"24156","Neal Maddox","M",33,178,98,"United States",2011,201,32,5.8,216
+"24156","Neal Maddox","M",33,178,98,"United States",2012,527,20,5.8,216
+"24156","Neal Maddox","M",35,178,98,"United States",2013,663,9,5.8,216
+"24156","Neal Maddox","M",36,178,98,"United States",2014,629,15,5.8,216
+"24156","Neal Maddox","M",37,178,98,"United States",2015,198,39,5.8,216
+"24281","Jeralee Anderson","F",27,163,65.66385373,"",2008,31,31,5.3,145
+"24309","Lukas Högberg","M",23,183,96,"",2014,533,23,6,212
+"24309","Lukas Högberg","M",24,183,96,"Sweden",2015,385,30,6,212
+"24309","Lukas Högberg","M",25,183,96,"Sweden",2016,640,14,6,212
+"24309","Lukas Högberg","M",27,183,96,"Sweden",2018,886,3,6,212
+"24309","Lukas Högberg","M",28,183,96,"Sweden",2019,319,17,6,212
+"24538","Yurii Hanson","M",34,171,87,"United States",2012,192,44,5.6,192
+"24547","Andrea Bell","F",31,161,59,"",2009,189,33,5.3,130
+"24883","Natalie McLain","F",27,155,55,"United States",2013,425,30,5.1,121
+"25107","Dana Lynch","F",37,161,63,"",2009,108,66,5.3,139
+"25528","Ruth Anderson Horrell","F",27,167,66,"New Zealand",2011,220,31,5.5,146
+"25528","Ruth Anderson-Horrell","F",27,167,66,"Australia",2012,622,17,5.5,146
+"25528","Ruth Anderson-Horrell","F",29,167,66,"Australia",2013,658,15,5.5,146
+"25565","Whitney Elks","F",28,173,71,"United States",2016,416,30,5.7,157
+"25569","Kyle Kasperbauer","M",27,173,87,"",2009,126,42,5.7,192
+"25569","Kyle Kasperbauer","M",29,173,87,"United States",2012,930,3,5.7,192
+"25569","Kyle Kasperbauer","M",31,173,87,"United States",2013,591,20,5.7,192
+"25569","Kyle Kasperbauer","M",32,173,87,"United States",2014,639,13,5.7,192
+"25613","Edmund Tan","M",33,170,68,"Malaysia",2019,0,102,5.6,150
+"25678","Annie Sakamoto","F",35,153,55,"United States",2012,496,23,5,121
+"25957","Alexander Nettey","M",29,186,84,"United States",2013,361,36,6.1,185
+"25957","Alexander Nettey","M",30,186,84,"United States",2014,347,38,6.1,185
+"26295","Caroline Fryklund","F",26,173,67,"",2012,426,25,5.7,148
+"26295","Caroline Fryklund","F",28,173,67,"",2013,656,17,5.7,148
+"26344","Jeff Tincher","M",39,176,84,"",2008,15,5,5.8,185
+"26344","Jeffrey Tincher","M",40,176,84,"",2009,175,33,5.8,185
+"26672","Nicole Tainatongo Monforte","F",24,166,69,"",2013,304,39,5.4,152
+"26851","Garth Prouse","M",33,177.3722892,88.37544696,"",2010,113,31,5.8,195
+"26980","Pip Malone","F",23,164,64,"Australia",2013,320,36,5.4,141
+"26980","Pip Malone","F",24,164,64,"Australia",2014,313,41,5.4,141
+"26994","Lance Mosley","M",35,177.3722892,88,"",2008,21,50,5.8,194
+"26994","Lance Mosley","M",36,177.3722892,88,"",2009,209,41,5.8,194
+"27065","Chris Spealler","M",28,166,65,"",2007,261,4,5.4,143
+"27065","Chris Spealler","M",29,166,65,"",2008,16,10,5.4,143
+"27065","Chris Spealler","M",30,166,65,"",2009,144,25,5.4,143
+"27065","Chris Spealler","M",31,166,65,"",2010,69,3,5.4,143
+"27065","Chris Spealler","M",32,166,65,"United States",2011,651,11,5.4,143
+"27065","Chris Spealler","M",32,166,65,"United States",2012,495,22,5.4,143
+"27065","Chris Spealler","M",35,166,65,"United States",2014,501,28,5.4,143
+"27667","Keegan Martin","M",13,181,83,"",2007,56,44,5.9,183
+"27855","Lauren Plumey","F",27,173,64,"",2009,153,46,5.7,141
+"27855","Lauren Plumey","F",28,173,64,"",2010,126,15,5.7,141
+"27975","Chyna Cho","F",23,173,68,"",2010,99,18,5.7,150
+"27975","Chyna Cho","F",27,173,68,"United States",2014,648,15,5.7,150
+"27975","Chyna Cho","F",28,173,68,"United States",2015,661,6,5.7,150
+"27975","Chyna Cho","F",29,173,68,"United States",2016,612,17,5.7,150
+"27975","Chyna Cho","F",30,173,68,"United States",2017,562,17,5.7,150
+"27975","Chyna Cho","F",31,173,68,"United States",2018,570,21,5.7,150
+"28040","Eric Carmody","M",26,181,96,"",2014,331,39,5.9,212
+"28040","Eric Carmody","M",31,181,96,"United States",2019,160,38,5.9,212
+"28224","Jenny Jacobsen","F",36,162,61,"Sweden",2011,121,41,5.3,134
+"28505","Andy Petranek","M",42,173,73,"",2009,208,62,5.7,161
+"28534","Tamaryn Venter (barber)","F",27,165.3748252,65.66385373,"",2009,96,38,5.4,145
+"28886","Emily Friedman","F",29,168,59,"United States",2013,528,25,5.5,130
+"28918","Jenny Davis","F",28,166,69,"United States",2011,322,22,5.4,152
+"28918","Jenny Davis","F",28,166,69,"United States",2012,856,8,5.4,152
+"30018","Michael Mcgoldrick","M",26,181,93,"United States",2013,296,40,5.9,205
+"30168","Ken Cutrer","M",43,186,88,"",2008,23,69,6.1,194
+"30180","Guido Trinidad","M",30,171,82,"United States",2012,383,29,5.6,181
+"30192","Lindsey Valenzuela","F",24,168,69,"United States",2012,845,9,5.5,152
+"30211","Steve Smith","M",35,171,78,"",2009,178,48,5.6,172
+"30491","Chastity Slone","F",35,171,67,"",2009,155,30,5.6,148
+"30675","Marcus Neal","M",27,183,96,"",2007,220,19,6,212
+"30740","Ben Stoneberg","M",24,171,82,"United States",2011,340,20,5.6,181
+"30740","Ben Stoneberg","M",26,171,82,"United States",2013,611,16,5.6,181
+"30740","Ben Stoneberg","M",27,171,82,"United States",2014,716,9,5.6,181
+"30740","Ben Stoneberg","M",29,171,82,"United States",2016,473,28,5.6,181
+"30862","Vic Zachary","M",27,177.3722892,84,"",2009,173,32,5.8,185
+"30862","Vic Zachary","M",28,177.3722892,84,"",2010,121,36,5.8,185
+"31263","Nicole Gordon","F",29,158,55,"",2009,164,49,5.2,121
+"31660","Jonathan Pera","M",28,178,92,"United States",2011,117,41,5.8,203
+"31660","Jon Pera","M",28,178,92,"United States",2012,495,23,5.8,203
+"31660","Jon Pera","M",32,178,92,"United States",2015,519,18,5.8,203
+"31737","Ashley Smith","F",31,165.3748252,65.66385373,"",2009,191,58,5.4,145
+"31873","Austin Stack","M",26,183,105,"United States",2012,353,34,6,231
+"32052","Lacee Kovacs","M",26,174,85,"",2013,564,25,5.7,187
+"32083","Karim El Hlimi","M",33,173,84,"Morocco",2019,0,108,5.7,185
+"32710","Peter Egyed","M",21,181,88,"",2007,232,10,5.9,194
+"32710","Peter Egyed","M",22,181,88,"",2008,18,21,5.9,194
+"32710","Peter Egyed","M",23,181,88,"",2009,107,6,5.9,194
+"32710","Peter Egyed","M",24,181,88,"",2010,117,10,5.9,194
+"32835","Mike Pistono","M",39,177.3722892,88.37544696,"",2008,31,105,5.8,195
+"33172","Ahmik Jones","M",33,177.3722892,81,"",2008,32,113,5.8,179
+"33216","Austin Begiebing","M",29,188,96,"",2008,17,13,6.2,212
+"33992","Rick Heilmann","M",21,177.3722892,98,"",2008,31,111,5.8,216
+"34002","Moe Kelsey","M",32,188,98,"",2009,91,3,6.2,216
+"34002","Moe Kelsey","M",33,188,98,"",2010,130,14,6.2,216
+"34025","Payam Saljoughian","M",32,176,80,"Iran",2019,0,96,5.8,176
+"34216","Sveinbjorn Sveinbjornsson","M",28,186,90,"",2009,118,15,6.1,198
+"34216","Sveinbjörn Sveinbjörnsson","M",29,186,90,"",2010,134,40,6.1,198
+"34796","Scott Panchik","M",23,176,85,"United States",2012,892,4,5.8,187
+"34796","Scott Panchik","M",25,176,85,"United States",2013,770,4,5.8,187
+"34796","Scott Panchik","M",26,176,85,"United States",2014,782,5,5.8,187
+"34796","Scott Panchik","M",27,176,85,"United States",2015,709,6,5.8,187
+"34796","Scott Panchik","M",28,176,85,"United States",2016,800,6,5.8,187
+"34796","Scott Panchik","M",29,176,85,"United States",2017,784,6,5.8,187
+"34796","Scott Panchik","M",30,176,85,"United States",2018,694,11,5.8,187
+"34796","Scott Panchik","M",31,176,85,"United States",2019,795,4,5.8,187
+"34796","Scott Panchik","M",33,176,85,"United States",2021,840,11,5.8,187
+"35012","Jeremy Kinnick","M",29,178,89,"",2008,24,78,5.8,196
+"35012","Jeremy Kinnick","M",30,178,89,"",2009,163,29,5.8,196
+"35012","Jeremy Kinnick","M",32,178,89,"United States",2011,117,40,5.8,196
+"35012","Jeremy Kinnick","M",32,178,89,"United States",2012,382,31,5.8,196
+"35627","Will Moorad","M",25,176,87,"United States",2014,632,14,5.8,192
+"35627","Will Moorad","M",30,176,87,"United States",2019,485,10,5.8,192
+"35627","Will Moorad","M",32,176,87,"United States",2021,674,20,5.8,192
+"35627","Will Moorad","M",33,176,87,"United States",2022,574,22,5.8,192
+"35627","Will Moorad","M",34,176,87,"United States",2023,0,0,5.8,192
+"36154","Aja Barto","M",24,196,100,"United States",2011,232,28,6.4,220
+"36154","Aja Barto","M",24,196,100,"United States",2012,519,21,6.4,220
+"36307","Simon Warnos","M",25,176,90,"",2008,18,19,5.8,198
+"36429","Tara Parsons","F",21,165.3748252,65.66385373,"",2007,246,11,5.4,145
+"36446","Nichole Dehart","F",21,163,65.66385373,"",2007,270,3,5.3,145
+"36515","Jeremy Christofferson","M",28,177.3722892,88.37544696,"",2010,115,32,5.8,195
+"36670","John Kane","M",54,171,80,"",2007,185,30,5.6,176
+"36699","Becky Conzelman","F",39,161,59,"United States",2011,295,24,5.3,130
+"36699","Becky Conzelman","F",39,161,59,"United States",2012,709,14,5.3,130
+"36734","Kristan Clever","F",27,158,59,"",2009,75,4,5.2,130
+"36734","Kristan Clever","F",28,158,59,"",2010,31,1,5.2,130
+"36734","Kristan Clever","F",29,158,59,"United States",2011,799,2,5.2,130
+"36734","Kristan Clever","F",29,158,59,"United States",2012,964,4,5.2,130
+"36734","Kristan Clever","F",31,158,59,"United States",2013,349,32,5.2,130
+"36776","Colleen Maher","F",16,158,65.66385373,"United States",2012,254,40,5.2,145
+"37537","Alessandra Pichelli","F",27,168,71,"United States",2013,818,4,5.5,157
+"37537","Alessandra Pichelli","F",28,168,71,"United States",2014,582,23,5.5,157
+"37537","Alessandra Pichelli","F",29,168,71,"United States",2015,427,32,5.5,157
+"37537","Alessandra Pichelli","F",30,168,71,"United States",2016,745,9,5.5,157
+"37537","Alessandra Pichelli","F",31,168,71,"United States",2017,668,11,5.5,157
+"37537","Alessandra Pichelli","F",32,168,71,"United States",2018,676,14,5.5,157
+"37537","Alessandra Pichelli","F",33,168,71,"Italy",2019,365,13,5.5,157
+"37537","Alessandra Pichelli","F",35,168,71,"Canada",2021,426,22,5.5,157
+"38209","Lucas Parker","M",21,173,87,"Canada",2011,260,26,5.7,192
+"38209","Lucas Parker","M",21,173,87,"Canada",2012,685,15,5.7,192
+"38209","Lucas Parker","M",23,173,87,"Canada",2013,595,19,5.7,192
+"38209","Lucas Parker","M",24,173,87,"Canada",2014,358,34,5.7,192
+"38209","Lucas Parker","M",25,173,87,"Canada",2015,556,14,5.7,192
+"38209","Lucas Parker","M",26,173,87,"Canada",2016,507,22,5.7,192
+"38371","Jill Digiampaolo","F",30,161,59,"",2009,138,26,5.3,130
+"38474","Ashleigh Moe","F",26,158,59,"",2010,122,24,5.2,130
+"38474","Ashleigh Moe","F",27,158,59,"United States",2011,209,33,5.2,130
+"38474","Ashleigh Moe","F",29,158,59,"United States",2013,230,43,5.2,130
+"39517","Emilia Leppanen","F",32,165,69,"Finland",2019,40,55,5.4,152
+"39517","Emilia Leppänen","F",34,165,69,"Finland",2021,338,29,5.4,152
+"39754","Daniel Petro","M",25,181,96,"United States",2013,629,13,5.9,212
+"40339","Michele Vieux","F",30,165.3748252,65.66385373,"",2008,27,19,5.4,145
+"40339","Michele Vieux","F",31,165.3748252,65.66385373,"",2009,130,23,5.4,145
+"40822","Alicia Gomes","F",32,158,59,"United States",2012,369,32,5.2,130
+"40939","Sarah Dunsmore","F",28,165.3748252,65.66385373,"",2009,74,13,5.4,145
+"40955","Ricky Garard","M",23,179,91,"Australia",2017,834,-1,5.9,201
+"40955","Ricky Garard","M",28,179,91,"Australia",2022,1068,3,5.9,201
+"41091","Jennifer Kellams","F",31,163,55,"",2009,106,64,5.3,121
+"41231","Saul Jimenez","M",45,171,80,"",2007,121,39,5.6,176
+"41298","Matthew Griffin","M",27,173,72,"",2008,25,80,5.7,159
+"42105","Maggie Larson","F",42,176,65,"",2007,260,5,5.8,143
+"42206","Kevin Simons","M",23,171,88,"United States",2012,297,37,5.6,194
+"42206","Kevin Simons","M",27,171,88,"United States",2015,149,37,5.6,194
+"42521","Drew Mckenzie","M",28,161,66,"",2009,108,68,5.3,146
+"42556","Steve Serrano","M",19,178,80,"",2008,34,115,5.8,176
+"42717","Joe Scali","M",29,183,89,"Canada",2015,221,38,6,196
+"42803","Orlando Trejo","M",23,162,50,"",2012,0,46,5.3,110
+"42803","Orlando Trejo","M",25,162,50,"",2013,220,43,5.3,110
+"43069","Mary Lampas","F",28,176,69,"",2010,104,30,5.8,152
+"43198","Lindsay Vaughan","F",34,173,70,"United States",2019,152,34,5.7,154
+"43310","Deric Maruquin","M",29,161,82,"",2010,99,27,5.3,181
+"43678","Lee Knight","F",31,161,57,"",2009,0,71,5.3,126
+"43727","Graham Spagnola","M",27,181,103,"",2009,192,56,5.9,227
+"43761","Ben Smith","M",19,181,89,"",2009,215,64,5.9,196
+"43761","Ben Smith","M",20,181,89,"",2010,93,8,5.9,196
+"43761","Ben Smith","M",21,181,89,"United States",2011,738,3,5.9,196
+"43761","Ben Smith","M",21,181,89,"United States",2012,808,11,5.9,196
+"43761","Ben Smith","M",23,181,89,"United States",2013,802,3,5.9,196
+"43761","Ben Smith","M",24,181,89,"United States",2014,772,7,5.9,196
+"43761","Ben Smith","M",25,181,89,"United States",2015,915,1,5.9,196
+"43761","Ben Smith","M",26,181,89,"United States",2016,899,2,5.9,196
+"43761","Ben Smith","M",27,181,89,"United States",2017,730,7,5.9,196
+"43761","Ben Smith","M",28,181,89,"United States",2018,684,12,5.9,196
+"43761","Ben Smith","M",29,181,89,"United States",2019,217,28,5.9,196
+"44402","Gary Helmick","M",25,178,82,"United States",2013,326,38,5.8,181
+"44402","Gary Helmick","M",28,178,82,"United States",2016,479,27,5.8,181
+"45179","Alicia Connors","F",21,150,66,"",2010,123,36,4.9,146
+"45179","Alicia Connors","F",22,150,66,"Canada",2011,189,35,4.9,146
+"45479","Megan Maclellan","F",22,171,74,"",2009,133,24,5.6,163
+"45491","Jennifer Smith","F",27,168,63,"United States",2013,619,22,5.5,139
+"45491","Jennifer Smith","F",30,168,63,"United States",2016,288,36,5.5,139
+"45491","Jennifer Smith","F",32,168,63,"United States",2018,372,36,5.5,139
+"45763","Amy Summers","F",28,165.3748252,65.66385373,"",2008,30,30,5.4,145
+"46105","Courtney Modecki","F",30,158,59,"",2013,240,42,5.2,130
+"46167","Sam Ryder","F",36,171,62,"",2010,0,42,5.6,137
+"46243","Julie Foucher","F",21,163,62,"",2010,72,5,5.3,137
+"46243","Julie Foucher","F",22,163,62,"United States",2011,730,5,5.3,137
+"46243","Julie Foucher","F",22,163,62,"United States",2012,977,2,5.3,137
+"46243","Julie Foucher","F",25,163,62,"United States",2014,793,3,5.3,137
+"47056","Stacey Kroon","F",26,173,71,"",2009,137,10,5.7,157
+"47056","Stacey Kroon","F",28,173,71,"United States",2011,389,15,5.7,157
+"47099","Jacob Tsypkin","M",19,177.3722892,88.37544696,"",2008,31,107,5.8,195
+"47661","Dan Bailey","M",27,171,82,"United States",2011,696,6,5.6,181
+"47661","Dan Bailey","M",27,171,82,"United States",2012,860,6,5.6,181
+"47661","Dan Bailey","M",29,171,82,"United States",2013,667,8,5.6,181
+"47661","Dan Bailey","M",30,171,82,"United States",2014,704,10,5.6,181
+"47661","Dan Bailey","M",31,171,82,"United States",2015,730,4,5.6,181
+"48307","Omar Torres","M",30,166,80,"",2008,16,11,5.4,176
+"49052","Lauren Pryor","F",27,176,77,"",2009,122,14,5.8,170
+"49052","Lauren Pryor","F",28,176,77,"",2010,115,34,5.8,170
+"49506","Ryan Lilienthal","M",33,176,82,"",2010,110,30,5.8,181
+"49510","Albert-dominic Larouche","M",21,178,91,"Canada",2011,201,33,5.8,201
+"49510","Albert-Dominic Larouche","M",21,178,91,"Canada",2012,421,25,5.8,201
+"49510","Albert-Dominic Larouche","M",23,178,91,"Canada",2013,640,12,5.8,201
+"49510","Albert-Dominic Larouche","M",24,178,91,"Canada",2014,172,43,5.8,201
+"49510","Albert-Dominic Larouche","M",26,178,91,"Canada",2016,489,26,5.8,201
+"49846","Mariah Serrano","F",16,165.3748252,65.66385373,"",2007,237,15,5.4,145
+"50225","Mona Pretorius","F",22,165.3748252,65.66385373,"South Africa",2011,71,45,5.4,145
+"50601","Valerie Mackenzie (voboril)","F",30,158,62,"",2009,10,70,5.2,137
+"50601","Valerie Mackenzie Voboril","F",31,158,62,"",2010,51,3,5.2,137
+"50601","Valerie Voboril","F",32,158,62,"United States",2012,887,5,5.2,137
+"50601","Valerie Voboril","F",34,158,62,"United States",2013,818,3,5.2,137
+"50601","Valerie Voboril","F",35,158,62,"United States",2014,780,5,5.2,137
+"50601","Valerie Voboril","F",38,158,62,"United States",2017,346,32,5.2,137
+"50837","Cori Gobell","F",32,165.3748252,67,"",2008,27,16,5.4,148
+"50866","Spencer Hendel","M",20,188,98,"",2009,115,12,6.2,216
+"50866","Spencer Hendel","M",21,188,98,"",2010,104,17,6.2,216
+"50866","Spencer Hendel","M",22,188,98,"United States",2011,675,9,6.2,216
+"50866","Spencer Hendel","M",22,188,98,"United States",2012,735,13,6.2,216
+"50866","Spencer Hendel","M",26,188,98,"United States",2015,718,5,6.2,216
+"50866","Spencer Hendel","M",27,188,98,"United States",2016,390,33,6.2,216
+"50900","Christen Wagner","F",24,168,66,"",2012,230,41,5.5,146
+"50940","Krista Colson","F",37,173,71,"",2009,139,28,5.7,157
+"51041","Chad Mackay","M",28,186,107,"",2010,123,12,6.1,236
+"51041","Chad Mackay","M",29,186,107,"Australia",2012,829,9,6.1,236
+"51041","Chad Mackay","M",31,186,107,"Australia",2013,645,11,6.1,236
+"51041","Chad Mackay","M",33,186,107,"Australia",2015,270,40,6.1,236
+"51106","Tiffany Hendrickson","F",32,161,62,"United States",2013,352,31,5.3,137
+"51106","Tiffany Hendrickson","F",33,161,62,"United States",2014,679,11,5.3,137
+"51184","Shelly Fleming","F",33,165.3748252,65.66385373,"",2010,136,37,5.4,145
+"51701","Danielle Dionne","F",28,166,62,"",2009,200,37,5.4,137
+"51922","Alexandra Bergeron","F",21,163,65.66385373,"",2009,144,29,5.3,145
+"52053","Jasmine Dever","F",25,176,66,"",2010,98,27,5.8,146
+"52053","Jasmine Dever","F",26,176,66,"United States",2011,229,29,5.8,146
+"52053","Jasmine Dever","F",26,176,66,"United States",2012,257,39,5.8,146
+"52526","Jenny Olson","F",38,168,62,"",2009,134,8,5.5,137
+"52677","Taylor Richards-lindsay","F",25,163,61,"United States",2011,246,27,5.3,134
+"52940","Lindsey Smith","F",26,181,72,"",2009,105,5,5.9,159
+"52940","Lindsey Smith","F",27,181,72,"",2010,119,12,5.9,159
+"52940","Lindsey Smith","F",28,181,72,"United States",2011,386,16,5.9,159
+"52940","Lindsey Smith","F",28,181,72,"United States",2012,522,21,5.9,159
+"53314","Nate Schrader","M",26,186,100,"United States",2011,386,14,6.1,220
+"53314","Nathaniel Schrader","M",26,186,100,"United States",2012,801,12,6.1,220
+"53314","Nathaniel Schrader","M",29,186,100,"United States",2014,531,24,6.1,220
+"53552","Nicolle Wallace","F",34,165.3748252,65.66385373,"",2010,142,39,5.4,145
+"53824","Tyson Takasaki","M",25,186,93,"Canada",2013,573,23,6.1,205
+"53824","Tyson Takasaki","M",26,186,93,"Canada",2014,348,37,6.1,205
+"53824","Tyson Takasaki","M",27,186,93,"Canada",2015,518,19,6.1,205
+"54259","Mustafa El-Lari","M",29,178,86,"Iraq",2019,0,123,5.8,190
+"54590","Ben Carter","M",25,177.3722892,88.37544696,"",2009,123,21,5.8,195
+"54687","Heather Gillespie","F",31,163,63,"Canada",2012,343,34,5.3,139
+"54687","Heather Gillespie","F",33,163,63,"Canada",2013,87,44,5.3,139
+"55121","Katrin Tanja Davidsdottir","F",18,169,69,"",2012,377,30,5.5,152
+"55121","Katrin Tanja Davidsdottir","F",20,169,69,"",2013,585,24,5.5,152
+"55121","Katrin Tanja Davidsdottir","F",22,169,69,"Iceland",2015,790,1,5.5,152
+"55121","Katrin Tanja Davidsdottir","F",23,169,69,"United States",2016,984,1,5.5,152
+"55121","Katrín Tanja Davidsdottir","F",24,169,69,"United States",2017,914,5,5.5,152
+"55121","Katrín Tanja Davidsdottir","F",25,169,69,"United States",2018,1020,3,5.5,152
+"55121","Katrín Tanja Davidsdottir","F",26,169,69,"Iceland",2019,784,4,5.5,152
+"55121","Katrin Tanja Davidsdottir","F",27,169,69,"Iceland",2020,665,2,5.5,152
+"55121","Katrin Tanja Davidsdottir","F",28,169,69,"Iceland",2021,921,10,5.5,152
+"55121","Katrin Tanja Davidsdottir","F",30,169,69,"United States",2023,0,0,5.5,152
+"56057","Chris Kemp","M",33,177.3722892,88.37544696,"",2008,24,74,5.8,195
+"56606","Ian Carver","M",34,181,89,"",2008,21,54,5.9,196
+"56664","Heidi Choi","F",33,162,54,"Korea, Republic of",2019,0,100,5.3,119
+"56923","Joseph Weigel","M",18,183,89,"",2008,23,65,6,196
+"56923","Joseph Weigel","M",21,183,89,"United States",2011,377,15,6,196
+"57509","Tanya Wagner","F",26,168,69,"",2008,19,2,5.5,152
+"57509","Tanya Wagner","F",27,168,69,"",2009,54,1,5.5,152
+"57785","Brett Marshall","M",33,168,71,"",2007,270,2,5.5,157
+"57785","Brett Marshall","M",34,168,71,"",2008,19,39,5.5,157
+"58489","Steve Willis","M",33,177.3722892,88.37544696,"",2009,101,4,5.8,195
+"59148","Cyndi Frieling","F",33,168,71,"",2008,27,21,5.5,157
+"59148","Cyndi Frieling","F",34,168,71,"",2009,102,12,5.5,157
+"60526","Julian Alcaraz","M",25,178,90,"United States",2015,299,35,5.8,198
+"60614","Christopher Netley","M",25,186,98,"",2008,25,81,6.1,216
+"60656","Justine Beath","F",26,163,64,"Australia",2016,224,38,5.3,141
+"60656","Justine Beath","F",28,163,64,"Australia",2018,144,38,5.3,141
+"61090","Rob Orlando","M",34,173,89,"",2009,125,22,5.7,196
+"61090","Rob Orlando","M",35,173,89,"",2010,134,15,5.7,196
+"61090","Rob Orlando","M",36,173,89,"United States",2011,8,49,5.7,196
+"61605","Kent Stamey","M",38,177.3722892,91,"",2008,23,67,5.8,201
+"62554","Brooke Ence","F",25,171,69,"United States",2015,582,14,5.6,152
+"63058","Dave Lipson","M",26,183,96,"",2008,17,14,6,212
+"63058","David Lipson","M",27,183,96,"",2009,166,45,6,212
+"64862","Rebecca Eastwell","F",30,160,50,"",2010,118,23,5.2,110
+"66772","Paul Eich","M",44,188,89,"",2008,29,97,6.2,196
+"68808","Christina Seeley","F",26,164,69,"Canada",2016,377,32,5.4,152
+"71944","Dani Martin","F",27,158,53,"",2007,256,8,5.2,117
+"74320","Samuel Kwant","M",20,181,94,"United States",2016,588,16,5.9,207
+"74320","Samuel Kwant","M",21,181,94,"United States",2017,500,20,5.9,207
+"74320","Samuel Kwant","M",23,181,94,"United States",2019,349,13,5.9,207
+"74320","Samuel Kwant","M",24,181,94,"United States",2020,605,2,5.9,207
+"74320","Samuel Kwant","M",26,181,94,"United States",2022,975,4,5.9,207
+"74320","Samuel Kwant","M",27,181,94,"United States",2023,0,0,5.9,207
+"74524","John Spear","M",29,177.3722892,88.37544696,"",2008,22,63,5.8,195
+"78751","Magnúsdóttir Jenny","F",26,171,73,"",2010,0,45,5.6,161
+"79509","Richard Vanmeerbeek","M",23,188,90,"",2010,142,43,6.2,198
+"79664","Max Mormont","M",29,173,103,"",2008,20,40,5.7,227
+"80097","Joshua Webster","M",28,194,100,"",2008,21,55,6.4,220
+"81616","Björgvin Karl Guðmundsson","M",21,178,87,"",2014,517,26,5.8,192
+"81616","Björgvin Karl Guðmundsson","M",22,178,87,"Iceland",2015,766,3,5.8,192
+"81616","Björgvin Karl Guðmundsson","M",23,178,87,"Iceland",2016,735,8,5.8,192
+"81616","Björgvin Karl Guðmundsson","M",24,178,87,"Iceland",2017,786,5,5.8,192
+"81616","Björgvin Karl Guðmundsson","M",25,178,87,"Iceland",2018,834,5,5.8,192
+"81616","Björgvin Karl Guðmundsson","M",26,178,87,"Iceland",2019,888,3,5.8,192
+"81616","Björgvin Karl Guðmundsson","M",27,178,87,"Iceland",2020,0,8,5.8,192
+"81616","Björgvin Karl Guðmundsson","M",28,178,87,"Iceland",2021,1004,4,5.8,192
+"81616","Björgvin Karl Guðmundsson","M",29,178,87,"Iceland",2022,841,9,5.8,192
+"81616","Björgvin Karl Guðmundsson","M",30,178,87,"Iceland",2023,0,0,5.8,192
+"82009","Brad Posnanski","M",36,176,90,"",2008,20,43,5.8,198
+"82009","Brad Posnanski","M",37,176,90,"",2009,194,37,5.8,198
+"82058","Joe Westerlin","M",26,178,75,"",2008,30,102,5.8,165
+"82637","Russell Bruel","M",31,161,65,"",2007,59,41,5.3,143
+"82742","Edgar Pangilinan","M",30,177,109,"",2008,31,109,5.8,240
+"82954","Andrew Swartz","M",32,177.3722892,88.37544696,"",2008,20,41,5.8,195
+"86089","Elliot Simmonds","M",24,185,90,"United Arab Emirates",2018,530,26,6.1,198
+"86089","Elliot Simmonds","M",25,185,90,"United Kingdom",2019,303,19,6.1,198
+"86164","Jimi Letchford","M",28,176,91,"",2008,18,26,5.8,201
+"87315","Kerri Wenke","F",27,165.3748252,65.66385373,"",2008,35,35,5.4,145
+"89340","Sven Hestrand","M",40,177.3722892,88.37544696,"",2008,35,117,5.8,195
+"93171","Jeff Patzer","M",29,168,80,"United States",2017,326,34,5.5,176
+"93473","Josh Miller","M",30,176,87,"United States",2019,0,82,5.8,192
+"93488","Emmanuel Maldonado","M",24,150,89,"",2014,237,40,4.9,196
+"93497","Mekenzie Riley","F",29,163,71,"United States",2017,484,23,5.3,157
+"93497","Mekenzie Riley","F",30,163,71,"United States",2018,632,18,5.3,157
+"93497","Mekenzie Riley","F",31,163,71,"United States",2019,228,25,5.3,157
+"93497","Mekenzie Riley","F",33,163,71,"United States",2021,424,23,5.3,157
+"95022","Rogelio Gamboa","M",29,173,89,"United States",2016,378,35,5.7,196
+"95022","Rogelio Gamboa","M",31,173,89,"United States",2018,578,23,5.7,196
+"95022","Rogelio Gamboa","M",33,173,89,"United States",2020,0,28,5.7,196
+"95022","Rogelio Gamboa","M",34,173,89,"United States",2021,242,34,5.7,196
+"95767","Joseph Guesnier","M",25,183,98,"United States",2016,356,36,6,216
+"96750","Oddrun Eik Gylfadottir","F",29,163,59,"United Arab Emirates",2018,462,26,5.3,130
+"96750","Oddrún Eik Gylfadottir","F",30,163,59,"Iceland",2019,125,38,5.3,130
+"96918","Andy Andrews","M",30,169,74,"Sri Lanka",2019,0,136,5.5,163
+"96973","Zak Carchedi","M",23,176,84,"United States",2016,504,23,5.8,185
+"96973","Zak Carchedi","M",24,176,84,"United States",2017,400,30,5.8,185
+"97943","Zac Pine","M",26,176,78,"",2007,85,40,5.8,172
+"97944","Jenni Orr","F",28,165.3748252,65.66385373,"",2008,24,10,5.4,145
+"97944","Jennifer Orr","F",29,165.3748252,65.66385373,"",2009,124,69,5.4,145
+"97944","Jenni Orr","F",30,165.3748252,65.66385373,"",2010,114,33,5.4,145
+"99039","Travis Mayer","M",22,150,87,"United States",2013,602,18,4.9,192
+"99564","Alec Smith","M",24,181,84,"United States",2017,284,36,5.9,185
+"99564","Alec Smith","M",25,181,84,"United States",2018,548,25,5.9,185
+"100062","Candice Ruiz","F",25,165.3748252,65.66385373,"",2010,98,17,5.4,145
+"101492","Celestie Engelbrecht","F",26,168,61,"",2014,244,39,5.5,134
+"101929","Dina Swift","F",30,178,80,"South Africa",2019,0,98,5.8,176
+"102114","Carly Fuhrer","F",25,161,62,"United States",2016,237,37,5.3,137
+"102114","Carly Fuhrer","F",26,161,62,"United States",2017,362,31,5.3,137
+"102327","Dakota Rager","M",25,163,77,"United States",2017,492,22,5.3,170
+"103389","Carol-Ann Reason-Thibault","F",27,164,65,"Canada",2015,484,27,5.4,143
+"103389","Carol-Ann Reason-Thibault","F",28,164,65,"Canada",2016,659,14,5.4,143
+"103389","Carol-Ann Reason-Thibault","F",29,164,65,"Canada",2017,612,15,5.4,143
+"103389","Carol-Ann Reason-Thibault","F",30,164,65,"Canada",2018,620,19,5.4,143
+"103389","Carol-Ann Reason-Thibault","F",31,164,65,"Canada",2019,328,16,5.4,143
+"103389","Carol-Ann Reason-Thibault","F",32,164,65,"Canada",2020,0,11,5.4,143
+"103415","Roy Gamboa","M",26,173,91,"United States",2013,584,22,5.7,201
+"103415","Roy Gamboa","M",28,173,91,"United States",2015,476,22,5.7,201
+"103617","Carmen Bosmans","F",30,167,70,"Belgium",2019,80,44,5.5,154
+"104297","Nathan Bramblett","M",24,178,84,"United States",2015,425,27,5.8,185
+"105253","Jean-Claude Jardim","M",27,178,86,"Zimbabwe",2019,3,75,5.8,190
+"105614","Jeff Evans","M",25,183,94,"United States",2014,354,35,6,207
+"105874","Khan Porter","M",24,183,93,"Australia",2014,513,27,6,205
+"105874","Khan Porter","M",25,183,93,"Australia",2015,351,33,6,205
+"105874","Khan Porter","M",26,183,93,"Australia",2016,328,38,6,205
+"105874","Khan Porter","M",28,183,93,"Australia",2018,558,24,6,205
+"105874","Khan Porter","M",30,183,93,"Australia",2020,0,26,6,205
+"106129","Carrie Beamer","F",27,161,62,"United States",2019,167,32,5.3,137
+"106380","Lara Erlank","F",31,168,65,"Namibia",2019,0,89,5.5,143
+"106655","Simon Mäntylä","M",28,181,95,"Sweden",2019,99,45,5.9,209
+"106999","Jessica Sanki","F",38,165,65,"Tunisia",2019,0,111,5.4,143
+"107101","Brent Fikowski","M",25,188,100,"Canada",2016,861,4,6.2,220
+"107101","Brent Fikowski","M",26,188,100,"Canada",2017,916,2,6.2,220
+"107101","Brent Fikowski","M",27,188,100,"Canada",2018,886,4,6.2,220
+"107101","Brent Fikowski","M",28,188,100,"Canada",2019,243,23,6.2,220
+"107101","Brent Fikowski","M",29,188,100,"Canada",2020,0,15,6.2,220
+"107101","Brent Fikowski","M",30,188,100,"Canada",2021,1028,3,6.2,220
+"107101","Brent Fikowski","M",31,188,100,"Canada",2022,707,16,6.2,220
+"107101","Brent Fikowski","M",32,188,100,"Canada",2023,0,0,6.2,220
+"109085","Andrea Nisler","F",31,168,70,"United States",2020,0,10,5.5,154
+"109346","John Coltey","M",29,176,89,"United States",2018,486,28,5.8,196
+"109388","Angel Orozco","M",28,199,93,"",2009,106,67,6.5,205
+"110918","Whitney Gelin","F",30,171,75,"United States",2015,560,19,5.6,165
+"110918","Whitney Gelin","F",32,171,75,"United States",2017,446,26,5.6,165
+"110918","Whitney Gelin","F",33,171,75,"United States",2018,416,28,5.6,165
+"111574","Jordan Cook","M",22,176,88,"United States",2014,351,36,5.8,194
+"111574","Jordan Cook","M",23,176,88,"United States",2015,244,36,5.8,194
+"111592","Connor Duddy","M",26,178,87,"United States",2019,244,22,5.8,192
+"114742","Lauren Roberts","F",25,165.3748252,66,"",2010,88,25,5.4,146
+"115239","Brooke Haas","F",30,161,70,"United States",2019,44,53,5.3,154
+"115239","Brooke Haas","F",31,161,70,"United States",2020,0,29,5.3,154
+"115892","Meg Reardon","F",24,168,69,"United States",2016,364,33,5.5,152
+"115892","Meg Reardon","F",27,168,69,"United States",2019,243,23,5.5,152
+"115920","Sage Castro","F",32,163,64,"",2007,83,17,5.3,141
+"117750","Jeremy Fisher","M",31,177.3722892,88.37544696,"",2008,19,33,5.8,195
+"119313","Erik Toth","M",29,179,84,"Slovakia",2019,35,58,5.9,185
+"120247","Katelin Van Zyl","F",27,171,68,"Australia",2019,36,57,5.6,150
+"120265","Tamara Zulim","F",35,170,60,"Croatia",2019,35,59,5.6,132
+"120277","Sabrina Caron","F",27,161,58,"France",2019,36,56,5.3,128
+"120333","Jason Smith","M",33,185,89,"South Africa",2017,688,10,6.1,196
+"120333","Jason Smith","M",35,185,89,"South Africa",2019,216,29,6.1,196
+"120333","Jason Smith","M",37,185,89,"South Africa",2021,419,26,6.1,196
+"120333","Jason Smith","M",39,185,89,"South Africa",2023,0,0,6.1,196
+"120480","Kristin Holte","F",28,162,59,"",2014,644,16,5.3,130
+"120480","Kristin Holte","F",29,162,59,"Norway",2015,566,17,5.3,130
+"120480","Kristin Holte","F",30,162,59,"Norway",2016,696,12,5.3,130
+"120480","Kristin Holte","F",31,162,59,"Norway",2017,826,7,5.3,130
+"120480","Kristin Holte","F",32,162,59,"Norway",2018,820,7,5.3,130
+"120480","Kristin Holte","F",33,162,59,"Norway",2019,876,2,5.3,130
+"120480","Kristin Holte","F",34,162,59,"Norway",2020,0,6,5.3,130
+"120480","Kristin Holte","F",35,162,59,"Norway",2021,1064,4,5.3,130
+"121033","Sydney Wells","F",28,168,69,"United States",2023,0,0,5.5,152
+"121917","Alexandra LaChance","F",26,168,71,"United States",2014,287,38,5.5,157
+"123582","Cassidy Lance-Mcwherter","F",25,161,64,"United States",2013,452,29,5.3,141
+"123582","Cassidy Lance-Mcwherter","F",26,161,64,"United States",2014,688,8,5.3,141
+"123582","Cassidy Lance-Mcwherter","F",27,161,64,"United States",2015,488,26,5.3,141
+"123582","Cassidy Lance-Mcwherter","F",29,161,64,"United States",2017,658,12,5.3,141
+"123582","Cassidy Lance-Mcwherter","F",30,161,64,"United States",2018,742,10,5.3,141
+"123764","Logan Collins","M",25,171,83,"United States",2016,420,31,5.6,183
+"123764","Logan Collins","M",26,171,83,"United States",2017,686,11,5.6,183
+"123764","Logan Collins","M",27,171,83,"United States",2018,652,15,5.6,183
+"123764","Logan Collins","M",28,171,83,"United States",2019,340,14,5.6,183
+"123968","Lindsey Valenzuela","F",24,168,69,"United States",2011,204,34,5.5,152
+"123968","Lindsey Valenzuela","F",26,168,69,"United States",2013,821,2,5.5,152
+"123968","Lindsey Valenzuela","F",28,168,69,"United States",2015,636,7,5.5,152
+"124483","Josh Bridges","M",30,166,79,"United States",2013,729,7,5.4,174
+"124483","Josh Bridges","M",31,166,79,"United States",2014,786,4,5.4,174
+"124483","Josh Bridges","M",33,166,79,"United States",2016,678,13,5.4,174
+"124483","Josh Bridges","M",34,166,79,"United States",2017,408,29,5.4,174
+"124483","Josh Bridges","M",35,166,79,"United States",2018,434,31,5.4,174
+"126467","Nate Malton","M",22,177.3722892,88.37544696,"",2010,131,39,5.8,195
+"126813","Craig Kenney","M",27,183,87,"United States",2014,665,11,6,192
+"126813","Craig Kenney","M",31,183,87,"United States",2018,516,27,6,192
+"131825","Aaron Finley","M",27,177.3722892,88.37544696,"",2008,22,62,5.8,195
+"131845","Richard Bohlken","M",25,181,98,"United States",2014,614,16,5.9,216
+"132258","Arielle Loewen","F",27,161,65,"United States",2021,717,14,5.3,143
+"132258","Arielle Loewen","F",28,161,66,"United States",2022,828,11,5.3,146
+"132258","Arielle Loewen","F",29,161,69,"United States",2023,0,0,5.3,152
+"134076","Alea Helmick","F",29,173,68,"United States",2016,486,26,5.7,150
+"134617","Sean Sweeney","M",24,176,88,"United States",2016,420,30,5.8,194
+"134617","Sean Sweeney","M",26,176,88,"United States",2018,580,22,5.8,194
+"134617","Sean Sweeney","M",27,176,88,"United States",2019,236,24,5.8,194
+"134617","Sean Sweeney","M",29,176,88,"United States",2021,146,36,5.8,194
+"135797","Tennil Beuerlein","F",28,168,72,"United States",2016,707,11,5.5,159
+"135797","Tennil Beuerlein","F",29,168,72,"United States",2017,888,6,5.5,159
+"135797","Tennil Beuerlein","F",30,168,72,"United States",2018,712,12,5.5,159
+"141620","Alex Parker","F",25,168,65,"Canada",2015,434,30,5.5,143
+"143285","Brian Bowen","M",30,173,80,"",2009,209,63,5.7,176
+"143996","George Sanchez","M",26,186,96,"United States",2017,494,21,6.1,212
+"144006","Jocelyn Forest","F",29,165.3748252,65.66385373,"",2009,134,43,5.4,145
+"145603","Brandon Massie","M",20,183,98,"",2009,200,60,6,216
+"145925","Aja Barto","M",26,196,103,"United States",2013,552,27,6.4,227
+"147770","Kevin Manuel","M",29,187,95,"Australia",2015,534,17,6.1,209
+"148485","Meredith Root","F",30,163,60,"Canada",2018,396,30,5.3,132
+"149475","Tasia Percevecz","F",25,166,73,"United States",2016,638,15,5.4,161
+"151555","Erin Vandendriessche","F",28,171,66,"United States",2019,48,50,5.6,146
+"151906","Mikko Salo","M",29,175,85,"",2009,78,1,5.7,187
+"151906","Mikko Salo","M",30,175,85,"",2010,77,5,5.7,187
+"151906","Mikko Salo","M",31,175,85,"Finland",2011,15,48,5.7,187
+"151906","Mikko Salo","M",33,175,85,"",2013,0,47,5.7,187
+"153604","Mathew Fraser","M",24,171,89,"United States",2014,875,2,5.6,196
+"153604","Mathew Fraser","M",25,171,89,"United States",2015,879,2,5.6,196
+"153604","Mathew Fraser","M",26,171,89,"United States",2016,1096,1,5.6,196
+"153604","Mathew Fraser","M",27,171,89,"United States",2017,1132,1,5.6,196
+"153604","Mathew Fraser","M",28,171,89,"United States",2018,1162,1,5.6,196
+"153604","Mathew Fraser","M",29,171,89,"United States",2019,984,1,5.6,196
+"153604","Mathew Fraser","M",30,171,89,"United States",2020,1150,1,5.6,196
+"153625","Cole Sager","M",23,181,90,"United States",2014,611,17,5.9,198
+"153625","Cole Sager","M",24,181,90,"United States",2015,700,7,5.9,198
+"153625","Cole Sager","M",25,181,90,"United States",2016,803,5,5.9,198
+"153625","Cole Sager","M",26,181,90,"United States",2017,562,16,5.9,198
+"153625","Cole Sager","M",27,181,90,"United States",2018,760,7,5.9,198
+"153625","Cole Sager","M",28,181,90,"United States",2019,368,11,5.9,198
+"153625","Cole Sager","M",29,181,90,"United States",2020,0,20,5.9,198
+"153625","Cole Sager","M",30,181,90,"United States",2021,776,14,5.9,198
+"153625","Cole Sager","M",31,181,90,"United States",2022,733,13,5.9,198
+"153625","Cole Sager","M",32,181,91,"United States",2023,0,0,5.9,201
+"155471","Darwin Perez","M",30,171,82,"Mexico",2019,47,53,5.6,181
+"155824","Jacob Anderson","M",23,173,84,"United States",2016,441,29,5.7,185
+"156156","Jay Crouch","M",21,175,85,"Australia",2020,0,18,5.7,187
+"156156","Jay Crouch","M",22,175,85,"Australia",2021,494,22,5.7,187
+"156156","Jay Crouch","M",23,175,85,"Australia",2022,507,28,5.7,187
+"156156","Jay Crouch","M",24,175,85,"Australia",2023,0,0,5.7,187
+"156719","ZA Anderson","M",24,188,103,"United States",2013,646,10,6.2,227
+"156732","Ganna Almazova","F",32,165,63,"Ukraine",2019,17,71,5.4,139
+"156773","Nicholas Ballstaedt","M",23,177.3722892,88.37544696,"",2008,20,42,5.8,195
+"157139","Cody Mooney","M",23,183,96,"United States",2017,550,17,6,212
+"157678","Zachary Thiel","M",30,176,87,"",2008,25,79,5.8,192
+"158264","Patrick Vellner","M",26,181,89,"Canada",2016,863,3,5.9,196
+"158264","Patrick Vellner","M",27,181,89,"Canada",2017,792,3,5.9,196
+"158264","Patrick Vellner","M",28,181,89,"Canada",2018,942,2,5.9,196
+"158264","Patrick Vellner","M",29,181,89,"Canada",2019,322,16,5.9,196
+"158264","Patrick Vellner","M",30,181,89,"Canada",2020,0,9,5.9,196
+"158264","Patrick Vellner","M",31,181,89,"Canada",2021,1152,2,5.9,196
+"158264","Patrick Vellner","M",32,181,89,"Canada",2022,892,6,5.9,196
+"158264","Patrick Vellner","M",33,181,89,"Canada",2023,0,0,5.9,196
+"159681","Regan Huckaby","F",27,166,67,"United States",2014,481,30,5.4,148
+"159681","Regan Huckaby","F",28,166,67,"United States",2015,390,33,5.4,148
+"159681","Regan Huckaby","F",30,166,67,"United States",2017,408,29,5.4,148
+"159681","Regan Huckaby","F",34,166,67,"United States",2021,312,30,5.4,148
+"160128","Connor Nellans","M",25,183,96,"Luxembourg",2019,31,62,6,212
+"162712","Spencer Panchik","M",26,173,82,"United States",2022,635,20,5.7,181
+"162712","Spencer Panchik","M",27,173,87,"United States",2023,0,0,5.7,192
+"163097","Tia-Clair Toomey","F",21,163,58,"Australia",2015,750,2,5.3,128
+"163097","Tia-Clair Toomey","F",22,163,58,"Australia",2016,973,2,5.3,128
+"163097","Tia-Clair Toomey","F",23,163,58,"Australia",2017,994,1,5.3,128
+"163097","Tia-Clair Toomey","F",24,163,58,"Australia",2018,1154,1,5.3,128
+"163097","Tia-Clair Toomey","F",25,163,58,"Australia",2019,1071,1,5.3,128
+"163097","Tia-Clair Toomey","F",26,163,58,"Australia",2020,1025,1,5.3,128
+"163097","Tia-Clair Toomey","F",27,163,58,"Australia",2021,1435,1,5.3,128
+"163097","Tia-Clair Toomey","F",28,163,58,"Australia",2022,1158,1,5.3,128
+"163784","Graham Holmberg","M",28,181,89,"United States",2013,625,14,5.9,196
+"164070","James Fitzgerald","M",33,176,80,"",2007,272,1,5.8,176
+"164070","James Fitzgerald","M",34,176,80,"",2008,16,12,5.8,176
+"164070","James Fitzgerald","M",35,176,80,"",2009,104,13,5.8,176
+"164070","James Fitzgerald","M",36,176,80,"",2010,102,28,5.8,176
+"165705","Elijah Muhammad","M",27,183,88,"United States",2015,535,16,6,194
+"165705","Elijah Muhammad","M",29,183,88,"United States",2017,324,35,6,194
+"165805","Mary Everett","F",25,176,69,"",2008,25,13,5.8,152
+"168305","Brooke Wells","F",20,168,69,"United States",2015,572,16,5.5,152
+"168305","Brooke Wells","F",21,168,69,"United States",2016,796,6,5.5,152
+"168305","Brooke Wells","F",22,168,69,"United States",2017,612,14,5.5,152
+"168305","Brooke Wells","F",23,168,69,"United States",2018,818,8,5.5,152
+"168305","Brooke Wells","F",24,168,69,"United States",2019,351,15,5.5,152
+"168305","Brooke Wells","F",25,168,69,"United States",2020,525,5,5.5,152
+"168305","Brooke Wells","F",26,168,69,"United States",2021,792,20,5.5,152
+"168305","Brooke Wells","F",27,168,69,"United States",2022,904,5,5.5,152
+"173837","Jonne Koski","M",19,171,87,"",2014,384,32,5.6,192
+"173837","Jonne Koski","M",20,171,87,"Finland",2015,638,9,5.6,192
+"173837","Jonne Koski","M",21,171,87,"Finland",2016,142,40,5.6,192
+"173837","Jonne Koski","M",22,171,87,"Finland",2017,696,9,5.6,192
+"173837","Jonne Koski","M",24,171,87,"Finland",2019,165,37,5.6,192
+"173837","Jonne Koski","M",25,171,87,"Finland",2020,0,7,5.6,192
+"173837","Jonne Koski","M",26,171,87,"Finland",2021,965,6,5.6,192
+"173837","Jonne Koski","M",27,171,87,"Finland",2022,725,15,5.6,192
+"173837","Jonne Koski","M",28,171,87,"Finland",2023,0,0,5.6,192
+"174547","Amanda Barnhart","F",26,171,73,"United States",2018,670,15,5.6,161
+"174547","Amanda Barnhart","F",27,171,73,"United States",2019,706,7,5.6,161
+"174547","Amanda Barnhart","F",28,171,73,"United States",2020,0,7,5.6,161
+"174547","Amanda Barnhart","F",29,171,73,"United States",2021,936,9,5.6,161
+"174547","Amanda Barnhart","F",30,171,73,"United States",2022,778,14,5.6,161
+"174547","Amanda Barnhart","F",31,171,73,"United States",2023,0,0,5.6,161
+"175490","Fern Webb","F",33,165.3748252,65.66385373,"",2008,26,14,5.4,145
+"177489","Crystal Mcreynolds","F",24,176,69,"",2008,33,33,5.8,152
+"177489","Crystal Mcreynolds","F",25,176,69,"",2009,135,9,5.8,152
+"179080","Bartek Lipka","M",29,177,90,"Poland",2019,0,92,5.8,198
+"180106","Zeke Grove","M",24,169,83,"Australia",2016,219,39,5.5,183
+"180106","Zeke Grove","M",25,169,83,"Australia",2017,330,33,5.5,183
+"180106","Zeke Grove","M",26,169,83,"Australia",2018,440,30,5.5,183
+"180250","Emily Abbott","F",25,171,72,"Canada",2014,372,35,5.6,159
+"180250","Emily Abbott","F",26,171,72,"Canada",2015,623,8,5.6,159
+"180250","Emily Abbott","F",27,171,72,"Canada",2016,562,20,5.6,159
+"180250","Emily Abbott","F",28,171,72,"Canada",2017,554,19,5.6,159
+"180541","Alex Vigneault","M",23,181,93,"Canada",2015,615,11,5.9,205
+"180541","Alex Vigneault","M",24,181,93,"Canada",2016,707,9,5.9,205
+"180541","Alex Vigneault","M",27,181,93,"Canada",2019,233,25,5.9,205
+"180541","Alex Vigneault","M",29,181,93,"Canada",2021,912,8,5.9,205
+"180541","Alex Vigneault","M",30,181,93,"Canada",2022,532,25,5.9,205
+"180541","Alex Vigneault","M",31,181,93,"Canada",2023,0,0,5.9,205
+"182129","Tuomas Vainio","M",25,177.3722892,88.37544696,"Finland",2011,342,19,5.8,195
+"182565","Pete Shaw","M",30,185,98,"Canada",2020,0,29,6.1,216
+"185697","Laura Demarco","F",34,178,75,"",2009,103,15,5.8,165
+"185697","Laura Demarco","F",35,178,75,"",2010,116,22,5.8,165
+"187257","Aaron Hanna","M",26,186,98,"United States",2015,604,12,6.1,216
+"189142","Michael Gregory","M",26,177.3722892,88.37544696,"",2008,21,51,5.8,195
+"189706","Chelsey Hughes","F",31,166,62,"United States",2017,12,40,5.4,137
+"191624","Alvaro Lopez","M",33,150,84,"Panama",2019,0,83,4.9,185
+"196667","Hunter McIntyre","M",30,188,93,"United States",2019,31,61,6.2,205
+"196834","Jamie Hagiya","F",31,161,69,"United States",2016,574,18,5.3,152
+"199533","J. Rodrigo Agreda","M",26,176,88,"Bolivia",2019,0,135,5.8,194
+"199938","Jacob Heppner","M",24,171,89,"United States",2014,605,18,5.6,196
+"199938","Jacob Heppner","M",25,171,89,"United States",2015,621,10,5.6,196
+"199938","Jacob Heppner","M",26,171,89,"United States",2016,797,7,5.6,196
+"199938","Jacob Heppner","M",29,171,89,"United States",2019,694,6,5.6,196
+"199938","Jacob Heppner","M",30,171,89,"United States",2020,0,12,5.6,196
+"200222","Jessica Pamanian","F",26,163,63,"",2010,72,4,5.3,139
+"200222","Jessica Pamanian","F",27,163,63,"United States",2011,141,38,5.3,139
+"202638","Royce Dunne","M",27,183,102,"Australia",2018,386,34,6,225
+"202638","Royce Dunne","M",30,183,102,"Australia",2021,754,16,6,225
+"204756","Dutch Lowy","M",26,177.3722892,88.37544696,"",2008,16,7,5.8,195
+"204756","Dutch Lowy","M",27,177.3722892,88.37544696,"",2009,117,73,5.8,195
+"208293","Alexis Johnson","F",25,158,64,"United States",2016,413,31,5.2,141
+"208293","Alexis Johnson","F",26,158,64,"United States",2017,340,33,5.2,141
+"211543","Marquan Jones","M",28,181,91,"United States",2018,272,37,5.9,201
+"213806","Severin Irimia","M",31,182,88,"Romania",2019,0,78,6,194
+"215510","Ralitza Koterlitzova","F",30,161,64,"Bulgaria",2019,35,58,5.3,141
+"218478","Andy Stumpf","M",29,177.3722892,88.37544696,"",2007,158,38,5.8,195
+"221169","Victoria Campos","F",29,161,64,"Brazil",2022,318,33,5.3,141
+"221169","Victoria Campos","F",30,161,64,"Brazil",2023,0,0,5.3,141
+"221436","Luke Fiso","M",29,176,90,"New Zealand",2019,48,52,5.8,198
+"227027","Mattheaus Otero","M",28,171,82,"Trinidad and Tobago",2019,0,107,5.6,181
+"227678","Vanessa Wagner","F",28,169,65,"Austria",2019,18,69,5.5,143
+"230757","Casper Gammelmark","M",28,185,93,"Denmark",2019,251,20,6.1,205
+"231921","Ates Boran","M",33,173,77,"Turkey",2019,33,60,5.7,170
+"233855","João Ferreira","M",24,171,85,"Portugal",2019,0,80,5.6,187
+"234569","David Shorunke","M",30,189,103,"United Kingdom",2020,0,30,6.2,227
+"234569","David Shorunke","M",33,189,103,"United Kingdom",2023,0,0,6.2,227
+"235110","Taylor Streid","F",28,166,64,"United States",2019,32,61,5.4,141
+"235218","Alethea Boon","F",31,160,59,"Australia",2015,556,20,5.2,130
+"235218","Alethea Boon","F",32,160,59,"Australia",2016,260,40,5.2,130
+"235218","Alethea Boon","F",33,160,59,"Australia",2017,514,21,5.2,130
+"235246","Khalid Alhamadi","M",30,175,80,"Qatar",2019,0,121,5.7,176
+"235602","Kelly Steadman","F",28,165.3748252,65.66385373,"United States",2011,400,14,5.4,145
+"236779","Chloe Gauvin-David","F",26,171,67,"Canada",2018,480,25,5.6,148
+"238026","Anastasiya Ganina","F",34,170,69,"Russian Federation",2019,46,51,5.6,152
+"238208","Katie Trombetta","F",28,161,68,"United States",2019,89,-1,5.3,150
+"239148","Carolyne Prevost","F",29,161,66,"Canada",2019,365,12,5.3,146
+"239148","Carolyne Prevost","F",31,161,66,"Canada",2021,387,27,5.3,146
+"239148","Carolyne Prevost","F",32,161,66,"Canada",2022,565,23,5.3,146
+"239210","Andrea Rodriguez","F",33,165,75,"Ecuador",2019,0,96,5.4,165
+"239442","Emma McQuaid","F",29,165,65,"Ireland",2019,255,20,5.4,143
+"239442","Emma McQuaid","F",30,165,65,"Ireland",2020,0,19,5.4,143
+"239442","Emma McQuaid","F",31,165,65,"Ireland",2021,868,12,5.4,143
+"239442","Emma McQuaid","F",32,165,65,"Ireland",2022,798,12,5.4,143
+"239442","Emma McQuaid","F",33,165,67,"Ireland",2023,0,0,5.4,148
+"239902","Kira Oliver","F",37,171,59,"Barbados",2019,0,95,5.6,130
+"242149","Brenda Castro","F",29,150,64,"Mexico",2018,350,34,4.9,141
+"242149","Brenda Castro","F",30,150,64,"Mexico",2019,43,54,4.9,141
+"244353","John-Paul Hethcock","M",26,178,88,"United States",2019,92,46,5.8,194
+"244718","Lyndsay Murray","F",29,171,59,"Trinidad and Tobago",2019,27,64,5.6,130
+"245403","Colleen Fotsch","F",29,173,76,"United States",2019,222,27,5.7,168
+"246355","Vilija Teel","F",43,168,64,"Lithuania",2019,0,113,5.5,141
+"247005","Streat Hoerner","M",22,176,89,"United States",2017,586,14,5.8,196
+"247005","Streat Hoerner","M",24,176,89,"United States",2019,0,86,5.8,196
+"248235","Leonie Henrich","F",25,171,71,"Netherlands",2019,86,43,5.6,157
+"249028","Wesley Rethwill","M",26,183,91,"United States",2017,280,37,6,201
+"249055","Quinton Z Van Rooyen","M",28,175,85,"",2014,186,42,5.7,187
+"250172","Bronislaw Olenkowicz","M",30,182,99,"Poland",2019,112,42,6,218
+"250172","Bronislaw Olenkowicz","M",34,182,99,"Poland",2023,0,0,6,218
+"251447","Austin Spencer","M",29,178,93,"United States",2022,316,35,5.8,205
+"251546","Alexandre Caron","M",22,181,93,"Canada",2018,182,39,5.9,205
+"251546","Alexandre Caron","M",24,181,93,"Canada",2020,0,16,5.9,205
+"251546","Alexandre Caron","M",25,181,93,"Canada",2021,426,24,5.9,205
+"251546","Alexandre Caron","M",26,181,93,"Canada",2022,457,30,5.9,205
+"252100","Casey Campbell","F",31,163,66,"United States",2017,206,37,5.3,146
+"252691","Feeroozeh Saghafi","F",24,155,62,"United States",2019,237,24,5.1,137
+"252691","Feeroozeh Saghafi","F",28,155,61,"United States",2023,0,0,5.1,134
+"252900","Anna Fragkou","F",29,160,63,"Greece",2019,640,-1,5.2,139
+"253911","Vedharth Thappa","M",25,175,86,"India",2019,0,133,5.7,190
+"254313","Jessica Griffith","F",25,168,70,"United States",2017,326,34,5.5,154
+"254313","Jessica Griffith","F",29,168,70,"United States",2021,381,28,5.5,154
+"254824","Solveig Sigurdardottir","F",27,170,70,"Iceland",2022,299,34,5.6,154
+"256607","Eusebio Aldano","M",34,179,93,"Dominican Republic",2019,0,81,5.9,205
+"257454","Lisa Bender","F",42,166,72,"",2008,29,27,5.4,159
+"258151","Jake Douglas","M",32,172,92,"Australia",2023,0,0,5.6,203
+"258629","Thelma Christoforou","F",32,168,65,"Cyprus",2019,74,46,5.5,143
+"262746","Kendall Vincelette","F",26,158,58,"United States",2020,0,22,5.2,128
+"262945","Graham Holmberg","M",24,181,89,"",2009,119,19,5.9,196
+"262945","Graham Holmberg","M",25,181,89,"",2010,48,1,5.9,196
+"262945","Graham Holmberg","M",30,181,89,"United States",2015,472,24,5.9,196
+"263026","Zach Watts","M",25,183,93,"United States",2021,280,30,6,205
+"264512","Jamie Greene","F",26,163,62,"New Zealand",2017,796,8,5.3,137
+"264512","Jamie Greene","F",27,163,62,"United Arab Emirates",2018,728,11,5.3,137
+"264512","Jamie Greene","F",28,163,62,"New Zealand",2019,851,3,5.3,137
+"264512","Jamie Simmonds","F",29,163,62,"New Zealand",2020,0,12,5.3,137
+"264512","Jamie Simmonds","F",32,163,62,"New Zealand",2023,0,0,5.3,137
+"265064","Brandon Phillips","M",26,181,97,"",2009,165,30,5.9,214
+"270266","Omar Martinez","M",27,167,76,"Venezuela",2019,24,66,5.5,168
+"275390","Christoph Koerner","M",31,181,90,"Austria",2019,18,69,5.9,198
+"277184","Laura Gonzalez-Marin","F",25,171,68,"Venezuela",2019,0,120,5.6,150
+"278578","JiMoo Son","M",28,170,79,"Korea, Republic of",2019,0,106,5.6,174
+"279929","Rachel Garibay","F",27,150,59,"United States",2019,100,40,4.9,130
+"280553","Chanelle Munroe","F",41,163,74,"Bahamas",2019,0,122,5.3,163
+"280780","Kristine Best","F",30,161,63,"United States",2020,0,16,5.3,139
+"283866","Pablo Chalfun","M",25,173,88,"Brazil",2018,210,38,5.7,194
+"284801","Mitchell Sinnamon","M",26,172,90,"Australia",2016,337,37,5.6,198
+"284801","Mitchell Sinnamon","M",27,172,90,"Australia",2017,182,38,5.6,198
+"286311","Marlon Azurdia","M",33,176,90,"Guatemala",2019,46,54,5.8,198
+"286691","Joshua Wichtrup","M",27,183,86,"Germany",2019,315,18,6,190
+"290550","Jared Enderton","M",29,168,89,"United States",2018,382,35,5.5,196
+"291771","Daniel Hester","M",23,177.3722892,88.37544696,"",2008,19,34,5.8,195
+"295450","Annie Sakamoto","F",35,153,56,"United States",2011,643,9,5,123
+"295501","Sofia Bermeo","F",31,167,66,"Peru",2019,0,77,5.5,146
+"296529","Achilleas Pantazis","M",28,174,91,"Cyprus",2019,0,-1,5.7,201
+"297397","Majid Al Sharaf","M",28,178,85,"Bahrain",2019,0,97,5.8,187
+"297753","Hajer Jamal","F",32,154,59,"Kuwait",2019,0,87,5.1,130
+"299053","Jacqueline Dahlstrøm","F",27,167,67,"Norway",2019,77,45,5.5,148
+"299053","Jacqueline Dahlstrøm","F",29,167,67,"Norway",2021,689,17,5.5,148
+"299053","Jacqueline Dahlstrøm","F",30,167,67,"Norway",2022,764,15,5.5,148
+"305891","Kari Pearce","F",26,161,64,"United States",2015,554,21,5.3,141
+"305891","Kari Pearce","F",27,161,64,"United States",2016,804,5,5.3,141
+"305891","Kari Pearce","F",28,161,64,"United States",2017,742,10,5.3,141
+"305891","Kari Pearce","F",29,161,64,"United States",2018,834,6,5.3,141
+"305891","Karissa Pearce","F",30,161,64,"United States",2019,714,5,5.3,141
+"305891","Kari Pearce","F",31,161,64,"United States",2020,585,3,5.3,141
+"305891","Kari Pearce","F",32,161,64,"United States",2021,0,37,5.3,141
+"307307","Nick Cruz","M",30,177.3722892,96,"",2007,175,34,5.8,212
+"308651","Brandon Luckett","M",23,183,91,"United States",2018,366,36,6,201
+"308651","Brandon Luckett","M",25,183,91,"United States",2020,0,23,6,201
+"308651","Brandon Luckett","M",26,183,91,"United States",2021,383,27,6,201
+"308712","Jean-Simon Roy-Lemaire","M",25,176,89,"Canada",2019,0,84,5.8,196
+"310687","Kristi Eramo","F",27,158,60,"United States",2016,767,8,5.2,132
+"310687","Kristi Eramo","F",28,158,60,"United States",2017,612,13,5.2,132
+"310687","Kristi Eramo","F",29,158,60,"United States",2018,754,9,5.2,132
+"310687","Kristi Eramo O'Connell","F",31,158,60,"United States",2020,0,9,5.2,132
+"310687","Kristi Eramo O'Connell","F",32,158,60,"United States",2021,959,8,5.2,132
+"310687","Kristi Eramo O'Connell","F",33,158,60,"United States",2022,785,13,5.2,132
+"310970","Saxon Panchik","M",22,176,84,"United States",2018,602,19,5.8,185
+"310970","Saxon Panchik","M",23,176,84,"United States",2019,587,9,5.8,185
+"310970","Saxon Panchik","M",24,176,82,"United States",2020,0,21,5.8,181
+"310970","Saxon Panchik","M",25,176,82,"United States",2021,996,5,5.8,181
+"310970","Saxon Panchik","M",26,176,84,"United States",2022,803,11,5.8,185
+"312216","Maddy Myers","F",18,158,58,"United States",2015,38,39,5.2,128
+"313237","Michelle Benedict","F",29,166,66,"",2009,195,35,5.4,146
+"314703","Caroline Conners","F",28,155,61,"United States",2021,234,33,5.1,134
+"314703","Caroline Conners","F",29,155,61,"United States",2022,281,36,5.1,134
+"315200","Jason Bird","M",33,180,87,"",2009,199,50,5.9,192
+"315266","Amin Attallah","M",25,171,83,"Jordan",2019,25,65,5.6,183
+"319617","Kim Ball","F",18,165.3748252,65.66385373,"",2009,127,21,5.4,145
+"323300","Mitchel Stevenson","M",25,176,88,"United States",2018,430,32,5.8,194
+"326958","Santiago Comba","M",25,173,84,"Uruguay",2019,0,91,5.7,185
+"327636","Samuel Cournoyer","M",23,180,93,"Canada",2019,186,35,5.9,205
+"327636","Samuel Cournoyer","M",24,180,93,"Canada",2020,0,10,5.9,205
+"327636","Samuel Cournoyer","M",25,180,93,"Canada",2021,479,23,5.9,205
+"327636","Samuel Cournoyer","M",27,180,93,"Canada",2023,0,0,5.9,205
+"327773","Yuval Regev","M",31,175,72,"Israel",2019,0,119,5.7,159
+"329279","George Sterner","M",20,176,84,"United States",2019,194,32,5.8,185
+"330326","Carole Castellani","F",30,170,70,"France",2019,156,33,5.6,154
+"331478","Jacky Schmitt","F",25,166,61,"Luxembourg",2019,19,67,5.4,134
+"337194","Bayden Brown","M",24,177,90,"Australia",2019,0,104,5.8,198
+"337194","Bayden Brown","M",25,177,90,"Australia",2020,0,11,5.8,198
+"337194","Bayden Brown","M",26,177,90,"Australia",2021,729,17,5.8,198
+"337194","Bayden Brown","M",27,177,90,"Australia",2022,360,31,5.8,198
+"345700","Franky Wood","M",31,167,78,"Honduras",2019,0,-1,5.5,172
+"345836","Victoria Frascolla","F",28,161,59,"Uruguay",2019,0,103,5.3,130
+"349097","Danielle Brandon","F",23,170,69,"United States",2019,376,10,5.6,152
+"349097","Danielle Brandon","F",24,170,71,"United States",2020,0,15,5.6,157
+"349097","Danielle Brandon","F",25,170,71,"United States",2021,917,11,5.6,157
+"349097","Danielle Brandon","F",26,170,69,"United States",2022,937,4,5.6,152
+"349097","Danielle Brandon","F",27,170,69,"United States",2023,0,0,5.6,152
+"350442","Neyran Guneli","F",37,170,68,"Turkey",2019,45,52,5.6,150
+"351417","Alexander Anasagasti","M",27,174,74,"Spain",2019,41,56,5.7,163
+"352604","Richy Jordan","M",30,178,86,"Barbados",2019,0,118,5.8,190
+"359849","Vera Valdez","F",30,162,59,"Guatemala",2019,21,66,5.3,130
+"360615","Jason Neago","M",27,177.3722892,88.37544696,"",2009,213,53,5.8,195
+"367329","Ian Mosher","M",27,177.3722892,88.37544696,"",2008,27,88,5.8,195
+"371085","André Houdet","M",27,183,96,"Denmark",2021,768,15,6,212
+"371085","André Houdet","M",28,183,96,"Denmark",2022,508,27,6,212
+"382954","Sara Pinto","F",30,162,61,"Portugal",2019,0,110,5.3,134
+"387995","Stephanie Chung","F",26,166,69,"United Arab Emirates",2018,204,35,5.4,152
+"390443","Alessia Joy Wälchli","F",25,168,66,"Switzerland",2019,152,35,5.5,146
+"400158","Apollonia Helm","F",23,158,65.66385373,"",2009,191,34,5.2,145
+"402931","Patrick Mcmahon","M",21,177.3722892,88.37544696,"",2008,22,64,5.8,195
+"407204","Joe Carlson","M",33,178,82,"",2008,20,48,5.8,181
+"419506","Dema Al Zebdieh","F",33,175,74,"Jordan",2019,0,116,5.7,163
+"423302","Sam Lubben","M",22,184,91,"Netherlands",2019,23,67,6,201
+"425160","Ian Wee","M",24,165,71,"Singapore",2019,0,134,5.4,157
+"432338","Arminas Balevicius","M",26,176,87,"Lithuania",2019,108,43,5.8,192
+"434258","Justin Hernandez","M",25,174,84,"Philippines",2019,0,85,5.7,185
+"441600","Connor Banks","M",24,191,109,"",2007,224,14,6.3,240
+"441600","Connor Banks","M",25,191,109,"",2008,23,71,6.3,240
+"444527","Landy Pui Boon Eng","F",30,159,57,"Singapore",2019,0,101,5.2,126
+"450568","Justin Clark","M",24,176,88,"",2008,29,95,5.8,194
+"451905","Amira Ayob","F",28,155,54,"Malaysia",2019,0,91,5.1,119
+"452187","Carol Colling-Romero","F",26,157,58,"Paraguay",2019,71,47,5.2,128
+"455677","Larissa Cunha","F",30,153,62,"Brazil",2021,0,38,5,137
+"456619","Oana Catalina Chelmus","F",32,160,61,"Romania",2019,0,93,5.2,134
+"457993","Bilal Tariq","M",31,167,66,"Pakistan",2019,0,132,5.5,146
+"458360","David Stroupek","M",24,178,90,"Czech Republic",2019,0,99,5.8,198
+"459004","Michelle Kinney","F",26,163,64,"",2010,99,10,5.3,141
+"459004","Michelle Kinney","F",27,163,64,"United States",2011,376,17,5.3,141
+"461734","Michael Smith","M",27,183,96,"Ireland",2019,224,26,6,212
+"464588","Enric Closa","M",32,170,86,"Andorra",2019,0,137,5.6,190
+"466656","Andrea Solberg","F",24,164,62,"Norway",2020,0,27,5.4,137
+"468290","Bryan Hernández","M",21,169,79,"Colombia",2019,53,50,5.5,174
+"468509","Alice Mille","F",25,174,69,"Sweden",2019,10,73,5.7,152
+"469626","Chandler Smith","M",26,173,89,"United States",2019,329,15,5.7,196
+"469626","Chandler Smith","M",27,173,89,"United States",2020,0,6,5.7,196
+"469626","Chandler Smith","M",28,173,89,"United States",2021,513,21,5.7,196
+"469626","Chandler Smith","M",30,173,89,"United States",2023,0,0,5.7,196
+"469656","Jeffrey Adler","M",25,176,90,"Canada",2019,193,33,5.8,198
+"469656","Jeffrey Adler","M",26,176,90,"Canada",2020,505,5,5.8,198
+"469656","Jeffrey Adler","M",27,176,90,"Canada",2021,815,13,5.8,198
+"469656","Jeffrey Adler","M",28,176,90,"Canada",2022,950,5,5.8,198
+"469656","Jeffrey Adler","M",29,176,90,"Canada",2023,0,0,5.8,198
+"470906","Oleksandr Shkoliarenko","M",29,184,89,"Ukraine",2019,18,70,6,196
+"472642","Uldis Upenieks","M",21,174,85,"Latvia",2019,194,31,5.7,187
+"472642","Uldis Upenieks","M",23,174,85,"Latvia",2021,422,25,5.7,187
+"472642","Uldis Upenieks","M",24,174,85,"Latvia",2022,595,21,5.7,187
+"472642","Uldis Upenieks","M",25,174,85,"Latvia",2023,0,0,5.7,187
+"473719","Michael Palomba","M",22,176,98,"United States",2017,388,31,5.8,216
+"474223","Laura Joyce","F",28,163,64,"",2010,153,40,5.3,141
+"477570","Kristen Lim","F",26,163,67,"Philippines",2019,18,68,5.3,148
+"477709","Courtney Haley","F",23,165,69,"Australia",2018,498,23,5.4,152
+"477709","Courtney Haley","F",24,165,69,"Australia",2019,191,29,5.4,152
+"478414","Agustin Richelme","M",22,173,85,"Argentina",2019,66,49,5.7,187
+"478414","Agustin Richelme","M",24,173,85,"Argentina",2021,262,32,5.7,187
+"478414","Agustin Richelme","M",25,173,85,"Argentina",2022,194,38,5.7,187
+"479759","Bayley Martin","M",23,174,82,"New Zealand",2023,0,0,5.7,181
+"482392","Nicole Verbrugghe","F",47,165.3748252,62,"",2009,169,51,5.4,137
+"483096","Giorgos Karavis","M",26,177,92,"Greece",2021,248,33,5.8,203
+"483096","Giorgos Karavis","M",27,177,92,"Greece",2022,212,37,5.8,203
+"484380","Emily Rolfe","F",30,170,69,"Canada",2019,317,18,5.6,152
+"484380","Emily Rolfe","F",32,170,69,"Canada",2021,706,15,5.6,152
+"484380","Emily Rolfe","F",33,170,69,"Canada",2022,61,40,5.6,152
+"484380","Emily Rolfe","F",34,170,69,"Canada",2023,0,0,5.6,152
+"485089","Renata Pimentel","F",36,174,73,"Brazil",2019,28,63,5.7,161
+"485344","Rebecka Vitesson","F",29,173,65,"Sweden",2023,0,0,5.7,143
+"487949","Mohamed Elomda","M",31,180,92,"Egypt",2019,100,44,5.9,203
+"488055","Ethan Helbig","M",22,181,100,"United States",2018,410,33,5.9,220
+"488881","MariaNive Clark","F",37,153,74,"Samoa",2019,0,119,5,163
+"495051","Sion Brinn","M",46,188,86,"Jamaica",2019,0,103,6.2,190
+"498697","Pasent Medhat","F",31,158,58,"Oman",2019,0,81,5.2,128
+"501728","Jason Carroll","M",28,178,82,"United States",2017,414,28,5.8,181
+"501728","Jason Carroll","M",30,178,82,"United States",2019,159,39,5.8,181
+"503582","Alexis Raptis","F",23,166,71,"United States",2022,859,10,5.4,157
+"503582","Alexis Raptis","F",24,166,71,"United States",2023,0,0,5.4,157
+"505225","Michelle Merand","F",30,158,60,"South Africa",2019,98,41,5.2,132
+"505225","Michelle Merand","F",33,158,60,"South Africa",2022,210,39,5.2,132
+"509768","Jake Wiseman","M",24,188,88.37544696,"",2008,26,84,6.2,195
+"511473","Gábor Török","M",28,173,85,"Hungary",2019,86,-1,5.7,187
+"514502","Lefteris Theofanidis","M",29,171,81,"Greece",2019,34,59,5.6,179
+"517771","Marisol Umana","F",35,152,57,"Costa Rica",2019,0,74,5,126
+"523439","Moustafa Awada","M",29,174,80,"Lebanon",2019,0,111,5.7,176
+"524819","Kelly Jo Smith","F",34,173,89,"",2010,109,20,5.7,196
+"527011","Lisa Eble","F",28,160,66,"Germany",2019,54,49,5.2,146
+"529918","Chad Melton","M",25,171,89,"United States",2015,460,25,5.6,196
+"530860","Shelby Neal","F",23,158,69,"United States",2023,0,0,5.2,152
+"531598","Paige Semenza","F",26,161,65,"United States",2018,372,32,5.3,143
+"531598","Paige Semenza","F",27,161,65,"United States",2019,171,30,5.3,143
+"531598","Paige Semenza","F",30,161,65,"United States",2022,636,21,5.3,143
+"531598","Paige Semenza","F",31,161,67,"United States",2023,0,0,5.3,148
+"532534","Lauren Erwin","F",20,165.3748252,64,"",2009,126,19,5.4,141
+"534247","Scott Tetlow","M",27,161,80,"United States",2020,0,17,5.3,176
+"534577","Melina Rodriguez","F",23,156,63,"Argentina",2019,0,97,5.1,139
+"534577","Melina Rodriguez","F",24,156,63,"Argentina",2020,0,17,5.1,139
+"534813","Sanna Venäläinen","F",29,164,64,"Finland",2020,0,30,5.4,141
+"542883","Nicolay Billaudel","M",29,182,92,"Norway",2019,154,40,6,203
+"544958","Stefano Migliorini","M",30,173,84,"Italy",2019,0,125,5.7,185
+"555277","Rebecca Fuselier","F",22,158,58,"United States",2022,352,30,5.2,128
+"555634","Kobe Khy","M",31,170,75,"Cambodia",2019,0,129,5.6,165
+"571999","Paul Castillo","M",27,181,91,"United States",2017,426,27,5.9,201
+"571999","Richard Paul Castillo","M",29,181,91,"United States",2019,0,98,5.9,201
+"574502","Heskeith Flavien","M",38,171,82,"Saint Lucia",2019,0,127,5.6,181
+"585046","Baylee Rayl","F",25,171,62,"United States",2021,610,18,5.6,137
+"585046","Baylee Rayl","F",26,171,62,"United States",2022,455,28,5.6,137
+"585046","Baylee Rayl","F",27,171,62,"United States",2023,0,0,5.6,137
+"586509","Nina Juna","F",27,157,58,"Brunei Darussalam",2019,0,106,5.2,128
+"591912","Laura Horvath","F",21,170,70,"Hungary",2018,1090,2,5.6,154
+"591912","Laura Horvath","F",22,170,70,"Hungary",2019,356,14,5.6,154
+"591912","Laura Horváth","F",23,170,70,"Hungary",2020,0,24,5.6,154
+"591912","Laura Horváth","F",24,170,70,"Hungary",2021,1179,2,5.6,154
+"591912","Laura Horvath","F",25,170,70,"Hungary",2022,981,3,5.6,154
+"591912","Laura Horvath","F",26,170,70,"Hungary",2023,0,0,5.6,154
+"592472","Bethany Shadburne","F",23,163,66,"United States",2017,502,22,5.3,146
+"592472","Bethany Shadburne","F",24,163,66,"United States",2018,666,16,5.3,146
+"592472","Bethany Shadburne","F",25,163,66,"United States",2019,659,8,5.3,146
+"592472","Bethany Shadburne","F",26,163,66,"United States",2020,0,20,5.3,146
+"592472","Bethany Shadburne","F",27,163,66,"United States",2021,0,39,5.3,146
+"592472","Bethany Flores","F",29,163,66,"United States",2023,0,0,5.3,146
+"595818","Dillon Mahadeo","M",23,188,91,"Guyana",2019,0,94,6.2,201
+"607473","Braden Lutz","M",34,177.3722892,88.37544696,"",2008,18,18,5.8,195
+"607473","Braden Lutz","M",36,177.3722892,88.37544696,"",2010,107,20,5.8,195
+"621610","Sam Dancer","M",29,178,103,"United States",2016,418,32,5.8,227
+"635438","Simona Quintana","F",23,167,65,"Chile",2019,141,36,5.5,143
+"636703","Caroline Attmore","F",28,165.3748252,65.66385373,"",2009,190,57,5.4,145
+"639107","Hussain Saeedi","M",29,179,84,"Saudi Arabia",2019,0,112,5.9,185
+"639392","John Welbourn","M",32,177.3722892,88.37544696,"",2008,29,96,5.8,195
+"640333","Ndiya Nkongho","F",32,165.3748252,65.66385373,"",2009,180,54,5.4,145
+"642463","Jeremy Thiel","M",25,177.3722892,93,"",2007,248,6,5.8,205
+"642463","Jeremy Thiel","M",26,177.3722892,93,"",2008,14,3,5.8,205
+"642463","Jeremy Thiel","M",27,177.3722892,93,"",2009,118,16,5.8,205
+"644351","Daryl Borg","M",32,171,80,"Malta",2019,0,122,5.6,176
+"656004","Christine Kolenbrander","F",30,168,72,"United States",2022,488,27,5.5,159
+"656004","Christine Kolenbrander","F",31,168,70,"United States",2023,0,0,5.5,154
+"658408","Stavri Stavrev","M",27,170,80,"Bulgaria",2019,0,90,5.6,176
+"660204","Matt Mcleod","M",26,168,82,"Australia",2019,671,7,5.5,181
+"661734","Marian Khoury","F",26,163,57,"Palestinian Territory",2019,0,88,5.3,126
+"661943","Keshini Vitharana","F",22,164,60,"Sri Lanka",2019,0,128,5.4,132
+"663689","Tyler Christophel","M",30,178,89,"United States",2020,0,24,5.8,196
+"663979","Sona Karaskova","F",31,167,68,"Czech Republic",2019,0,80,5.5,150
+"665223","Michal Wesolowski","M",30,184,98,"Poland",2023,0,0,6,216
+"667464","Đorđe Đurić","M",24,187,94,"Bosnia and Herzegovina",2019,16,71,6.1,207
+"667707","Ksenija Kecman","F",30,177,70,"Bosnia and Herzegovina",2019,90,42,5.8,154
+"668286","Matt Murski","M",28,177.3722892,88.37544696,"",2008,19,35,5.8,195
+"670000","Dani Speegle","F",25,168,78,"United States",2019,226,26,5.5,172
+"670000","Dani Speegle","F",26,168,77,"United States",2020,0,13,5.5,170
+"670000","Dani Speegle","F",27,168,77,"United States",2021,239,35,5.5,170
+"670000","Dani Speegle","F",28,168,78,"United States",2022,750,17,5.5,172
+"671093","Dallin Pepper","M",20,183,98,"United States",2022,647,19,6,216
+"671093","Dallin Pepper","M",21,183,98,"United States",2023,0,0,6,216
+"671201","Patricia Trujillo","F",44,150,53,"El Salvador",2019,0,114,4.9,117
+"671666","Haley Adams","F",18,171,64,"United States",2019,711,6,5.6,141
+"671666","Haley Adams","F",19,171,64,"United States",2020,560,4,5.6,141
+"671666","Haley Adams","F",20,171,64,"United States",2021,995,5,5.6,141
+"671666","Haley Adams","F",21,171,64,"United States",2022,867,9,5.6,141
+"672425","Arthur Semenov","M",29,189,99,"Russian Federation",2022,125,39,6.2,218
+"672425","Arthur Semenov","M",30,189,99,"Russian Federation",2023,0,0,6.2,218
+"675164","Nikita Yundov","M",26,178,90,"Belarus",2019,0,101,5.8,198
+"676693","Colten Mertens","M",23,163,87,"United States",2021,278,31,5.3,192
+"676693","Colten Mertens","M",24,163,84,"United States",2022,344,32,5.3,185
+"676693","Colten Mertens","M",25,163,82,"United States",2023,0,0,5.3,181
+"677889","Alban Dubois","M",24,175,86,"Belgium",2019,49,51,5.7,190
+"680734","Henrik Haapalainen","M",26,185,94,"Finland",2021,708,18,6.1,207
+"680734","Henrik Haapalainen","M",27,185,94,"Finland",2022,538,24,6.1,207
+"680734","Henrik Haapalainen","M",28,185,94,"Finland",2023,0,0,6.1,207
+"681073","Griffin Roelle","M",28,178,93,"United States",2020,0,25,5.8,205
+"682551","Ryan Sowder","M",25,173,87,"United States",2019,208,30,5.7,192
+"683201","Krista Kraskura","F",27,172,66,"Latvia",2019,0,121,5.6,146
+"683220","Diego Kemper","M",28,183,88,"Paraguay",2019,0,77,6,194
+"683301","Rodrigo Beltrán","M",31,187,84,"El Salvador",2019,0,110,6.1,185
+"683305","Sara Alicia Fernandez Costas","F",29,159,63,"Spain",2019,0,76,5.2,139
+"685943","Tatiana Diakou","F",19,165,68,"Belarus",2019,0,94,5.4,150
+"686308","Guilherme Malheiros","M",19,177,88,"Brazil",2019,74,48,5.8,194
+"686308","Guilherme Malheiros","M",21,177,88,"Brazil",2021,958,7,5.8,194
+"686308","Guilherme Malheiros","M",22,177,88,"Brazil",2022,831,10,5.8,194
+"686626","Manon Angonese","F",30,163,69,"Belgium",2023,0,0,5.3,152
+"687711","Gabriela Perez","F",28,168,62,"Honduras",2019,0,109,5.5,137
+"695821","Julie Hougård","F",27,173,70,"Denmark",2019,15,72,5.7,154
+"698182","Adrian Mundwiler","M",23,172,86,"Spain",2016,381,34,5.6,190
+"698182","Adrian Mundwiler","M",25,172,86,"Germany",2018,652,16,5.6,190
+"698182","Adrian Mundwiler","M",26,172,86,"Switzerland",2019,632,8,5.6,190
+"698182","Adrian Mundwiler","M",28,172,86,"Switzerland",2021,157,35,5.6,190
+"698210","Karin Freyová","F",24,170,72,"Slovakia",2019,254,21,5.6,159
+"698210","Karin Freyová","F",25,170,72,"Slovakia",2020,0,14,5.6,159
+"698210","Karin Freyová","F",27,170,72,"Slovakia",2022,642,20,5.6,159
+"698210","Karin Freyová","F",28,170,72,"Slovakia",2023,0,0,5.6,159
+"702092","Willy Georges","M",25,179,88,"France",2018,728,9,5.9,194
+"702092","Willy Georges","M",26,179,88,"France",2019,245,21,5.9,194
+"702092","Willy Georges","M",29,179,88,"France",2022,688,17,5.9,194
+"703126","Khalid Aljarallah","M",32,175,88,"Kuwait",2019,0,76,5.7,194
+"704718","David Shanahan","M",16,177.3722892,88.37544696,"",2007,206,23,5.8,195
+"722854","Robert Berisha","M",32,170,80,"Kosovo",2019,0,116,5.6,176
+"728984","Sanjana Sivasalapathi","F",26,165.3748252,65.66385373,"India",2019,18,70,5.4,145
+"733576","Mihkel Keldoja","M",24,181,88,"Estonia",2019,0,89,5.9,194
+"737357","Martha Berrocal","F",32,163,58,"Bolivia",2019,0,92,5.3,128
+"747027","Kelly Baker","F",31,163,69,"United States",2023,0,0,5.3,152
+"755342","Zachery Buntin","M",25,183,103,"United States",2019,0,88,6,227
+"762495","Elena Carratala Sanahuja","F",28,164,63,"Spain",2022,223,38,5.4,139
+"764556","Gabriela Migała","F",20,170,75,"Poland",2019,0,75,5.6,165
+"764556","Gabriela Migała","F",21,170,75,"Poland",2020,0,18,5.6,165
+"764556","Gabriela Migała","F",22,170,75,"Poland",2021,972,6,5.6,165
+"764556","Gabriela Migała","F",23,170,75,"Poland",2022,868,8,5.6,165
+"764556","Gabriela Migała","F",24,170,75,"Poland",2023,0,0,5.6,165
+"768482","Amal Alshahrani","F",34,165,68,"Saudi Arabia",2019,0,117,5.4,150
+"781908","William Sanchez","M",28,171,84,"Costa Rica",2019,0,117,5.6,185
+"796219","Hanna Karlsson","F",26,177,81,"Sweden",2019,132,37,5.8,179
+"811708","Justin Medeiros","M",21,176,89,"United States",2020,560,3,5.8,196
+"811708","Justin Medeiros","M",22,176,89,"United States",2021,1234,1,5.8,196
+"811708","Justin Medeiros","M",23,176,89,"United States",2022,1184,1,5.8,196
+"811708","Justin Medeiros","M",24,176,89,"United States",2023,0,0,5.8,196
+"831149","Matilde Garnes","F",26,174,70,"Norway",2022,663,19,5.7,154
+"831149","Matilde Garnes","F",27,174,70,"Norway",2023,0,0,5.7,154
+"839047","Keith Nhan","M",31,163,64,"Viet Nam",2019,0,139,5.3,141
+"842919","Aleks Koštomaj","M",26,180,87,"Slovenia",2019,90,47,5.9,192
+"843041","Nick Mathew","M",28,176,91,"United States",2022,728,14,5.8,201
+"843041","Nick Mathew","M",29,176,91,"United States",2023,0,0,5.8,201
+"844066","Marzougui Mootez","M",28,172,76,"Tunisia",2019,3,74,5.6,168
+"848265","Chaker Alouni","M",30,181,86,"Algeria",2019,0,120,5.9,190
+"849478","Shingo Moromasa","M",32,150,84,"Japan",2019,31,64,4.9,185
+"851037","Pack Santos","M",29,175,74,"Mozambique",2019,0,128,5.7,163
+"855131","Nicole Pettel","F",27,161,69,"Israel",2019,28,62,5.3,152
+"858387","Augustin Vilicnik","M",29,181,95,"Croatia",2019,31,63,5.9,209
+"867741","Jack Farlow","M",21,186,96,"Canada",2023,0,0,6.1,212
+"871307","McKenzie Flinchum","F",27,166,66,"United States",2019,69,48,5.4,146
+"872275","Caroline Stanley","F",23,161,66,"United States",2023,0,0,5.3,146
+"872448","Charity Vale","F",33,165.3748252,65.66385373,"",2009,72,2,5.4,145
+"881332","Tommy Vinas","M",20,181,98,"United States",2017,378,32,5.9,216
+"887297","Emma Tall","F",27,168,68,"Sweden",2019,168,31,5.5,150
+"887297","Emma Tall","F",29,168,68,"Sweden",2021,566,19,5.5,150
+"887297","Emma Tall","F",31,168,68,"Sweden",2023,0,0,5.5,150
+"888668","Luka Đukić","M",22,181,92,"Serbia",2021,312,29,5.9,203
+"889971","Melanie Yip Woon Sun","F",33,165,77,"Mauritius",2019,0,129,5.4,170
+"893554","Michelle Basnett","F",24,163,69,"South Africa",2021,296,32,5.3,152
+"893554","Michelle Basnett","F",26,163,69,"South Africa",2023,0,0,5.3,152
+"893571","Tsai-Jui Hung","F",26,163,63,"China",2019,0,105,5.3,139
+"897110","Tudor Magda","M",19,178,91,"United States",2022,338,34,5.8,201
+"899345","Citra Ramaniya","F",36,158,59,"Indonesia",2019,0,86,5.2,130
+"900251","James Sprague","M",21,188,96,"United States",2023,0,0,6.2,212
+"901467","Kealan Henry","M",29,168,80,"South Africa",2022,62,40,5.5,176
+"901503","Kaique Cerveny","M",25,150,96,"Brazil",2023,0,0,4.9,212
+"901702","Stas Solodov","M",36,175,85,"Russian Federation",2021,0,39,5.7,187
+"901899","Ehea Schuerch","F",29,171,72,"United States",2018,634,17,5.6,159
+"907105","Sebastian Rodriguez","M",22,170,80,"Ecuador",2019,0,100,5.6,176
+"915210","Jovaldo Miranda","M",30,167,81,"Peru",2019,0,113,5.5,179
+"916290","David Morley","M",28,186,89,"Bahamas",2019,0,109,6.1,196
+"921544","Edem Ahiaku","M",28,175,84,"Ghana",2019,0,115,5.7,185
+"922058","Cricel Castillo","F",30,153,55,"Belize",2019,0,83,5,121
+"925870","Moritz Fiebig","M",27,179,95,"Germany",2022,304,36,5.9,209
+"925870","Moritz Fiebig","M",28,179,95,"Germany",2023,0,0,5.9,209
+"926366","Jelle Hoste","M",28,190,98,"Belgium",2023,0,0,6.2,216
+"929317","Enrico Zenoni","M",24,178,86,"Italy",2022,443,29,5.8,190
+"935227","Jen Gonzales","F",25,165.3748252,65.66385373,"",2008,27,18,5.4,145
+"953791","Shahad Budebs","F",24,161,60,"United Arab Emirates",2019,0,84,5.3,132
+"953791","Shahad Budebs","F",28,160,60,"United Arab Emirates",2023,0,0,5.2,132
+"971185","Andrew Swartz","M",22,173,75,"",2009,133,23,5.7,165
+"975294","Mishka Murad","F",34,163,57,"Pakistan",2019,0,123,5.3,126
+"975774","Roman Khrennikov","M",23,182,103,"Russian Federation",2018,0,40,6,227
+"975774","Roman Khrennikov","M",25,182,103,"Russian Federation",2020,0,13,6,227
+"975774","Roman Khrennikov","M",26,182,103,"Russian Federation",2021,0,40,6,227
+"975774","Roman Khrennikov","M",27,182,103,"Russian Federation",2022,1157,2,6,227
+"975774","Roman Khrennikov","M",28,182,103,"United States",2023,0,0,6,227
+"978472","Fernanda Saavedra","F",26,161,69,"Nicaragua",2019,0,79,5.3,152
+"998366","Ella Wunger","F",25,170,70,"Sweden",2023,0,0,5.6,154
+"1018713","Laura Clifton","F",26,162,75,"New Zealand",2020,0,26,5.3,165
+"1018713","Laura Clifton","F",26,162,75,"New Zealand",2021,416,24,5.3,165
+"1019212","Svetlana Kubyshkina","F",30,155,60,"Russian Federation",2021,0,40,5.1,132
+"1020449","Jayson Hopper","M",23,186,100,"United States",2021,701,19,6.1,220
+"1020449","Jayson Hopper","M",24,186,100,"United States",2022,887,7,6.1,220
+"1020449","Jayson Hopper","M",25,186,100,"United States",2023,0,0,6.1,220
+"1023069","Whitney Welsch","F",45,166,62,"",2010,111,21,5.4,137
+"1037933","Sanaa Mandar","F",31,166,66,"Morocco",2019,0,107,5.4,146
+"1038984","Jen Cardella","F",17,165.3748252,65.66385373,"",2010,92,26,5.4,145
+"1055578","Akiko Kamitani","F",30,154,52,"Japan",2019,26,65,5.1,115
+"1059467","Lazar Đukić","M",25,182,90,"Serbia",2021,887,9,6,198
+"1059467","Lazar Đukić","M",26,182,93,"Serbia",2022,850,8,6,205
+"1059467","Lazar Đukić","M",27,182,93,"Serbia",2023,0,0,6,205
+"1076087","Hamzeh Tarefi","M",24,173,88,"Palestinian Territory",2019,13,72,5.7,194
+"1095623","Kila Kilaverave","M",38,169,75,"Papua New Guinea",2019,0,138,5.5,165
+"1105497","Guillaume Briant","M",28,180,93,"France",2022,525,26,5.9,205
+"1111705","Sheena Miller","F",36,175,70,"Kenya",2019,0,108,5.7,154
+"1119323","Ellie Turner","F",23,167,72,"Australia",2021,404,26,5.5,159
+"1119323","Ellie Turner","F",24,167,72,"Australia",2022,728,18,5.5,159
+"1119323","Ellie Turner","F",25,167,72,"Australia",2023,0,0,5.5,159
+"1119795","Jessica Borg Ghigo","F",35,167,70,"Malta",2019,0,78,5.5,154
+"1120310","Josh Jorgensen","M",19,177.3722892,88.37544696,"",2008,27,89,5.8,195
+"1122311","Arturocesar Mora","M",21,172,84,"Nicaragua",2019,0,131,5.6,185
+"1129621","Mahendra Arditirta","M",29,173,70,"Indonesia",2019,0,114,5.7,154
+"1131171","Delice Adonis","F",21,171,64,"Guyana",2019,0,115,5.6,141
+"1167527","Craig Mccarroll","M",30,177.3722892,88.37544696,"",2009,141,43,5.8,195
+"1169213","Danielle Shanine","F",26,158,57,"Lebanon",2019,0,112,5.2,126
+"1176528","Trang Nguyen","F",27,160,57,"Viet Nam",2019,0,124,5.2,126
+"1178252","Piero Gorichon","M",27,183,90,"Chile",2019,7,73,6,198
+"1179765","Adam Davidson","M",28,178,93,"Canada",2020,0,27,5.8,205
+"1187609","Sasha Nievas","F",23,156,61,"Argentina",2021,297,31,5.1,134
+"1190381","Paige Powers","F",19,163,71,"United States",2022,509,25,5.3,157
+"1190381","Paige Powers","F",20,163,71,"United States",2023,0,0,5.3,157
+"1192351","Aya Fouad","F",25,155,60,"Egypt",2019,0,102,5.1,132
+"1203632","Alaa Hannora","F",32,154,52,"Syrian Arab Republic",2019,0,104,5.1,115
+"1207609","Freya Moosbrugger","F",20,165,69,"Canada",2022,335,32,5.4,152
+"1217058","Anastassia Psenitsnaja","F",24,170,69,"Estonia",2019,0,85,5.6,152
+"1218177","Cingiwe Ciegy Seru","F",35,160,60,"Botswana",2019,0,125,5.2,132
+"1223806","Katlego Kgwadi","M",31,170,66,"Botswana",2019,0,126,5.6,146
+"1232297","Alex Willis","F",20,168,69,"United States",2022,553,24,5.5,152
+"1232297","Alex Gazan","F",21,168,69,"United States",2023,0,0,5.5,152
+"1237131","Luaneth Alveo","F",20,199,62,"Panama",2019,0,90,6.5,137
+"1239980","Mallory O'Brien","F",17,161,62,"United States",2021,963,7,5.3,137
+"1239980","Mallory O'Brien","F",18,161,62,"United States",2022,1045,2,5.3,137
+"1240398","Emily de Rooy","F",22,174,75,"Australia",2023,0,0,5.7,165
+"1243131","Miriam Torra","F",25,168,65,"Andorra",2019,0,126,5.5,143
+"1269411","Olivia Kerstetter","F",17,166,73,"United States",2023,0,0,5.4,161
+"1280595","Ava Zalman","F",17,166,64,"Suriname",2019,0,99,5.4,141
+"1281689","Nate Pierce","M",23,186,89,"",2007,215,21,6.1,196
+"1299203","Maria Camila Quintero","F",23,155,58,"Colombia",2019,34,60,5.1,128
+"1306552","Sami Salampur","M",30,176,70,"Afghanistan",2019,0,130,5.8,154
+"1325298","Aleksandar Ilin","M",29,175,87,"Russian Federation",2019,45,55,5.7,192
+"1325298","Aleksandar Ilin","M",31,175,87,"Russian Federation",2021,54,38,5.7,192
+"1346810","Seungyeon Choi","F",22,168,71,"Korea, Republic of",2021,213,34,5.5,157
+"1346810","Seungyeon Choi","F",23,168,71,"Korea, Republic of",2022,493,26,5.5,157
+"1351483","Sheerly Bueno Reyes","F",21,160,57,"Dominican Republic",2019,0,82,5.2,126
+"1382942","Aslam Al Shukaili","M",27,178,85,"Oman",2019,0,141,5.8,187
+"1402559","Marco Almeida","M",30,185,96,"Angola",2019,0,95,6.1,212
+"1441210","Sydney Michalyshen","F",21,168,71,"Canada",2021,414,25,5.5,157
+"1441210","Sydney Michalyshen","F",22,168,71,"Canada",2022,342,31,5.5,157
+"1458106","Lucy Campbell","F",26,168,73,"United Kingdom",2022,760,16,5.5,161
+"1492132","Robin Lyons","F",31,165.3748252,65.66385373,"",2008,24,9,5.4,145
+"1512343","Jessica Hellyer","F",20,165.3748252,65.66385373,"",2010,138,38,5.4,145
+"1521380","Zaida Amade","F",41,164,60,"Mozambique",2019,0,118,5.4,132
+"1521928","Tamara Trumbetaš","F",23,163,65,"Serbia",2019,0,127,5.3,143
+"1523179","Vernon Neal","M",30,173,78,"Belize",2019,0,79,5.7,172
+"1523543","Mody Traore","M",39,173,72,"Senegal",2019,0,124,5.7,159
+"1544576","Seher Kaya","F",24,161,64,"Turkey",2022,443,29,5.3,141
+"1544576","Seher Kaya","F",25,161,64,"Turkey",2023,0,0,5.3,141
+"1546147","Luke Parker","M",29,181,93,"United States",2023,0,0,5.9,205
+"1547449","Emma Cary","F",17,163,64,"United States",2021,689,16,5.3,141
+"1547449","Emma Cary","F",19,163,64,"United States",2023,0,0,5.3,141
+"1558034","Julia Kato","F",22,159,67,"Brazil",2022,258,37,5.2,148
+"1657300","Fabian Beneito","M",27,178,90,"Spain",2023,0,0,5.8,198
+"1673635","Brendan Gilliam","M",30,183,84,"",2007,243,7,6,185
+"1673635","Brendan Gilliam","M",31,183,84,"",2008,18,22,6,185
+"1692338","Uyi Nosa Osawe","M",29,184,87,"Nigeria",2019,20,68,6,192
+"1697328","Mahmood Shalan","M",26,176,88,"United Arab Emirates",2019,40,57,5.8,194
+"1701668","Libby Dibiase","F",20,165.3748252,65.66385373,"",2008,23,6,5.4,145
+"1718365","Cole Greashaber","M",22,183,97,"United States",2022,341,33,6,214
+"1718365","Cole Greashaber","M",23,183,97,"United States",2023,0,0,6,214
+"1762608","Morteza Sedaghat","M",28,172,89,"Iran",2023,0,0,5.6,196
+"1790285","Nikki Hall","F",24,165.3748252,65.66385373,"",2009,118,68,5.4,145
+"1804151","Brian Guernsey","M",44,177.3722892,88.37544696,"",2008,21,52,5.8,195
+"1818745","Brian Vandewettering","M",44,177.3722892,88.37544696,"",2007,221,18,5.8,195
+"1931423","Emma Lawson","F",17,166,64,"Canada",2022,893,6,5.4,141
+"1931423","Emma Lawson","F",18,166,64,"Canada",2023,0,0,5.4,141
+"1983424","Elisa Fuliano","F",26,157,60,"Italy",2022,296,35,5.2,132
+"1983424","Elisa Fuliano","F",27,157,60,"Italy",2023,0,0,5.2,132
+"2012971","Alexia Williams","F",24,169,70,"Argentina",2023,0,0,5.5,154
+"2064040","Kalyan Souza","M",22,184,92,"Brazil",2023,0,0,6,203
+"2077209","Abigail Domit","F",25,171,67,"United States",2023,0,0,5.6,148
+"2376545","Erik Szakaly","M",27,177.3722892,88.37544696,"",2010,137,41,5.8,195
+"2376546","Jessica Sharratt","F",27,165.3748252,65.66385373,"",2010,111,31,5.4,145
+"2376547","Elanna Robson","F",27,165.3748252,65.66385373,"",2010,0,43,5.4,145
+"2376548","Diago Johana","F",27,165.3748252,65.66385373,"",2010,0,44,5.4,145
+"2376989","Danie Du Preez","M",27,177.3722892,88.37544696,"",2009,195,49,5.8,195
+"2376990","Jon Matzner","M",27,177.3722892,88.37544696,"",2009,193,57,5.8,195
+"2376991","James Crichton","M",27,177.3722892,88.37544696,"",2009,204,61,5.8,195
+"2376992","Jolie Gentry","F",27,165.3748252,65.66385373,"",2009,131,7,5.4,145
+"2376993","Glory Dawson","F",27,165.3748252,65.66385373,"",2009,130,22,5.4,145
+"2376994","Polly Bobseine","F",27,165.3748252,65.66385373,"",2009,139,27,5.4,145
+"2376995","Danielle Comolli","F",27,165.3748252,65.66385373,"",2009,164,32,5.4,145
+"2376996","Nadine Burns","F",27,165.3748252,65.66385373,"",2009,127,41,5.4,145
+"2376997","Katy Josephs","F",27,165.3748252,65.66385373,"",2009,134,42,5.4,145
+"2376998","Jenna Rettenmayer","F",27,165.3748252,65.66385373,"",2009,161,48,5.4,145
+"2376999","Vicky Zimmerman","F",27,165.3748252,65.66385373,"",2009,164,50,5.4,145
+"2377000","Maggie Dabe-colby","F",27,165.3748252,65.66385373,"",2009,172,52,5.4,145
+"2377001","Amanda Miller","F",27,165.3748252,65.66385373,"",2009,182,55,5.4,145
+"2377002","Gillian Mounsey","F",27,165.3748252,65.66385373,"",2009,191,59,5.4,145
+"2377003","Kallista Pappas","F",27,165.3748252,65.66385373,"",2009,191,60,5.4,145
+"2377004","Rachel Steinbruckner","F",27,165.3748252,65.66385373,"",2009,213,61,5.4,145
+"2377005","Joy Nguyen","F",27,165.3748252,65.66385373,"",2009,0,71,5.4,145
+"2377057","Lucas Brainerd","M",27,177.3722892,88.37544696,"",2008,16,9,5.8,195
+"2377058","Aaron Lucke","M",27,177.3722892,88.37544696,"",2008,17,17,5.8,195
+"2377059","John Fragoso","M",27,177.3722892,88.37544696,"",2008,18,27,5.8,195
+"2377060","Mark Riebel","M",27,177.3722892,88.37544696,"",2008,19,31,5.8,195
+"2377061","Jonathan Thomas","M",27,177.3722892,88.37544696,"",2008,22,57,5.8,195
+"2377062","Miguel Flores","M",27,177.3722892,88.37544696,"",2008,22,58,5.8,195
+"2377063","Roland Cantu","M",27,177.3722892,88.37544696,"",2008,22,59,5.8,195
+"2377064","John Alanis","M",27,177.3722892,88.37544696,"",2008,22,61,5.8,195
+"2377065","Brent Oakeson","M",27,177.3722892,88.37544696,"",2008,23,68,5.8,195
+"2377066","Tony Lichiello","M",27,177.3722892,88.37544696,"",2008,24,73,5.8,195
+"2377067","Tommy Orr","M",27,177.3722892,88.37544696,"",2008,24,75,5.8,195
+"2377068","Scott Delozier","M",27,177.3722892,88.37544696,"",2008,25,82,5.8,195
+"2377069","Loren Goodwin","M",27,177.3722892,88.37544696,"",2008,26,83,5.8,195
+"2377070","Richard Hoover","M",27,177.3722892,88.37544696,"",2008,27,90,5.8,195
+"2377071","Andres De La Rosa","M",27,177.3722892,88.37544696,"",2008,28,93,5.8,195
+"2377072","Jonathan Kalaher","M",27,177.3722892,88.37544696,"",2008,28,94,5.8,195
+"2377073","Jesse Blomberg","M",27,177.3722892,88.37544696,"",2008,30,103,5.8,195
+"2377074","Jason Westfall","M",27,177.3722892,88.37544696,"",2008,33,114,5.8,195
+"2377075","Gillian Mounsey","F",27,165.3748252,65.66385373,"",2008,19,3,5.4,145
+"2377076","Jolie Gentry","F",27,165.3748252,65.66385373,"",2008,22,5,5.4,145
+"2377077","Amber Wiggs","F",27,165.3748252,65.66385373,"",2008,24,8,5.4,145
+"2377078","Nicki Violetti","F",27,165.3748252,65.66385373,"",2008,27,17,5.4,145
+"2377079","Maggie Dabe-colby","F",27,165.3748252,65.66385373,"",2008,27,20,5.4,145
+"2377080","Shelly Finlayson","F",27,165.3748252,65.66385373,"",2008,29,24,5.4,145
+"2377081","Kallista Pappas","F",27,165.3748252,65.66385373,"",2008,29,25,5.4,145
+"2377082","Jenny Rydh","F",27,165.3748252,65.66385373,"",2008,29,26,5.4,145
+"2377083","Aqueelah Tillman","F",27,165.3748252,65.66385373,"",2008,32,32,5.4,145
+"2377084","Rachel Wong","F",27,165.3748252,65.66385373,"",2008,33,34,5.4,145
+"2377125","Evan Von","M",27,177.3722892,88.37544696,"",2007,239,8,5.8,195
+"2377126","Brent Oakson","M",27,177.3722892,88.37544696,"",2007,235,9,5.8,195
+"2377127","John Murphy","M",27,177.3722892,88.37544696,"",2007,222,16,5.8,195
+"2377128","Ryan Wolley","M",27,177.3722892,88.37544696,"",2007,222,17,5.8,195
+"2377129","Andreas De","M",27,177.3722892,88.37544696,"",2007,212,22,5.8,195
+"2377130","Nickolas Hawks","M",27,177.3722892,88.37544696,"",2007,205,25,5.8,195
+"2377131","Taylor Nigh","M",27,177.3722892,88.37544696,"",2007,197,26,5.8,195
+"2377132","Steve Serrano","M",27,177.3722892,88.37544696,"",2007,196,27,5.8,195
+"2377133","Michael Woodruff","M",27,177.3722892,88.37544696,"",2007,195,28,5.8,195
+"2377134","Eric Le","M",27,177.3722892,88.37544696,"",2007,190,29,5.8,195
+"2377135","Thomas Silva","M",27,177.3722892,88.37544696,"",2007,184,31,5.8,195
+"2377136","Keith Ansell","M",27,177.3722892,88.37544696,"",2007,163,35,5.8,195
+"2377137","Kris Ratz","M",27,177.3722892,88.37544696,"",2007,175,36,5.8,195
+"2377138","John Murphy","M",27,177.3722892,88.37544696,"",2007,84,42,5.8,195
+"2377139","Jacob Typskin","M",27,177.3722892,88.37544696,"",2007,85,43,5.8,195
+"2377140","Jolie Gentry","F",27,165.3748252,65.66385373,"",2007,290,1,5.4,145
+"2377141","Mary Rigney","F",27,165.3748252,65.66385373,"",2007,271,2,5.4,145
+"2377142","Tara Muccilli","F",27,165.3748252,65.66385373,"",2007,261,4,5.4,145
+"2377143","Kate Hunt","F",27,165.3748252,65.66385373,"",2007,260,6,5.4,145
+"2377144","Nora Grant","F",27,165.3748252,65.66385373,"",2007,258,7,5.4,145
+"2377145","Kallista Pappas","F",27,165.3748252,65.66385373,"",2007,255,9,5.4,145
+"2377146","Lori King","F",27,165.3748252,65.66385373,"",2007,240,12,5.4,145
+"2377147","Jean Rapagna","F",27,165.3748252,65.66385373,"",2007,238,13,5.4,145
+"2377148","Melanie Ward","F",27,165.3748252,65.66385373,"",2007,237,14,5.4,145
+"2377149","Susan Kopcha","F",27,165.3748252,65.66385373,"",2007,162,16,5.4,145
+"2377150","Melanie Ayres","F",27,165.3748252,65.66385373,"",2007,81,18,5.4,145
+"2377151","Jaime Stumpf","F",27,165.3748252,65.66385373,"",2007,76,19,5.4,145
+"2377152","Victoria ","F",27,165.3748252,65.66385373,"",2007,86,20,5.4,145
