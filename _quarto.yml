@@ -1,0 +1,61 @@
+project:
+  type: book
+
+book:
+  title: "Research Transparency, Reproducibility, and Basic Data Analysis in R!"
+  author: "Shaon Lahiri, PhD, MPH"
+  date: today
+  page-navigation: true
+  chapters:
+    - index.qmd
+    - installation.qmd
+    - getstarted.qmd
+    - intro.qmd
+    - datatypes.qmd
+    - stringscomps.qmd
+    - dataimport.qmd
+    - datajoin.qmd
+    - cleaning.qmd
+    - dataexp.qmd
+    - dataviz.qmd
+    - replication1.qmd
+    - replication2.qmd
+    - replication3.qmd
+    - replication4.qmd
+    - replication5.qmd
+    - references.qmd
+  appendices: 
+    - appintroex.qmd
+    - appdatatypes.qmd
+    - appstringcomp.qmd
+    - appdatajoin.qmd
+    - appdataclean.qmd
+    - apptidyex.qmd
+    - appkahneman.qmd
+    
+    
+  
+
+bibliography: references.bib
+csl: ama.csl
+
+format:
+  html:
+    html-math-method: katex
+    code-overflow: wrap
+    grid: 
+      body-width: 850px
+    theme: cerulean
+    code-fold: false
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
+
+
+
+
+
+
+  
