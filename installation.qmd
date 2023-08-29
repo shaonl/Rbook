@@ -1,0 +1,21 @@
+# Installing R and RStudio {#sec-installation}
+
+Let's make sure we understand what R and RStudio are before proceeding. Firstly, R is a programming language that is commonly used for statistical analysis and data visualization. RStudio is an Integrated Development Environment (IDE) which sits on top of R. It provides a very nice graphical user interface that allows us to use R along with many other useful features.
+
+R is the engine, and RStudio is the car frame. You can use R without RStudio (known as Base R), but you cannot use RStudio without R.
+
+Before we meet for the first class, ensure you have downloaded and installed the following:
+
+1.  R
+
+    -   Download from here: <https://cran.r-project.org>
+
+2.  RStudio Desktop
+
+    -   Download from here: <https://posit.co/download/rstudio-desktop/>
+
+If you're using a Mac and you're having trouble, try switching browsers from Safari to Chrome. Sometimes Safari has some extra security provisions which prevent you from installing software successfully, and this can be remedied by using a different browser like Chrome.
+
+Please email me if you have any trouble installing R and R Studio. If you've successfully installed both, head over to @sec-started .
+
+![](/Images/rlogos.png)

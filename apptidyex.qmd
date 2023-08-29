@@ -1,0 +1,122 @@
+# Answers for @sec-tidyex {#sec-appendixtidyexp}
+
+The following are answers to the exercises in @sec-tidyex.
+
+1.  Load the `tidyverse` package. Then assign the built-in dataframe `starwars` to an object named whatever you want. Then subset the dataframe by human species only. Save the subsetted dataframe as an object called `swhuman`. Then calculate and report the mean and median height in `swhuman`. Also report an NAs (missing data) in the height variable. *Note: the units for the height variable are centimeters.*
+
+```{r, warning = FALSE, message = FALSE}
+
+library(tidyverse)
+
+stardf <- starwars
+
+swhuman <- stardf %>%
+  filter(species == "Human")
+
+swhuman %>%
+  select(height) %>%
+  summary()
+
+# The mean height is 176.6 centimeters, and the median height is 180 centimeters.There are 4 NAs.
+```
+
+2.  Hopefully you noticed that there are indeed some NAs in the `swhuman` dataframe! Detect which rows have NAs for the height variable, and write the names of the characters that have this. Next, let's fix these errors. Perform an internet search and populate those NAs with plausible values. If you need to convert from feet to centimeters, multiply the value in feet by 30.48. If you absolutely cannot find the height of any character substitute the median height from Question 1 for their height.
+
+```{r}
+
+# Which rows have NA for the height variable?
+
+which(is.na(swhuman$height))
+
+swhuman %>%
+  slice(18,
+        32,
+        33,
+        34) %>%
+  print()
+
+## It looks like Arvel Crynyd, Finn, Rey, and Poe Dameron all have NA values for height. From a quick Google search, I found heights of Finn, Rey, and Poe Dameron but not for Arvel Crynyd. Thus, I will enter a value of 180 (median from Question 1) for Arvel Crynyd. For Finn, Rey, and Poe Dameron, I will enter 176.8, 170.7, and 172, respectively. 
+
+swhuman$height[18] <- 180
+
+swhuman$height[32:34] <- c(176.8, 170.7, 172)
+```
+
+3.  Once you have filled in this missing data, calculate the new mean and median for the height variable. Comment on how much of a difference the additional values made on the mean and median compared with the values you calculated in Question 1. Then determine the three shortest characters, and three tallest characters.
+
+```{r}
+summary(swhuman$height)
+
+# The new mean is 176.4. This is 0.2 centimeters less than the mean from Question 1.
+# The new median is 178. This is 2 centimeters less than the median from Question 1.
+
+# Next, let's print the three shortest and three tallest characters.
+
+swhuman %>%
+  slice_min(height, n = 3)
+
+swhuman %>%
+  slice_max(height, n = 3)
+
+## The three shortest characters are Leia Organa, Mon Mothma, and Cordé.
+## The three tallest characters are Darth Vader, Qui-Gon Jinn, and Dooku.
+```
+
+4.  Return to the larger `starwars` dataframe or whatever object to which you assigned it. Determine which characters have NA for height. If there are any characters with NA for height (hint: there are), enter plausible values for their heights using the approach taken in Question 2. Then report the mean and median height across everyone in this dataframe.
+
+```{r}
+
+# Both approaches tell you the rows with NA in height. Use the approach you like.
+
+which(is.na(stardf$height))
+
+stardf$height %>%
+  is.na() %>%
+  which()
+
+# Determine which characters have NA for height.
+
+stardf %>%
+  slice(28,
+        82:86) %>%
+  print()
+
+# I already have heights for the first four. BB8's height is 67.1, and Captain Phasma's height is 200.1.
+
+stardf$height[28] <- 180
+
+stardf$height[82:86] <- c(176.8, 170.7, 172, 67.1, 200.1)
+
+# Now calculate mean and median height.
+
+summary(stardf$height)
+
+## The mean height is 173.4 cm and the median height is 180 cm.
+```
+
+5.  Still working with the `starwars` dataframe, convert the `species` variable to factor. Then, group and summarise the mean height by species, and print this in descending order. Report which species is the tallest, on average. Then, rearrange and report the species which is the shortest, on average.
+
+```{r}
+
+# Convert species to factor
+
+stardf$species <- as.factor(stardf$species)
+
+# Which is the tallest species, on average?
+
+stardf %>%
+  group_by(species) %>%
+  summarise(mean_height = mean(height)) %>%
+  arrange(desc(mean_height))
+
+## The Quermian species is the tallest on average.
+
+# Which is the shortest species on average?
+
+stardf %>%
+  group_by(species) %>%
+  summarise(mean_height = mean(height)) %>%
+  arrange(mean_height)
+
+## Yoda's species is the shortest on average.
+```

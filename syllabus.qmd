@@ -1,0 +1,222 @@
+# Syllabus {#sec-syllabus .unnumbered}
+
+![](/Images/welcome.png){fig-align="center" width="874"}
+
+It's a pleasure to have you in this course. I mean it! Without you, this course would not exist, and my job would be in jeopardy. So I'm glad to have you here, and not just because I need this job to purchase food and shelter, but also because teaching Research Transparency and Reproducibility (RT2) and R are my passions! Don't believe me? Consider this: I wrote this free textbook during my summer vacation, for no money, and with no expectations of making any money from it in the future. Why? I love R, RT2, and teaching these topics!
+
+## What are the course details?
+
+**Course Title:** Research in PPE: Research Transparency, Reproducibility and Basic Data Analysis in R
+
+**Course Instructor:** [Shaon Lahiri, PhD, MPH (he/him)](https://www.shaonlahiri.com)
+
+**Course Instructor Email:** [shaonl\@sas.upenn.edu](mailto:shaonl@sas.upenn.edu)
+
+**Course Number:** PPE 4000-301
+
+**CRN:** 60098
+
+**Schedule:** Thursdays, 12pm - 3pm (August 29, 2023 - December 11, 2023)
+
+**Location:** Fisher-Bennett Hall 017
+
+## What's this course about?
+
+A great question! Here's the deal: across the sciences, there are often problems with published research and the way in which research is conducted. Some of these problems are pretty major, like fabricating data and images. Others are not as scandalous but still problematic, such as not providing the full details of your study. These problems are bad for science. They hold us back from solving problems and understanding complex phenomena. They give us distorted or incorrect insights that can then lead to bad policies and programs.
+
+In this course we will discuss many issues related to the conduct of research, including bad or unethical approaches to research, how to think about replication and reproducibility, incentives to produce research, and solutions for making the research world a better place. You will hear stories of scandal and lies, but also tales of hope for a better future.
+
+But this course is not just about learning *about* research, but also learning how to *do* research with code. We will learn basic data preparation, management, analysis, and reporting in R. Finally, when it comes to data analysis, we will go over basic statistical analysis from descriptives, bivariate analyses, and to multivariable analyses staying mainly within the General Linear Model family of techniques. We will also get a little taste of more advanced techniques in R, and Bayesian probability and inference. All in all, it's going to be a good time!
+
+*TL;DR - this course is about learning R, research transparency & replication, and basic data analysis. The instructor is reasonably competent, motivated, and chill.*
+
+## Are there any prerequisites for this course?
+
+**If you've never used R in your life, nor have even heard of RT2, that's fine!** I assume no prior knowledge of these concepts. It would be helpful to have completed at least a high school level course in statistics before taking this one. But if you haven't, that's no problem as we will go over the necessary statistical concepts.
+
+The only thing you really need for this course is a modicum of motivation to learn R and RT2! But also a computer with enough memory to download R, R Studio, and maybe a few other things (\~300 MB in total).
+
+## Why should I take this course?
+
+Millions of people use the statistical programming language R to solve complex issues every day. If you have any interest in using data to understand the world, and visualize data in a way that communicates information succinctly and impactfully, this course is for you!
+
+Need a programming skill to add to that resume to be more competitive on the job market? This course is for you!
+
+Besides being a highly marketable skill, learning R is incredibly useful to undertake quantitative research. If you have any interest in doing research, having R in your aRsenal can help you quickly and efficiently write reproducible code to import, clean, analyze, and interpret data in various forms. Finally, doing good research means doing ethical research. I will teach you how to avoid bad practices and malignant influences in order to conduct research in a reproducible, ethical, and rigorous manner.
+
+::: callout-tip
+## If you want to impress potential romantic partners, R is also useful to have in your back pocket. I once went on a date where the subject of R came up (I brought it up), and my date asked how much it cost. When I said it was free, she was shocked and intrigued. I then explained all the things R can do. The relationship never went anywhere, but still...she was impressed.
+:::
+
+## What are the requirements of this course?
+
+The pie chart breaks down the grade distribution for this course. Each component is described in detail below.
+
+![](/Images/piechart.png)
+
+### Class participation (20%)
+
+To receive an 'A' for this component, you must not accure more than two (2) unexcused absences during the semester. If you miss class due to religious holiday, illness, or an emergency, those are excused absences and do not count toward your two miss-able class limit. You must also complete all assignments prior to class, and be ready to engage in discussion, ask questions, engage in activities, and generally be ready to contribute. I run this class as a seminar, so it's going to be quite interactive. If you feel sick, please [do not]{.underline} come to class. Instead, please email me and we can set up a time to meet if you have any questions about the course material. No documentation is required by me for illness or emergencies because I trust you. Beyond the two excused absences, each missed class will decrease your Class Participation grade by 10%.
+
+### Class presentations (20%)
+
+Over the course of the semester, each student will deliver two presentations to the class lasting approximately 15 minutes, followed by five minutes of Q&A. The first of these presentations will cover a recent or emerging topic within the world of research transparency and reproducibility. The second presentation will be an introduction and demonstration of a particular R package. I'm happy to help you come up with topics or troubleshoot for any of the presentations. All presentation topics must be approved by me before you proceed with the preparation.
+
+### Monthly quizzes (10% each; 40% total)
+
+Four quizzes will be administered in class during the semester. Each quiz will include a section on research transparency & reproducibility (Section 1), and a section involving completing tasks in R (Section 2). Section 1 is 'closed-book' and will be administered on paper (no notes or digital media will be allowed during the completion of this section). Students will then complete Section 2 on their laptops, and will be permitted to use their notes and the Internet (including Chat GPT or similar natural language processing tools). The content covered in each quiz is listed in the Outline of classes section below. Each quiz is worth 10%, for a total of 40% of one's grade for the course. There are no make-up quizzes except in case of emergency. All quizzes must be completed alone. If you receive a poor grade in Quizzes 1-3, you can substitute another RT2 presentation for it during our November 30th class.
+
+### Weekly Discussion Board posts (20%)
+
+Prior to class each week (except the first and last week of class), students are required to post a question, comment, or reflection on the Discussion Board on Canvas about a topic related to research transparency & reproducibility, OR about R (either is fine with me). **The post should be made on the appropriate Discussion Board on Canvas by 11am on the day we have class.** Posts made after this time will not count toward the student's grade. This is essentially a chance for you to explore, critique, or reflect on the class content or any related content from outside the class.
+
+The content of Discussion Board posts should be reasonably substantive. For example, a post saying "this was really hard to do, and I think there should be a better way" is not very substantive, whereas a post saying "this was challenging, but I found some other code online that accomplishes this task in a better way. Here it is. . ." is a much more substantive post. Use your judgment and always feel free to check with me if you have any questions or doubts. Multiple posts are permitted. Students may miss posting for up to two (2) weeks (i.e. two posts) without penalty. Outside of this allowance, missed discussion posts will subtract 10% of a student's grade for this component per week of missed posts.
+
+## What is the grading scale for this course?
+
++------------+--------------+--------------------------------------------------------------------------------------------------+
+| Percentage | Letter Grade | Interpretation                                                                                   |
++============+==============+==================================================================================================+
+| 93-100%    | A            | Outstanding work. Meets all expectations of the assignment with excellent command of material.   |
++------------+--------------+--------------------------------------------------------------------------------------------------+
+| 90-92%     | A-           | High-quality work. Meets nearly all expectations of the assignment, but is lacking in 1-2 areas. |
++------------+--------------+--------------------------------------------------------------------------------------------------+
+| 87-89%     | B+           | Good work. Meets most expectations of the assignment, but is lacking in 3 or more areas.         |
++------------+--------------+--------------------------------------------------------------------------------------------------+
+| 83-86%     | B            | Adequate work. Meets the majority of expectations of the assignment, but is weak in 1-2 areas.   |
++------------+--------------+--------------------------------------------------------------------------------------------------+
+| 80-82%     | B-           | Below average work. Meets some expectations of the assignment, but is weak in 3 or more areas.   |
++------------+--------------+--------------------------------------------------------------------------------------------------+
+| 77-79%     | C+           | Did not meet the expectations of the assignment. Please meet with me.                            |
++------------+--------------+--------------------------------------------------------------------------------------------------+
+| 73-76%     | C            | Did not meet the expectations of the assignment. Please meet with me.                            |
++------------+--------------+--------------------------------------------------------------------------------------------------+
+| 70-72%     | C-           | Did not meet the expectations of the assignment. Please meet with me.                            |
++------------+--------------+--------------------------------------------------------------------------------------------------+
+| 67-69%     | D            | Did not meet the expectations of the assignment. Please meet with me.                            |
++------------+--------------+--------------------------------------------------------------------------------------------------+
+| \<67%      | F            | Did not meet the expectations of the assignment. Please meet with me.                            |
++------------+--------------+--------------------------------------------------------------------------------------------------+
+
+Grades will be calculated using standard rounding rules, in which a number in the tenths decimal place will be rounded down to the nearest integer if it is between 0-4, and rounded up to the nearest integer if it is between 5-9. For example, a grade of 89.4% will be rounded to 89%, and a grade of 89.5% will be rounded to 90%. For all quizzes, I provide an answer key after it has been completed. For all assignments, I provide a rubric.
+
+## What materials do I need to buy for this course?
+
+Nothing beyond what you use normally for other courses at Penn (i.e. a personal computer or laptop, internet access, word processing software, and pdf reading software). We will primarily be using the free e-textbook that I have written for this class. All other materials will be provided on Canvas. Please make sure R and RStudio are downloaded and installed on your laptop before the first class following the directions in @sec-installation. If you have trouble installing either of them, please email me.
+
+## Do you have an "Email Policy"?
+
+I do! Please allow me up to two business days (i.e. M-F except holidays) to get back to your emails. In most cases, I will get back to you as soon as possible. If I haven't replied to you in two business days, please follow-up. I stick to traditional work hours (i.e 9am - 5pm) when responding to emails. I request that you to begin all emails to me with "Hi Shaon," because I prefer personalized emails addressing me by name. If you have any questions about course material, or if there is anything I can do to help you succeed in the course, please email me. I am here to support your growth and nurture your interests. Additionally, if anything at all in the course does not sit right with you at any point, please get in touch.
+
+## What are you doing to make the course more accessible and inclusive?
+
+I strive to create a welcoming environment for all, and have a zero tolerance policy regarding bullying, harassment, or threatening behavior. Part of creating an inclusive environment can involve occasionally hearing a viewpoint contrary to your own. I expect all of us to engage in respectful civil discourse, especially when disagreeing with one another. This is usually not an issue in my courses, but as we sometimes deal with sensitive subject matter, please remember it is encouraged to share your thoughts and opinions, but please accord the same respect to others as you would have them accord to you. If you feel at any point that I or someone in the class has violated that trust, please contact me as soon as possible.
+
+Part of inclusion means supporting our classmates who are breastfeeding or have gaps in child-care. Babies are always welcome in the class, and I ask students who bring babies to sit near a door in case you need to step out briefly to provide special attention to your little one. For young children, while not a long-term child care solution, occasionally bringing a child to class is perfectly fine. I ask that all students work together with me to support our classmates who bring babies or young children to class. While I hold all students to the same high-quality standards for the work submitted in this course, if you are a student-parent, I will be happy to work with you to support you however I can.
+
+Service animals are always welcome in the classroom.
+
+If you require any other accommodations, please let me know and I will do my best to make them happen. Additionally, please contact me if you ever just want to talk.
+
+If you're an international student, I feel your pain (#relatable)! Let's talk about it.
+
+## How are you handling names and pronouns in the course?
+
+It is essential that we refer to everyone by their names and pronouns. Pronouns can be a way to affirm someone's gender identity, but they can also be unrelated to a person's identity. They are simply a public way in which people are referred to in place of their name (e.g. 'he' or 'she'; 'they' or 'ze'; or others). In my classroom, you are invited, but not required to, share the pronouns you use (or the pronouns you want to use in a particular space), and I ask that all of us commit to being attentive to and using each other's pronouns. If you accidentally misgender someone or use an incorrect pronoun for them, please simply correct yourself to their pronoun. If during the course, you would like to change the pronoun that we are using for you, please let me know.
+
+In support of the University of Pennsylvania's commitment to providing an equitable and safe experience for students whose birth name and/or legal name does not reflect their gender identity and/or gender expression, Penn accepts requests from any student seeking to use a first and/or middle name that differs from the name currently in University records. A student's requested name can and will be used where feasible in all University systems unless the student's birth name and/or legal name use is required by law or the student's requested name use if intent of misrepresentation.
+
+Any student, including transgender, genderfluid, genderqueer, gender diverse, non-cisgender and cisgender students who wish to designate a different name can do so by editing their Personal Information page in Path\@Penn. For additional Preferred First Name, Pronouns, and Gender Identity Information, see this page: <https://srfs.upenn.edu/student-records/update-data>.
+
+## Is cheating in the course ok?
+
+No! Please familiarize yourself with Penn's Code of Academic Integrity if you have not already done so [here](https://catalog.upenn.edu/pennbook/code-of-academic-integrity/). I have a zero tolerance policy for cheating and plagiarism. If you are ever unsure what the line is between plagiarism and appropriate citation/reference, please contact me BEFORE submitting your work! If you feel that cannot succeed in this course without cheating, please contact me and we can speak confidentially. I will never punish you for the temptation, and we can develop a plan together to figure out a plan for avoiding the temptation. Please always work alone on all quizzes and written assignments in this course, and never copy a sentence or phrase from another work without appropriate citations and references.
+
+## Outline of classes {#sec-outline}
+
+Below is an outline of our course material over the semester. Please note that the *Assignments* are things you should complete BEFORE class. The *Chapters* listed under *Assignments* refer to sections of this e-textbook. While we have a defined curriculum and textbook for this course, there is some room to tailor some of the class content to your interests. So, if you have something you want to learn in R, please let me know! If we cannot get to it in class, I will provide resources for you to learn more, and you can incorporate any special topics into presentations.
+
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| Date                  | Topics and Events                                                                                                                               | Assignments                                                                          |
++=======================+=================================================================================================================================================+======================================================================================+
+| August 31             | -   Research Transparency and Reproducibility (RT2) Story: Bolivian National Election.                                                          | -   Successful installation of R and R Studio.                                       |
+|                       | -   RT2 Story: Hydroxychloroquine.                                                                                                              |                                                                                      |
+|                       | -   Introduction to Base R and RStudio (arithmetic operations, objects, functions, packages, R Studio).                                         | -   Chapters 1 - 3 and 21.                                                           |
+|                       | -   Introduction to RT2 - what it is and a brief history of replication.                                                                        |                                                                                      |
+|                       |                                                                                                                                                 | -   Chapter 3 exercises (optional).                                                  |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| September 7           | -   RT2 Story: A nutrition researcher's arrogance becomes his downfall.                                                                         | -   Chapters 4 and 22.                                                               |
+|                       | -   Discussion board post discussion.                                                                                                           | -   Chapter 3 and 4 exercises.                                                       |
+|                       | -   Data types (vectors, matrices, dataframes, lists, arrays).                                                                                  | -   Discussion board post.                                                           |
+|                       | -   Mertonian norms and counter-norms of science.                                                                                               |                                                                                      |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| September 14          | -   RT2 Story: Worm Wars.                                                                                                                       | -   Chapters 5 and 11.                                                               |
+|                       | -   Discussion board post discussion.                                                                                                           | -   Chapter 5 exercises.                                                             |
+|                       | -   Working with strings and comparisons (including conditional statements to evaluate comparisons).                                            | -   Discussion board post.                                                           |
+|                       | -   Statistical preliminaries (hypothesis testing, p-values, power, confidence intervals, sample statistics and population parameters).         |                                                                                      |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| September 21          | **QUIZ #1 in class** (covers material from Aug 31, Sept 7, and Sep 14).                                                                         | -   Chapters 6, 7, and 23.                                                           |
+|                       |                                                                                                                                                 | -   Discussion board post.                                                           |
+|                       | -   RT2 Story: A dishonesty researcher is allegedly dishonest.                                                                                  |                                                                                      |
+|                       | -   Discussion board post discussion.                                                                                                           |                                                                                      |
+|                       | -   Importing data.                                                                                                                             |                                                                                      |
+|                       | -   Introduction to data cleaning (folder structure, detecting illogical and extreme values, subsetting, variable transformation, data export). |                                                                                      |
+|                       | -   Crises of replication and the domino effect.                                                                                                |                                                                                      |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| September 28          | -   RT2 Story: Another dishonesty researcher is allegedly dishonest!                                                                            | -   Chapters 7 and 8.                                                                |
+|                       | -   Discussion board post discussion.                                                                                                           | -   Chapter 7 exercises.                                                             |
+|                       | -   Data cleaning continued.                                                                                                                    | -   Chapter 8 exercises (optional).                                                  |
+|                       | -   Introduction to the `tidyverse` (esp. `dplyr` for data management and exploration)                                                          | -   Discussion board post.                                                           |
+|                       | -   Mitigating researcher degrees of freedom.                                                                                                   |                                                                                      |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| October 5             | -   RT2 Story: Fertility research + data integrity = terrorism?                                                                                 | -   Chapter 9.                                                                       |
+|                       | -   Discussion board post discussion.                                                                                                           | -   Chapter 8 exercises.                                                             |
+|                       | -   Possible guest lecture: Daniel Putman, PhD on Many Economists project.                                                                      | -   Chapter 9 exercises (optional).                                                  |
+|                       | -   Data visualization (base R, `ggplot2` and some related packages).                                                                           | -   Hadley, W. (2014). Tidy data. *Journal of Statistical Software*, *59*(10), 1-23. |
+|                       | -   Mitigating researcher degrees of freedom continued.                                                                                         | -   Discussion board post.                                                           |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| October 12            | ### Fall Break (No Class)                                                                                                                       | -   Enjoy Fall Break and youth, in general.                                          |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| October 19            | **QUIZ #2 in class** (covers material from Sep 21, Sep 28, and Oct 5).                                                                          | -   Chapters 12 and 13.                                                              |
+|                       |                                                                                                                                                 | -   Chapter 9 exercises.                                                             |
+|                       | -   RT2 Story: A student newspaper brings down a president.                                                                                     | -   Chapter 12 and 13 exercises (optional).                                          |
+|                       | -   Discussion board post discussion.                                                                                                           | -   Discussion board post.                                                           |
+|                       | -   Univariate and bivariate analyses (descriptive statistics, correlations, related plots).                                                    |                                                                                      |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| October 26            | -   RT2 Story: What the heck is going on with Anesthesia research?!                                                                             | -   Chapter 14.                                                                      |
+|                       | -   Discussion board post discussion.                                                                                                           |                                                                                      |
+|                       | -   Introduction to probability (basics of probability theory, common distributions, Bayesian vs Frequentist paradigms).                        | -   Chapter 12 and 13 exercises.                                                     |
+|                       |                                                                                                                                                 |                                                                                      |
+|                       |                                                                                                                                                 | -   Discussion board post.                                                           |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| November 2            | -   RT2 Story: Paper mills and predatory journals.                                                                                              | -   Chapters 15 and 16.                                                              |
+|                       | -   Discussion board post discussion.                                                                                                           | -   Chapter 15 and 16 exercises (optional).                                          |
+|                       | -   Categorical data analysis, comparing $n$ means (t-tests, ANOVA), non-parametric tests.                                                      | -   Discussion board post.                                                           |
+|                       | -   Random assignment.                                                                                                                          |                                                                                      |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| November 9            | ### **Student Presentations - Round 1**                                                                                                         | -   No additional work beyond preparing for your presentation.                       |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| November 16           | **QUIZ #3 in class** (covers material from Oct 19, Oct 26, and Nov 2).                                                                          | -   Chapters 10 and 17.                                                              |
+|                       |                                                                                                                                                 | -   Chapter 10 and 17 exercises (optional).                                          |
+|                       | -   Discussion board post discussion.                                                                                                           | -   Chapter 15 and 16 exercises.                                                     |
+|                       | -   Linear regression and ANCOVA.                                                                                                               | -   Discussion board post.                                                           |
+|                       | -   Possible guest lecture: Pei-Hsun Hsieh, PhD on simple scraping and text analysis.                                                           |                                                                                      |
+|                       | -   Tabulating and preparing results with R Markdown.                                                                                           |                                                                                      |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| November 21 (Tuesday) | **Thur-Fri class schedule on Tue-Wed.**                                                                                                         | -   Chapters 18 and 19.                                                              |
+|                       |                                                                                                                                                 | -   Chapter 10 and 17 exercises.                                                     |
+|                       | -   Discussion board post discussion.                                                                                                           | -   Chapter 18 and 19 exercises (optional).                                          |
+|                       | -   Logistic regression and interactions.                                                                                                       | -   Discussion board post.                                                           |
+|                       | -   More on R Markdown (maybe even a little Quarto).                                                                                            |                                                                                      |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| November 30           | **QUIZ #4 in class** (covers material from Nov 16, Nov 21, and Nov 30).                                                                         | -   Chapter 20.                                                                      |
+|                       |                                                                                                                                                 | -   Chapter 18 and 19 exercises.                                                     |
+|                       | -   Discussion board post discussion.                                                                                                           | -   Discussion board post.                                                           |
+|                       | -   Introduction to Bayesian inference (analysis of contingency tables, t-tests, ANOVAs, and regressions).                                      |                                                                                      |
+|                       |                                                                                                                                                 |                                                                                      |
+|                       | ***Students who wish to improve their grade can do another RT2 presentation on this day.***                                                     |                                                                                      |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| December 7            | Last Day of Class.                                                                                                                              | -   No additional work beyond preparing for your presentation.                       |
+|                       |                                                                                                                                                 |                                                                                      |
+|                       | ### **Student Presentations - Round 2.**                                                                                                        |                                                                                      |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+

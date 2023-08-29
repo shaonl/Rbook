@@ -1,0 +1,255 @@
+# Strings & Comparisons {#sec-ops}
+
+## Strings
+
+![](images/strings.png)
+
+As we discussed in @sec-dts, character values are stored in objects known as *strings* in R. Let's go over a few key things with strings.
+
+First, let's remember that string values are surrounded by quotes, such as `x <- "Hello, World"`. These can also be single quotes, such as `y <- 'Hello, World'.` However, you CANNOT combine double quotes on one end of the value and single quotes on the other, such as `z <- 'Hello, World"`. So, make sure you are consistent. I recommend using double quotes consistently, as R will always print and store the value with double quotes, even if you store the variable using single quotes.
+
+What if you want to store quote within a quote? In this case, you can use the standard grammar rules of American English. According to [Brittney Ross from *grammarly*](https://www.grammarly.com/blog/quotation-within-quotation/#:~:text=In%20American%20English%2C%20use%20double,marks%20for%20quotations%20within%20quotations.), in American English, we use double quotation marks for quotes, and single quotation marks for quotes within quotes. Here's an example.
+
+```{r}
+a <- "Invoking the Bard, she replied 'To thine own self be true.'"
+a
+```
+
+Notice that simply running the object name returns its value, in the same way that `print()`does. We can check the length of a string with the `nchar()` function.
+
+```{r}
+nchar(a)
+```
+
+We can also check if a character or sequence of characters exist in a given string using the `grepl()` function, in which the first argument is the character/sequence of interest, and the second argument is the string. Evaluating this expression returns a logical value.
+
+```{r}
+grepl("Bard", a)
+grepl("Z", a)
+
+```
+
+To combine strings, we can use the `paste()` function, where the arguments are the string objects to be combined. This is also called *concatenating* or *merging* multiple strings.
+
+```{r}
+# Let's create two new string objects b and c.
+
+b <- "Demurely and without hesitation, I invoked Jonson 'There is no greater hell than to be a prisoner of fear.'"
+
+c <- "That ended the conversation rather quickly."
+
+# Now we combine the three
+
+d <- paste(a,b,c)
+
+d
+```
+
+Note that the `paste()` function concatenates strings with a space by default. If we don't want spaces by default, we can use the `paste0()` function which does not separate strings by spaces, by default.
+
+```{r}
+
+paste0("Remove", "All", "Spaces", "Now", "!", "!", "!")
+```
+
+The `stringr` package also has a number of useful functions for manipulating strings. One thing I find especially helpful in this package is the ability to convert the characters in a string to lowercase, uppercase, or title case. This is especially helpful if you have values with inconsistent punctuation. Here's an example.
+
+```{r}
+# A string with inconsistent punctuation
+library(stringr)
+
+e <- "WOW, tHiS Is qUiTE a mESsY oNe."
+
+# Let's str_to_lower() function to make all characters lowercase.
+
+f <- str_to_lower(e)
+f
+
+# Now we use the str_to_upper() function to make all characters uppercase. 
+
+g <- str_to_upper(f)
+g
+
+# Finally, we use the str_to_title() function to make all characters title case.
+
+h <- str_to_title(g)
+h
+```
+
+(gsub stuff)
+
+## Comparisons
+
+![](images/comparisons.png)
+
+Very often we are interested in comparing two quantities in R. For instance, we may compare a variable to a value, or two variables to one another. We can also use Boolean operators in constructing our comparisons. Boolean operators are words like *AND*, *NOT*, and *OR* that are used as conjunctions commonly to create advanced search terms. However, we can also use them in creating comparisons.
+
+### Comparison Operators
+
+To start, let us remind ourselves of common operators used in comparisons, as well as the three common Boolean operators, seen in @tbl-ops.
+
+| Operator (R code) | Description              |
+|-------------------|--------------------------|
+| ==                | Equals to                |
+| !=                | Not equal to             |
+| \<                | Less than                |
+| \>                | Greater than             |
+| \<=               | Less than or equal to    |
+| \>=               | Greater than or equal to |
+| !                 | NOT                      |
+| \|                | OR                       |
+| &                 | AND                      |
+
+: Operators used for comparisons in R. {#tbl-ops}
+
+You can use these to compare values or objects. Comparisons result in a logical value being returned.
+
+```{r}
+# Comparing values
+
+12 > 4
+
+4.32 == (16.03/4)
+
+pi^pi <= (4 * pi) / (pi + 4)
+
+# Comparing objects
+
+a <- 453
+
+b <- 4 * 23
+
+a >= b
+
+## The objects being can be vectors of the same length. This will return a vector of logical values.
+
+c <- mtcars$mpg > mtcars$wt
+print(c)
+
+# Booleans can be used to create multiple conditions for the comparison.
+
+d <- 500
+e <- 50
+
+# This evaluates to FALSE becase d > 100.
+d < 100 & e < 100
+
+# This evaluates to TRUE because at least one of {d,e} < 100. 
+d < 100 | e < 100
+
+# This evaluates to TRUE because d > e.  
+
+d != e
+
+```
+
+### Comparisons in Conditional Statements
+
+Comparisons are commonly used within `if` and `if else` statements. These are conditional statements that specify a condition that must be satisfied, and then list rules for what happens if the condition is satisfied and what happens when it is not satisfied. The logic of the `if else` statement in show in @fig-ifelse.
+
+![The simple and elegant logic of the If Else statement.](images/ifelse.png){#fig-ifelse}
+
+Let's have a look at some simple If Else statements involving comparisons. Note that the If and Else blocks are surrounded by curly braces `{ }`.
+
+```{r}
+
+# First, we create some variables.
+
+f <- 25
+g <- 50
+h <- 10
+
+# Now let's try a simple If Else statement comparing the variables.
+
+if (g < f) {                     # Here comes the If block
+  print("g is less than f")
+} else {                         # Here comes the Else block
+  print("g is greater than f")
+}
+
+
+if (g < h) {                     # Here comes the If block
+  print("g is less than h")
+} else {                         # Here comes the Else block
+  print("g is not less than h")
+}
+
+```
+
+We can also add more conditions with the `else if` statement, which basically tells R "If the previous condition is not true, here's another condition with a rule." Let's add an Else If statement to the example above.
+
+```{r}
+# First, we create some variables.
+
+f <- 25
+g <- 50
+i <- 50
+
+# Now we add some Else If statements to our IF statement.
+
+if (g < i) {
+  print("g is less than i")
+} else if (g > i) {
+  print("g is greater than i")
+} else if (g == i) {
+  print("g is equal to i")
+}
+
+# You might say that the third Else If condition above can just be an Else statement, since if g !< i & g !> i, it must be that g == i. This is true! Let's write it that way.
+
+if (g < i) {
+  print("g is less than i")
+} else if (g > i) {
+  print("g is greater than i")
+} else {
+  print("g is equal to i")
+}
+
+```
+
+We can also add the AND operator `&` and OR operator `|` to the conditional statements.
+
+```{r}
+# Let's create some variables.
+
+j <- 100
+k <- 200
+l <- 150
+
+# Now we use & (AND) in our if else statement.
+
+if (j < l & j < k) {
+  print("j is the lowest")
+} else if (j > l & j > k) {
+  print("j is the highest")
+} else {
+  print("j is the middle value")
+}
+
+# Now we use | (OR) in our if else statement.
+
+if (l < k | l < j) {
+  print("l is less than at least one other value")
+} else {
+  print("l is the highest")
+}
+
+```
+
+That about wraps it up for Strings and Comparisons. As always, don't forget to...
+
+![](images/manx2.png)
+
+## Exercises {#sec-sboex}
+
+As always, it's a good idea to attempt these while the material is still fresh. You can find the answers in @sec-appendixops.
+
+1.  Create a variable called `MarySue1` with the value `"Dr Mary Sue Coleman, former president of the University of Michigan once said"`. Then, create another variable called `MarySue2` with the value `"For today, goodbye. For tomorrow, good luck. And Forever, Go Blue!"`. Then find the number of characters in each variable using the `nchar()` function. Then, check if the letter 'r' is present in each variable, and report the results.
+
+2.  Create a variable called `MarySue3` whose value is a concatenation (combination) of `MarySue1` and `MarySue2` using the `paste()` function, in which the arguments are the variables separated by a comma. Then, print the value for `MarySue3`.
+
+3.  Let's do a variation of Mad Libs I will call Mad Sentences. Install and load the `keyToEnglish` package (be mindful of the capitalization in this package's name). Then create three variables named after your three favorite cuisines. For each variable, assign the value `generate_random_sentences(n = 2, punctuate = TRUE)` to generate two random sentences per variable. This will produce a total of six sentences (two per variable). Finally, create a variable called `madsentences` whose value combines (pastes) all three variables. Print `madsentences`. If it sounds nonsensical, then it worked!
+
+4.  Let's compare the returns from simple vs compound interest after five years. First, define `p` as `1000`, `r` as `.07` and `t` as 5. Then Create a variable called `simple` with the value `p * r * t`. Next, create a variable `compound` with the value `p * (1 + r)^t - p`. Then, perform a logical test to see if `simple` is equal to `compound`, and write out the results of the test in one sentence.
+
+5.  Retain the variables you created above and write a series of conditional (If else/Else If) statements according to the following rules: 1) If `simple` is less than `compound`, print the statement "Simple interest is less than compound interest"; 2) If `simple` is greater `compound`, print the statement "Simple interest is greater than compound interest"; 3) If `simple` is equal to `compound`, print the statement "Simple interest is equal to compound interest".

@@ -1,0 +1,117 @@
+# Answers for @sec-joinex {#sec-appendixjoinex}
+
+The following are answers to the exercises in @sec-joinex.
+
+1.  Assign the built-in dataframe `Orange` to an object named whatever you want. This dataframe relates to the age and circumference of orange trees. First, with respect to the specific tree, is the dataframe in long or wide format? Please explain your answer.
+
+```{r}
+
+tree <- Orange
+
+head(tree)
+
+# The dataframe appears to be in long format, as each tree has multiple rows.
+```
+
+2.  Once again with respect to individual trees, reshape the dataframe. If you believe it is in long format, reshape to wide (hint: this is the correct answer). Assign the reshaped dataframe to a new object with a name that indicates the reshaped nature of the data (e.g., "tree_wide"). What you want to see is a dataframe where each row corresponds to age, and separate columns listing the circumference of each tree. Use an approach you have seen to name each column "Tree (number) circumference". For example, the first tree column should be named "Tree 1 circumference", the second should be called "Tree 2 circumference", and so on. Once you have finished, use the `head()` function to show the first five rows of the reshaped dataframe.
+
+```{r, warning = FALSE, message = FALSE}
+
+library(tidyverse)
+
+tree_wide <- tree %>%
+   pivot_wider(
+    names_from = Tree,
+    values_from = circumference,
+    names_glue = "Tree {Tree} {.value}"
+    )
+
+head(tree_wide, n = 5)
+
+```
+
+3.  Let's go backwards. Take the wide dataframe from Question 2, and reshape into long format, assigning this to a new object with a name noting that the new dataframe is in long format (e.g. "tree_long"). Here, we want each row to correspond to a tree, and separate columns for age and circumference, labelled as such. Then, use a command that you've seen before to make the new tree column come first in order in the dataframe. Finally, use the `head()` to show the first five rows of the new dataframe.
+
+```{r}
+
+tree_long <- tree_wide %>%
+  pivot_longer(
+    cols = c("Tree 1 circumference", 
+             "Tree 2 circumference", 
+             "Tree 3 circumference",
+             "Tree 4 circumference",
+             "Tree 5 circumference"),
+    names_to = "Tree",
+    names_pattern = "[^Tree](.)",   ## This is basically saying take the former column labels (Tree 1 circumference, Tree 2 circumference, etc.), exclude the word Tree [^Tree], and keep the first character after the word 'Tree', and nothing else.
+    values_to = "Circumference"
+    ) %>%
+  relocate(Tree, .before = everything()  ## This puts the Tree column first in order.
+           )
+
+head(tree_long, n = 5)
+
+```
+
+4.  Let's go back to the original `Orange` dataframe, or the object to which you initially assigned it. Next, we're going to create two new dataframes `tree2` and `tree3` using the code below. We're also going to create an ID variable for the two dataframes with the same rows in order to have unique indices for each row.
+
+```{r}
+
+tree <- Orange
+
+newage <- tree$circumference/2.5
+treeid <- tree$Tree
+
+tree2 <- data.frame(Tree = treeid,
+                    "Age_years" = newage)
+
+
+tree3 <- data.frame(Tree = c(rep(6, 7)),
+                    "Age_years" = c(10.4, 
+                                      21.2, 
+                                      30.4, 
+                                      41.3, 
+                                      55.8, 
+                                      66.7,
+                                      71.4),
+                    ID = c(seq(from = 36, to = 42)
+                           )
+                    )
+tree3$Tree <- ordered(tree3$Tree) ## This will make the Tree column in tree3 the same class as the Tree column in the original dataframe. This is needed for merging.
+
+## This creates an ID variable in the original dataframe and in tree2.
+tree$ID <- 1:nrow(tree)
+tree2$ID <- 1:nrow(tree2)
+```
+
+5.  Create a new dataframe `tree4` that merges `tree2` with the `Orange` dataframe or whatever object you assigned it to. Note, what we want here is to add a new column `Age (Years)` to the same rows or observational units. The `ID` variable we created above should be used to link the dataframes. Once the merge is complete, print the first six rows of the merged dataframe to make sure it worked.
+
+```{r}
+
+tree4 <- tree %>%
+  left_join(tree2,
+            by = c("ID" = "ID")
+            )
+
+head(tree4, n = 6)
+
+# While this is fine and links the data well, we do have duplicate Tree columns. Since the two dataframes are arranged in the same order (i.e. the ID variables are both sequentially sorted in each dataframe), we can also use the simpler cbind() function. This code takes the unique column from tree2 and binds it to the tree dataframe.
+
+tree4 <- cbind(tree, tree2$Age_years)
+
+## Let's move ID to the front and clean up the Age_years variable name.
+
+tree4 <- tree4 %>%
+  relocate(ID, .before = everything()) %>%
+  rename("Age (years)" = `tree2$Age_years`)
+
+head(tree4, n = 6)
+```
+
+6.  Now create a new dataframe `tree5` which appends rows from `tree3` to the `tree2` dataframe we created in Question 2. Once the merge is complete, print the *last* seven rows of the merged dataframe to make sure it worked.
+
+```{r}
+
+tree5 <- rbind(tree2, tree3)
+
+tail(tree5, n = 7)
+```

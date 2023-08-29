@@ -1,0 +1,86 @@
+# Answers for @sec-sboex {#sec-appendixops}
+
+1.  Create a variable called `MarySue1` with the value `"Dr Mary Sue Coleman, former president of the University of Michigan once said"`. Then, create another variable called `MarySue2` with the value `"For today, goodbye. For tomorrow, good luck. And Forever, Go Blue!"`. Then find the number of characters in each variable using the `nchar()` function. Then, check if the letter 'r' is present in each variable, and report the results.
+
+```{r}
+MarySue1 <- "Dr Mary Sue Coleman, former president of the University of Michigan once said"
+
+MarySue2 <- "For today, goodbye. For tomorrow, good luck. And Forever, Go Blue!"
+
+nchar(MarySue1)
+nchar(MarySue2)
+
+# There are 77 characters in MarySue1 and 66 characters in MarySue2.
+
+
+grepl('r', MarySue1)
+grepl('r', MarySue2)
+
+# The letter r is present in both variables MarySue1 and MarySue2.
+```
+
+2.  Create a variable called `MarySue3` whose value is a concatenation (combination) of `MarySue1` and `MarySue2` using the `paste()` function, in which the arguments are the variables separated by a comma. Then, print the value for `MarySue3`.
+
+```{r}
+MarySue3 <- paste(MarySue1, MarySue2)
+print(MarySue3)
+```
+
+3.  Create a string vector called `basho` and assign it the value `"An old silent pond. A frog jumps into the pond—Splash! Silence again."` Then create and print another variable called `basho2` in which the word 'frog' has been replaced by 'buffalo', and the word 'Splash!' has been replaced by 'Yikes!'.
+
+```{r}
+
+basho <- "An old silent pond. A frog jumps into the pond—Splash! Silence again."
+
+basho2 <- basho
+
+gsub('frog', 'buffalo', basho2)
+gsub('Splash!', 'Yikes!', basho2)
+
+print(basho2)
+```
+
+4.  Let's do a variation of Mad Libs I will call Mad Sentences. Install and load the `keyToEnglish` package (be mindful of the capitalization in this package's name). Then create three variables named after your three favorite cuisines. For each variable, assign the value `generate_random_sentences(n = 2, punctuate = TRUE)` to generate two random sentences per variable. This will produce a total of six sentences (two per variable). Finally, create a variable called `madsentences` whose value combines (pastes) all three variables. Print `madsentences`. If it sounds nonsensical, then it worked!
+
+```{r, warning = FALSE}
+
+library(keyToEnglish)
+
+indian <- generate_random_sentences(n = 2, punctuate = TRUE)
+chinese <- generate_random_sentences(n = 2, punctuate = TRUE)
+korean <- generate_random_sentences(n = 2, punctuate = TRUE)
+
+madsentence <- paste(indian, chinese, korean)
+print(madsentence)
+```
+
+5.  Let's compare the returns from simple vs compound interest after five years. First, define `p` as `1000`, `r` as `.07` and `t` as 5. Then Create a variable called `simple` with the value `p * r * t`. Next, create a variable `compound` with the value `p * (1 + r)^t - p`. Then, perform a logical test to see if `simple` is equal to `compound`, and write out the results of the test in one sentence.
+
+```{r}
+
+p <- 1000
+r <- 7 / 100
+t <- 5
+
+simple <- p * r * t
+
+compound <- p * (1 + r)^t - p
+
+simple == compound
+
+# Simple interest is not equal to compound interest in five years at a principal of 1000 (dollars) and a rate of seven percent.
+
+```
+
+6.  Retain the variables you created above and write a series of conditional (If else/Else If) statements according to the following rules: 1) If `simple` is less than `compound`, print the statement "Simple interest is less than compound interest."; 2) If `simple` is greater `compound`, print the statement "Simple interest is greater than compound interest."; 3) If `simple` is equal to `compound`, print the statement "Simple interest is equal to compound interest."
+
+```{r}
+
+if (simple < compound) {
+  print("Simple interest is less than compound interest")
+} else if (simple > compound) {
+  print("Simple interest is greater than compound interest")
+} else {                             # could also be else if (simple == compound)
+  print("Simple interest is equal to compound interest")
+}
+```

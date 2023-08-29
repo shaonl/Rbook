@@ -1,0 +1,52 @@
+# Answers for @sec-introex {#sec-appendixa}
+
+1.  Calculate $89+9/(4*5)^2$ and assign the value to the object `solution1`. Then print `solution1`.
+
+```{r, eval=FALSE }
+solution1 <- (89+9)/(4*5)^2 
+print(solution1)
+```
+
+2.  What is the difference between R and R Studio?
+
+*Base R refers to the statistical programming language and application installed on your computer to process the R programming language. RStudio is an Integrated Development Environment (IDE) that integrates with R to provide much more functionality. You can use base R without RStudio, but not the other way around.*
+
+3.  How do you add a comment to a Script file?
+
+```{r, eval=FALSE }
+# Just add a hash/pound sign to the left. 
+#### You can add more hashes for aesthetic purposes ####
+
+# Multi-line comments require a hash 
+# starting on the left of each line.
+```
+
+4.  What are packages in R, and how do you install them?
+
+*R packages are user-written collections of functions, compiled code, and sample data. There are over 9000+ packages in R and counting. We use packages for specific things we want to do that we cannot accomplish with the functions in base R, or to do things easier or more efficiently than base R functions.*
+
+*Most packages that have been vetted and checked are available on the Comprehensive R Archive Network (CRAN), which is the central R package repository." "In most cases, installing a package in R is accomplished with the following code* `install.packages("name of package")`.
+
+5.  Install and load the package `rstudioapi`.
+
+```{r, eval=FALSE }
+install.packages("rstudioapi")
+library(rstudioapi)
+```
+
+6.  How do you modify the appearance of R Studio?
+
+*Tools --\> Global Options --\> Appearance --\> Editor Theme.*
+
+7.  Assign the value of `365` to an object called `year`. Then, create another object called `months` and assign it the value `year * 0.032854884083862`.
+
+```{r, eval=FALSE }
+year <- 365
+month <- year * 0.032854884083862
+```
+
+8.  Create three variables named `Cowboys`, `Giants`, and `Commanders` and assign them all the value `"Inferior Team"` using multiple assignment operators.
+
+```{r}
+Cowboys <- Giants <- Commanders <- "Inferior Team"
+```

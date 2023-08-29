@@ -1,0 +1,163 @@
+# Data Exploration with `dplyr` {#sec-dataexp}
+
+The `dplyr` package is a great tool for organizing and manipulating our dataframe. Note, I use the term *manipulate* not to convey anything nefarious or unethical, but in the sense of *data management*. The functions of this package are named after useful verbs, making them relatively easy to remember. Some common `dplyr` functions are listed in @tbl-dplyrf.
+
+| `dplyr` Function | Description                                                   |
+|-------------------|-----------------------------------------------------|
+| `arrange()`      | Change the order of rows.                                     |
+| `filter()`       | Select rows based on column values.                           |
+| `mutate()`       | Change the values in certain columns, and create new columns. |
+| `relocate()`     | Change the order of columns.                                  |
+| `rename()`       | Change the name of columns.                                   |
+| `select()`       | Include or exclude a column.                                  |
+| `slice()`        | Select rows based on location.                                |
+| `summarise()`    | Collapse a group into a single row.                           |
+| `group_by()`     | Select a grouping variable to perform an operation by group.  |
+
+: dplyr's useful functions with their description. {#tbl-dplyrf}
+
+Let's look at some examples with the built-in `mtcars` dataframe.
+
+## Filter() & Arrange()
+
+```{r, message = FALSE, warning = FALSE}
+
+library(dplyr)
+
+# Load mtcars dataframe. Assign it to an object.
+df <- mtcars
+
+# Let's look at cars with only eight cylinders.
+df %>%
+  filter(cyl == 8)
+
+# Let's add to that, and order the dataframe by mpg in descending order (highest to lowest). To do this, we embed the desc() function within arrange(). For ascending order, no need for the desc() function.
+
+df %>%
+  filter(cyl == 8) %>%
+  arrange(desc(mpg))
+```
+
+## Mutate() & Rename()
+
+```{r}
+# Now let's add a new column called kpl (kilometers per litre) using mutate(). A quick Google search tells me that going from mpg to kpl involves dividing mpg by 2.352.  
+
+df %>%
+  filter(cyl == 8) %>%
+  arrange(desc(mpg)) %>%
+  mutate(kpl = mpg / 2.352) %>%
+  head()
+
+# Let's add a new name for the wt variable called weight.
+df %>%
+  filter(cyl == 8) %>%
+  arrange(desc(mpg)) %>%
+  mutate(kpl = mpg / 2.352) %>%
+  rename(weight = wt) %>%
+  head()
+```
+
+## Select() & Slice()
+
+```{r}
+
+# Let's now only select a few variables using select()
+
+df %>%
+  select(mpg, cyl, wt) %>%
+  head()
+
+## If we want to select all but a few variables, we can still use select. Let's say I want all variables except mpg, cyl, and wt. I just need to add a minus before each variable name.
+
+df %>%
+  select(-mpg, -cyl, -wt)
+
+# If we want to select certain rows of a dataframe, we can do this with slice() by mentioning the index number of the columns. If we want to know the row number based on a column value (e.g. mpg > 20), we can use the which() function where you can write the column, relational operator, and value.
+
+which(df$mpg > 20)
+
+df %>%
+  slice(1:4,
+        8,
+        9,
+        18:21,
+        26:28,
+        32) %>%
+  print()
+
+# Similarly, if you want to know which rows have the value 'NA' which indicates missing data for a particular column, we can wrap the is.na() function within the which() function like this.
+
+## Let's add some NAs to the disp variable first.
+
+df[c(5,8,21:22), 3] <- NA
+
+## Now we will see which rows in disp have NA. 
+
+which(is.na(df$disp))
+
+## Often we want to know the highest and lowest values of a variable. We can use slice_min() for the lowest values and slice_max() for the highest values. The first argument is the column and the second is how many rows you want (e.g. n = 5).
+
+## The five cars with the lowest mpg.
+
+df %>%
+  slice_min(mpg, n = 5)
+
+## The five cars with the highest mpg.
+
+df %>%
+  slice_max(mpg, n = 5)
+```
+
+## Relocate() and Summarise()
+
+```{r}
+# If I want to change the order of how some columns appear in the dataframe, I can do so with relocate() where the first argument is the column(s) to move, and the second argument specifies the intended new location with either .before or .after to indicate where you want to place the columns. 
+
+## Let's move wt to the front.
+
+df %>%
+  relocate(wt, .before = everything()
+           )
+
+## Let's move wt to before disp.
+
+df %>%
+  relocate(wt, .before = disp)
+
+## Let's move wt to after qsec
+
+df %>%
+  relocate(wt, .after = qsec)
+
+# Let's use the summarise() and group_by() functions to get a summary of the weight of each car (wt) grouped by cylinders (cyl), and rounded to two decimal places.
+
+df %>%
+  group_by(cyl) %>%
+  summarise(mean_weight = mean(wt)) %>%
+  round(digits = 2)
+```
+
+Thus, we can see that the `dplyr` package offers several useful functions to manage our data. Remember, that if you want any changes to be reflected in your dataframe, such as renaming a variable, remember to assign your `dplyr` code to your dataframe. For example, if I want the name change for `wt` to `weight` to stick, I would assign that to the dataframe like this:
+
+```{r, eval = FALSE}
+
+df <- df %>%
+  rename(weight = wt)
+```
+
+![](Images/manx2.png)
+
+## Exercises {#sec-tidyex}
+
+As always, it's a good idea to attempt these while the material is still fresh. You can find the answers in @sec-appendixtidyexp.
+
+1.  Load the `tidyverse` package. Then assign the built-in dataframe `starwars` to an object named whatever you want. Then subset the dataframe by human species only. Save the subsetted dataframe as an object called `swhuman`. Then calculate and report the mean and median height in `swhuman`. Also report an NAs (missing data) in the height variable. *Note: the units for the height variable are centimeters.*
+
+2.  Hopefully you noticed that there are indeed some NAs in the `swhuman` dataframe! Detect which rows have NAs for the height variable, and write the names of the characters that have this. Next, let's fix these errors. Perform an internet search and populate those NAs with plausible values. If you need to convert from feet to centimeters, multiply the value in feet by 30.48. If you absolutely cannot find the height of any character substitute the median height from Question 1 for their height.
+
+3.  Once you have filled in this missing data, calculate the new mean and median for the height variable. Comment on how much of a difference the additional values made on the mean and median compared with the values you calculated in Question 1. Then determine the three shortest characters, and three tallest characters.
+
+4.  Return to the larger `starwars` dataframe or whatever object to which you assigned it. Determine which characters have NA for height. If there are any characters with NA for height (hint: there are), enter plausible values for their heights using the approach taken in Question 2. Then report the mean and median height across everyone in this dataframe.
+
+5.  Still working with the `starwars` dataframe, convert the `species` variable to factor. Then, group and summarise the mean height by species, and print this in descending order. Report which species is the tallest, on average. Then, rearrange and report the species which is the shortest, on average.
