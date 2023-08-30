@@ -337,7 +337,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><img src="images/carstapestry.png" class="img-fluid figure-img"></p>
+<p><img src=".\Images/carstapestry.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Which built-in R dataframe am I invoking with this image?</figcaption>
 </figure>
 </div>
@@ -345,7 +345,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Usually, there is some link such as an ID number for each observational unit that links the dataframes, but not always. Terminologically, combining data is often called <em>merging, appending, or joining.</em> The latter is commonly used with other programming languages like SQL, so we’ll stick to calling it joining or different types of data joins. Four commonly used types of data joins are presented in <a href="#fig-jointypes">Figure&nbsp;<span>7.1</span></a>.</p>
 <div id="fig-jointypes" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="images/joins.png" class="img-fluid figure-img"></p>
+<p><img src=".\Images/joins.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;7.1: Four common data join types. There are others, but we’ll leave those aside for now.</figcaption>
 </figure>
 </div>
@@ -429,7 +429,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"ID"</span> <span class="ot">=</span> <span class="st">"ID"</span>)</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>             )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><img src="images/df6_merge.png" id="fig-mergedf6" class="img-fluid"></p>
+<p><img src=".\Images/df6_merge.png" id="fig-mergedf6" class="img-fluid"></p>
 <p>The merged dataframe df6 only retained the nine common rows between df2 and df3 (1:9). All other rows were deleted. Additionally, this function took all the columns in df2 and added them to df3, even if they are the same columns. In this case, R adds a little suffix to indicate the provenance of each column (.x and .y). This is not the most useful join, as you can see that it drops observations. However, it can be useful to examine the intersection of two dataframes.</p>
 <p>Finally let’s look at a full join which combines everything - the unique aspects of both dataframes as well as the overlap. We will make use of the <code>full_join()</code> function from the <code>dplyr</code> package.</p>
 <div class="cell">
@@ -438,7 +438,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"ID"</span> <span class="ot">=</span> <span class="st">"ID"</span>)</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><img src="images/df7merge.png" class="img-fluid"></p>
+<p><img src=".\Images/df7merge.png" class="img-fluid"></p>
 <p>In contrast with the inner join, the full join has added all rows across both dataframes. It also added all columns with the appropriate <code>.x</code> or <code>.y</code> suffix to columns shared between dataframes. Given that it added all rows, naturally there will be some columns for which there are no values. For example, rows 10:20 are not present in <code>df2</code> and the variable <code>MntFishProducts</code> is present in <code>df2</code>. But after the merge, the values for <code>MntFishProducts</code> for rows 10:20 are missing <code>NA</code>.</p>
 </section>
 <section id="two-common-merging-scenarios" class="level2" data-number="7.3">
@@ -457,7 +457,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"ID"</span> <span class="ot">=</span> <span class="st">"ID"</span>)</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><img src="images/df8merge.png" class="img-fluid"></p>
+<p><img src=".\Images/df8merge.png" class="img-fluid"></p>
 <p>Now, we have a merged dataframe where we have added two new columns (<code>MntWines</code> and <code>MntFishProducts</code> from <code>df2</code>) to <code>df1</code> and matched them based on <code>ID</code>. This is a scenario where you have, for example, multiple dataframes for same individuals.</p>
 <p>Now, let’s look at a situation where we want to append new rows to an existing dataframe. This is a scenario where, for example, you have the same exact set of variables but data for different people across dataframes. First, we’ll modify our existing <code>df3</code> so that it contains the exact same three variables (<code>ID</code>, <code>MntWines</code>, and <code>MntFishProducts</code>) as <code>df2</code>, but just has different rows. We will then use the base R <code>rbind()</code> function to append rows from <code>df3</code> to <code>df2</code>.</p>
 <div class="cell">
@@ -469,7 +469,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>df9 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(df2, df3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><img src="images/df9merge.png" class="img-fluid"></p>
+<p><img src=".\Images/df9merge.png" class="img-fluid"></p>
 <p>As we see from the screenshot above, we have now appended rows 10:20 from <code>df3</code> to rows 1:9 from <code>df2</code>.</p>
 </section>
 <section id="reshaping-data" class="level2" data-number="7.4">
@@ -589,7 +589,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>And just like that, we are back to long format using the <code>pivot_longer()</code> function. Remember, reshaping is mainly about readability and preparing the data for particular statistical procedures. Some procedures require the data to be in long format, while others require the data to be in wide format. Therefore, it’s useful to know how to transition from one format to another.</p>
-<p><img src="Images/manx2.png" class="img-fluid"></p>
+<p><img src=".\Images/manx2.png" class="img-fluid"></p>
 </section>
 </section>
 <section id="sec-joinex" class="level2" data-number="7.5">
