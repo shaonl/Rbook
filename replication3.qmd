@@ -9,7 +9,7 @@ If you read the paragraph above, you might be wondering why I made the words **c
 
 The statistics we will be discussing in this course are all based on the frequentist paradigm, because that is still the way most scientists do statistics, and it's definitely worth knowing. If you are interested, an alternative approach to probability that pre-dates the frequentist paradigm, and is recently gaining a lot of ground across the sciences is the **Bayesian** paradigm, stemming from a [theorem](https://www.mathsisfun.com/data/bayes-theorem.html) by English Presbyterian minister and statistician Thomas Bayes (1701 - 1761). In the Bayesian approach, probability is related to our degree of belief in something happening. If we are trying to estimate a parameter (let's say the average height of all Swedes), the Bayesian approach treats this parameter as a random variable, and estimates of this parameter are influenced by our prior knowledge of Swedes' height. In the frequentist approach, the parameter we are trying to estimate is fixed, and we can eventually estimate it given enough studies sampling from the population of Swedes.
 
-![Thomas Bayes' theorem was the catalyst for Bayesian statistics, which has since gained a lot of steam with advances in computing power.](Images/bayes.gif){fig-align="center"}
+![Thomas Bayes' theorem was the catalyst for Bayesian statistics, which has since gained a lot of steam with advances in computing power.](/Images/bayes.jpg){fig-align="center" width="379"}
 
 While an introduction to Bayesian statistics is outside the scope of this book, some of my favorite books on the subject are [*Doing Bayesian Data Analysis by John Kruschke*](https://sites.google.com/site/doingbayesiandataanalysis/)and [*Statistical Rethinking by Richard McElreath*](https://www.routledge.com/Statistical-Rethinking-A-Bayesian-Course-with-Examples-in-R-and-STAN/McElreath/p/book/9780367139919).
 :::
@@ -27,7 +27,7 @@ If the sample data provide enough evidence against the null hypothesis, we say t
 
 How do we judge if the data provide evidence for the hypothesis? The method of NHST involves the computation a **test statistic**, or number that quantifies how close the data match the distribution implied by the null hypothesis (this is commonly a normal or Gaussian distribution). The test statistic allows for the calculation of a **p-value**, or ***probability of observing a test statistic at least as extreme or more extreme as the one observed, assuming the null hypothesis true***. @harrell_statistical_2017 @lakens_practical_2021 If the p-value is less than a particular threshold (typically 0.05, or a one-in-twenty chance, and denoted by the Greek letter alpha $\alpha$), then we can say that the p-value is **statistically significant.** This is illustrated in @fig-straw.
 
-![Null Hypothesis Significance Testing is akin to Proof by Contradiction.](Images/strawman.png){#fig-straw}
+![Null Hypothesis Significance Testing is akin to Proof by Contradiction.](/Images/strawman.png){#fig-straw}
 
 ::: {#fig-null .callout-important}
 ## Why can't we ever accept the null hypothesis?

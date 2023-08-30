@@ -1,12 +1,12 @@
 # Merging (Joining) and Reshaping Data {#sec-datajoin}
 
-![Which built-in R dataframe am I invoking with this image?](images/carstapestry.png){fig-align="left" width="685"}
+![Which built-in R dataframe am I invoking with this image?](/Images/carstapestry.png){fig-align="left"}
 
 The data analyst's task is often to combine multiple dataframes. We've already seen how to combine rows and columns with matrices in @sec-mats. Those of course are homogenous data structures (all elements have to be the same type). With dataframes we can have multiple types of data structures, and we commonly want to combine multiple dataframes. If two dataframes are already in the same order, and have the exact same number of rows, we can still use the `cbind()` function to append multiple columns. It's usually safer to merge dataframes based on a key (usually an ID variable), but if the dataframes are sorted in the same order, and have the same number of rows, go ahead and trying the `cbind()` function.
 
 Usually, there is some link such as an ID number for each observational unit that links the dataframes, but not always. Terminologically, combining data is often called *merging, appending, or joining.* The latter is commonly used with other programming languages like SQL, so we'll stick to calling it joining or different types of data joins. Four commonly used types of data joins are presented in @fig-jointypes.
 
-![Four common data join types. There are others, but we'll leave those aside for now.](images/joins.png){#fig-jointypes}
+![Four common data join types. There are others, but we'll leave those aside for now.](/Images/joins.png){#fig-jointypes}
 
 ## Left and Right Joins
 
@@ -59,7 +59,7 @@ df6 <- df3 %>%
 
 ```
 
-![](images/df6_merge.png){#fig-mergedf6}
+![](/Images/df6_merge.png){#fig-mergedf6}
 
 The merged dataframe df6 only retained the nine common rows between df2 and df3 (1:9). All other rows were deleted. Additionally, this function took all the columns in df2 and added them to df3, even if they are the same columns. In this case, R adds a little suffix to indicate the provenance of each column (.x and .y). This is not the most useful join, as you can see that it drops observations. However, it can be useful to examine the intersection of two dataframes.
 
@@ -73,7 +73,7 @@ df7 <- df3 %>%
             )
 ```
 
-![](images/df7merge.png)
+![](/Images/df7merge.png)
 
 In contrast with the inner join, the full join has added all rows across both dataframes. It also added all columns with the appropriate `.x` or `.y` suffix to columns shared between dataframes. Given that it added all rows, naturally there will be some columns for which there are no values. For example, rows 10:20 are not present in `df2` and the variable `MntFishProducts` is present in `df2`. But after the merge, the values for `MntFishProducts` for rows 10:20 are missing `NA`.
 
@@ -96,7 +96,7 @@ df8 <- df1 %>%
             )
 ```
 
-![](images/df8merge.png)
+![](/Images/df8merge.png)
 
 Now, we have a merged dataframe where we have added two new columns (`MntWines` and `MntFishProducts` from `df2`) to `df1` and matched them based on `ID`. This is a scenario where you have, for example, multiple dataframes for same individuals.
 
@@ -113,7 +113,7 @@ df3 <- df3[-c(1:9), -c(4:5)]
 df9 <- rbind(df2, df3)
 ```
 
-![](images/df9merge.png)
+![](/Images/df9merge.png)
 
 As we see from the screenshot above, we have now appended rows 10:20 from `df3` to rows 1:9 from `df2`.
 
@@ -188,7 +188,7 @@ head(ncaabball_long, n = 15)
 
 And just like that, we are back to long format using the `pivot_longer()` function. Remember, reshaping is mainly about readability and preparing the data for particular statistical procedures. Some procedures require the data to be in long format, while others require the data to be in wide format. Therefore, it's useful to know how to transition from one format to another.
 
-![](Images/manx2.png)
+![](/Images/manx2.png)
 
 ## Exercises {#sec-joinex}
 

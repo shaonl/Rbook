@@ -1,6 +1,6 @@
 # Data Cleaning {#sec-cleaning}
 
-![](Images/cleaning.png)
+![](/Images/cleaning.png)
 
 What does it mean to *clean* data? Raw data, or the data you obtain directly from measurement, and has yet to be processed and made *digestible* for human consumption. This is because raw data can missing data, contain errors, weird characters or symbols, personally identifiable information (information that can help identify an individual and break anonymity), or other things that you'd rather not have in there. Therefore, raw data needs to be cleaned (or cleansed or scrubbed) to proceed to data analysis, inference, visualization, and reporting.
 
@@ -187,7 +187,7 @@ df2 <- df1 %>%
   identify_outliers(mpg)
 ```
 
-![](images/outliercars.png)
+![](/Images/outliercars.png)
 
 The resulting data frame shows the seven unique values that are 1.5 and 3 times the IQR (see the two columns added at the end). For our purposes, this helps identify the specific outliers or extreme values. In this case, we have already determined that 500 is an illogical value for the fuel efficiency (miles per gallon) of cars. Thus, we can delete the values and replace them with `NA` to indicate missing values. To accomplish this, let's use the `which()` function and `%in%` operator to identify the rows with a value of 500 for `mpg` from our original dataset. The `which()` function gives us the position or index which satisfies a given condition. Recall that the `%in%` operator checks whether the values in the first argument are present in the second argument, and returns a logical value. When we combine `which()` with the `%in%` operator, and add those into the first argument in square brackets after a dataframe, this will give the specific rows that satisfy a particular condition.
 
@@ -203,7 +203,7 @@ df1[which(df1$mpg %in% 500), 1] <- NA
 
 If we view the resulting dataframe, we can see that the `mpg` variable for the rows in question have all been replaced with `NA` to indicate missing data (indicated with red squares).
 
-![](images/outliercarsmiss.png)
+![](/Images/outliercarsmiss.png)
 
 ## Variable Subsetting, Naming, Transformation & Creation
 
@@ -225,7 +225,7 @@ head(crossfit[, c(1:6)], n = 10)
 Let's say I've also had a more detailed look at the data, either beforehand using a codebook, or after importing the data into R and using the `View()` function. I've decided to conduct a descriptive analysis by examining the competitors with the most competition starts, the highest ranks, as well as some of their demographic characteristics. I decide to analyze the following variables shown in @tbl-crossfit.
 
 | Variable Name       | Description                                                | Variable Type |
-|-----------------|--------------------------------------|-----------------|
+|------------------|-------------------------------------|------------------|
 | competitorId        | Competitor's unique identification number.                 | Factor        |
 | competitorName      | Competitor's full name.                                    | Factor        |
 | gender              | Competitor's gender (male or female only in this dataset). | Factor        |
@@ -455,7 +455,7 @@ The `write.table()` function can be used to export your dataframe to a text file
 write.table(crossfit2, "crossfitdf.txt", sep = "\t")
 ```
 
-![](images/manx2.png)
+![](/Images/manx2.png)
 
 ## Exercises {#sec-cleanex}
 

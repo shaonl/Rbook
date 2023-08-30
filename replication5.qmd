@@ -4,11 +4,11 @@
 
 We've now seen the issues stemming from crises of reproducibility across multiple academic fields. Before we can discuss potential solutions to the many problems, let's take stock of some common problems that hamper reproducibility in @fig-rdofs.
 
-![Figure taken from the report of the symposium, 'Reproducibility and reliability of biomedical research', organised by the Academy of Medical Sciences, BBSRC, MRC and Wellcome Trust in April 2015. Full report [here](https://acmedsci.ac.uk/policy/policy-projects/reproducibility-and-reliability-of-biomedical-research).](Images/rdofs.png){#fig-rdofs width="646"}
+![Figure taken from the report of the symposium, 'Reproducibility and reliability of biomedical research', organised by the Academy of Medical Sciences, BBSRC, MRC and Wellcome Trust in April 2015. Full report [here](https://acmedsci.ac.uk/policy/policy-projects/reproducibility-and-reliability-of-biomedical-research).](/Images/rdofs.png){#fig-rdofs width="646"}
 
 Notice how the issues are arranged in a circle. This is not a coincidence, as such researcher degrees of freedom are present at all steps in the research cycle. Consider the image in @fig-hark, which comes from a 2017 paper in *Nature*. @munafo_manifesto_2017
 
-![Researcher degrees of freedom can happen at any stage of the research process.](Images/hark.png){#fig-hark width="719"}
+![Researcher degrees of freedom can happen at any stage of the research process.](/Images/hark.png){#fig-hark width="719"}
 
 ## HARKing
 
@@ -28,12 +28,12 @@ Additionally, if the unexpected hypothesis $U$ is reported as the *a priori* hyp
 
 There are always chance variations in effect size due to sample size, the underlying odds in the effect being true before the study is even conducted, the composition of the sample, the variation in population effects, and more. Therefore, reporting $U$ as $H$ can be a case of a researcher being fooled by randomness, and reporting spurious effects as real ones.
 
-![](Images/hark2.png)
+![](/Images/hark2.png)
 
 It's also worth noting that authors have since noting some variants of HARKing, which are shown in @tbl-harkvars. @lishner_harking_2021
 
 | Acronym  | Full Form                                       | Description                                                                                                                                                                                                        |
-|----------|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|---------------|---------------|-------------------------------------------|
 | CHARKing | Constructing Hypotheses After Results are Known | This is like the description of HARKing above. Creating hypotheses after the fact and presenting them as having been constructed *a priori*.                                                                       |
 | RHARKing | Retrieving Hypotheses After Results are Known   | Let's say the researchers had previously proposed some hypotheses but then dropped them. After the fact, they might revive those hypotheses and present them as having been known *a priori*.                      |
 | SHARKing | Suppressing Hypotheses After Results are Known  | Not reporting *a priori* hypotheses that were not supported by the results. This could also be not reporting *a priori* hypotheses supported by results just because the researchers didn't like these hypotheses. |
@@ -44,7 +44,7 @@ A key problem of all variations of HARKing is that they can lead to theories tha
 
 ## Publication Bias & the File Drawer Problem
 
-![](Images/filedrawer.png)
+![](/Images/filedrawer.png)
 
 You may be wondering what motivates researcher degrees of freedom such as HARKing? One important consideration is the incentives that researchers have for engaging in researcher degrees of freedom. A key incentive is to be able to publish one's results. In a perfect world perhaps, all results would have an equal opportunity to be published regardless of statistical significance. Unfortunately, this is not the case.
 
@@ -56,13 +56,13 @@ Publication bias thus naturally leads researchers to suppress null or non-statis
 
 When examining the problem empirically based on studies supported by a National Science Foundation program, a group of authors found some troubling results, @franco_publication_2014 seen in @fig-filed.
 
-![Publication bias results in fewer results seeing the light of day!](Images/filedrawerfranco.gif){#fig-filed width="373"}
+![Publication bias results in fewer results seeing the light of day!](/Images/filedrawerfranco.jpg){#fig-filed}
 
 Publication bias is such an extensive problem (and having been recognized in the literature for over 40 years), that researchers are continually developing new methods to detect publication bias in evidence syntheses. @shi_trim-and-fill_2019 @maier_robust_2023 @rodgers_evaluating_2021 Of course, there are other potential solutions to the problem which we'll discuss in the next chapter, but suffice it to say, we must always be cognizant of publication bias when evaluating a body of evidence.
 
 ## Cognitive Biases
 
-![](Images/biasbrain.png){width="526"}
+![](/Images/biasbrain.png){width="526"}
 
 You might be thinking at this point, *Why do researchers engage in researcher degrees of freedom if they know the consequences to the evidence base?* That's just the thing. They may willfully engage in unethical research practices, but they just as well be fooled by various cognitive biases to which we can all fall prey. For one, researchers have a strong incentive to publish papers, as their tenure and promotion is often heavily dependent on their publication output (hence the phrase *Publish or Perish*). Then given that journals are more likely to publish studies with statistically significant findings, researchers have a stake in the results of their quantitative research. Additionally, the salaries of researchers in many fields is also partly (and sometimes entirely) contingent on acquiring research funding, where a strong publication record is expected.
 
@@ -76,7 +76,7 @@ Similar to confirmation bias is **hindsight bias**, or the tendency to make a pr
 
 Another important cognitive bias which influences reproducibility and research transparency is **apophenia**, or the human tendency to see patterns in randomness. A common example of this is seeing a face among a collection of inanimate objects, or seeing animal shapes in clouds. Consider the image in @fig-mars.
 
-![The "Face on Mars" (left) photographed in 1976 by the NASA Viking 1 orbiter. On the right is the same image taken in 2001 by the NASA Mars Global Surveyor. *Source: NASA/JPL.*](images/marsface.jpg){#fig-mars}
+![The "Face on Mars" (left) photographed in 1976 by the NASA Viking 1 orbiter. On the right is the same image taken in 2001 by the NASA Mars Global Surveyor. *Source: NASA/JPL.*](/Images/marsface.jpg){#fig-mars}
 
 The image shows the same mesa on Mars - one captured in 1976 (on the left) and another captured in 2001 (on the right). The picture on the right has an image resolution 10 times higher than the image on the left. However, when NASA released the image on the left to the public in 1976, they thought the apparent 'face,' resembling an ancient Egyptian planet, would drum up public interest. What they didn't realize is that it led to a lot of speculation about ancient civilizations on Mars, and conspiracy theories that NASA was hiding the facts. @nasa_science_unmasking_2001 Even after the 2001 image was released, it didn't satisfy everyone. Some still believed that this 'face' is evidence of a civilization on Mars. This reflects a natural tendency to see patterns where there are none.
 
@@ -84,6 +84,6 @@ When applied to research, apophenia can lead researchers to infer meaningful pat
 
 Have you ever heard the expression, *Correlation does not necessarily equal causation*? This is because just because two things are statistically related or similar does not mean that there is any meaningful relationship between them. However, our tendency toward apophenia can lead us to conclude a meaningful correlation when there isn't one. Consider the image in @fig-spurcorr from the website *Spurious Correlations* created by Tyler Vigen. The image shows a remarkably strong (and by chance) correlation between the number of letters in the winning word of the Scripps National Spelling Bee and the number of people killed by venomous spiders each year.
 
-![Apophenia leads us to infer patterns within random noise. *Credit: Tylervigen.com.*](images/corrspur.jpeg){#fig-spurcorr}
+![Apophenia leads us to infer patterns within random noise. *Credit: Tylervigen.com.*](/Images/corrspur.jpeg){#fig-spurcorr}
 
 In sum, we should be mindful of the many cognitive biases that can shape our conduct of research. While the situation may seem hopeless, know that there is hope! In the next chapter, we'll discuss many advances in Open Science that can help mitigate these biases in the conduct of research.

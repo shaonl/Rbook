@@ -8,7 +8,7 @@ R is a computer language and run-time environment which can be used to do many t
 
 Here's the deal. R was created by statisticians **Ross Ihaka** and **Robert Gentleman** in the early 1990s at the University of Auckland. They developed a coding language to teach introductory statistics based on the syntax of another language at the time called *S* (programmers loved single-letter names back in the day). Since both their first names (Robert and Ross) started with the letter *R*, that's what they chose to call their new language. Seriously.
 
-[![Ross Ihaka (right) and Robert Gentleman (left) - the creatoRs.](rcreators.png){fig-alt="Picture of R creators."}](https://www.stat.auckland.ac.nz/~ihaka/downloads/Otago.pdf)
+[![Ross Ihaka (right) and Robert Gentleman (left) - the creatoRs.](/Images/rcreators.png){fig-alt="Picture of R creators."}](https://www.stat.auckland.ac.nz/~ihaka/downloads/Otago.pdf)
 
 Importantly, Gentleman and Ihaka spoke with their colleagues who convinced them to release the language for free as part of a philosophy called the [**Free Software Movement**](https://en.wikipedia.org/wiki/Free_software_movement)**.** Under this philosophy, "users have the freedom to run, copy, distribute, study, change and improve the software" (see [GNU](https://www.gnu.org) for more details).
 
@@ -21,7 +21,7 @@ Today, R is a thriving language that receives regular updates by the R Core Team
 You might have heard of other programs for data analysis, and might be wondering which of these are open-source (meaning free!), and which are proprietary. I list some of the most common statistics programs, and whether they are open source or not in @tbl-statsprogs.
 
 | Program/language used for data analysis | Is it Open Source (free) or not? | Company or organization maintaining the program/language            |
-|-------------------|-------------------|---------------------------|
+|---------------------|---------------------|------------------------------|
 | R                                       | YES                              | Supported by R Core Team and R Foundation for Statistical Computing |
 | Python                                  | YES                              | Python Software Foundation                                          |
 | SAS                                     | NO                               | SAS Institute                                                       |

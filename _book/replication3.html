@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Research Transparency, Reproducibility, and Basic Data Analysis in R! - 14&nbsp; Some Statistical Preliminaries</title>
+<title>Research Transparency, Reproducibility, and Basic Data Analysis in R! - 13&nbsp; Some Statistical Preliminaries</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,7 +108,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./replication3.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Some Statistical Preliminaries</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./replication3.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Some Statistical Preliminaries</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -201,50 +201,44 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dataanalysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Univariate, Bivariate &amp; Multivariable Analysis</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./replication1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">A Very Brief History of Replication</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">A Very Brief History of Replication</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./replication2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Mertonian Norms and Counter-Norms</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mertonian Norms and Counter-Norms</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./replication3.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Some Statistical Preliminaries</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Some Statistical Preliminaries</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./replication4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Crises of Replication</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Crises of Replication</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./replication5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Common Problems that Hamper Reproducibility</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Common Problems that Hamper Reproducibility</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./replication6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Potential Solutions &amp; the Way Forward</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Potential Solutions &amp; the Way Forward</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">References</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -310,10 +304,10 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#null-hypothesis-significance-testing" id="toc-null-hypothesis-significance-testing" class="nav-link active" data-scroll-target="#null-hypothesis-significance-testing"><span class="header-section-number">14.1</span> Null Hypothesis Significance Testing</a></li>
-  <li><a href="#p-value" id="toc-p-value" class="nav-link" data-scroll-target="#p-value"><span class="header-section-number">14.2</span> P-Value</a></li>
-  <li><a href="#power" id="toc-power" class="nav-link" data-scroll-target="#power"><span class="header-section-number">14.3</span> Power</a></li>
-  <li><a href="#confidence-intervals" id="toc-confidence-intervals" class="nav-link" data-scroll-target="#confidence-intervals"><span class="header-section-number">14.4</span> Confidence Intervals</a></li>
+  <li><a href="#null-hypothesis-significance-testing" id="toc-null-hypothesis-significance-testing" class="nav-link active" data-scroll-target="#null-hypothesis-significance-testing"><span class="header-section-number">13.1</span> Null Hypothesis Significance Testing</a></li>
+  <li><a href="#p-value" id="toc-p-value" class="nav-link" data-scroll-target="#p-value"><span class="header-section-number">13.2</span> P-Value</a></li>
+  <li><a href="#power" id="toc-power" class="nav-link" data-scroll-target="#power"><span class="header-section-number">13.3</span> Power</a></li>
+  <li><a href="#confidence-intervals" id="toc-confidence-intervals" class="nav-link" data-scroll-target="#confidence-intervals"><span class="header-section-number">13.4</span> Confidence Intervals</a></li>
   </ul>
 </nav>
     </div>
@@ -322,7 +316,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-rep3" class="quarto-section-identifier"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Some Statistical Preliminaries</span></span></h1>
+<h1 class="title"><span id="sec-rep3" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Some Statistical Preliminaries</span></span></h1>
 </div>
 
 
@@ -352,15 +346,15 @@ What do you mean “Frequentist Statistics?”
 <p>The statistics we will be discussing in this course are all based on the frequentist paradigm, because that is still the way most scientists do statistics, and it’s definitely worth knowing. If you are interested, an alternative approach to probability that pre-dates the frequentist paradigm, and is recently gaining a lot of ground across the sciences is the <strong>Bayesian</strong> paradigm, stemming from a <a href="https://www.mathsisfun.com/data/bayes-theorem.html">theorem</a> by English Presbyterian minister and statistician Thomas Bayes (1701 - 1761). In the Bayesian approach, probability is related to our degree of belief in something happening. If we are trying to estimate a parameter (let’s say the average height of all Swedes), the Bayesian approach treats this parameter as a random variable, and estimates of this parameter are influenced by our prior knowledge of Swedes’ height. In the frequentist approach, the parameter we are trying to estimate is fixed, and we can eventually estimate it given enough studies sampling from the population of Swedes.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Images/bayes.gif" class="img-fluid figure-img"></p>
+<p><img src=".\Images/bayes.jpg" class="img-fluid figure-img" width="379"></p>
 <figcaption class="figure-caption">Thomas Bayes’ theorem was the catalyst for Bayesian statistics, which has since gained a lot of steam with advances in computing power.</figcaption>
 </figure>
 </div>
 <p>While an introduction to Bayesian statistics is outside the scope of this book, some of my favorite books on the subject are <a href="https://sites.google.com/site/doingbayesiandataanalysis/"><em>Doing Bayesian Data Analysis by John Kruschke</em></a>and <a href="https://www.routledge.com/Statistical-Rethinking-A-Bayesian-Course-with-Examples-in-R-and-STAN/McElreath/p/book/9780367139919"><em>Statistical Rethinking by Richard McElreath</em></a>.</p>
 </div>
 </div>
-<section id="null-hypothesis-significance-testing" class="level2" data-number="14.1">
-<h2 data-number="14.1" class="anchored" data-anchor-id="null-hypothesis-significance-testing"><span class="header-section-number">14.1</span> Null Hypothesis Significance Testing</h2>
+<section id="null-hypothesis-significance-testing" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="null-hypothesis-significance-testing"><span class="header-section-number">13.1</span> Null Hypothesis Significance Testing</h2>
 <p>Next, let’s either remind ourselves (if you’ve taken a statistics course before) what is commonly referred to as <strong>Null Hypothesis Significance Testing</strong> (NHST). NHST is a method of statistical inference in which you test the thing you think will happen in relation to a straw-man hypothesis usually corresponding to the notion “Nothing is going to happen.” Let’s break down how it works.</p>
 <p>When we talk about statistical hypothesis testing, we typically have two competing hypotheses:</p>
 <ul>
@@ -368,11 +362,11 @@ What do you mean “Frequentist Statistics?”
 <li>The <strong>Alternative Hypothesis</strong> (<span class="math inline">H_A</span>) is typically what we are trying to assert or explore. To use the above example, my alternative hypothesis would be that the new vaccine has a non-zero effect on the new disease.</li>
 </ul>
 <p>If the sample data provide enough evidence against the null hypothesis, we say that we <em>reject the null hypothesis</em> in favor of the alternative hypothesis. If the sample data not provide enough evidence against the null hypothesis, we say that <em>fail to reject the null</em> hypothesis. Note that we can <strong>NEVER</strong> say that we <em>accept the null hypothesis</em>.</p>
-<p>How do we judge if the data provide evidence for the hypothesis? The method of NHST involves the computation a <strong>test statistic</strong>, or number that quantifies how close the data match the distribution implied by the null hypothesis (this is commonly a normal or Gaussian distribution). The test statistic allows for the calculation of a <strong>p-value</strong>, or <strong><em>probability of observing a test statistic at least as extreme or more extreme as the one observed, assuming the null hypothesis true</em></strong>.<span class="citation" data-cites="harrell_statistical_2017"><sup><a href="references.html#ref-harrell_statistical_2017" role="doc-biblioref">1</a></sup></span> <span class="citation" data-cites="lakens_practical_2021"><sup><a href="references.html#ref-lakens_practical_2021" role="doc-biblioref">2</a></sup></span> If the p-value is less than a particular threshold (typically 0.05, or a one-in-twenty chance, and denoted by the Greek letter alpha <span class="math inline">\alpha</span>), then we can say that the p-value is <strong>statistically significant.</strong> This is illustrated in <a href="#fig-straw">Figure&nbsp;<span>14.1</span></a>.</p>
+<p>How do we judge if the data provide evidence for the hypothesis? The method of NHST involves the computation a <strong>test statistic</strong>, or number that quantifies how close the data match the distribution implied by the null hypothesis (this is commonly a normal or Gaussian distribution). The test statistic allows for the calculation of a <strong>p-value</strong>, or <strong><em>probability of observing a test statistic at least as extreme or more extreme as the one observed, assuming the null hypothesis true</em></strong>.<span class="citation" data-cites="harrell_statistical_2017"><sup><a href="references.html#ref-harrell_statistical_2017" role="doc-biblioref">1</a></sup></span> <span class="citation" data-cites="lakens_practical_2021"><sup><a href="references.html#ref-lakens_practical_2021" role="doc-biblioref">2</a></sup></span> If the p-value is less than a particular threshold (typically 0.05, or a one-in-twenty chance, and denoted by the Greek letter alpha <span class="math inline">\alpha</span>), then we can say that the p-value is <strong>statistically significant.</strong> This is illustrated in <a href="#fig-straw">Figure&nbsp;<span>13.1</span></a>.</p>
 <div id="fig-straw" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="Images/strawman.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;14.1: Null Hypothesis Significance Testing is akin to Proof by Contradiction.</figcaption>
+<p><img src=".\Images/strawman.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;13.1: Null Hypothesis Significance Testing is akin to Proof by Contradiction.</figcaption>
 </figure>
 </div>
 <div id="fig-null" class="callout callout-style-default callout-important callout-titled">
@@ -389,8 +383,8 @@ Why can’t we ever accept the null hypothesis?
 </div>
 </div>
 </section>
-<section id="p-value" class="level2" data-number="14.2">
-<h2 data-number="14.2" class="anchored" data-anchor-id="p-value"><span class="header-section-number">14.2</span> P-Value</h2>
+<section id="p-value" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="p-value"><span class="header-section-number">13.2</span> P-Value</h2>
 <p>It’s important that we have a VERY clear definition of a p-value, as this is commonly misunderstood. Let’s use the American Statistical Association’s definition of the p-value.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -416,8 +410,8 @@ Definition of the p-value from the American Statistical Association
 <p>The p-value is also affected by the sample size and effect size. Generally, a larger sample size have a higher likelihood of detecting a statistically significant result if there is one. Additionally, a large effect is more likely to be detected than a smaller one.</p>
 <p>Ok, so that’s a lot of DON’Ts. You might be wondering, <em>Well what should I do then?</em> To answer this question, we can use the helpful acronym <strong>ATOM: A</strong>ccept uncertainty, be <strong>T</strong>houghtful, <strong>O</strong>pen, and <strong>M</strong>odest.<span class="citation" data-cites="wasserstein_moving_2019"><sup><a href="references.html#ref-wasserstein_moving_2019" role="doc-biblioref">4</a></sup></span> Basically, use the p-value but know its limitations.</p>
 </section>
-<section id="power" class="level2" data-number="14.3">
-<h2 data-number="14.3" class="anchored" data-anchor-id="power"><span class="header-section-number">14.3</span> Power</h2>
+<section id="power" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="power"><span class="header-section-number">13.3</span> Power</h2>
 <p>When you perform NHST, there are certain conditions of your hypothesis test that have a strong bearing on the p-values obtained, which can affect the interpretation of your results.</p>
 <p>With any NHST, the following terms apply:</p>
 <ul>
@@ -431,8 +425,8 @@ Definition of the p-value from the American Statistical Association
 <p>where: <span class="math inline">1 - \beta</span> is statistical power (probability of detecting an effect if there is one), <span class="math inline">\beta</span> is the probability of a Type II error (false negative), <span class="math inline">\alpha</span> is the probability of a Type I error (false positive), and <span class="math inline">R</span> is the pre-study probability of observing a non-zero effect.</p>
 <p>The lower the power and the higher the Type I error, the lower the PPV. If a study has lower power, it can only detect an effect (if there is one) when the size of that effect is large.</p>
 </section>
-<section id="confidence-intervals" class="level2" data-number="14.4">
-<h2 data-number="14.4" class="anchored" data-anchor-id="confidence-intervals"><span class="header-section-number">14.4</span> Confidence Intervals</h2>
+<section id="confidence-intervals" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="confidence-intervals"><span class="header-section-number">13.4</span> Confidence Intervals</h2>
 <p>Note that when we commonly deal with <em>estimates</em> when running statistical tests. We commonly estimate a <strong>population parameter</strong> (such as the mean), which is a descriptive measure for an entire population (such as Residents of Philadelphia). Parameters can be many things. Two of the most common population parameters we try to estimate are the mean of some variable, denoted by the Greek letter Mu <span class="math inline">\mu</span>, and the Standard Deviation (a measure how spread out the data are) of some variable denoted by the Greek letter Sigma <span class="math inline">\sigma</span>.</p>
 <p>Since we typically cannot collect data from all members of a population, we have to take samples from the population, and calculate <strong>sample statistic</strong> which involve the same kinds of parameters as for the population, but just for the sample. Thus, a sample statistic is a characteristic of the sample. If you draw a number from the population, the sample’s characteristics will typically be similar to the population parameters. If you draw enough random samples, the sample statistics will converge on the population parameters, which is known as the <strong>Law of Large Numbers</strong>. Note that this only applies to the average of a variable converging to the Expected Value of the parameter in the population.</p>
 <p>Ok, so why does all this matter? Well, the idea is that there is a degree of uncertainty associated with every estimate. The degree of uncertainty matters. If an estimate has a high degree of uncertainty, we might trust it less than an estimate with a low degree of uncertainty. How do we know how much uncertainty is associated with an estimate? Enter, the <strong>Confidence Interval</strong>, or a range of estimates for a parameter. The confidence level of the interval represents the proportion of confidence intervals in the long run that contain the true population parameter. For example, a confidence level of 95% (which is typical) suggests that if one were to construct many confidence intervals over and over again, 95% of them would contain the true population parameter.</p>
@@ -694,12 +688,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./replication2.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Mertonian Norms and Counter-Norms</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mertonian Norms and Counter-Norms</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./replication4.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Crises of Replication</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Crises of Replication</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

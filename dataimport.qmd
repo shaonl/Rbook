@@ -35,7 +35,7 @@ Cool, now let's take a closer look at the data with the `View()` function.
 View(mydata1)
 ```
 
-![](Images/dogsdf.png)
+![](/Images/dogsdf.png)
 
 Ok, it looks like we have a variables corresponding to whether the dog is lost, found, or adoptable (`Record_type`), the specific ID of the animal (`Animal_ID`), it's current location, and several others. It's always a good idea to have a look at the data to see if anything looks amiss. We'll get more into some specifics of data cleaning a bit later, but for now, it's worthwhile just having a look.
 
@@ -136,4 +136,4 @@ You will also notice that when we examined the first and last 10 rows and first 
 
 Now you know how to import a number of common data types into R! So, why not...
 
-[![Manx cat has public use dataset suggestions for you if you just click on him. Credit to the University of Missouri Libraries.](Images/manx2.png){fig-align="left"}](https://libraryguides.missouri.edu/datasets/public-use)
+[![Manx cat has public use dataset suggestions for you if you just click on him. Credit to the University of Missouri Libraries.](/Images/manx2.png){fig-align="left"}](https://libraryguides.missouri.edu/datasets/public-use)

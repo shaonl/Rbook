@@ -2,7 +2,7 @@
 
 ## Strings
 
-![](images/strings.png)
+![](/Images/strings.png)
 
 As we discussed in @sec-dts, character values are stored in objects known as *strings* in R. Let's go over a few key things with strings.
 
@@ -128,7 +128,7 @@ When it comes to substituting strings, it's better to test replacement code on a
 
 ## Comparisons
 
-![](images/comparisons.png)
+![](/Images/comparisons.png)
 
 Very often we are interested in comparing two quantities in R. For instance, we may compare a variable to a value, or two variables to one another. We can also use Boolean operators in constructing our comparisons. Boolean operators are words like *AND*, *NOT*, and *OR* that are used as conjunctions commonly to create advanced search terms. However, we can also use them in creating comparisons.
 
@@ -195,7 +195,7 @@ d != e
 
 Comparisons are commonly used within `if` and `if else` statements. These are conditional statements that specify a condition that must be satisfied, and then list rules for what happens if the condition is satisfied and what happens when it is not satisfied. The logic of the `if else` statement in show in @fig-ifelse.
 
-![The simple and elegant logic of the If Else statement.](images/ifelse.png){#fig-ifelse}
+![The simple and elegant logic of the If Else statement.](/Images/ifelse.png){#fig-ifelse}
 
 Let's have a look at some simple If Else statements involving comparisons. Note that the If and Else blocks are surrounded by curly braces `{ }`.
 
@@ -286,7 +286,7 @@ if (l < k | l < j) {
 
 That about wraps it up for Strings and Comparisons. As always, don't forget to...
 
-![](images/manx2.png)
+![](/Images/manx2.png)
 
 ## Exercises {#sec-sboex}
 

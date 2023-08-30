@@ -7,7 +7,7 @@ One of the most powerful and versatile aspects of R is the ability it affords us
 A full tutorial on data visualization can comprise its own book, and in fact, does. There are a number of books and other resources for data visualization in R which can help you choose the right visualization for the right data, along with several design principles. Three of these resources are presented in @tbl-datavizs below.
 
 | Resource name (with link)                                                                   | Author                                                    |
-|---------------------------------------------------------------------------------------------|-----------------------------------------------------------|
+|--------------------------------------------|----------------------------|
 | [Data Visualization with R](https://rkabacoff.github.io/datavis/)                           | Rob Kabacoff                                              |
 | [R for Data Science (2e) - Visualize (Chapters 10 to 12)](https://r4ds.hadley.nz/visualize) | Hadley Wickham, Mine Çetinkaya-Rundel & Garrett Grolemund |
 | [The R Graph Gallery](https://r-graph-gallery.com/index.html)                               | Yan Holtz                                                 |
@@ -64,7 +64,7 @@ There are also great color packages available through other packages. One of my 
 
 Finally, you can also invoke colors by hexadecimal number. The hexadecimal system is a numerical system of base-16. It uses 16 symbols to represent numbers (10 to 15 are represented with the letters A through F). A list of hexadecimal numbers can be found in @fig-hexs.
 
-![Hexadecimal color codes. Source: [VisiBone](https://html-color-codes.com).](images/hexad.png){#fig-hexs}
+![Hexadecimal color codes. Source: [VisiBone](https://html-color-codes.com).](/Images/hexad.png){#fig-hexs}
 
 When using the hexadecimal (or 'hex') number in the `col =` argument, make sure to add a hash \# in front of the code (e.g. #00CCFF, #0033CC).
 :::
@@ -155,7 +155,7 @@ plot(mtcars$mpg, mtcars$hp,
 
 We can also change the shape of the points to other things, listed in @fig-rpch using the `pch =` argument. The size of the shape can be adjusted by specifying a number relative to the current size. For example `cex = 2` would double the default size of the shape, and `cex = 0.5` would reduce the size of the shape by 50%.
 
-![Different points that can be used on scatterplots.](Images/rpch.png){#fig-rpch}
+![Different points that can be used on scatterplots.](/Images/rpch.png){#fig-rpch}
 
 For instance, let's change the shape of the dots to the filled-in triangle (#17), and increase the size of the shapes by 50%.
 
@@ -211,7 +211,7 @@ One of the main ideas behind the grammar of graphics influence on `ggplot2` is t
 
 There are other potential layers we can add to customize labels, add relevant statistics, use a different coordinate system, specify subplots, and more. Some of the main layers are presented in @fig-gglayers. Note that the bottom three are the most crucial as these form the basic building blocks of a ggplot.
 
-![Some of the main layers of ggplot2. At a minimum, you need the bottom three layers to create a ggplot.](images/gglayers.png){#fig-gglayers fig-align="center" width="491"}
+![Some of the main layers of ggplot2. At a minimum, you need the bottom three layers to create a ggplot.](/Images/gglayers.png){#fig-gglayers fig-align="center" width="491"}
 
 ### Bar Graphs
 
@@ -592,7 +592,7 @@ Here we see scatterplots for all the years in the dataframe where the outlier is
 
 Remember how discussed using boxplots to visualize outliers and potentially illogical values in @sec-illexs ? You might be wondering why I didn't discuss boxplots in this section. The main reason is that boxplots can be misleading because they do not show the underlying distribution. Consider @fig-badbox from a blog post on boxplots written by the Data Visualization Society.
 
-![Boxplots give you some useful information but also conceal other important information. @desbarats_ive_2021](Images/badbox.png){#fig-badbox}
+![Boxplots give you some useful information but also conceal other important information. @desbarats_ive_2021](/Images/badbox.png){#fig-badbox}
 
 The blog post I've cited in the image caption is definitely worth a read, and explain other pitfalls with boxplots. However, if you would like the information provided by a boxplot AND want to know the underlying distribution, the violin plot is an ideal option. They illustrate the distribution of a numeric variable as a mirror image on either side of a line. They can also have a box plot embedded them. To accomplish this, we can use the `geom_violin()` and `geom_boxplot` functions. Let's create a violin plot to examine the distribution of life expectancy in 1952 and 2007 across all continents, and then separately by continent.
 

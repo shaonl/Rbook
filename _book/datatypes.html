@@ -647,8 +647,13 @@ c 0.65 0.45 0.37</code></pre>
 <li>Hours spent sleeping</li>
 <li>School Rating</li>
 </ul>
-<p>Now let us examine the correlation matrix of the variables of this hypothetical study illustrated in <span class="quarto-unresolved-ref">?fig-cormat1</span>.</p>
-<p><img src=".\Images/corrmat.jpg" id="fig-cormat1" class="img-fluid"></p>
+<p>Now let us examine the correlation matrix of the variables of this hypothetical study illustrated in <a href="#fig-cormat1">Figure&nbsp;<span>4.3</span></a>.</p>
+<div id="fig-cormat1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src=".\Images/corrmat.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.3: A correlation matrix - correlations between variables are on either side of the 1s on the diagonal.</figcaption>
+</figure>
+</div>
 <p>It looks like there is a strong correlation (<span class="math inline">r = 0.82</span>) between hours spent studying and exam score, which makes sense. We also have smaller correlations between IQ and exam score <span class="math inline">(r = 0.33)</span> and school rating and exam score <span class="math inline">(r = 0.23)</span>. All other correlations with exam score are negligible. Let’s now input this correlation matrix into R.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Input correlations </span></span>

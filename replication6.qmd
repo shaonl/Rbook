@@ -1,6 +1,6 @@
 # Potential Solutions & the Way Forward {#sec-rep6}
 
-![Wise capybaras feel motivated and encouraged by advances in Open Science, and I agree with them!](images/capytea.png){fig-align="left" width="728"}
+![Wise capybaras feel motivated and encouraged by advances in Open Science, and I agree with them!](/Images/capytea.png){fig-align="left" width="728"}
 
 If you've made it this far having read all the previous chapters, I hope you are not dismayed at the state of research transparency and reproducibility (RT2) in science. If you are, I don't blame you. It's easy to feel helpless at the state of research. However, there are many advances that have been made, and that will be made to improve things. Consider this, about 15 years ago, RT2 was not really a thing. Most folks had no idea about problems with replicating and reproducing results of empirical studies. Sure, some folks like John Ioannidis were already sounding the alarms for a while as we say in @sec-stirr, but I think it's safe to say most researchers either didn't know or didn't care about RT2 problems (many still don't).
 
@@ -10,53 +10,53 @@ Since that time, there have been a number of changes to the RT2 landscape, and a
 
 First, let's look at a table of potential solutions advanced in an excellent *Nature* article entitled *A manifesto for reproducible science* @munafo_manifesto_2017 in @tbl-sols.
 
-+-------------------------------------------+------------------------------------------------------------------------------------+
-| Potential Solution Area                   | Example(s) of Potential Solutions                                                  |
-+===========================================+====================================================================================+
-| Protecting against cognitive biases       | Blinding                                                                           |
-+-------------------------------------------+------------------------------------------------------------------------------------+
-| Improved methodological training          | Rigorous training in statistics and research methods for future researchers.       |
-|                                           |                                                                                    |
-|                                           | Rigorous continuing education in statistics and methods for current researchers.   |
-+-------------------------------------------+------------------------------------------------------------------------------------+
-| Independent methodological support        | Involvement of methodologists in research.                                         |
-|                                           |                                                                                    |
-|                                           | Independent oversight.                                                             |
-+-------------------------------------------+------------------------------------------------------------------------------------+
-| Collaboration and team science            | Multi-site studies/distributed data collection.                                    |
-|                                           |                                                                                    |
-|                                           | Team-science consortia.                                                            |
-+-------------------------------------------+------------------------------------------------------------------------------------+
-| Promoting study pre-registration          | Registered Reports.                                                                |
-|                                           |                                                                                    |
-|                                           | Open Science Framework use.                                                        |
-+-------------------------------------------+------------------------------------------------------------------------------------+
-| Improving the quality of reporting        | Using reporting checklists.                                                        |
-|                                           |                                                                                    |
-|                                           | Protocol checklists.                                                               |
-+-------------------------------------------+------------------------------------------------------------------------------------+
-| Protecting against conflicts of interest  | Disclosure of conflicts of interest.                                               |
-|                                           |                                                                                    |
-|                                           | Exclusion/containment of financial and non-financial conflicts of interest.        |
-+-------------------------------------------+------------------------------------------------------------------------------------+
-| Encouraging transparency and open science | Open data, code, and related materials.                                            |
-|                                           |                                                                                    |
-|                                           | Pre-registration.                                                                  |
-+-------------------------------------------+------------------------------------------------------------------------------------+
-| Diversifying peer review                  | Preprints.                                                                         |
-|                                           |                                                                                    |
-|                                           | Pre- and post-publication peer review such as Publons and PubMed Commons.          |
-+-------------------------------------------+------------------------------------------------------------------------------------+
-| Rewarding open and reproducible practices | Badges.                                                                            |
-|                                           |                                                                                    |
-|                                           | Transparency and Openness Promotion Guidelines.                                    |
-|                                           |                                                                                    |
-|                                           | Funding replication studies.                                                       |
-|                                           |                                                                                    |
-|                                           | Registered Reports.                                                                |
-|                                           |                                                                                    |
-|                                           | Open science practices in hiring and promotion.                                    |
-+-------------------------------------------+------------------------------------------------------------------------------------+
++-------------------------------------------+----------------------------------------------------------------------------------+
+| Potential Solution Area                   | Example(s) of Potential Solutions                                                |
++===========================================+==================================================================================+
+| Protecting against cognitive biases       | Blinding                                                                         |
++-------------------------------------------+----------------------------------------------------------------------------------+
+| Improved methodological training          | Rigorous training in statistics and research methods for future researchers.     |
+|                                           |                                                                                  |
+|                                           | Rigorous continuing education in statistics and methods for current researchers. |
++-------------------------------------------+----------------------------------------------------------------------------------+
+| Independent methodological support        | Involvement of methodologists in research.                                       |
+|                                           |                                                                                  |
+|                                           | Independent oversight.                                                           |
++-------------------------------------------+----------------------------------------------------------------------------------+
+| Collaboration and team science            | Multi-site studies/distributed data collection.                                  |
+|                                           |                                                                                  |
+|                                           | Team-science consortia.                                                          |
++-------------------------------------------+----------------------------------------------------------------------------------+
+| Promoting study pre-registration          | Registered Reports.                                                              |
+|                                           |                                                                                  |
+|                                           | Open Science Framework use.                                                      |
++-------------------------------------------+----------------------------------------------------------------------------------+
+| Improving the quality of reporting        | Using reporting checklists.                                                      |
+|                                           |                                                                                  |
+|                                           | Protocol checklists.                                                             |
++-------------------------------------------+----------------------------------------------------------------------------------+
+| Protecting against conflicts of interest  | Disclosure of conflicts of interest.                                             |
+|                                           |                                                                                  |
+|                                           | Exclusion/containment of financial and non-financial conflicts of interest.      |
++-------------------------------------------+----------------------------------------------------------------------------------+
+| Encouraging transparency and open science | Open data, code, and related materials.                                          |
+|                                           |                                                                                  |
+|                                           | Pre-registration.                                                                |
++-------------------------------------------+----------------------------------------------------------------------------------+
+| Diversifying peer review                  | Preprints.                                                                       |
+|                                           |                                                                                  |
+|                                           | Pre- and post-publication peer review such as Publons and PubMed Commons.        |
++-------------------------------------------+----------------------------------------------------------------------------------+
+| Rewarding open and reproducible practices | Badges.                                                                          |
+|                                           |                                                                                  |
+|                                           | Transparency and Openness Promotion Guidelines.                                  |
+|                                           |                                                                                  |
+|                                           | Funding replication studies.                                                     |
+|                                           |                                                                                  |
+|                                           | Registered Reports.                                                              |
+|                                           |                                                                                  |
+|                                           | Open science practices in hiring and promotion.                                  |
++-------------------------------------------+----------------------------------------------------------------------------------+
 
 : A partial list of potential solutions. Adapted from Table 1 in the original article by Munafò et al. @munafo_manifesto_2017 {#tbl-sols}
 
@@ -68,7 +68,7 @@ That's a pretty good list. It's not complete, nor could it be, as advances are c
 
 Pre-registration refers to *specifying your research plan in advance of your study and submitting it to a registry.* @center_for_open_science_preregistration_nodate It's basically saying what you plan to do and how you plan to do it, and then publishing those details in the public domain before you conduct your study. In this way, pre-registration separates **hypothesis-testing** (confirmatory) research from **hypothesis-generating** (exploratory) research as shown in @fig-prereg.
 
-![Pre-registration is not a straitjacket; you can still conduct exploratory analyses and try things out. It's just that you should be clear which analyses will be confirmatory and which will be exploratory.](images/prereg.png){#fig-prereg}
+![Pre-registration is not a straitjacket; you can still conduct exploratory analyses and try things out. It's just that you should be clear which analyses will be confirmatory and which will be exploratory.](/Images/prereg.png){#fig-prereg}
 
 As we saw in @sec-rep5, humans are prone to several cognitive biases which can affect our ability to separate *a priori* from *a posteriori* thinking, even if we do not mean to conflate the two. Pre-registration can mitigate these biases by clearly stating at the outset what analyses will be used to confirm or falsify hypotheses, and which analyses will be exploratory. Then, the reader can judge the merit of the work for themselves. Ideally before a researcher collects any data, they should pre-register their confirmatory hypotheses and related analyses in the public domain. There are several benefits of doing so in terms of reducing bias due to:
 
@@ -77,7 +77,7 @@ As we saw in @sec-rep5, humans are prone to several cognitive biases which can a
 -   Publication bias, because it corrects the denominator of studies and hypotheses out there.
 -   Cognitive biases like apophenia, hindsight bias, and confirmation bias.
 
-### Common Apprehensions 
+### Common Apprehensions
 
 Now, let's say you followed my advice above and pre-registered your study in the public domain prior to data collection. Then, in the course of the research process, you discover that something you said you would do in your pre-registration isn't working, and you have to pivot to a different strategy. Is that OK? Yes! As long as you clearly state any deviations from your pre-registered plan, it's totally fine if you need to adjust something. It's all about being transparent about what you did. Additionally, even if you already have a dataframe you want to analyze, you can still pre-register your analysis plan prior to analyzing the data. This is not the ideal scenario as it still leaves a researcher degree of freedom to cheat and peek at the data, but at least it shows people exactly what you did and readers can judge the veracity of the pre-registration for themselves.
 
@@ -119,17 +119,17 @@ Want to see an example of a real study pre-registration? Here's [one of mine](ht
 
 Any scientific discipline that makes use of statistical analysis can be open to researcher degrees of freedom, and consequently, spurious research findings. Thus, appropriate and rigorous statistical training is needed for robust quantitative science. Additionally, researchers need robust training in study design and implementation. Research design and statistical analyses are mutually dependent and reinforcing. @munafo_manifesto_2017 Even if you've received a PhD with solid training in statistics, keeping up the latest advances requires a concerted effort, and is necessary. In particular the following areas of methodological training have been cited as especially crucial to RT2, @munafo_manifesto_2017 seen in @fig-stats.
 
-![Methodological training at all stages of one's career is crucial to keep up with the latest advances in rigorous design and analysis. ](images/methtrain.png){#fig-stats}
+![Methodological training at all stages of one's career is crucial to keep up with the latest advances in rigorous design and analysis.](/Images/methtrain.png){#fig-stats}
 
 The use of statistics in quantitative research is so ubiquitous that you'd be hard-pressed to find a scientific field that DOES NOT use statistics for any research involving numbers. Thus, most researchers may not be specialists in statistics (I know I'm certainly not), but need to know they key components in order to use them appropriately. This is why it is crucial to consult methodologists (those whose primary work concerns methodology development and training) and statistical experts whenever possible. However, non-specialists who use statistics should be appropriately trained so we don't make the same mistakes as researchers in the past. When reporting the results of a study, some suggest a simple 21-word 'solution':
 
-> *We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study.\"* @simmons_21_2012
+> *We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study."* @simmons_21_2012
 
 This isn't a 'solution' in the mathematical sense or in the sense we are discussing here. Rather, it's a sentence that prompts researchers to clearly describe important elements of their study.
 
 One useful way to improve methodological training is to train students to replicate a given study. This can apply to students in formal degree programs, but could just as well be applied to participants at a workshop who may be continuing their education. This is commonly done in certain fields currently, but there's no reason why it cannot be applied broadly to any fields who engage in quantitative research. In fact, there is an increasing push toward teaching replication at the undergraduate and graduate levels. @stojmenovska_teaching_2019 @janz_bringing_2016 @hawkins_improving_2018 An example of a replication pedagogy workflow for a graduate-level experimental methods courses is shown in @fig-repschem.
 
-![An example of a graduate-level replication pedagogy workflow. Adapted from Hawinks et al. @hawkins_improving_2018](images/repschem.png){#fig-repschem width="676"}
+![An example of a graduate-level replication pedagogy workflow. Adapted from Hawinks et al. @hawkins_improving_2018](/Images/repschem.png){#fig-repschem width="676"}
 
 The schematic above illustrates one possible pedagogical workflow for a graduate-level course over 10 weeks. It's not the only approach, but a good place to start. In this workflow, students begin with writing brief proposals for determining which studies they want to replicate, which are reviewed by an instructor for feasibility. Next, they complete the Methods section of a replication template developed by the Open Science Collaboration. @open_science_collaboration_estimating_2015 They then work on outlining their proposed replication experiment, which is reviewed by the instructor. Once approved, students proceed with their experimental protocol in two pilot tests. The first test is conducted with nonnaive participants, meaning the people in the class. This is to make sure the data are logged accurately, and confirmatory analysis code is working properly. After an instructor reviews the results, students proceed to a pilot test with real-world participants who are not in the class on an online platform such as MTurk or Prolific. This is done to make sure participants don't experience any issues with completing the experiment, and to solicit feedback to determine if any design changes should be made. Following instructor review of the second pilot test, students pre-register and run their main replication.
 
@@ -139,7 +139,7 @@ By making replication and pre-registration familiar to students, the hope is tha
 
 How does one incentivize Open Science practices like sharing data, code, and related materials in the public domain? One promising approach is inspired by the world of video games! Really! If you've ever played a video in the past 10 years or so, you have likely encountered some variation of an achievement badge for some task (e.g., leveling-up, defeating a boss, etc). The Center for Open Science developed several digital badges for use by journals to award researchers for pre-registering their study, sharing their data, and sharing their materials. The current suite of badges are shown in @fig-badges.
 
-![Current Center of Open Science badges. @center_for_open_science_open_nodate @american_psychological_association_open_2023](images/badges.png){#fig-badges width="728"}
+![Current Center of Open Science badges. @center_for_open_science_open_nodate @american_psychological_association_open_2023](/Images/badges.png){#fig-badges width="728"}
 
 Over 100 journals currently award these open science badges to authors who do the thing associated with each badge. The meaning of each badge is summarized in @tbl-badges.
 
@@ -161,7 +161,7 @@ Over 100 journals currently award these open science badges to authors who do th
 
 While the badges might seem silly, they can actually make a difference to Open Science practices. To see if the badges encouraged data sharing, a group of researchers examined 2,478 experimental or observational study articles published from 2012 to the first half of 2015 in five psychology journals. @kidwell_badges_2016 One of these journals *Psychological Science* began awarding open science badges in late 2013. The other four journals were all respected journals in psychology that did not award open science badges during the 2012 to 2015 study period. The results are quite telling. Check out their findings related to the effect of badges on data sharing in @fig-badgeswork.
 
-![After the journal Psychological Science started awarding badges, the rate of data sharing went way up. The dotted red line indicates when Psychological Science started awarding Open Science badges. Other journals who didn't award badges had the same low level of data sharing. From Figure 2 of the original study by Kidwell et al.](images/badgeswork.png){#fig-badgeswork width="983"}
+![After the journal Psychological Science started awarding badges, the rate of data sharing went way up. The dotted red line indicates when Psychological Science started awarding Open Science badges. Other journals who didn't award badges had the same low level of data sharing. From Figure 2 of the original study by Kidwell et al.](/Images/badgeswork.png){#fig-badgeswork width="983"}
 
 The findings suggest that the badges increased data sharing, as well as the usability and accuracy of the data shared. The rate of data-sharing in *Psychological Science* increased from 1.5% to 39%, while the other journals stayed at 5% or less. However, badges are still not going to create more open practices on their own. An evaluation of badge use by the *British Medical Journal* for instance found that the badges did little to increase data sharing. @rowhani-farid_did_2020 A similar evaluation of badge use by the journal *Biostatistics* showed an increase in data sharing due to badges, but of only about 7.6%, with no impact on code-sharing. @rowhani-farid_badges_2018 Thus, badges alone will not solve the problems in the field, but they are a simple, low- (or no) cost incentive that can improve things, even if only a little bit.
 
@@ -169,7 +169,7 @@ The findings suggest that the badges increased data sharing, as well as the usab
 
 Perhaps better than an incentives for researchers to engage in Open Science practices are requirement to do by funders. For instance, [cOAlition S](https://www.coalition-s.org/about/) is an initiative by various international organizations and funders to make all research funded by national, regional or international research councils and funding bodies made available immediately in Open Access repositories and journals. This took effect from 2021 and continues to this day among funders who subscribe to this organization's Plan S Principles presented below. @european_science_foundation_principles_2023
 
-1.  Authors or their institutions retain copyright to their publications. All publications must be published under an open license, preferably the Creative Commons Attribution license (CC BY), in order to fulfil the requirements defined by the [Berlin Declaration](https://openaccess.mpg.de/Berlin-Declaration).
+1.  Authors or their institutions retain copyright to their publications. All publications must be published under an open license, preferably the Creative Commons Attribution license (CC BY), in order to fulfil the requirements defined by the [Berlin Declaration](#0).
 
 2.  The Funders will develop robust criteria and requirements for the services that high-quality Open Access journals, Open Access platforms, and Open Access repositories must provide.
 
@@ -183,7 +183,7 @@ Perhaps better than an incentives for researchers to engage in Open Science prac
 
 7.  The above principles shall apply to all types of scholarly publications, but it is understood that the timeline to achieve Open Access for [monographs](#0) and book chapters will be longer and requires a separate and due process.
 
-8.  The Funders do not support the \'hybrid\' model of publishing. However, as a transitional pathway towards full Open Access within a clearly defined timeframe, and only as part of [transformative arrangements](https://www.coalition-s.org/faq/what-is-a-transformative-arrangement/). Funders may contribute to financially supporting such arrangements.
+8.  The Funders do not support the 'hybrid' model of publishing. However, as a transitional pathway towards full Open Access within a clearly defined timeframe, and only as part of [transformative arrangements](https://www.coalition-s.org/faq/what-is-a-transformative-arrangement/). Funders may contribute to financially supporting such arrangements.
 
 9.  The Funders will monitor compliance and sanction non-compliant beneficiaries/grantees.
 
@@ -191,11 +191,11 @@ Perhaps better than an incentives for researchers to engage in Open Science prac
 
 Many international funders have already endorsed the Plan S Principles such as the Bill & Melinda Gates Foundation, the World Health Organization, Templeton World, the Wellcome Fund, and others. Additionally, a number of journals have also begun adopting the Plan S Principles. Specifically, a Transformative Journal is one that is committed to transitioning to a fully Open Access journal (one that does not place access restrictions on its articles). @european_science_foundation_principles_2023 These are small steps, but when funders require Open Science practices, that can be a powerful force for change.
 
-## Reporting Guidelines 
+## Reporting Guidelines
 
 Reporting guidelines are simple tools that provide a minimum list of information that should be included when writing a study. Having a common minimum set of guidelines helps create consistency across the field, and improve the quality of reporting. For instance, the [Equator network](https://www.equator-network.org) is an organization that brings together researchers, funders, journal editors, and others in service of improving the quality of published research. They have links to 577 different reporting guidelines across diverse study designs, research areas, and fields. Some of the main guidelines that researchers use are listed in @fig-guidelines. The use of such guidelines is often required by particular journals, and can be a great way to obtain relevant information about key aspects of a study.
 
-![The Equator network has links to 577 reporting guidelines!](images/equator.png){#fig-guidelines}
+![The Equator network has links to 577 reporting guidelines!](/Images/equator.png){#fig-guidelines}
 
 In fact, we now even have Transparency and Openness Promotion (TOP) guidelines which specify eight standard toward greater scientific openness. @nosek_promoting_2015 The complete list of guidelines can be found [here](https://www.cos.io/initiatives/top-guidelines). There are now thousands of journals that have implemented at least two of the TOP guidelines, and journals can be checked for their *TOP Factor* which provides a numeric rating of how well they are implementing Open Science practices. The directory of journal TOP factors can be found [here](https://topfactor.org).
 
@@ -205,7 +205,7 @@ Preprints are research papers that are shared in the public domain prior to peer
 
 Registered reports are a relatively newer publishing format that involve two stages of peer review: one on the methodology of the planned study before data are collection, and another after the data are collected. The idea is to eliminate publication bias by agreeing to publish work that is methodologically sound, regardless of statistically significant outcomes. Journals that allow this format review the methodology and analysis plan in the first stage, and can choose to accept it, reject it, and accept it conditional on revisions. If it accepted, then the journal grants *in-principle* acceptance to the authors, meaning that they will publish the study regardless of the outcome as long as the authors stick to the protocol they described. The basic workflow of a Registered Report is presented in @fig-rreports.
 
-![Two-stage peer-review process to eliminate publication bias. *Source: Center for Open Science.* @center_for_open_science_registered_nodate](images/rreports.png)
+![Two-stage peer-review process to eliminate publication bias. *Source: Center for Open Science.* @center_for_open_science_registered_nodate](/Images/rreports.png){#fig-rreports}
 
 There are now over 200 published Registered Reports, up from just a handful in 2014. @chambers_whats_2019 They are not appropriate for every type of research, such as mainly exploratory work, but can be a valuable mechanism to mitigate researcher degrees of freedom and publication bias.
 

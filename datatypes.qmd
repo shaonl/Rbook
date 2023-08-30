@@ -216,7 +216,7 @@ Imagine a study on exam performance and study habits with the following variable
 
 Now let us examine the correlation matrix of the variables of this hypothetical study illustrated in @fig-cormat1.
 
-![](/Images/corrmat.jpg){#fig-cormat1}
+![A correlation matrix - correlations between variables are on either side of the 1s on the diagonal.](/Images/corrmat.jpg){#fig-cormat1}
 
 It looks like there is a strong correlation ($r = 0.82$) between hours spent studying and exam score, which makes sense. We also have smaller correlations between IQ and exam score $(r = 0.33)$ and school rating and exam score $(r = 0.23)$. All other correlations with exam score are negligible. Let's now input this correlation matrix into R.
 
