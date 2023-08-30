@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Research Transparency, Reproducibility, and Basic Data Analysis in R! - 9&nbsp; Data Exploration with dplyr</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./dataviz.html" rel="next">
+<link href="./cleaning.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dataexp.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Exploration with `dplyr`</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Research Transparency, Reproducibility, and Basic Data Analysis in R!</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing R and RStudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./getstarted.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Accustomed to R Studio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./datatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./stringscomps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Strings &amp; Comparisons</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataimport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Importing Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./datajoin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Merging (Joining) and Reshaping Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Cleaning</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataexp.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Exploration with <code>dplyr</code></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataviz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Visualization with base R and <code>ggplot2</code></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">A Very Brief History of Replication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mertonian Norms and Counter-Norms</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Some Statistical Preliminaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Crises of Replication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Common Problems that Hamper Reproducibility</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Potential Solutions &amp; the Way Forward</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appintroex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="intro.html#sec-introex"><span>Section&nbsp;3.8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appdatatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="datatypes.html#sec-dtex"><span>Section&nbsp;4.7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appstringcomp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="stringscomps.html#sec-sboex"><span>Section&nbsp;5.3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appdatajoin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="datajoin.html#sec-joinex"><span>Section&nbsp;7.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appdataclean.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="cleaning.html#sec-cleanex"><span>Section&nbsp;8.8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./apptidyex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="#sec-tidyex"><span>Section&nbsp;9.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appkahneman.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Kahneman’s Open Letter to Priming Researchers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#filter-arrange" id="toc-filter-arrange" class="nav-link active" data-scroll-target="#filter-arrange"><span class="header-section-number">9.1</span> Filter() &amp; Arrange()</a></li>
+  <li><a href="#mutate-rename" id="toc-mutate-rename" class="nav-link" data-scroll-target="#mutate-rename"><span class="header-section-number">9.2</span> Mutate() &amp; Rename()</a></li>
+  <li><a href="#select-slice" id="toc-select-slice" class="nav-link" data-scroll-target="#select-slice"><span class="header-section-number">9.3</span> Select() &amp; Slice()</a></li>
+  <li><a href="#relocate-and-summarise" id="toc-relocate-and-summarise" class="nav-link" data-scroll-target="#relocate-and-summarise"><span class="header-section-number">9.4</span> Relocate() and Summarise()</a></li>
+  <li><a href="#sec-tidyex" id="toc-sec-tidyex" class="nav-link" data-scroll-target="#sec-tidyex"><span class="header-section-number">9.5</span> Exercises</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-dataexp" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Exploration with <code>dplyr</code></span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>The <code>dplyr</code> package is a great tool for organizing and manipulating our dataframe. Note, I use the term <em>manipulate</em> not to convey anything nefarious or unethical, but in the sense of <em>data management</em>. The functions of this package are named after useful verbs, making them relatively easy to remember. Some common <code>dplyr</code> functions are listed in <a href="#tbl-dplyrf">Table&nbsp;<span>9.1</span></a>.</p>
+<div id="tbl-dplyrf" class="anchored">
+<table class="table">
+<caption>Table&nbsp;9.1: dplyr’s useful functions with their description.</caption>
+<colgroup>
+<col style="width: 26%">
+<col style="width: 73%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><code>dplyr</code> Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>arrange()</code></td>
+<td>Change the order of rows.</td>
+</tr>
+<tr class="even">
+<td><code>filter()</code></td>
+<td>Select rows based on column values.</td>
+</tr>
+<tr class="odd">
+<td><code>mutate()</code></td>
+<td>Change the values in certain columns, and create new columns.</td>
+</tr>
+<tr class="even">
+<td><code>relocate()</code></td>
+<td>Change the order of columns.</td>
+</tr>
+<tr class="odd">
+<td><code>rename()</code></td>
+<td>Change the name of columns.</td>
+</tr>
+<tr class="even">
+<td><code>select()</code></td>
+<td>Include or exclude a column.</td>
+</tr>
+<tr class="odd">
+<td><code>slice()</code></td>
+<td>Select rows based on location.</td>
+</tr>
+<tr class="even">
+<td><code>summarise()</code></td>
+<td>Collapse a group into a single row.</td>
+</tr>
+<tr class="odd">
+<td><code>group_by()</code></td>
+<td>Select a grouping variable to perform an operation by group.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Let’s look at some examples with the built-in <code>mtcars</code> dataframe.</p>
+<section id="filter-arrange" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="filter-arrange"><span class="header-section-number">9.1</span> Filter() &amp; Arrange()</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load mtcars dataframe. Assign it to an object.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> mtcars</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's look at cars with only eight cylinders.</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
+Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
+Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
+Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
+Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
+Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
+AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
+Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
+Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
+Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
+Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's add to that, and order the dataframe by mpg in descending order (highest to lowest). To do this, we embed the desc() function within arrange(). For ascending order, no need for the desc() function.</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">8</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mpg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
+Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
+Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
+Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
+Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
+Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
+Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
+Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
+Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
+Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
+Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4</code></pre>
+</div>
+</div>
+</section>
+<section id="mutate-rename" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="mutate-rename"><span class="header-section-number">9.2</span> Mutate() &amp; Rename()</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Now let's add a new column called kpl (kilometers per litre) using mutate(). A quick Google search tells me that going from mpg to kpl involves dividing mpg by 2.352.  </span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">8</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mpg)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">kpl =</span> mpg <span class="sc">/</span> <span class="fl">2.352</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   mpg cyl  disp  hp drat    wt  qsec vs am gear carb      kpl
+Pontiac Firebird  19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2 8.163265
+Hornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2 7.950680
+Merc 450SL        17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3 7.355442
+Merc 450SE        16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3 6.972789
+Ford Pantera L    15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4 6.717687
+Dodge Challenger  15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2 6.590136</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's add a new name for the wt variable called weight.</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">8</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mpg)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">kpl =</span> mpg <span class="sc">/</span> <span class="fl">2.352</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">weight =</span> wt) <span class="sc">%&gt;%</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   mpg cyl  disp  hp drat weight  qsec vs am gear carb      kpl
+Pontiac Firebird  19.2   8 400.0 175 3.08  3.845 17.05  0  0    3    2 8.163265
+Hornet Sportabout 18.7   8 360.0 175 3.15  3.440 17.02  0  0    3    2 7.950680
+Merc 450SL        17.3   8 275.8 180 3.07  3.730 17.60  0  0    3    3 7.355442
+Merc 450SE        16.4   8 275.8 180 3.07  4.070 17.40  0  0    3    3 6.972789
+Ford Pantera L    15.8   8 351.0 264 4.22  3.170 14.50  0  1    5    4 6.717687
+Dodge Challenger  15.5   8 318.0 150 2.76  3.520 16.87  0  0    3    2 6.590136</code></pre>
+</div>
+</div>
+</section>
+<section id="select-slice" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="select-slice"><span class="header-section-number">9.3</span> Select() &amp; Slice()</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's now only select a few variables using select()</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(mpg, cyl, wt) <span class="sc">%&gt;%</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   mpg cyl    wt
+Mazda RX4         21.0   6 2.620
+Mazda RX4 Wag     21.0   6 2.875
+Datsun 710        22.8   4 2.320
+Hornet 4 Drive    21.4   6 3.215
+Hornet Sportabout 18.7   8 3.440
+Valiant           18.1   6 3.460</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">## If we want to select all but a few variables, we can still use select. Let's say I want all variables except mpg, cyl, and wt. I just need to add a minus before each variable name.</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>mpg, <span class="sc">-</span>cyl, <span class="sc">-</span>wt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                     disp  hp drat  qsec vs am gear carb
+Mazda RX4           160.0 110 3.90 16.46  0  1    4    4
+Mazda RX4 Wag       160.0 110 3.90 17.02  0  1    4    4
+Datsun 710          108.0  93 3.85 18.61  1  1    4    1
+Hornet 4 Drive      258.0 110 3.08 19.44  1  0    3    1
+Hornet Sportabout   360.0 175 3.15 17.02  0  0    3    2
+Valiant             225.0 105 2.76 20.22  1  0    3    1
+Duster 360          360.0 245 3.21 15.84  0  0    3    4
+Merc 240D           146.7  62 3.69 20.00  1  0    4    2
+Merc 230            140.8  95 3.92 22.90  1  0    4    2
+Merc 280            167.6 123 3.92 18.30  1  0    4    4
+Merc 280C           167.6 123 3.92 18.90  1  0    4    4
+Merc 450SE          275.8 180 3.07 17.40  0  0    3    3
+Merc 450SL          275.8 180 3.07 17.60  0  0    3    3
+Merc 450SLC         275.8 180 3.07 18.00  0  0    3    3
+Cadillac Fleetwood  472.0 205 2.93 17.98  0  0    3    4
+Lincoln Continental 460.0 215 3.00 17.82  0  0    3    4
+Chrysler Imperial   440.0 230 3.23 17.42  0  0    3    4
+Fiat 128             78.7  66 4.08 19.47  1  1    4    1
+Honda Civic          75.7  52 4.93 18.52  1  1    4    2
+Toyota Corolla       71.1  65 4.22 19.90  1  1    4    1
+Toyota Corona       120.1  97 3.70 20.01  1  0    3    1
+Dodge Challenger    318.0 150 2.76 16.87  0  0    3    2
+AMC Javelin         304.0 150 3.15 17.30  0  0    3    2
+Camaro Z28          350.0 245 3.73 15.41  0  0    3    4
+Pontiac Firebird    400.0 175 3.08 17.05  0  0    3    2
+Fiat X1-9            79.0  66 4.08 18.90  1  1    4    1
+Porsche 914-2       120.3  91 4.43 16.70  0  1    5    2
+Lotus Europa         95.1 113 3.77 16.90  1  1    5    2
+Ford Pantera L      351.0 264 4.22 14.50  0  1    5    4
+Ferrari Dino        145.0 175 3.62 15.50  0  1    5    6
+Maserati Bora       301.0 335 3.54 14.60  0  1    5    8
+Volvo 142E          121.0 109 4.11 18.60  1  1    4    2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If we want to select certain rows of a dataframe, we can do this with slice() by mentioning the index number of the columns. If we want to know the row number based on a column value (e.g. mpg &gt; 20), we can use the which() function where you can write the column, relational operator, and value.</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(df<span class="sc">$</span>mpg <span class="sc">&gt;</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  1  2  3  4  8  9 18 19 20 21 26 27 28 32</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>        <span class="dv">8</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>        <span class="dv">9</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        <span class="dv">18</span><span class="sc">:</span><span class="dv">21</span>,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        <span class="dv">26</span><span class="sc">:</span><span class="dv">28</span>,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        <span class="dv">32</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4      21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag  21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710     22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive 21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+Merc 240D      24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+Merc 230       22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+Fiat 128       32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
+Honda Civic    30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
+Toyota Corolla 33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
+Toyota Corona  21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
+Fiat X1-9      27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
+Porsche 914-2  26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
+Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
+Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Similarly, if you want to know which rows have the value 'NA' which indicates missing data for a particular column, we can wrap the is.na() function within the which() function like this.</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Let's add some NAs to the disp variable first.</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>df[<span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">21</span><span class="sc">:</span><span class="dv">22</span>), <span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Now we will see which rows in disp have NA. </span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(<span class="fu">is.na</span>(df<span class="sc">$</span>disp))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  5  8 21 22</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Often we want to know the highest and lowest values of a variable. We can use slice_min() for the lowest values and slice_max() for the highest values. The first argument is the column and the second is how many rows you want (e.g. n = 5).</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="do">## The five cars with the lowest mpg.</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_min</span>(mpg, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                     mpg cyl disp  hp drat    wt  qsec vs am gear carb
+Cadillac Fleetwood  10.4   8  472 205 2.93 5.250 17.98  0  0    3    4
+Lincoln Continental 10.4   8  460 215 3.00 5.424 17.82  0  0    3    4
+Camaro Z28          13.3   8  350 245 3.73 3.840 15.41  0  0    3    4
+Duster 360          14.3   8  360 245 3.21 3.570 15.84  0  0    3    4
+Chrysler Imperial   14.7   8  440 230 3.23 5.345 17.42  0  0    3    4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="do">## The five cars with the highest mpg.</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(mpg, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                mpg cyl disp  hp drat    wt  qsec vs am gear carb
+Toyota Corolla 33.9   4 71.1  65 4.22 1.835 19.90  1  1    4    1
+Fiat 128       32.4   4 78.7  66 4.08 2.200 19.47  1  1    4    1
+Honda Civic    30.4   4 75.7  52 4.93 1.615 18.52  1  1    4    2
+Lotus Europa   30.4   4 95.1 113 3.77 1.513 16.90  1  1    5    2
+Fiat X1-9      27.3   4 79.0  66 4.08 1.935 18.90  1  1    4    1</code></pre>
+</div>
+</div>
+</section>
+<section id="relocate-and-summarise" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="relocate-and-summarise"><span class="header-section-number">9.4</span> Relocate() and Summarise()</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If I want to change the order of how some columns appear in the dataframe, I can do so with relocate() where the first argument is the column(s) to move, and the second argument specifies the intended new location with either .before or .after to indicate where you want to place the columns. </span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Let's move wt to the front.</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(wt, <span class="at">.before =</span> <span class="fu">everything</span>()</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>           )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                       wt  mpg cyl  disp  hp drat  qsec vs am gear carb
+Mazda RX4           2.620 21.0   6 160.0 110 3.90 16.46  0  1    4    4
+Mazda RX4 Wag       2.875 21.0   6 160.0 110 3.90 17.02  0  1    4    4
+Datsun 710          2.320 22.8   4 108.0  93 3.85 18.61  1  1    4    1
+Hornet 4 Drive      3.215 21.4   6 258.0 110 3.08 19.44  1  0    3    1
+Hornet Sportabout   3.440 18.7   8    NA 175 3.15 17.02  0  0    3    2
+Valiant             3.460 18.1   6 225.0 105 2.76 20.22  1  0    3    1
+Duster 360          3.570 14.3   8 360.0 245 3.21 15.84  0  0    3    4
+Merc 240D           3.190 24.4   4    NA  62 3.69 20.00  1  0    4    2
+Merc 230            3.150 22.8   4 140.8  95 3.92 22.90  1  0    4    2
+Merc 280            3.440 19.2   6 167.6 123 3.92 18.30  1  0    4    4
+Merc 280C           3.440 17.8   6 167.6 123 3.92 18.90  1  0    4    4
+Merc 450SE          4.070 16.4   8 275.8 180 3.07 17.40  0  0    3    3
+Merc 450SL          3.730 17.3   8 275.8 180 3.07 17.60  0  0    3    3
+Merc 450SLC         3.780 15.2   8 275.8 180 3.07 18.00  0  0    3    3
+Cadillac Fleetwood  5.250 10.4   8 472.0 205 2.93 17.98  0  0    3    4
+Lincoln Continental 5.424 10.4   8 460.0 215 3.00 17.82  0  0    3    4
+Chrysler Imperial   5.345 14.7   8 440.0 230 3.23 17.42  0  0    3    4
+Fiat 128            2.200 32.4   4  78.7  66 4.08 19.47  1  1    4    1
+Honda Civic         1.615 30.4   4  75.7  52 4.93 18.52  1  1    4    2
+Toyota Corolla      1.835 33.9   4  71.1  65 4.22 19.90  1  1    4    1
+Toyota Corona       2.465 21.5   4    NA  97 3.70 20.01  1  0    3    1
+Dodge Challenger    3.520 15.5   8    NA 150 2.76 16.87  0  0    3    2
+AMC Javelin         3.435 15.2   8 304.0 150 3.15 17.30  0  0    3    2
+Camaro Z28          3.840 13.3   8 350.0 245 3.73 15.41  0  0    3    4
+Pontiac Firebird    3.845 19.2   8 400.0 175 3.08 17.05  0  0    3    2
+Fiat X1-9           1.935 27.3   4  79.0  66 4.08 18.90  1  1    4    1
+Porsche 914-2       2.140 26.0   4 120.3  91 4.43 16.70  0  1    5    2
+Lotus Europa        1.513 30.4   4  95.1 113 3.77 16.90  1  1    5    2
+Ford Pantera L      3.170 15.8   8 351.0 264 4.22 14.50  0  1    5    4
+Ferrari Dino        2.770 19.7   6 145.0 175 3.62 15.50  0  1    5    6
+Maserati Bora       3.570 15.0   8 301.0 335 3.54 14.60  0  1    5    8
+Volvo 142E          2.780 21.4   4 121.0 109 4.11 18.60  1  1    4    2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let's move wt to before disp.</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(wt, <span class="at">.before =</span> disp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                     mpg cyl    wt  disp  hp drat  qsec vs am gear carb
+Mazda RX4           21.0   6 2.620 160.0 110 3.90 16.46  0  1    4    4
+Mazda RX4 Wag       21.0   6 2.875 160.0 110 3.90 17.02  0  1    4    4
+Datsun 710          22.8   4 2.320 108.0  93 3.85 18.61  1  1    4    1
+Hornet 4 Drive      21.4   6 3.215 258.0 110 3.08 19.44  1  0    3    1
+Hornet Sportabout   18.7   8 3.440    NA 175 3.15 17.02  0  0    3    2
+Valiant             18.1   6 3.460 225.0 105 2.76 20.22  1  0    3    1
+Duster 360          14.3   8 3.570 360.0 245 3.21 15.84  0  0    3    4
+Merc 240D           24.4   4 3.190    NA  62 3.69 20.00  1  0    4    2
+Merc 230            22.8   4 3.150 140.8  95 3.92 22.90  1  0    4    2
+Merc 280            19.2   6 3.440 167.6 123 3.92 18.30  1  0    4    4
+Merc 280C           17.8   6 3.440 167.6 123 3.92 18.90  1  0    4    4
+Merc 450SE          16.4   8 4.070 275.8 180 3.07 17.40  0  0    3    3
+Merc 450SL          17.3   8 3.730 275.8 180 3.07 17.60  0  0    3    3
+Merc 450SLC         15.2   8 3.780 275.8 180 3.07 18.00  0  0    3    3
+Cadillac Fleetwood  10.4   8 5.250 472.0 205 2.93 17.98  0  0    3    4
+Lincoln Continental 10.4   8 5.424 460.0 215 3.00 17.82  0  0    3    4
+Chrysler Imperial   14.7   8 5.345 440.0 230 3.23 17.42  0  0    3    4
+Fiat 128            32.4   4 2.200  78.7  66 4.08 19.47  1  1    4    1
+Honda Civic         30.4   4 1.615  75.7  52 4.93 18.52  1  1    4    2
+Toyota Corolla      33.9   4 1.835  71.1  65 4.22 19.90  1  1    4    1
+Toyota Corona       21.5   4 2.465    NA  97 3.70 20.01  1  0    3    1
+Dodge Challenger    15.5   8 3.520    NA 150 2.76 16.87  0  0    3    2
+AMC Javelin         15.2   8 3.435 304.0 150 3.15 17.30  0  0    3    2
+Camaro Z28          13.3   8 3.840 350.0 245 3.73 15.41  0  0    3    4
+Pontiac Firebird    19.2   8 3.845 400.0 175 3.08 17.05  0  0    3    2
+Fiat X1-9           27.3   4 1.935  79.0  66 4.08 18.90  1  1    4    1
+Porsche 914-2       26.0   4 2.140 120.3  91 4.43 16.70  0  1    5    2
+Lotus Europa        30.4   4 1.513  95.1 113 3.77 16.90  1  1    5    2
+Ford Pantera L      15.8   8 3.170 351.0 264 4.22 14.50  0  1    5    4
+Ferrari Dino        19.7   6 2.770 145.0 175 3.62 15.50  0  1    5    6
+Maserati Bora       15.0   8 3.570 301.0 335 3.54 14.60  0  1    5    8
+Volvo 142E          21.4   4 2.780 121.0 109 4.11 18.60  1  1    4    2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let's move wt to after qsec</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(wt, <span class="at">.after =</span> qsec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                     mpg cyl  disp  hp drat  qsec    wt vs am gear carb
+Mazda RX4           21.0   6 160.0 110 3.90 16.46 2.620  0  1    4    4
+Mazda RX4 Wag       21.0   6 160.0 110 3.90 17.02 2.875  0  1    4    4
+Datsun 710          22.8   4 108.0  93 3.85 18.61 2.320  1  1    4    1
+Hornet 4 Drive      21.4   6 258.0 110 3.08 19.44 3.215  1  0    3    1
+Hornet Sportabout   18.7   8    NA 175 3.15 17.02 3.440  0  0    3    2
+Valiant             18.1   6 225.0 105 2.76 20.22 3.460  1  0    3    1
+Duster 360          14.3   8 360.0 245 3.21 15.84 3.570  0  0    3    4
+Merc 240D           24.4   4    NA  62 3.69 20.00 3.190  1  0    4    2
+Merc 230            22.8   4 140.8  95 3.92 22.90 3.150  1  0    4    2
+Merc 280            19.2   6 167.6 123 3.92 18.30 3.440  1  0    4    4
+Merc 280C           17.8   6 167.6 123 3.92 18.90 3.440  1  0    4    4
+Merc 450SE          16.4   8 275.8 180 3.07 17.40 4.070  0  0    3    3
+Merc 450SL          17.3   8 275.8 180 3.07 17.60 3.730  0  0    3    3
+Merc 450SLC         15.2   8 275.8 180 3.07 18.00 3.780  0  0    3    3
+Cadillac Fleetwood  10.4   8 472.0 205 2.93 17.98 5.250  0  0    3    4
+Lincoln Continental 10.4   8 460.0 215 3.00 17.82 5.424  0  0    3    4
+Chrysler Imperial   14.7   8 440.0 230 3.23 17.42 5.345  0  0    3    4
+Fiat 128            32.4   4  78.7  66 4.08 19.47 2.200  1  1    4    1
+Honda Civic         30.4   4  75.7  52 4.93 18.52 1.615  1  1    4    2
+Toyota Corolla      33.9   4  71.1  65 4.22 19.90 1.835  1  1    4    1
+Toyota Corona       21.5   4    NA  97 3.70 20.01 2.465  1  0    3    1
+Dodge Challenger    15.5   8    NA 150 2.76 16.87 3.520  0  0    3    2
+AMC Javelin         15.2   8 304.0 150 3.15 17.30 3.435  0  0    3    2
+Camaro Z28          13.3   8 350.0 245 3.73 15.41 3.840  0  0    3    4
+Pontiac Firebird    19.2   8 400.0 175 3.08 17.05 3.845  0  0    3    2
+Fiat X1-9           27.3   4  79.0  66 4.08 18.90 1.935  1  1    4    1
+Porsche 914-2       26.0   4 120.3  91 4.43 16.70 2.140  0  1    5    2
+Lotus Europa        30.4   4  95.1 113 3.77 16.90 1.513  1  1    5    2
+Ford Pantera L      15.8   8 351.0 264 4.22 14.50 3.170  0  1    5    4
+Ferrari Dino        19.7   6 145.0 175 3.62 15.50 2.770  0  1    5    6
+Maserati Bora       15.0   8 301.0 335 3.54 14.60 3.570  0  1    5    8
+Volvo 142E          21.4   4 121.0 109 4.11 18.60 2.780  1  1    4    2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's use the summarise() and group_by() functions to get a summary of the weight of each car (wt) grouped by cylinders (cyl), and rounded to two decimal places.</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_weight =</span> <span class="fu">mean</span>(wt)) <span class="sc">%&gt;%</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+    cyl mean_weight
+  &lt;dbl&gt;       &lt;dbl&gt;
+1     4        2.29
+2     6        3.12
+3     8        4   </code></pre>
+</div>
+</div>
+<p>Thus, we can see that the <code>dplyr</code> package offers several useful functions to manage our data. Remember, that if you want any changes to be reflected in your dataframe, such as renaming a variable, remember to assign your <code>dplyr</code> code to your dataframe. For example, if I want the name change for <code>wt</code> to <code>weight</code> to stick, I would assign that to the dataframe like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">weight =</span> wt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="Images/manx2.png" class="img-fluid"></p>
+</section>
+<section id="sec-tidyex" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="sec-tidyex"><span class="header-section-number">9.5</span> Exercises</h2>
+<p>As always, it’s a good idea to attempt these while the material is still fresh. You can find the answers in <a href="apptidyex.html"><span>Appendix&nbsp;F</span></a>.</p>
+<ol type="1">
+<li><p>Load the <code>tidyverse</code> package. Then assign the built-in dataframe <code>starwars</code> to an object named whatever you want. Then subset the dataframe by human species only. Save the subsetted dataframe as an object called <code>swhuman</code>. Then calculate and report the mean and median height in <code>swhuman</code>. Also report an NAs (missing data) in the height variable. <em>Note: the units for the height variable are centimeters.</em></p></li>
+<li><p>Hopefully you noticed that there are indeed some NAs in the <code>swhuman</code> dataframe! Detect which rows have NAs for the height variable, and write the names of the characters that have this. Next, let’s fix these errors. Perform an internet search and populate those NAs with plausible values. If you need to convert from feet to centimeters, multiply the value in feet by 30.48. If you absolutely cannot find the height of any character substitute the median height from Question 1 for their height.</p></li>
+<li><p>Once you have filled in this missing data, calculate the new mean and median for the height variable. Comment on how much of a difference the additional values made on the mean and median compared with the values you calculated in Question 1. Then determine the three shortest characters, and three tallest characters.</p></li>
+<li><p>Return to the larger <code>starwars</code> dataframe or whatever object to which you assigned it. Determine which characters have NA for height. If there are any characters with NA for height (hint: there are), enter plausible values for their heights using the approach taken in Question 2. Then report the mean and median height across everyone in this dataframe.</p></li>
+<li><p>Still working with the <code>starwars</code> dataframe, convert the <code>species</code> variable to factor. Then, group and summarise the mean height by species, and print this in descending order. Report which species is the tallest, on average. Then, rearrange and report the species which is the shortest, on average.</p></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./cleaning.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Cleaning</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./dataviz.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Visualization with base R and <code>ggplot2</code></span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

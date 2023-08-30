@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Research Transparency, Reproducibility, and Basic Data Analysis in R! - 12&nbsp; Mertonian Norms and Counter-Norms</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./replication3.html" rel="next">
+<link href="./replication1.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./replication2.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mertonian Norms and Counter-Norms</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Research Transparency, Reproducibility, and Basic Data Analysis in R!</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing R and RStudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./getstarted.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Accustomed to R Studio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./datatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./stringscomps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Strings &amp; Comparisons</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataimport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Importing Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./datajoin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Merging (Joining) and Reshaping Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Cleaning</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataexp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Exploration with <code>dplyr</code></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataviz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Visualization with base R and <code>ggplot2</code></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">A Very Brief History of Replication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mertonian Norms and Counter-Norms</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Some Statistical Preliminaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Crises of Replication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Common Problems that Hamper Reproducibility</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Potential Solutions &amp; the Way Forward</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appintroex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="intro.html#sec-introex"><span>Section&nbsp;3.8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appdatatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="datatypes.html#sec-dtex"><span>Section&nbsp;4.7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appstringcomp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="stringscomps.html#sec-sboex"><span>Section&nbsp;5.3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appdatajoin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="datajoin.html#sec-joinex"><span>Section&nbsp;7.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appdataclean.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="cleaning.html#sec-cleanex"><span>Section&nbsp;8.8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./apptidyex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="dataexp.html#sec-tidyex"><span>Section&nbsp;9.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appkahneman.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Kahneman’s Open Letter to Priming Researchers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="header-section-number">12.1</span> Background</a></li>
+  <li><a href="#cudos" id="toc-cudos" class="nav-link" data-scroll-target="#cudos"><span class="header-section-number">12.2</span> CUDOS</a>
+  <ul class="collapse">
+  <li><a href="#communalism" id="toc-communalism" class="nav-link" data-scroll-target="#communalism"><span class="header-section-number">12.2.1</span> Communalism</a></li>
+  <li><a href="#universalism" id="toc-universalism" class="nav-link" data-scroll-target="#universalism"><span class="header-section-number">12.2.2</span> Universalism</a></li>
+  <li><a href="#disinterestedness" id="toc-disinterestedness" class="nav-link" data-scroll-target="#disinterestedness"><span class="header-section-number">12.2.3</span> Disinterestedness</a></li>
+  <li><a href="#organized-skepticism" id="toc-organized-skepticism" class="nav-link" data-scroll-target="#organized-skepticism"><span class="header-section-number">12.2.4</span> Organized Skepticism</a></li>
+  </ul></li>
+  <li><a href="#counter-norms" id="toc-counter-norms" class="nav-link" data-scroll-target="#counter-norms"><span class="header-section-number">12.3</span> Counter-Norms</a>
+  <ul class="collapse">
+  <li><a href="#particularism-in-contrast-with-universalism" id="toc-particularism-in-contrast-with-universalism" class="nav-link" data-scroll-target="#particularism-in-contrast-with-universalism"><span class="header-section-number">12.3.1</span> Particularism (in contrast with Universalism)</a></li>
+  <li><a href="#solitariness-in-contrast-with-communalism" id="toc-solitariness-in-contrast-with-communalism" class="nav-link" data-scroll-target="#solitariness-in-contrast-with-communalism"><span class="header-section-number">12.3.2</span> Solitariness (in contrast with Communalism)</a></li>
+  <li><a href="#interestedness-in-contrast-with-disinterestedness" id="toc-interestedness-in-contrast-with-disinterestedness" class="nav-link" data-scroll-target="#interestedness-in-contrast-with-disinterestedness"><span class="header-section-number">12.3.3</span> Interestedness (in contrast with Disinterestedness)</a></li>
+  <li><a href="#organized-dogmatism-in-contrast-with-organized-skepticism" id="toc-organized-dogmatism-in-contrast-with-organized-skepticism" class="nav-link" data-scroll-target="#organized-dogmatism-in-contrast-with-organized-skepticism"><span class="header-section-number">12.3.4</span> Organized Dogmatism (in contrast with Organized Skepticism)</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">12.4</span> Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-rep2" class="quarto-section-identifier"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mertonian Norms and Counter-Norms</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src=".\Images/rkm.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Robert K. Merton - the father of modern sociology.</figcaption>
+</figure>
+</div>
+<section id="background" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="background"><span class="header-section-number">12.1</span> Background</h2>
+<p>Robert K. Merton lived from 1910 - 2003 and made a number of major contributions to sociology, criminology, and the sociology of science. Unlike some of the early figures in the history of replication we saw in <a href="replication1.html"><span>Chapter&nbsp;11</span></a>, Merton advocated for theorizing to begin with <em>middle-range theory</em>, or starting with aspects of a phenomenon that are clearly understood, constructed with observed data. He intended this to be a middle ground between a grand theory and a description of a phenomenon. This is remarkably contemporary, as a great deal of middle range theory is about underlying mechanisms that give rise to phenomena.<span class="citation" data-cites="cartwright_middle-range_2020"><sup><a href="references.html#ref-cartwright_middle-range_2020" role="doc-biblioref">1</a></sup></span></p>
+<p>Reflecting on the history of science, Merton noted that scientists could no longer isolate themselves from the concerns of society.<span class="citation" data-cites="merton_science_1942"><sup><a href="references.html#ref-merton_science_1942" role="doc-biblioref">2</a></sup></span> He could have been a poet, because his descriptions of this observation are loaded with powerful imagery that summarize his position nicely. Let’s look at a few of these quotes with my crude interpretations interspersed.</p>
+<table class="table">
+<caption>Merton, please forgive me my crude interpretations of your dense, though mellifluous, prose.</caption>
+<colgroup>
+<col style="width: 75%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Merton’s Quote</th>
+<th>My Crude Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>A tower of ivory becomes untenable when its walls are under prolonged assault.</em></td>
+<td>Hey scientists, you can only pretend society doesn’t exist for so long, until you can’t.</td>
+</tr>
+<tr class="even">
+<td><em>A frontal assault on the autonomy of science was required to convert this sanguine isolationism into realistic participation in the revolutionary conflict of cultures.</em></td>
+<td>Hey scientists, when bombs start falling, you better get in the game!</td>
+</tr>
+<tr class="odd">
+<td><em>Science is a deceptively inclusive word which refers to a variety of distinct though interrelated items.</em></td>
+<td>Like, what even <em>is</em> Science?</td>
+</tr>
+<tr class="even">
+<td><em>The ethos of science is that affectively toned complex of values and norms which is held to be binding on the man of science. The norms are expressed in the form of prescriptions, proscriptions, preferences, and permissions. They are legitimized in terms of institutional values.</em></td>
+<td>Science is done a particular way, and you can see that in a bunch of places.</td>
+</tr>
+</tbody>
+</table>
+<p>As you will note, Merton was interested in the way science was done, and with its explicit and implicit beliefs, norms, and aspirations. In short, he was interested in spelling out an <strong>ethos</strong> of science, or the character of ideal scientific inquiry. While Merton made many valuable contributions to social science, we are primarily concerned with his notion of <strong>Mertonian Norms</strong>, which are given by the acronym CUDOS.</p>
+</section>
+<section id="cudos" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="cudos"><span class="header-section-number">12.2</span> CUDOS</h2>
+<table class="table">
+<caption>Mertonian Norms of Science</caption>
+<colgroup>
+<col style="width: 30%">
+<col style="width: 69%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>C</strong>ommunalism (called <em>Communism</em> by Merton)</td>
+<td>Public ownership of scientific goods.</td>
+</tr>
+<tr class="even">
+<td><strong>U</strong>niversalism</td>
+<td>Validity of findings as independent of the status of human subjects.</td>
+</tr>
+<tr class="odd">
+<td><strong>D</strong>isinterestedness</td>
+<td>Scientific institutions act for the benefit of a common scientific enterprise, and not for personal gain.</td>
+</tr>
+<tr class="even">
+<td><strong>O</strong>rganized <strong>S</strong>kepticism</td>
+<td>Scientific claims should undergo critical scrutiny before being accepted.</td>
+</tr>
+</tbody>
+</table>
+<p>Let’s make sure we have a good sense of each of his norms (i.e.&nbsp;CUDOS) before proceeding.</p>
+<section id="communalism" class="level3" data-number="12.2.1">
+<h3 data-number="12.2.1" class="anchored" data-anchor-id="communalism"><span class="header-section-number">12.2.1</span> Communalism</h3>
+<p><img src=".\Images/communalism.png" class="img-fluid"></p>
+<p>Merton believed that science should produce goods under common ownership of the community (he called it <strong>Communism</strong> but scientists instead often call this <strong>Communalism</strong> because the former has…certain connotations unrelated to science). The idea here is that a major discovery in science in not the exclusive property of the discoverer. You might get something named after you (known as Eponymy, such as Boyle’s Law or Schrödinger’s cat), and maybe some recognition, but you don’t get to own the discovery as this contradicts the scientific ethic. Secrecy in the antithesis of this norm, and “full and open communication” is related to putting the norm into practice. Merton notes that this norm is incompatible with the definition of technology as private property.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Real-World Applications: Communalism
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A study investigated 36 top ranked apps for depression and smoking cessation for Android and iOS in the US and Australia in 2018.<span class="citation" data-cites="huckvale_assessment_2019"><sup><a href="references.html#ref-huckvale_assessment_2019" role="doc-biblioref">3</a></sup></span> The study found that of the 36 apps, 29 shared user data to Google and Facebook, and only 12 of these accurately disclosed this information in a privacy policy. How does sharing findings on users with commercial entities align with the Mertonian norm of Communalism?</p>
+</div>
+</div>
+</section>
+<section id="universalism" class="level3" data-number="12.2.2">
+<h3 data-number="12.2.2" class="anchored" data-anchor-id="universalism"><span class="header-section-number">12.2.2</span> Universalism</h3>
+<p><img src=".\Images/universalism.png" class="img-fluid"></p>
+<p>The acceptance or rejection of particular research claims should be impersonal. It should not depend on the author’s race, gender, nationality, alma mater, or any personal characteristic. Merton believed that the impersonal character of science was deep and rooted in <strong>Universalism</strong>. He was also realistic and understood that the larger culture within which science is housed can be antagonistic to the norm of Universalism. In particular, nationalistic bias and related forces can create the situation where “the man of science may be converted into a man of way - and act accordingly.”<span class="citation" data-cites="merton_science_1942"><sup><a href="references.html#ref-merton_science_1942" role="doc-biblioref">2</a></sup></span> Knowledge cannot be advanced and furthered if scientific careers are restricted on grounds other than competence, according to Merton. It shouldn’t matter who you are as long your work is competent and adheres to the standard of quality in a field. Unfortunately, implicit and explicit can creep in during process of hiring researchers, the peer review process, and the consumption of research. This is why many journals operate using a double-blind process, whereby neither the authors nor the reviewers know the identity of the other.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Less than Universal - A Personal Anecdote
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When I was an undergraduate research assistant at the University of Michigan in the US, I once brought a paper to the attention of my supervisor, who was a young PhD student educated in the US. When they asked what journal the paper came from, I replied “the Indian Journal of Psychology.” Without looking at the paper, they said “Hmm, see if you can find a paper from a better journal.” I dutifully went looking for another paper, but not before reflecting “Why didn’t they look at the study before making a decision on its quality?” As an Indian studying in the US, this experience illustrated the mental shortcuts frequently made in academia, illustrating a stark deviation from the norm of Universalism.</p>
+</div>
+</div>
+<p>When I first read about the Mertonian norm of Universalism, my first thought was of a specific scene in Antoine de Saint-Exupéry’s classic <em>Le Petit Prince [The Little Prince]</em>.<span class="citation" data-cites="de_saint-exupery_petit_1943"><sup><a href="references.html#ref-de_saint-exupery_petit_1943" role="doc-biblioref">4</a></sup></span> The scene is presented in <a href="#fig-turk">Figure&nbsp;<span>12.1</span></a> .</p>
+<div id="fig-turk" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src=".\Images/petitprinceturk.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;12.1: Le Petit Prince (1943). <em>Reynal &amp; Hitchcock</em>. No one believed the astronomer when he wore non-European clothing. But when he donned a three-piece suit, they listened then. A violation of the norm of Universalism.</figcaption>
+</figure>
+</div>
+<p>In this scene, a Turkish astronomer who discovered an asteroid and tried to present the results of his discovery to his peers at an international astronomy conference. However, his peers did not believe his findings because he was dressed in traditional Turkish garb of a fez and a billowing set of shalwar pants. Years later, a Turkish dictator forces his subjects to wear European-style clothing under pain of death. This time, the Turkish astronomer presented his findings at the same conference but with a more European outfit. His peers then immediately believe his findings.</p>
+</section>
+<section id="disinterestedness" class="level3" data-number="12.2.3">
+<h3 data-number="12.2.3" class="anchored" data-anchor-id="disinterestedness"><span class="header-section-number">12.2.3</span> Disinterestedness</h3>
+<p><img src=".\Images/disint.png" class="img-fluid"></p>
+<p>When it comes to science, researchers shouldn’t be motivated by commercial pursuits, political interests, or the desire for individual status and prestige. The norm of <strong>Disinterestedness</strong> is about individual motivations to do science, and that these should be for the sake of science itself. I see this more as <em>Purity of Intention</em>. Merton noted that the norm of Disinterestedness is supported by the fact that scientists are accountable to their peers. If you’re going to do partisan politics under the guise of science, your professional peers are going to point that out, and illustrate how its not science. In essence, your colleagues will largely see through you and understand what you are doing.</p>
+<p>This is the most aspirational norm, if you ask me. Consider that in academia hiring and promotion is usually heavily influenced by how many papers you publish or how much grant money you can secure. In fact, the whole purpose of this course is to show how to do ethical programming and statistical analysis, with a number of illustrative cases where this is not the case. Additionally, consider the incentives of funders of research as well, especially private organizations that have their own motives and priority areas. While this norm is not especially realistic, it’s a good thing to strive for, and an important one when it comes to the interpretation of data.</p>
+</section>
+<section id="organized-skepticism" class="level3" data-number="12.2.4">
+<h3 data-number="12.2.4" class="anchored" data-anchor-id="organized-skepticism"><span class="header-section-number">12.2.4</span> Organized Skepticism</h3>
+<p><img src=".\Images/orgskep.png" class="img-fluid"></p>
+<p>The norm of <strong>Organized Skepticism</strong> is an institutional and methodological mandate, according to Merton. Basically, for science to work, this <em>has</em> to be part of the process. Science is concerned with a <em>detached scrutiny of beliefs in terms of empirical and other logical criteria</em>. This is related to the process of peer review, in which experts provide critical scrutiny for articles submitted to scientific journals. Merton points to the fact that this norm has often involved questioning the ways things are done, and established beliefs. This can sometimes lead to negative consequences for scientists that question the power assumptions of certain institutions.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src=".\Images/galileo.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Galileo’s Organized Skepticism was not appreciated by the Catholic Church. Wikimedia Commons.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="counter-norms" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="counter-norms"><span class="header-section-number">12.3</span> Counter-Norms</h2>
+<p>Merton’s norms have been quite influential in the sociology of science field, and later work by Mitroff produced a useful list of counter-norms to Merton’s norms.<span class="citation" data-cites="mitroff_norms_1974"><sup><a href="references.html#ref-mitroff_norms_1974" role="doc-biblioref">5</a></sup></span> These counter-norms are the opposite of Merton’s norms, and nicely capture how science is often conducted in reality. We can refer to them when thinking about the conduct of science as falling on a spectrum with the poles being the norms and counter-norms.</p>
+<section id="particularism-in-contrast-with-universalism" class="level3" data-number="12.3.1">
+<h3 data-number="12.3.1" class="anchored" data-anchor-id="particularism-in-contrast-with-universalism"><span class="header-section-number">12.3.1</span> Particularism (in contrast with Universalism)</h3>
+<p>The idea here is that the acceptance or rejection of a claim depends in large part on the characteristics of who makes the claim. Recall the Turkish astronomer in the <em>Petit Prince</em> example, and how people accepted his claims only after he donned the clothing they deemed to be acceptable. If someone <em>prejudges</em> the claims of scientist from Harvard University as being automatically more credible and valid than those of someone from Jadavpur University in Kolkatta (where my dad went to college incidentally), India without actually seeing their claims, this would be a classic case of <strong>Particularism</strong>. In fact, they might be implicitly biased against the claimant from Jadavpur University even if they read their study.</p>
+<p>Sadly, given what we know about human judgment and how often it relies on quick, mental shortcuts, this counter-norm appears quite realistic. The key then is to design systems of review (such as double-blind peer review) that acknowledge the possibility of Particularism.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Racial Discrimination as a Form of Particularism
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src=".\Images/blackwell.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Professor David Blackwell - A Trailblazer in Statistics. The Bancroft Library, UC Berkeley Library.</figcaption>
+</figure>
+</div>
+<p>Racial discrimination is a commonly-seen form of Particularism whereby scientists are judged on the basis of their race, rather than on the credulity of their claims. David Blackwell was a very smart man, and made many important contributions to statistics and mathematics including to game theory, probability theory, and Bayesian statistics. He was true luminary in the field, and blazed a trail for others as the first African American elected to the National Academy of Sciences.</p>
+<p>Blackwell was a postdoc at the Institute of Advanced Study (IAS) in Princeton in 1941. Usually, an IAS postdoc would receive a Visiting Fellow appointment at Princeton University, but Blackwell was not afforded this because he was Black. The President of Princeton University was unhappy that IAS had admitted a Black man in the first place.</p>
+<p>In 1942, Blackwell had interviewed for a position at UC Berkeley. His PhD advisor Joseph Doob told Jerzy Neyman, the founder of the UC Berkeley Department of Statistics, that among his good students “<strong><em>…Blackwell is the best. But of course he is black. And in spite of the fact that we are ina war that’s advancing the cause of democracy, it may not have spread throughout our own land.</em></strong>”<span class="citation" data-cites="cattau_david_2010"><sup><a href="references.html#ref-cattau_david_2010" role="doc-biblioref">6</a></sup></span> This was a pretty spot-on observation by Doob, as Blackwell was not hired at UC Berkeley. The reason? The wife of the department head refused to have a Black man in her house because new faculty members customarily attended dinner at the department head’s house.</p>
+<p>Blackwell went on to teach at Howard University for 10 years, and also worked at the RAND corporation. In 1954, Blackwell was hired at UC Berkeley at last, and stayed there for the rest of his long and storied career.</p>
+</div>
+</div>
+</section>
+<section id="solitariness-in-contrast-with-communalism" class="level3" data-number="12.3.2">
+<h3 data-number="12.3.2" class="anchored" data-anchor-id="solitariness-in-contrast-with-communalism"><span class="header-section-number">12.3.2</span> Solitariness (in contrast with Communalism)</h3>
+<p>Secrecy is the name of the game with this counter-norm. Here, property rights are extended to scientific discoveries. This is actually what one commonly sees when business interests intersect with academic ones. Think about Big Tech companies. They have a strong financial incentive to deliver value to their shareholders through monetizing and protecting their intellectual property. That these are also scientific discoveries illustrates a deviation from the norm of Communalism.</p>
+<p>The lines are not always so stark however, and my personal opinion is that there is room for scientific communalism as well as commercial privatization in a number of cases. For example, the founders of Google, Larry Page and Sergey Brin, authored a journal article in 1998 in which they break down their famous PageRank algorithm.<span class="citation" data-cites="brin_anatomy_1998"><sup><a href="references.html#ref-brin_anatomy_1998" role="doc-biblioref">7</a></sup></span> This provided a valuable contribution to the computer science literature, while also forming the basis of Google Search, which still accounts for just over half of Google’s revenues.<span class="citation" data-cites="zaveri_googles_2020"><sup><a href="references.html#ref-zaveri_googles_2020" role="doc-biblioref">8</a></sup></span></p>
+</section>
+<section id="interestedness-in-contrast-with-disinterestedness" class="level3" data-number="12.3.3">
+<h3 data-number="12.3.3" class="anchored" data-anchor-id="interestedness-in-contrast-with-disinterestedness"><span class="header-section-number">12.3.3</span> Interestedness (in contrast with Disinterestedness)</h3>
+<p>In contrast with Disinterestedness, this counter-norm illustrates the temptation of self-interest and prestige as a chief motivating factor behind scientific discovery. Scientists then work not to for the sake of science, but to secure more funding, more renown, and better positions at more prestigious institutions. This is one of the more realistic counter-norms, in my opinion, as hiring and promotion tend to emphasize a scientist’s output, rather than a dedication to science for the sake of science. The culture of <strong>Publish or Perish</strong> means that you NEED to be cranking out papers to get a tenure-track position, and certainly to achieve tenure. Consider the implications of this incentive - the system will reward you for papers (be they fraudulent or improperly produced) rather than for producing transparent and robust unpublished work.</p>
+<p>This incentive creeps into the academic process in a number of ways. Consider how the prestige of a scientific journal often hinges on how well-cited and influential its articles are, and how this encourages more sensational, novel papers rather than carefully-crafted replications or less <em>sexy</em>, though important, findings. Journals are more likely to publish findings that are statistically significant than findings that are not statistically significant, and this phenomenon is known as <strong>Publication Bias</strong>.<span class="citation" data-cites="easterbrook_publication_1991"><sup><a href="references.html#ref-easterbrook_publication_1991" role="doc-biblioref">9</a></sup></span> This leads to all sorts of distortions of the evidence base which we shall discuss later in the course.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Self-Citations: Creating your own Fame
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In 2018, a prominent professor of human development, Robert Sternberg, resigned as editor of the journal <em>Perspectives on Psychological Science.</em> His colleagues were not happy that he kept citing himself and publishing in the journal in which he was the Editor. In one of his articles, 10/17 citations (~59%) are his own.<span class="citation" data-cites="sternberg_am_2016"><sup><a href="references.html#ref-sternberg_am_2016" role="doc-biblioref">10</a></sup></span> Other articles had similarly troubling levels of self-citations.<span class="citation" data-cites="flaherty_revolt_2018"><sup><a href="references.html#ref-flaherty_revolt_2018" role="doc-biblioref">11</a></sup></span> He was also criticized for publishing several commentaries in the journal without peer review, and with the benefit of garnering multiple citations.</p>
+<p>Citing your own work is not a bad thing on its own, but when the majority of your citations are your own, that’s usually a problem! Consider how it may indicate an echo-chamber approach to science, where you are not actually doing the work of reviewing the literature. The case of Robert Sternberg illustrates how once a habit becomes entrenched, it can be very difficult to see the shortcomings and to stop doing it.</p>
+</div>
+</div>
+</section>
+<section id="organized-dogmatism-in-contrast-with-organized-skepticism" class="level3" data-number="12.3.4">
+<h3 data-number="12.3.4" class="anchored" data-anchor-id="organized-dogmatism-in-contrast-with-organized-skepticism"><span class="header-section-number">12.3.4</span> Organized Dogmatism (in contrast with Organized Skepticism)</h3>
+<p>Under this counter-norm, scientists take all the credit for their discoveries, while placing the blame for any inadequacies on previous work by others. Far from doubting their own findings, under <strong>Organized Dogmatism</strong> scientists promote their own findings with a deep conviction, regardless of what others are saying or doing.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dogmatism: The Ultimate Close-Minded Approach
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A useful definition of Dogmatism is provided by the late psychologist Milton Rokeach:</p>
+<p><strong><em>A relatively closed cognitive organization of beliefs and disbeliefs about reality, organized around a central set of beliefs about absolute authority which, in turn, provides a framework for patterns of intolerance and qualified tolerance toward others.<span class="citation" data-cites="rokeach_nature_1954"><sup><a href="references.html#ref-rokeach_nature_1954" role="doc-biblioref">12</a></sup></span></em></strong></p>
+<p>In sum, dogmatism sounds like this “I’m right. I know I’m right. Anyone who says otherwise is wrong.”</p>
+</div>
+</div>
+<p>Imagine working on a specific area of research for most or all of your career. You become THE leading expert in the topic, and others defer to your authority…for a time. Just as you start to wane in fame, a young hotshot is putting out research that directly critiques your fundamental findings. Will you take an organized skeptical approach and re-assess your work (you should!), or will you instead fight back vociferously and vocally, in spite of mounting evidence against you? While I would love for scientists to be detached enough to scrutinize their own work even if they are the leading expert on it, unfortunately when one’s identity becomes intertwined with their work, it can be quite difficult to be objective.</p>
+<p>How do you avoid Organized Dogmatism? Lead with intellectual humility. One excellent example of this is psychologist Julia Rohrer’s <a href="https://lossofconfidencecom.wordpress.com">Loss of Confidence Project</a> in which she and others admit mistakes that they have made in their previous research. This is a remarkable departure from the tempting counter-norms of Organized Dogmatism and Interestedness, because instead of lauding one’s own accomplishments, it publicly declares instances of one’s errors. Normalizing errors and reporting them is a noble effort, and one that can fight against the counter-norms impeding the progress of science.</p>
+<p>As pointed out by Vox science and health editor Brian Resnick,<span class="citation" data-cites="resnick_intellectual_2019"><sup><a href="references.html#ref-resnick_intellectual_2019" role="doc-biblioref">13</a></sup></span> there are at least three key challenges to humility (which I paraphrase):</p>
+<ul>
+<li>Our minds (even the geniuses among us) have blindspots and are more imperfect than we are willing to admit.</li>
+<li>We need a culture that celebrates the words “I was wrong.”</li>
+<li>We will never achieve perfect intellectual humility, so we need to be thoughtful with our convictions.</li>
+</ul>
+</section>
+</section>
+<section id="conclusion" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">12.4</span> Conclusion</h2>
+<p>In short, Mertonian Norms are aspirational and admirable. We should strive to do science in accordance with these norms. However, let’s also be real and recognize that the counter-norms often motivate our behavior. We should be cognizant of them, and engage in habits and practices that actively minimize their influence on our behavior such as transparency and humility, and should strive to enact systems that are consonant with Mertonian Norms such as double-blind peer review, and keeping a lid on self-citations.</p>
+
+
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-cartwright_middle-range_2020" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Cartwright N. Middle-range theory: <span>Without</span> it what could anyone do? <em>THEORIA An International Journal for Theory, History and Foundations of Science</em>. Published online September 2020. Accessed June 13, 2023. <a href="https://ojs.ehu.eus/index.php/THEORIA/article/view/21479">https://ojs.ehu.eus/index.php/THEORIA/article/view/21479</a></div>
+</div>
+<div id="ref-merton_science_1942" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Merton RK. Science and technology in a democratic order, reprinted as <span>The</span> normative structure of science. Published online 1942. <a href="https://sciencepolicy.colorado.edu/students/envs_5110/merton_sociology_science.pdf">https://sciencepolicy.colorado.edu/students/envs_5110/merton_sociology_science.pdf</a></div>
+</div>
+<div id="ref-huckvale_assessment_2019" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Huckvale K, Torous J, Larsen ME. Assessment of the <span>Data</span> <span>Sharing</span> and <span>Privacy</span> <span>Practices</span> of <span>Smartphone</span> <span>Apps</span> for <span>Depression</span> and <span>Smoking</span> <span>Cessation</span>. <em>JAMA Network Open</em>. 2019;2(4):e192542. doi:<a href="https://doi.org/10.1001/jamanetworkopen.2019.2542">10.1001/jamanetworkopen.2019.2542</a></div>
+</div>
+<div id="ref-de_saint-exupery_petit_1943" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Saint-Exupéry A de. Le petit prince [<span>The</span> little prince]. <em>Verenigde State van Amerika: Reynal &amp; Hitchkock (US), Gallimard (FR)</em>. Published online 1943.</div>
+</div>
+<div id="ref-mitroff_norms_1974" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Mitroff II. Norms and <span>Counter</span>-<span>Norms</span> in a <span>Select</span> <span>Group</span> of the <span>Apollo</span> <span>Moon</span> <span>Scientists</span>: <span>A</span> <span>Case</span> <span>Study</span> of the <span>Ambivalence</span> of <span>Scientists</span>. <em>American Sociological Review</em>. 1974;39(4):579-595. doi:<a href="https://doi.org/10.2307/2094423">10.2307/2094423</a></div>
+</div>
+<div id="ref-cattau_david_2010" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Cattau D. David <span>Blackwell</span>, ’<span>Superstar</span>’. <em>The University of Illinois Alumni Association – Illinois Alumni Magazine</em>. Published online 2010.</div>
+</div>
+<div id="ref-brin_anatomy_1998" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Brin S, Page L. The <span>Anatomy</span> of a <span>Large</span>-<span>Scale</span> <span>Hypertextual</span> <span>Web</span> <span>Search</span> <span>Engine</span>. <em>Computer Networks</em>. 1998;30:107-117. Accessed June 21, 2023. <a href="http://www-db.stanford.edu/~backrub/google.html">http://www-db.stanford.edu/~backrub/google.html</a></div>
+</div>
+<div id="ref-zaveri_googles_2020" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Zaveri B. Google’s <span>Revenue</span> <span>By</span> <span>Segment</span> (2016-2023). <em>Business Quant</em>. Published online February 2020. Accessed June 21, 2023. <a href="https://businessquant.com/google-revenue-by-segment">https://businessquant.com/google-revenue-by-segment</a></div>
+</div>
+<div id="ref-easterbrook_publication_1991" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Easterbrook PJ, Gopalan R, Berlin J, Matthews DR. Publication bias in clinical research. <em>The Lancet</em>. 1991;337(8746):867-872.</div>
+</div>
+<div id="ref-sternberg_am_2016" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Sternberg RJ. "<span>Am</span> <span>I</span> <span>Famous</span> <span>Yet</span>?" <span>Judging</span> <span>Scholarly</span> <span>Merit</span> in <span>Psychological</span> <span>Science</span>: <span>An</span> <span>Introduction</span>. <em>Perspectives on Psychological Science: A Journal of the Association for Psychological Science</em>. 2016;11(6):877-881. doi:<a href="https://doi.org/10.1177/1745691616661777">10.1177/1745691616661777</a></div>
+</div>
+<div id="ref-flaherty_revolt_2018" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Flaherty C. Revolt <span>Over</span> an <span>Editor</span>. <em>Inside Higher Ed</em>. Published online 2018. Accessed June 21, 2023. <a href="https://www.insidehighered.com/news/2018/04/30/prominent-psychologist-resigns-journal-editor-over-allegations-over-self-citation">https://www.insidehighered.com/news/2018/04/30/prominent-psychologist-resigns-journal-editor-over-allegations-over-self-citation</a></div>
+</div>
+<div id="ref-rokeach_nature_1954" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Rokeach M. The nature and meaning of dogmatism. Published online 1954.</div>
+</div>
+<div id="ref-resnick_intellectual_2019" class="csl-entry" role="listitem">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">Resnick B. Intellectual humility: The importance of knowing you might be wrong. <em>Vox</em>. Published online January 2019. Accessed June 21, 2023. <a href="https://www.vox.com/science-and-health/2019/1/4/17989224/intellectual-humility-explained-psychology-replication">https://www.vox.com/science-and-health/2019/1/4/17989224/intellectual-humility-explained-psychology-replication</a></div>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./replication1.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">A Very Brief History of Replication</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./replication3.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Some Statistical Preliminaries</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

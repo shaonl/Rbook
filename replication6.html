@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Research Transparency, Reproducibility, and Basic Data Analysis in R! - 16&nbsp; Potential Solutions &amp; the Way Forward</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./replication5.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./replication6.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Potential Solutions &amp; the Way Forward</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Research Transparency, Reproducibility, and Basic Data Analysis in R!</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing R and RStudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./getstarted.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Accustomed to R Studio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./datatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./stringscomps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Strings &amp; Comparisons</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataimport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Importing Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./datajoin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Merging (Joining) and Reshaping Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Cleaning</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataexp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Exploration with <code>dplyr</code></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataviz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Visualization with base R and <code>ggplot2</code></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">A Very Brief History of Replication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mertonian Norms and Counter-Norms</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Some Statistical Preliminaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Crises of Replication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Common Problems that Hamper Reproducibility</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication6.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Potential Solutions &amp; the Way Forward</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appintroex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="intro.html#sec-introex"><span>Section&nbsp;3.8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appdatatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="datatypes.html#sec-dtex"><span>Section&nbsp;4.7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appstringcomp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="stringscomps.html#sec-sboex"><span>Section&nbsp;5.3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appdatajoin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="datajoin.html#sec-joinex"><span>Section&nbsp;7.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appdataclean.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="cleaning.html#sec-cleanex"><span>Section&nbsp;8.8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./apptidyex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="dataexp.html#sec-tidyex"><span>Section&nbsp;9.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appkahneman.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Kahneman’s Open Letter to Priming Researchers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#a-partial-list" id="toc-a-partial-list" class="nav-link active" data-scroll-target="#a-partial-list"><span class="header-section-number">16.1</span> A Partial List</a></li>
+  <li><a href="#pre-registration" id="toc-pre-registration" class="nav-link" data-scroll-target="#pre-registration"><span class="header-section-number">16.2</span> Pre-registration</a>
+  <ul class="collapse">
+  <li><a href="#general-description" id="toc-general-description" class="nav-link" data-scroll-target="#general-description"><span class="header-section-number">16.2.1</span> General Description</a></li>
+  <li><a href="#common-apprehensions" id="toc-common-apprehensions" class="nav-link" data-scroll-target="#common-apprehensions"><span class="header-section-number">16.2.2</span> Common Apprehensions</a></li>
+  <li><a href="#what-should-be-included-where-to-pre-register" id="toc-what-should-be-included-where-to-pre-register" class="nav-link" data-scroll-target="#what-should-be-included-where-to-pre-register"><span class="header-section-number">16.2.3</span> What Should Be Included &amp; Where to Pre-register</a></li>
+  </ul></li>
+  <li><a href="#improved-methodological-training" id="toc-improved-methodological-training" class="nav-link" data-scroll-target="#improved-methodological-training"><span class="header-section-number">16.3</span> Improved Methodological Training</a></li>
+  <li><a href="#incentives" id="toc-incentives" class="nav-link" data-scroll-target="#incentives"><span class="header-section-number">16.4</span> Incentives</a></li>
+  <li><a href="#funders-hold-tremendous-power" id="toc-funders-hold-tremendous-power" class="nav-link" data-scroll-target="#funders-hold-tremendous-power"><span class="header-section-number">16.5</span> Funders Hold Tremendous Power</a></li>
+  <li><a href="#reporting-guidelines" id="toc-reporting-guidelines" class="nav-link" data-scroll-target="#reporting-guidelines"><span class="header-section-number">16.6</span> Reporting Guidelines</a></li>
+  <li><a href="#preprints-and-registered-reports" id="toc-preprints-and-registered-reports" class="nav-link" data-scroll-target="#preprints-and-registered-reports"><span class="header-section-number">16.7</span> Preprints and Registered Reports</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">16.8</span> Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-rep6" class="quarto-section-identifier"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Potential Solutions &amp; the Way Forward</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/capytea.png" class="img-fluid figure-img" width="728"></p>
+<figcaption class="figure-caption">Wise capybaras feel motivated and encouraged by advances in Open Science, and I agree with them!</figcaption>
+</figure>
+</div>
+<p>If you’ve made it this far having read all the previous chapters, I hope you are not dismayed at the state of research transparency and reproducibility (RT2) in science. If you are, I don’t blame you. It’s easy to feel helpless at the state of research. However, there are many advances that have been made, and that will be made to improve things. Consider this, about 15 years ago, RT2 was not really a thing. Most folks had no idea about problems with replicating and reproducing results of empirical studies. Sure, some folks like John Ioannidis were already sounding the alarms for a while as we say in <a href="replication4.html#sec-stirr"><span>Section&nbsp;14.2</span></a>, but I think it’s safe to say most researchers either didn’t know or didn’t care about RT2 problems (many still don’t).</p>
+<p>Since that time, there have been a number of changes to the RT2 landscape, and a push toward Open Science has been increasing. Let’s review some of the potential solutions to the problems we’ve seen.</p>
+<section id="a-partial-list" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="a-partial-list"><span class="header-section-number">16.1</span> A Partial List</h2>
+<p>First, let’s look at a table of potential solutions advanced in an excellent <em>Nature</em> article entitled <em>A manifesto for reproducible science</em><span class="citation" data-cites="munafo_manifesto_2017"><sup><a href="references.html#ref-munafo_manifesto_2017" role="doc-biblioref">1</a></sup></span> in <a href="#tbl-sols">Table&nbsp;<span>16.1</span></a>.</p>
+<div id="tbl-sols" class="anchored">
+<table class="table">
+<caption>Table&nbsp;16.1: A partial list of potential solutions. Adapted from Table 1 in the original article by Munafò et al.<span class="citation" data-cites="munafo_manifesto_2017"><sup><a href="references.html#ref-munafo_manifesto_2017" role="doc-biblioref">1</a></sup></span></caption>
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Potential Solution Area</th>
+<th>Example(s) of Potential Solutions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Protecting against cognitive biases</td>
+<td>Blinding</td>
+</tr>
+<tr class="even">
+<td>Improved methodological training</td>
+<td><p>Rigorous training in statistics and research methods for future researchers.</p>
+<p>Rigorous continuing education in statistics and methods for current researchers.</p></td>
+</tr>
+<tr class="odd">
+<td>Independent methodological support</td>
+<td><p>Involvement of methodologists in research.</p>
+<p>Independent oversight.</p></td>
+</tr>
+<tr class="even">
+<td>Collaboration and team science</td>
+<td><p>Multi-site studies/distributed data collection.</p>
+<p>Team-science consortia.</p></td>
+</tr>
+<tr class="odd">
+<td>Promoting study pre-registration</td>
+<td><p>Registered Reports.</p>
+<p>Open Science Framework use.</p></td>
+</tr>
+<tr class="even">
+<td>Improving the quality of reporting</td>
+<td><p>Using reporting checklists.</p>
+<p>Protocol checklists.</p></td>
+</tr>
+<tr class="odd">
+<td>Protecting against conflicts of interest</td>
+<td><p>Disclosure of conflicts of interest.</p>
+<p>Exclusion/containment of financial and non-financial conflicts of interest.</p></td>
+</tr>
+<tr class="even">
+<td>Encouraging transparency and open science</td>
+<td><p>Open data, code, and related materials.</p>
+<p>Pre-registration.</p></td>
+</tr>
+<tr class="odd">
+<td>Diversifying peer review</td>
+<td><p>Preprints.</p>
+<p>Pre- and post-publication peer review such as Publons and PubMed Commons.</p></td>
+</tr>
+<tr class="even">
+<td>Rewarding open and reproducible practices</td>
+<td><p>Badges.</p>
+<p>Transparency and Openness Promotion Guidelines.</p>
+<p>Funding replication studies.</p>
+<p>Registered Reports.</p>
+<p>Open science practices in hiring and promotion.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>That’s a pretty good list. It’s not complete, nor could it be, as advances are continually being made, but it’s summarizes potential solutions across a number of areas nicely. Let’s now explore some potential solutions in detail.</p>
+</section>
+<section id="pre-registration" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="pre-registration"><span class="header-section-number">16.2</span> Pre-registration</h2>
+<section id="general-description" class="level3" data-number="16.2.1">
+<h3 data-number="16.2.1" class="anchored" data-anchor-id="general-description"><span class="header-section-number">16.2.1</span> General Description</h3>
+<p>Pre-registration refers to <em>specifying your research plan in advance of your study and submitting it to a registry.</em><span class="citation" data-cites="center_for_open_science_preregistration_nodate"><sup><a href="references.html#ref-center_for_open_science_preregistration_nodate" role="doc-biblioref">2</a></sup></span> It’s basically saying what you plan to do and how you plan to do it, and then publishing those details in the public domain before you conduct your study. In this way, pre-registration separates <strong>hypothesis-testing</strong> (confirmatory) research from <strong>hypothesis-generating</strong> (exploratory) research as shown in <a href="#fig-prereg">Figure&nbsp;<span>16.1</span></a>.</p>
+<div id="fig-prereg" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/prereg.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;16.1: Pre-registration is not a straitjacket; you can still conduct exploratory analyses and try things out. It’s just that you should be clear which analyses will be confirmatory and which will be exploratory.</figcaption>
+</figure>
+</div>
+<p>As we saw in <a href="replication5.html"><span>Chapter&nbsp;15</span></a>, humans are prone to several cognitive biases which can affect our ability to separate <em>a priori</em> from <em>a posteriori</em> thinking, even if we do not mean to conflate the two. Pre-registration can mitigate these biases by clearly stating at the outset what analyses will be used to confirm or falsify hypotheses, and which analyses will be exploratory. Then, the reader can judge the merit of the work for themselves. Ideally before a researcher collects any data, they should pre-register their confirmatory hypotheses and related analyses in the public domain. There are several benefits of doing so in terms of reducing bias due to:</p>
+<ul>
+<li>Selective reporting of outcomes.</li>
+<li>Different analytic decisions that can lead to different results.</li>
+<li>Publication bias, because it corrects the denominator of studies and hypotheses out there.</li>
+<li>Cognitive biases like apophenia, hindsight bias, and confirmation bias.</li>
+</ul>
+</section>
+<section id="common-apprehensions" class="level3" data-number="16.2.2">
+<h3 data-number="16.2.2" class="anchored" data-anchor-id="common-apprehensions"><span class="header-section-number">16.2.2</span> Common Apprehensions</h3>
+<p>Now, let’s say you followed my advice above and pre-registered your study in the public domain prior to data collection. Then, in the course of the research process, you discover that something you said you would do in your pre-registration isn’t working, and you have to pivot to a different strategy. Is that OK? Yes! As long as you clearly state any deviations from your pre-registered plan, it’s totally fine if you need to adjust something. It’s all about being transparent about what you did. Additionally, even if you already have a dataframe you want to analyze, you can still pre-register your analysis plan prior to analyzing the data. This is not the ideal scenario as it still leaves a researcher degree of freedom to cheat and peek at the data, but at least it shows people exactly what you did and readers can judge the veracity of the pre-registration for themselves.</p>
+<p>You may wonder, <em>Won’t someone steal my ideas if I pre-register my ideas?</em> This is a valid concern, and though I don’t believe this happens frequently, the point is that it <em>can</em> happen. The solution is therefore to <strong>embargo</strong> the pre-registration, which keeps it private for a certain amount of time (up to four years on some platforms) before it is made public. This allows researchers plenty of time to conduct a pre-registered study without worrying about their ideas being stolen (also known as <strong>getting scooped</strong>). Additionally, once the researcher’s ideas are pre-registered and public, that provides a timestamp to lay claim to their ideas. That is, if someone else steals your exact set of analyses, data, and code, you have a record of having registered these in the public domain prior to their study being published. In my experience, getting your ideas stolen due to preregistration doesn’t really happen. In fact, some believe that the fear of being scooped is not a legitimate drawback against pre-registration as papers are unlikely to be rejected due to scooping alone, no two scooped studies can be the same, and if someone uses your methods on a different sample, that’s actually a good thing for science!<span class="citation" data-cites="schwarzkopf_its_2016"><sup><a href="references.html#ref-schwarzkopf_its_2016" role="doc-biblioref">3</a></sup></span> Of course, if one is still afraid, the embargo period is an elegant solution.</p>
+</section>
+<section id="what-should-be-included-where-to-pre-register" class="level3" data-number="16.2.3">
+<h3 data-number="16.2.3" class="anchored" data-anchor-id="what-should-be-included-where-to-pre-register"><span class="header-section-number">16.2.3</span> What Should Be Included &amp; Where to Pre-register</h3>
+<p>You can be as detailed as you want in a pre-registration, but there are a few elements that should be described as a minimum. For instance, you should describe the hypotheses, planned analyses, and criteria for falsifying or supporting the hypotheses. In general, a reader should be able to replicate the methodology used, and the pre-registration should minimize as many researcher degrees of freedom as possible for confirmatory analyses. Personally, I treat the pre-registration as the bulk of my Methods section that will eventually end up in the published manuscript (save any deviations from the pre-registration which I include later in the final manuscript). This includes information about the variables being measured, a detailed analysis plan, and several back-up plans if what I want to do fails for some reason. If possible, the actual code that will be used to conduct the analyses should be included as well.</p>
+<p>The pre-registration platform <a href="https://aspredicted.org"><em>aspredicted.org</em></a> provides perhaps the simplest template for create a pre-registration, wherein researchers need to answer the following eight questions:</p>
+<ol type="1">
+<li><p>Have any data been collected for this study already?</p></li>
+<li><p>What’s the main question being asked or hypothesis being tested in this study?</p></li>
+<li><p>Describe the key dependent variable(s) specifying how they will be measured.</p></li>
+<li><p>How many and which conditions will participants be assigned to?</p></li>
+<li><p>Specify exactly which analyses you will conduct to examine the main question/hypothesis.</p></li>
+<li><p>Any secondary analyses?</p></li>
+<li><p>How many observations will be collected or what will determine sample size?</p></li>
+<li><p>Anything else you would like to pre-register (e.g., data exclusions, variables collected for exploratory purposes, unusual analyses planned)?</p></li>
+</ol>
+<p>My favorite platform for pre-registration and posting all research materials in the public domain is the <a href="https://osf.io/dashboard"><strong>Open Science Framework (OSF)</strong></a>.You can pre-register any study on the OSF, and it’s a great place to also put all your de-identified data, code, and materials used to generate your analyses. Besides having an excellent repository of study materials and pre-registrations, the site also provides several resources for learning more about pre-registration and Open Science. It also has an embargo period of four years should you wish to maintain privacy of the pre-registration for a certain period of time.</p>
+<p>There are also study design-specific registries. For instance, the American Economic Association has a <a href="https://www.socialscienceregistry.org/site/about">registry for Randomized Controlled Trials only</a>. The <a href="https://www.crd.york.ac.uk/prospero/">PROSPERO registry</a> hosted by York University in the UK is THE go-to place to register systematic reviews, meta-analyses, rapid reviews, and umbrella reviews. Clinical trials in the US have to registered on <a href="https://clinicaltrials.gov">clinicaltrials.gov</a>, but this registry is also applicable to any social science randomized controlled trial. The International Initiative for Impact Evaluation (3ie) hosts the <a href="https://ridie.3ieimpact.org">Registry for International Development Impact Evaluations</a>. Thus, there are many places to pre-register a study! If you’re at a loss for where to register, I suggest trying the Open Science Framework.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A Pre-Registered Analysis Plan
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Want to see an example of a real study pre-registration? Here’s <a href="https://doi.org/10.17605/OSF.IO/V8GQR">one of mine</a> on the Open Science Framework. It’s got hypotheses, analysis plans, diagrams, equations, references, and all kinds of good stuff! This study analyzed restricted-access longitudinal secondary data. This meant that I had to apply to get this data from a data vendor. Only after receiving the data could I gauge what variables I could include in an analysis plan. As a result, I create two pre-registrations: one before I received the data, and another after receiving the data but before conducting my main analyses. The link is to the second pre-registration, but you can also find a link to the first pre-registration on the same page. Check it out!</p>
+</div>
+</div>
+</section>
+</section>
+<section id="improved-methodological-training" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="improved-methodological-training"><span class="header-section-number">16.3</span> Improved Methodological Training</h2>
+<p>Any scientific discipline that makes use of statistical analysis can be open to researcher degrees of freedom, and consequently, spurious research findings. Thus, appropriate and rigorous statistical training is needed for robust quantitative science. Additionally, researchers need robust training in study design and implementation. Research design and statistical analyses are mutually dependent and reinforcing.<span class="citation" data-cites="munafo_manifesto_2017"><sup><a href="references.html#ref-munafo_manifesto_2017" role="doc-biblioref">1</a></sup></span> Even if you’ve received a PhD with solid training in statistics, keeping up the latest advances requires a concerted effort, and is necessary. In particular the following areas of methodological training have been cited as especially crucial to RT2,<span class="citation" data-cites="munafo_manifesto_2017"><sup><a href="references.html#ref-munafo_manifesto_2017" role="doc-biblioref">1</a></sup></span> seen in <a href="#fig-stats">Figure&nbsp;<span>16.2</span></a>.</p>
+<div id="fig-stats" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/methtrain.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;16.2: Methodological training at all stages of one’s career is crucial to keep up with the latest advances in rigorous design and analysis.</figcaption>
+</figure>
+</div>
+<p>The use of statistics in quantitative research is so ubiquitous that you’d be hard-pressed to find a scientific field that DOES NOT use statistics for any research involving numbers. Thus, most researchers may not be specialists in statistics (I know I’m certainly not), but need to know they key components in order to use them appropriately. This is why it is crucial to consult methodologists (those whose primary work concerns methodology development and training) and statistical experts whenever possible. However, non-specialists who use statistics should be appropriately trained so we don’t make the same mistakes as researchers in the past. When reporting the results of a study, some suggest a simple 21-word ‘solution’:</p>
+<blockquote class="blockquote">
+<p><em>We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study.”</em><span class="citation" data-cites="simmons_21_2012"><sup><a href="references.html#ref-simmons_21_2012" role="doc-biblioref">4</a></sup></span></p>
+</blockquote>
+<p>This isn’t a ‘solution’ in the mathematical sense or in the sense we are discussing here. Rather, it’s a sentence that prompts researchers to clearly describe important elements of their study.</p>
+<p>One useful way to improve methodological training is to train students to replicate a given study. This can apply to students in formal degree programs, but could just as well be applied to participants at a workshop who may be continuing their education. This is commonly done in certain fields currently, but there’s no reason why it cannot be applied broadly to any fields who engage in quantitative research. In fact, there is an increasing push toward teaching replication at the undergraduate and graduate levels.<span class="citation" data-cites="stojmenovska_teaching_2019"><sup><a href="references.html#ref-stojmenovska_teaching_2019" role="doc-biblioref">5</a></sup></span> <span class="citation" data-cites="janz_bringing_2016"><sup><a href="references.html#ref-janz_bringing_2016" role="doc-biblioref">6</a></sup></span><span class="citation" data-cites="hawkins_improving_2018"><sup><a href="references.html#ref-hawkins_improving_2018" role="doc-biblioref">7</a></sup></span> An example of a replication pedagogy workflow for a graduate-level experimental methods courses is shown in <a href="#fig-repschem">Figure&nbsp;<span>16.3</span></a>.</p>
+<div id="fig-repschem" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/repschem.png" class="img-fluid figure-img" width="676"></p>
+<figcaption class="figure-caption">Figure&nbsp;16.3: An example of a graduate-level replication pedagogy workflow. Adapted from Hawinks et al.<span class="citation" data-cites="hawkins_improving_2018"><sup><a href="references.html#ref-hawkins_improving_2018" role="doc-biblioref">7</a></sup></span></figcaption>
+</figure>
+</div>
+<p>The schematic above illustrates one possible pedagogical workflow for a graduate-level course over 10 weeks. It’s not the only approach, but a good place to start. In this workflow, students begin with writing brief proposals for determining which studies they want to replicate, which are reviewed by an instructor for feasibility. Next, they complete the Methods section of a replication template developed by the Open Science Collaboration.<span class="citation" data-cites="open_science_collaboration_estimating_2015"><sup><a href="references.html#ref-open_science_collaboration_estimating_2015" role="doc-biblioref">8</a></sup></span> They then work on outlining their proposed replication experiment, which is reviewed by the instructor. Once approved, students proceed with their experimental protocol in two pilot tests. The first test is conducted with nonnaive participants, meaning the people in the class. This is to make sure the data are logged accurately, and confirmatory analysis code is working properly. After an instructor reviews the results, students proceed to a pilot test with real-world participants who are not in the class on an online platform such as MTurk or Prolific. This is done to make sure participants don’t experience any issues with completing the experiment, and to solicit feedback to determine if any design changes should be made. Following instructor review of the second pilot test, students pre-register and run their main replication.</p>
+<p>By making replication and pre-registration familiar to students, the hope is that this will transfer into actual research practice. At the very least, it can help normalize these processes by including them within curricula.</p>
+</section>
+<section id="incentives" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="incentives"><span class="header-section-number">16.4</span> Incentives</h2>
+<p>How does one incentivize Open Science practices like sharing data, code, and related materials in the public domain? One promising approach is inspired by the world of video games! Really! If you’ve ever played a video in the past 10 years or so, you have likely encountered some variation of an achievement badge for some task (e.g., leveling-up, defeating a boss, etc). The Center for Open Science developed several digital badges for use by journals to award researchers for pre-registering their study, sharing their data, and sharing their materials. The current suite of badges are shown in <a href="#fig-badges">Figure&nbsp;<span>16.4</span></a>.</p>
+<div id="fig-badges" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/badges.png" class="img-fluid figure-img" width="728"></p>
+<figcaption class="figure-caption">Figure&nbsp;16.4: Current Center of Open Science badges.<span class="citation" data-cites="center_for_open_science_open_nodate"><sup><a href="references.html#ref-center_for_open_science_open_nodate" role="doc-biblioref">9</a></sup></span> <span class="citation" data-cites="american_psychological_association_open_2023"><sup><a href="references.html#ref-american_psychological_association_open_2023" role="doc-biblioref">10</a></sup></span></figcaption>
+</figure>
+</div>
+<p>Over 100 journals currently award these open science badges to authors who do the thing associated with each badge. The meaning of each badge is summarized in <a href="#tbl-badges">Table&nbsp;<span>16.2</span></a>.</p>
+<div id="tbl-badges" class="anchored">
+<table class="table">
+<caption>Table&nbsp;16.2: Description of Open Science Badges. <em>Source: American Psychological Association.</em><span class="citation" data-cites="american_psychological_association_open_2023"><sup><a href="references.html#ref-american_psychological_association_open_2023" role="doc-biblioref">10</a></sup></span></caption>
+<thead>
+<tr class="header">
+<th>Badge</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Preregistered</td>
+<td>At least one study has been preregistered with descriptions of the research design and study materials, including the planned sample size, research question(s) or hypothesis(ses), outcome variable(s), predictor variable(s). Results must be fully disclosed.</td>
+</tr>
+<tr class="even">
+<td>Preregistered✚</td>
+<td>At lease one study has been preregistered along with the analysis plan for the research, and the results are reported according to that plan.</td>
+</tr>
+<tr class="odd">
+<td>Open Materials</td>
+<td>All digitally-shareable materials necessary to reproduce the reported results are provided, and description of non-digitally-shareable materials needed for replication are made publicly available.</td>
+</tr>
+<tr class="even">
+<td>Open Data</td>
+<td>All data needed to reproduce results are made publicly available. Necessary metadata or codebooks are also provided. A list of such repositories is available <a href="https://osf.io/tvyxz/wiki/8.%20Approved%20Protected%20Access%20Repositories/">here</a>.</td>
+</tr>
+<tr class="odd">
+<td>Open Data (PA)</td>
+<td>PA stands for <em>Protected Access</em>. This refers to data that are sensitive or only available from an approved third-party repository that manages access to the data only for qualified researchers.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>While the badges might seem silly, they can actually make a difference to Open Science practices. To see if the badges encouraged data sharing, a group of researchers examined 2,478 experimental or observational study articles published from 2012 to the first half of 2015 in five psychology journals.<span class="citation" data-cites="kidwell_badges_2016"><sup><a href="references.html#ref-kidwell_badges_2016" role="doc-biblioref">11</a></sup></span> One of these journals <em>Psychological Science</em> began awarding open science badges in late 2013. The other four journals were all respected journals in psychology that did not award open science badges during the 2012 to 2015 study period. The results are quite telling. Check out their findings related to the effect of badges on data sharing in <a href="#fig-badgeswork">Figure&nbsp;<span>16.5</span></a>.</p>
+<div id="fig-badgeswork" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/badgeswork.png" class="img-fluid figure-img" width="983"></p>
+<figcaption class="figure-caption">Figure&nbsp;16.5: After the journal Psychological Science started awarding badges, the rate of data sharing went way up. The dotted red line indicates when Psychological Science started awarding Open Science badges. Other journals who didn’t award badges had the same low level of data sharing. From Figure 2 of the original study by Kidwell et al.</figcaption>
+</figure>
+</div>
+<p>The findings suggest that the badges increased data sharing, as well as the usability and accuracy of the data shared. The rate of data-sharing in <em>Psychological Science</em> increased from 1.5% to 39%, while the other journals stayed at 5% or less. However, badges are still not going to create more open practices on their own. An evaluation of badge use by the <em>British Medical Journal</em> for instance found that the badges did little to increase data sharing.<span class="citation" data-cites="rowhani-farid_did_2020"><sup><a href="references.html#ref-rowhani-farid_did_2020" role="doc-biblioref">12</a></sup></span> A similar evaluation of badge use by the journal <em>Biostatistics</em> showed an increase in data sharing due to badges, but of only about 7.6%, with no impact on code-sharing.<span class="citation" data-cites="rowhani-farid_badges_2018"><sup><a href="references.html#ref-rowhani-farid_badges_2018" role="doc-biblioref">13</a></sup></span> Thus, badges alone will not solve the problems in the field, but they are a simple, low- (or no) cost incentive that can improve things, even if only a little bit.</p>
+</section>
+<section id="funders-hold-tremendous-power" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="funders-hold-tremendous-power"><span class="header-section-number">16.5</span> Funders Hold Tremendous Power</h2>
+<p>Perhaps better than an incentives for researchers to engage in Open Science practices are requirement to do by funders. For instance, <a href="https://www.coalition-s.org/about/">cOAlition S</a> is an initiative by various international organizations and funders to make all research funded by national, regional or international research councils and funding bodies made available immediately in Open Access repositories and journals. This took effect from 2021 and continues to this day among funders who subscribe to this organization’s Plan S Principles presented below.<span class="citation" data-cites="european_science_foundation_principles_2023"><sup><a href="references.html#ref-european_science_foundation_principles_2023" role="doc-biblioref">14</a></sup></span></p>
+<ol type="1">
+<li><p>Authors or their institutions retain copyright to their publications. All publications must be published under an open license, preferably the Creative Commons Attribution license (CC BY), in order to fulfil the requirements defined by the <a href="#0">Berlin Declaration</a>.</p></li>
+<li><p>The Funders will develop robust criteria and requirements for the services that high-quality Open Access journals, Open Access platforms, and Open Access repositories must provide.</p></li>
+<li><p>In cases where high-quality Open Access journals or platforms do not yet exist, the Funders will, in a coordinated way, provide incentives to establish and support them when appropriate; support will also be provided for Open Access infrastructures where necessary.</p></li>
+<li><p>Where applicable, Open Access publication fees are covered by the Funders or research institutions, not by individual researchers; it is acknowledged that all researchers should be able to publish their work Open Access.</p></li>
+<li><p>The Funders support the diversity of business models for Open Access journals and platforms. When Open Access publication fees are applied, they must be commensurate with the publication services delivered and the structure of such&nbsp;<a href="https://www.coalition-s.org/faq/i-publish-a-journal-that-does-not-charge-any-publication-fees-aka-diamond-oa-do-i-have-to-submit-price-transparency-data/">fees must be transparent</a>&nbsp;to inform the market and facilitate the potential standardisation and capping of payments of fees.</p></li>
+<li><p>The Funders encourage governments, universities, research organisations, libraries, academies, and learned societies to align their strategies, policies, and practices, notably to ensure transparency.</p></li>
+<li><p>The above principles shall apply to all types of scholarly publications, but it is understood that the timeline to achieve Open Access for <a href="#0">monographs</a> and book chapters will be longer and requires a separate and due process.</p></li>
+<li><p>The Funders do not support the ‘hybrid’ model of publishing. However, as a transitional pathway towards full Open Access within a clearly defined timeframe, and only as part of&nbsp;<a href="https://www.coalition-s.org/faq/what-is-a-transformative-arrangement/">transformative arrangements</a>. Funders may contribute to financially supporting such arrangements.</p></li>
+<li><p>The Funders will monitor compliance and sanction non-compliant beneficiaries/grantees.</p></li>
+<li><p>The Funders commit that when assessing research outputs during funding decisions they will value the intrinsic merit of the work and not consider the publication channel, its impact factor (or other journal metrics), or the publisher.</p></li>
+</ol>
+<p>Many international funders have already endorsed the Plan S Principles such as the Bill &amp; Melinda Gates Foundation, the World Health Organization, Templeton World, the Wellcome Fund, and others. Additionally, a number of journals have also begun adopting the Plan S Principles. Specifically, a Transformative Journal is one that is committed to transitioning to a fully Open Access journal (one that does not place access restrictions on its articles).<span class="citation" data-cites="european_science_foundation_principles_2023"><sup><a href="references.html#ref-european_science_foundation_principles_2023" role="doc-biblioref">14</a></sup></span> These are small steps, but when funders require Open Science practices, that can be a powerful force for change.</p>
+</section>
+<section id="reporting-guidelines" class="level2" data-number="16.6">
+<h2 data-number="16.6" class="anchored" data-anchor-id="reporting-guidelines"><span class="header-section-number">16.6</span> Reporting Guidelines</h2>
+<p>Reporting guidelines are simple tools that provide a minimum list of information that should be included when writing a study. Having a common minimum set of guidelines helps create consistency across the field, and improve the quality of reporting. For instance, the <a href="https://www.equator-network.org">Equator network</a> is an organization that brings together researchers, funders, journal editors, and others in service of improving the quality of published research. They have links to 577 different reporting guidelines across diverse study designs, research areas, and fields. Some of the main guidelines that researchers use are listed in <a href="#fig-guidelines">Figure&nbsp;<span>16.6</span></a>. The use of such guidelines is often required by particular journals, and can be a great way to obtain relevant information about key aspects of a study.</p>
+<div id="fig-guidelines" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/equator.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;16.6: The Equator network has links to 577 reporting guidelines!</figcaption>
+</figure>
+</div>
+<p>In fact, we now even have Transparency and Openness Promotion (TOP) guidelines which specify eight standard toward greater scientific openness.<span class="citation" data-cites="nosek_promoting_2015"><sup><a href="references.html#ref-nosek_promoting_2015" role="doc-biblioref">15</a></sup></span> The complete list of guidelines can be found <a href="https://www.cos.io/initiatives/top-guidelines">here</a>. There are now thousands of journals that have implemented at least two of the TOP guidelines, and journals can be checked for their <em>TOP Factor</em> which provides a numeric rating of how well they are implementing Open Science practices. The directory of journal TOP factors can be found <a href="https://topfactor.org">here</a>.</p>
+</section>
+<section id="preprints-and-registered-reports" class="level2" data-number="16.7">
+<h2 data-number="16.7" class="anchored" data-anchor-id="preprints-and-registered-reports"><span class="header-section-number">16.7</span> Preprints and Registered Reports</h2>
+<p>Preprints are research papers that are shared in the public domain prior to peer review. They typically have a digital object identifier, so they can be cited. The benefits of doing so are typically to receive credit for one’s ideas and findings without waiting for the often-long peer review process to conclude, to receive feedback from other experts in the field, and to increase visibility of one’s research.<span class="citation" data-cites="mudrak_what_2018"><sup><a href="references.html#ref-mudrak_what_2018" role="doc-biblioref">16</a></sup></span> They can also be a great place to deposit null results that may not be accepted by journals due to publication bias. In this way, they can correct the denominator of studies and hypotheses on a topic, which can be particularly useful for evidence syntheses. There are several places to publish preprints, and an entire director of preprint servers is available <a href="https://asapbio.org/preprint-servers">here</a>. Some examples of preprint servers include SSRN, ArXiv (pronounced ‘archive’), Preprints.org, medRXiv, and many more.</p>
+<p>Registered reports are a relatively newer publishing format that involve two stages of peer review: one on the methodology of the planned study before data are collection, and another after the data are collected. The idea is to eliminate publication bias by agreeing to publish work that is methodologically sound, regardless of statistically significant outcomes. Journals that allow this format review the methodology and analysis plan in the first stage, and can choose to accept it, reject it, and accept it conditional on revisions. If it accepted, then the journal grants <em>in-principle</em> acceptance to the authors, meaning that they will publish the study regardless of the outcome as long as the authors stick to the protocol they described. The basic workflow of a Registered Report is presented in <a href="#fig-rreports">Figure&nbsp;<span>16.7</span></a>.</p>
+<div id="fig-rreports" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/rreports.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;16.7: Two-stage peer-review process to eliminate publication bias. <em>Source: Center for Open Science.</em><span class="citation" data-cites="center_for_open_science_registered_nodate"><sup><a href="references.html#ref-center_for_open_science_registered_nodate" role="doc-biblioref">17</a></sup></span></figcaption>
+</figure>
+</div>
+<p>There are now over 200 published Registered Reports, up from just a handful in 2014.<span class="citation" data-cites="chambers_whats_2019"><sup><a href="references.html#ref-chambers_whats_2019" role="doc-biblioref">18</a></sup></span> They are not appropriate for every type of research, such as mainly exploratory work, but can be a valuable mechanism to mitigate researcher degrees of freedom and publication bias.</p>
+</section>
+<section id="conclusion" class="level2" data-number="16.8">
+<h2 data-number="16.8" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">16.8</span> Conclusion</h2>
+<p>In sum, we have a lot of work left to do to clean up the research landscape. New advances are constantly being made, and an entire field of <em>Meta-Science</em> (science about science) or <em>Meta-Research</em> (research about research) has sprung up in the last decade or so to formally study many of the issues we have seen. Far from feeling hopeless, there are plenty of reasons to be excited about a better future for RT2!</p>
+
+
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-munafo_manifesto_2017" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Munafò MR, Nosek BA, Bishop DVM, et al. A manifesto for reproducible science. <em>Nature Human Behaviour</em>. 2017;1(1):1-9. doi:<a href="https://doi.org/10.1038/s41562-016-0021">10.1038/s41562-016-0021</a></div>
+</div>
+<div id="ref-center_for_open_science_preregistration_nodate" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Center for Open Science. Preregistration. Accessed August 29, 2023. <a href="https://www.cos.io/initiatives/prereg">https://www.cos.io/initiatives/prereg</a></div>
+</div>
+<div id="ref-schwarzkopf_its_2016" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Schwarzkopf S. It’s not the end of the world if your research gets <span>“scooped.”</span> <em>Times Higher Education (THE)</em>. Published online April 2016. Accessed August 29, 2023. <a href="https://www.timeshighereducation.com/blog/its-not-end-world-if-your-research-gets-scooped">https://www.timeshighereducation.com/blog/its-not-end-world-if-your-research-gets-scooped</a></div>
+</div>
+<div id="ref-simmons_21_2012" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Simmons JP, Nelson LD, Simonsohn U. A 21 word solution. <em>Available at SSRN 2160588</em>. Published online 2012.</div>
+</div>
+<div id="ref-stojmenovska_teaching_2019" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Stojmenovska D, Bol T, Leopold T. Teaching replication to graduate students. <em>Teaching Sociology</em>. 2019;47(4):303-313.</div>
+</div>
+<div id="ref-janz_bringing_2016" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Janz N. Bringing the gold standard into the classroom: Replication in university teaching. <em>International Studies Perspectives</em>. 2016;17(4):392-407.</div>
+</div>
+<div id="ref-hawkins_improving_2018" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Hawkins RXD, Smith EN, Au C, et al. Improving the <span>Replicability</span> of <span>Psychological</span> <span>Science</span> <span>Through</span> <span>Pedagogy</span>. <em>Advances in Methods and Practices in Psychological Science</em>. 2018;1(1):7-18. doi:<a href="https://doi.org/10.1177/2515245917740427">10.1177/2515245917740427</a></div>
+</div>
+<div id="ref-open_science_collaboration_estimating_2015" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Open Science Collaboration. Estimating the reproducibility of psychological science. <em>Science</em>. 2015;349(6251):aac4716. doi:<a href="https://doi.org/10.1126/science.aac4716">10.1126/science.aac4716</a></div>
+</div>
+<div id="ref-center_for_open_science_open_nodate" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Center for Open Science. Open <span>Science</span> <span>Badges</span>. Accessed August 29, 2023. <a href="https://www.cos.io/initiatives/badges">https://www.cos.io/initiatives/badges</a></div>
+</div>
+<div id="ref-american_psychological_association_open_2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">American Psychological Association. Open <span>Science</span> <span>Badges</span>. <em>https://wwwapaorg</em>. Published online 2023. Accessed August 29, 2023. <a href="https://www.apa.org/pubs/journals/resources/open-science-badges">https://www.apa.org/pubs/journals/resources/open-science-badges</a></div>
+</div>
+<div id="ref-kidwell_badges_2016" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Kidwell MC, Lazarević LB, Baranski E, et al. Badges to acknowledge open practices: <span>A</span> simple, low-cost, effective method for increasing transparency. <em>PLoS biology</em>. 2016;14(5):e1002456.</div>
+</div>
+<div id="ref-rowhani-farid_did_2020" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Rowhani-Farid A, Aldcroft A, Barnett AG. Did awarding badges increase data sharing in <span>BMJ</span> <span>Open</span>? <span>A</span> randomized controlled trial. <em>Royal Society Open Science</em>. 2020;7(3):191818. doi:<a href="https://doi.org/10.1098/rsos.191818">10.1098/rsos.191818</a></div>
+</div>
+<div id="ref-rowhani-farid_badges_2018" class="csl-entry" role="listitem">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">Rowhani-Farid A, Barnett AG. <em>Badges for Sharing Data and Code at <em><span>Biostatistics</span>:</em> An Observational Study</em>. F1000Research; 2018. doi:<a href="https://doi.org/10.12688/f1000research.13477.2">10.12688/f1000research.13477.2</a></div>
+</div>
+<div id="ref-european_science_foundation_principles_2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">European Science Foundation. Principles and <span>Implementation</span> <span></span> <span>Plan</span> <span>S</span>. Published online 2023. Accessed August 29, 2023. <a href="https://www.coalition-s.org/addendum-to-the-coalition-s-guidance-on-the-implementation-of-plan-s/principles-and-implementation/">https://www.coalition-s.org/addendum-to-the-coalition-s-guidance-on-the-implementation-of-plan-s/principles-and-implementation/</a></div>
+</div>
+<div id="ref-nosek_promoting_2015" class="csl-entry" role="listitem">
+<div class="csl-left-margin">15. </div><div class="csl-right-inline">Nosek BA, Alter G, Banks GC, et al. Promoting an open research culture. <em>Science</em>. 2015;348(6242):1422-1425. doi:<a href="https://doi.org/10.1126/science.aab2374">10.1126/science.aab2374</a></div>
+</div>
+<div id="ref-mudrak_what_2018" class="csl-entry" role="listitem">
+<div class="csl-left-margin">16. </div><div class="csl-right-inline">Mudrak B. What <span>Are</span> <span>Preprints</span>, and <span>How</span> <span>Do</span> <span>They</span> <span>Benefit</span> <span>Authors</span>? <span></span> <span>AJE</span>. Published online 2018. Accessed August 29, 2023. <a href="https://www.aje.com/arc/benefits-of-preprints-for-researchers/">https://www.aje.com/arc/benefits-of-preprints-for-researchers/</a></div>
+</div>
+<div id="ref-center_for_open_science_registered_nodate" class="csl-entry" role="listitem">
+<div class="csl-left-margin">17. </div><div class="csl-right-inline">Center for Open Science. Registered <span>Reports</span>. Accessed August 29, 2023. <a href="https://www.cos.io/initiatives/registered-reports">https://www.cos.io/initiatives/registered-reports</a></div>
+</div>
+<div id="ref-chambers_whats_2019" class="csl-entry" role="listitem">
+<div class="csl-left-margin">18. </div><div class="csl-right-inline">Chambers C. What’s next for <span>Registered</span> <span>Reports</span>? <em>Nature</em>. 2019;573(7773):187-189. doi:<a href="https://doi.org/10.1038/d41586-019-02674-6">10.1038/d41586-019-02674-6</a></div>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./replication5.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Common Problems that Hamper Reproducibility</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">References</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Research Transparency, Reproducibility, and Basic Data Analysis in R! - 8&nbsp; Data Cleaning</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./dataexp.html" rel="next">
+<link href="./datajoin.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cleaning.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Cleaning</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Research Transparency, Reproducibility, and Basic Data Analysis in R!</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing R and RStudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./getstarted.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Accustomed to R Studio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./datatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./stringscomps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Strings &amp; Comparisons</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataimport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Importing Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./datajoin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Merging (Joining) and Reshaping Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cleaning.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Cleaning</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataexp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Exploration with <code>dplyr</code></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataviz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Visualization with base R and <code>ggplot2</code></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">A Very Brief History of Replication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mertonian Norms and Counter-Norms</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Some Statistical Preliminaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Crises of Replication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Common Problems that Hamper Reproducibility</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Potential Solutions &amp; the Way Forward</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appintroex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="intro.html#sec-introex"><span>Section&nbsp;3.8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appdatatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="datatypes.html#sec-dtex"><span>Section&nbsp;4.7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appstringcomp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="stringscomps.html#sec-sboex"><span>Section&nbsp;5.3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appdatajoin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="datajoin.html#sec-joinex"><span>Section&nbsp;7.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appdataclean.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="#sec-cleanex"><span>Section&nbsp;8.8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./apptidyex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="dataexp.html#sec-tidyex"><span>Section&nbsp;9.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appkahneman.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Kahneman’s Open Letter to Priming Researchers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#basic-folder-structure" id="toc-basic-folder-structure" class="nav-link active" data-scroll-target="#basic-folder-structure"><span class="header-section-number">8.1</span> Basic Folder Structure</a></li>
+  <li><a href="#the-pipe-operator" id="toc-the-pipe-operator" class="nav-link" data-scroll-target="#the-pipe-operator"><span class="header-section-number">8.2</span> The Pipe Operator (%&gt;%)</a></li>
+  <li><a href="#illogical-values-typos" id="toc-illogical-values-typos" class="nav-link" data-scroll-target="#illogical-values-typos"><span class="header-section-number">8.3</span> Illogical Values &amp; Typos</a></li>
+  <li><a href="#duplicate-values-outliers" id="toc-duplicate-values-outliers" class="nav-link" data-scroll-target="#duplicate-values-outliers"><span class="header-section-number">8.4</span> Duplicate Values &amp; Outliers</a></li>
+  <li><a href="#sec-illexs" id="toc-sec-illexs" class="nav-link" data-scroll-target="#sec-illexs"><span class="header-section-number">8.5</span> Detecting Illogical or Extreme Values</a></li>
+  <li><a href="#variable-subsetting-naming-transformation-creation" id="toc-variable-subsetting-naming-transformation-creation" class="nav-link" data-scroll-target="#variable-subsetting-naming-transformation-creation"><span class="header-section-number">8.6</span> Variable Subsetting, Naming, Transformation &amp; Creation</a>
+  <ul class="collapse">
+  <li><a href="#subsetting" id="toc-subsetting" class="nav-link" data-scroll-target="#subsetting"><span class="header-section-number">8.6.1</span> Subsetting</a></li>
+  <li><a href="#renaming" id="toc-renaming" class="nav-link" data-scroll-target="#renaming"><span class="header-section-number">8.6.2</span> (Re)Naming</a></li>
+  <li><a href="#transformation-creation" id="toc-transformation-creation" class="nav-link" data-scroll-target="#transformation-creation"><span class="header-section-number">8.6.3</span> Transformation &amp; Creation</a></li>
+  </ul></li>
+  <li><a href="#saving-your-cleaned-dataframe" id="toc-saving-your-cleaned-dataframe" class="nav-link" data-scroll-target="#saving-your-cleaned-dataframe"><span class="header-section-number">8.7</span> Saving Your Cleaned Dataframe</a>
+  <ul class="collapse">
+  <li><a href="#as-an-r-data-file" id="toc-as-an-r-data-file" class="nav-link" data-scroll-target="#as-an-r-data-file"><span class="header-section-number">8.7.1</span> As an R Data File</a></li>
+  <li><a href="#as-an-excel-or-csv-file" id="toc-as-an-excel-or-csv-file" class="nav-link" data-scroll-target="#as-an-excel-or-csv-file"><span class="header-section-number">8.7.2</span> As an Excel or CSV File</a></li>
+  <li><a href="#as-a-stata-spss-or-sas-file" id="toc-as-a-stata-spss-or-sas-file" class="nav-link" data-scroll-target="#as-a-stata-spss-or-sas-file"><span class="header-section-number">8.7.3</span> As a Stata, SPSS, or SAS File</a></li>
+  <li><a href="#as-a-text-file" id="toc-as-a-text-file" class="nav-link" data-scroll-target="#as-a-text-file"><span class="header-section-number">8.7.4</span> As a Text File</a></li>
+  </ul></li>
+  <li><a href="#sec-cleanex" id="toc-sec-cleanex" class="nav-link" data-scroll-target="#sec-cleanex"><span class="header-section-number">8.8</span> Exercises</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-cleaning" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Cleaning</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p><img src="Images/cleaning.png" class="img-fluid"></p>
+<p>What does it mean to <em>clean</em> data? Raw data, or the data you obtain directly from measurement, and has yet to be processed and made <em>digestible</em> for human consumption. This is because raw data can missing data, contain errors, weird characters or symbols, personally identifiable information (information that can help identify an individual and break anonymity), or other things that you’d rather not have in there. Therefore, raw data needs to be cleaned (or cleansed or scrubbed) to proceed to data analysis, inference, visualization, and reporting.</p>
+<p>There is no standard definition of data cleaning, but in general it means that you want to fix any issues in your data before you do anything else. This makes sense right? You don’t want to analyze data which has a bunch of errors in it, as that could bias your results, create a misleading interpretation, and ultimately introduce noise and distortion into the scientific literature. When it comes data analysis, remember the acronym GIGO, which is explained in <a href="#fig-gigo">Figure&nbsp;<span>8.1</span></a>.</p>
+<div id="fig-gigo" class="quarto-figure quarto-figure-right anchored">
+<figure class="figure">
+<p><img src="Images/gigo.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;8.1: GIGO: Garbage In, Garbage Out. Your analyses are only as good as the quality of your data.</figcaption>
+</figure>
+</div>
+<p>Let’s now dig into some basic data cleaning issues.</p>
+<section id="basic-folder-structure" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="basic-folder-structure"><span class="header-section-number">8.1</span> Basic Folder Structure</h2>
+<p>There are several potential errors you can detect while looking at raw data. The first thing you should do is separate out raw data from the dataset you will be cleaning, and eventually produced a clean dataset. Leave the raw data in an encrypted folder or other secure location, and work with just the cleaned data (or data that will be cleaned). This will prevent you from overwriting the original dataset and making any errors in data cleaning permanent.</p>
+<p><img src="Images/folderstruc.png" class="img-fluid"></p>
+<p>Once this separation of raw and clean (or to be cleaned) data is established, you can begin working on cleaning.</p>
+</section>
+<section id="the-pipe-operator" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="the-pipe-operator"><span class="header-section-number">8.2</span> The Pipe Operator (%&gt;%)</h2>
+<p>This is a probably a good time to introduce one of the most useful collections of packages in R - the tidyverse!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/tidyverse.png" class="img-fluid figure-img" width="948"></p>
+<figcaption class="figure-caption">Source: www.tidyverse.org</figcaption>
+</figure>
+</div>
+<p>According to its <a href="https://www.tidyverse.org">website</a>:</p>
+<blockquote class="blockquote">
+<p>The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.</p>
+</blockquote>
+<p>It currently has about 30 packages which can all be installed simultaneously with <code>install.packages("tidyverse")</code>. Once you load the tidyverse, you can see a full list of its packages with the function <code>tidyverse_packages()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)  </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tidyverse_packages</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "broom"         "conflicted"    "cli"           "dbplyr"       
+ [5] "dplyr"         "dtplyr"        "forcats"       "ggplot2"      
+ [9] "googledrive"   "googlesheets4" "haven"         "hms"          
+[13] "httr"          "jsonlite"      "lubridate"     "magrittr"     
+[17] "modelr"        "pillar"        "purrr"         "ragg"         
+[21] "readr"         "readxl"        "reprex"        "rlang"        
+[25] "rstudioapi"    "rvest"         "stringr"       "tibble"       
+[29] "tidyr"         "xml2"          "tidyverse"    </code></pre>
+</div>
+</div>
+<p>The tidyverse is a collection of useful tools that are commonly used by R users. In particular, the packages <code>dplyr</code>, and <code>ggplot2</code> are the stars of the show, and very useful for data wrangling and visualization, which is what we will focus on mainly in this book.</p>
+<p>The pipe operator <code>%&gt;%</code> is used to combine functions in a way that sets up a chain of operations. It was originally part of the <code>magrittr</code> package, and now comes standard with the <code>dplyr</code> package as well. The pipe is essential telling R “Take the output from the left side and pass it into the right side as the first argument.” Put more simply, the pipe is saying “Take this [stuff on left] and put it through that [stuff on right]”. This is important because it can make our code more efficient when we want to multiple things. Let’s look at a simple example.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># First, let's randomly sample 10 numbers from a normal distribution.</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">10</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  0.08688429 -0.79338313  0.66885983  0.43446759  1.37835143  1.43840500
+ [7] -0.53594236  0.20828881  1.09012136 -1.47915660</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Here's the slow way to 1) Add five to every number in the vector; 2) round the numbers to one decimal place; 3) take the log of the numbers; and 4) take the mean of the resulting numbers. </span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="do">## First, we add five to every number in the vector</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 5.086884 4.206617 5.668860 5.434468 6.378351 6.438405 4.464058 5.208289
+ [9] 6.090121 3.520843</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Second, we round the vector to one decimal place.</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">round</span>(x, <span class="at">digits =</span> <span class="dv">1</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 5.1 4.2 5.7 5.4 6.4 6.4 4.5 5.2 6.1 3.5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Third, we take the log of each number.</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">log</span>(x)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 1.629241 1.435085 1.740466 1.686399 1.856298 1.856298 1.504077 1.648659
+ [9] 1.808289 1.252763</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Take the mean of the resulting vector. </span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">mean</span>(x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.641757</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's now accomplish this the more efficient way with pipes!</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">10</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  0.7355031  1.9497895 -0.3109919  1.4853519  1.6073930 -0.2443108
+ [7]  0.2611956 -0.5555693 -1.3723845 -1.4235136</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>y <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">+</span><span class="st">`</span>(<span class="dv">5</span>) <span class="sc">%&gt;%</span>              <span class="co"># Notice that arithmetic operators are surrounded by backticks `` and scalar values are surrounded by parentheses.</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span>   <span class="co"># Only the second argument is needed, since the first argument is the vector being passed by the pipes.</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">log</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.626611</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The summary() function can also provide us with useful information very easily. This information is the interquartile range, including the median and mean.</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>y <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+-1.423514 -0.494425  0.008442  0.213246  1.297890  1.949790 </code></pre>
+</div>
+</div>
+<p>We can also use the pipe operator to manipulate dataframes, including operations with string vectors or columns. Importantly, note that the pipe operator puts the output from the left side as the first argument on the right side. However, this becomes a problem when we use a function whose first argument is not a dataframe or vector, such as the <code>gsub()</code> function. In such cases, you can put a period <code>.</code> in the place where the vector or dataframe should go. Let’s look at an example.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's create a small dataframe.</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>bball <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">team =</span> <span class="fu">c</span>(<span class="st">"San Antonio"</span>,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"San Antonio"</span>,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"New Orleans"</span>,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Washington"</span>,</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Utah"</span>,</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Milwaukee"</span>,</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Cleveland"</span>),</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>                    <span class="at">player_name =</span> <span class="fu">c</span>(<span class="st">"Romeo Langford"</span>,</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"Jakov Poeltl"</span>,</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"Dyson Daniels"</span>,</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"Will Barton"</span>,</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"Mike Conley"</span>,</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"Joe Ingles"</span>,</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"Raul Neto"</span>),</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>                    <span class="at">points =</span> <span class="fu">c</span>(<span class="dv">2</span>,</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>                               <span class="dv">23</span>,</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>                               <span class="dv">35</span>,</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>                               <span class="dv">23</span>,</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>                               <span class="dv">8</span>,</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>                               <span class="dv">33</span>,</span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>                               <span class="dv">28</span>)</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>                    )</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's use the pipe operator to chain some functions together! The functions below change the team names and finally print the unique entries in the vector using the unique() function.</span></span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>bball<span class="sc">$</span>team <span class="sc">%&gt;%</span></span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gsub</span>(<span class="st">"San Antonio"</span>, <span class="st">"San Antonio Spurs"</span>, .) <span class="sc">%&gt;%</span></span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gsub</span>(<span class="st">"New Orleans"</span>, <span class="st">"New Orleans Pelicans"</span>, .) <span class="sc">%&gt;%</span></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gsub</span>(<span class="st">"Washington"</span>, <span class="st">"Washington Commanders"</span>, .) <span class="sc">%&gt;%</span></span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gsub</span>(<span class="st">"Utah"</span>, <span class="st">"Utah Jazz"</span>, .) <span class="sc">%&gt;%</span></span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gsub</span>(<span class="st">"Milwaukee"</span>, <span class="st">"Milwaukee Bucks"</span>, .) <span class="sc">%&gt;%</span></span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gsub</span>(<span class="st">"Cleveland"</span>, <span class="st">"Cleveland Cavaliers"</span>, .) <span class="sc">%&gt;%</span></span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unique</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "San Antonio Spurs"     "New Orleans Pelicans"  "Washington Commanders"
+[4] "Utah Jazz"             "Milwaukee Bucks"       "Cleveland Cavaliers"  </code></pre>
+</div>
+</div>
+<p><img src="Images/squirreldocs.png" class="img-fluid" width="481"></p>
+</section>
+<section id="illogical-values-typos" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="illogical-values-typos"><span class="header-section-number">8.3</span> Illogical Values &amp; Typos</h2>
+<p>One of the first things I always do with a raw data set is to check if there are any illogical values. These are values that fall outside of the acceptable set of response options for a particular variable. For example, if a question is asking about a participant’s age in years, a value of 366 would be an illogical value since humans cannot yet live that long. However, a value of 366 for a variable about age in months makes perfect sense, as it translates to an age of about 30 years, which is a logical value. As another example, if a survey of undergraduate students conducted at Boston University asks them to state their class year (e.g.&nbsp;first year, freshman, second year, sophomore, etc), and you see some entries with the value “Boston University”, this is an illogical value. It should either be modified to the correct class year, or deleted and left as missing data.</p>
+<p>Commonly, typos can create illogical values. These should be fairly obvious if you a codebook, which is a document providing the name, description, and meaning of each variable, including how it is coded and what response options are valid. These could be incorrect or illogical entries, but could also be logically but with incorrect punctuation. For example, entries for a variable about one’s favorite color may contain entries <em>red</em>, <em>RED</em>, <em>Red, or rED.</em> These are all logical values, but they differ in which letters are capitalized, potentially leading to issues in the analysis. Thus, they should all be standardized. I would change them all to <em>red.</em> There is no special reason for this particular format, other than consistency, but I have found that lowercase variable names introduce less potential for errors due to capitalization.</p>
+</section>
+<section id="duplicate-values-outliers" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="duplicate-values-outliers"><span class="header-section-number">8.4</span> Duplicate Values &amp; Outliers</h2>
+<p>Different participants can have the same response to particular questions or variables. However, if different participants have EXACTLY the same values across ALL variables, then you more than likely have a case of a duplicate value, which should be removed. Duplicate values are key sources of bias, and can inflate or mask detectable effects, leading to misleading interpretations. Sometimes duplicate values can arise as errors when multiple data sets are joined together. A simple approach to avoiding this problem is to count the rows and columns in each dataset before they are joined together, and then ensure the total rows and columns after joining corresponds to the sum of rows and columns from each individual dataset.</p>
+<p>Outliers are values that are abnormally far away from other values in your dataset. Imagine you take the average net worth of five people sitting at a bar. Even though the average net worth of the first four people is $64,501, the average net worth of all five people at the bar comes to $ 58 billion! How is that possible? Because the fifth person at the bar is Bill Gates, whose 2023 net worth was $117.5 billion. Gates’ net worth value is an outlier because 117.5 billion is VERY VERY far distant from $64,501.</p>
+<p>For right now, the important thing to note is that <strong>you should NOT remove outliers just because they are outliers.</strong> Outliers should only be removed if they represent true data entry/collection errors. For example, if an adult’s weight is entered as 12 pounds, this is likely a data entry error, but if their weight is listed as 432 pounds, this is a legitimately possible value, and if true, should not be removed. When outliers are legitimate extreme values, they represent a natural section of the population which you are studying. They are providing you information that should not be discarded simply to fit models easier, as this is a type of cherry-picking of the data which is . Rather, one should use statistical tests that are robust to outliers in such cases.</p>
+<p>Some people, such as professor of data science Pasquale Cirillo make a nice distinction between outliers (values that are not possible because they are too extreme in magnitude) and extremes (values that are possible and extreme in magnitude), show in <a href="#fig-outliers">Figure&nbsp;<span>8.2</span></a>.</p>
+<div id="fig-outliers" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Images/outliers.jpeg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;8.2: The bounds for a legitimate value depend on the variable, and should guide your choice to delete or retain the value.</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-illexs" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="sec-illexs"><span class="header-section-number">8.5</span> Detecting Illogical or Extreme Values</h2>
+<p>One simple method of determining whether there exist illogical values in a numeric variable is to look at the maximum and minimum values (ensuring that they correspond to logical values for that variable) using the <code>range()</code> function. Similarly, boxplots <code>boxplot()</code> and histograms <code>hist()</code> are also useful. Let’s look at the built-in <code>mtcars</code> data frame.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign the mtcars dataframe to an object named df1</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> mtcars</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># I add a few outliers to the 'mpg' column</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>df1[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span><span class="sc">:</span><span class="dv">11</span>,<span class="dv">22</span>), <span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">500</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's examine the range of values in the 'mpg' column starting with the range.</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(df1<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  10.4 500.0</code></pre>
+</div>
+</div>
+<p>Immediately, I see that the minimum value of 10 miles per gallon appears logical (think bigger SUVs which are less fuel-efficient than smaller sedan cars). However, the maximum value of 500 miles per gallon is not logical at all. How do I know? Well, for one I put in these entries. But if I didn’t know, a quick Google search tells me that the most fuel efficient gasoline car achieves 42 miles per gallon on the highway, and the most fuel efficient electric car achieves an 84 miles per gallon-equivalent. Thus, 500 miles per gallon is more of a distant dream rather than an accurate value.</p>
+<p>Let’s then visualize the variable with a histogram and a boxplot.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Next, let's look at a histogram of values</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(df1<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="cleaning_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Next, let's look at a boxplot of the mpg variable.</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(df1<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="cleaning_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>The histogram shows us that the majority of values are less than 100, and a small subset of values lie around 500. This suggests that 500 might be an outlier value. The boxplot suggests that same, but provides us the <strong>Interquartile Range (IQR)</strong>, which refers to the 25th percentile to 75th percentile of the data. The IQR is used to build box plots, which also display ‘whiskers’ or lines extending above and below the box, corresponding to 1.5 times the 75th percentile and 1.5 times the 25th percentile. If data points are outside the whiskers, these can be outliers. The boxplot above is super squished, and we can see a dot at 500. This indicates that a value of 500 might be an outlier.</p>
+<p>The <code>rstatix</code> package also has some useful functions for detecting outliers. The <code>identify_outliers()</code> function in particular returns you a data frame with two new columns indicating whether a specific value is an outlier (defined in this package as 1.5 times the IQR) or an extreme value (defined in this package is 1.5 times the IQR).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstatix)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> df1 <span class="sc">%&gt;%</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">identify_outliers</span>(mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="images/outliercars.png" class="img-fluid"></p>
+<p>The resulting data frame shows the seven unique values that are 1.5 and 3 times the IQR (see the two columns added at the end). For our purposes, this helps identify the specific outliers or extreme values. In this case, we have already determined that 500 is an illogical value for the fuel efficiency (miles per gallon) of cars. Thus, we can delete the values and replace them with <code>NA</code> to indicate missing values. To accomplish this, let’s use the <code>which()</code> function and <code>%in%</code> operator to identify the rows with a value of 500 for <code>mpg</code> from our original dataset. The <code>which()</code> function gives us the position or index which satisfies a given condition. Recall that the <code>%in%</code> operator checks whether the values in the first argument are present in the second argument, and returns a logical value. When we combine <code>which()</code> with the <code>%in%</code> operator, and add those into the first argument in square brackets after a dataframe, this will give the specific rows that satisfy a particular condition.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify rows with mpg == 500</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>df1[<span class="fu">which</span>(df1<span class="sc">$</span>mpg <span class="sc">%in%</span> <span class="dv">500</span>),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4 Wag     500   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+Hornet Sportabout 500   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+Duster 360        500   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+Merc 230          500   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+Merc 280          500   6 167.6 123 3.92 3.440 18.30  1  0    4    4
+Merc 280C         500   6 167.6 123 3.92 3.440 18.90  1  0    4    4
+Dodge Challenger  500   8 318.0 150 2.76 3.520 16.87  0  0    3    2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace 500 with NA</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>df1[<span class="fu">which</span>(df1<span class="sc">$</span>mpg <span class="sc">%in%</span> <span class="dv">500</span>), <span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If we view the resulting dataframe, we can see that the <code>mpg</code> variable for the rows in question have all been replaced with <code>NA</code> to indicate missing data (indicated with red squares).</p>
+<p><img src="images/outliercarsmiss.png" class="img-fluid"></p>
+</section>
+<section id="variable-subsetting-naming-transformation-creation" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="variable-subsetting-naming-transformation-creation"><span class="header-section-number">8.6</span> Variable Subsetting, Naming, Transformation &amp; Creation</h2>
+<section id="subsetting" class="level3" data-number="8.6.1">
+<h3 data-number="8.6.1" class="anchored" data-anchor-id="subsetting"><span class="header-section-number">8.6.1</span> Subsetting</h3>
+<p>Another key component of the data cleaning process is to prepare your set of variables for analysis. In R, since it is very easy to work with multiple dataframes at the same time (just assign them to different objects), it’s a good idea to create a dataframe with only the variables you need for the analysis. This is not strictly necessary, but keeps this organized, easy to view, and manageable. If you only need 20 variables for an analysis, why work with 175 variables in a data frame? It’s better to keep what you need and save those to a new dataframe.</p>
+<p>This is easily accomplished by subsetting the dataframe based on one or more conditions. This could be a particular variable value, a particular set of rows, or some other condition. Let’s demonstrate this using data from the CrossFit Games from 2007-2023.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First let's import our CSV dataframe, and see the dimensions.</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>crossfit <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/R Book/Datasets/crossfit.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(crossfit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1714   30</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Next, let's have a quick peek at the first 10 rows and first six columns.</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(crossfit[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)], <span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   competitorId    competitorName   firstName lastName gender genderId
+1          1616       Russ Greene        Russ   Greene      M        1
+2          1616       Russ Greene        Russ   Greene      M        1
+3          1685 Christopher Woods Christopher    Woods      M        1
+4          1690      Travis Mayer      Travis    Mayer      M        1
+5          1690      Travis Mayer      Travis    Mayer      M        1
+6          1690      Travis Mayer      Travis    Mayer      M        1
+7          1690      Travis Mayer      Travis    Mayer      M        1
+8          1690      Travis Mayer      Travis    Mayer      M        1
+9          1690      Travis Mayer      Travis    Mayer      M        1
+10         1690      Travis Mayer      Travis    Mayer      M        1</code></pre>
+</div>
+</div>
+<p>Let’s say I’ve also had a more detailed look at the data, either beforehand using a codebook, or after importing the data into R and using the <code>View()</code> function. I’ve decided to conduct a descriptive analysis by examining the competitors with the most competition starts, the highest ranks, as well as some of their demographic characteristics. I decide to analyze the following variables shown in <a href="#tbl-crossfit">Table&nbsp;<span>8.1</span></a>.</p>
+<div id="tbl-crossfit" class="anchored">
+<table class="table">
+<caption>Table&nbsp;8.1: List of variables I will retain for analysis.</caption>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 52%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable Name</th>
+<th>Description</th>
+<th>Variable Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>competitorId</td>
+<td>Competitor’s unique identification number.</td>
+<td>Factor</td>
+</tr>
+<tr class="even">
+<td>competitorName</td>
+<td>Competitor’s full name.</td>
+<td>Factor</td>
+</tr>
+<tr class="odd">
+<td>gender</td>
+<td>Competitor’s gender (male or female only in this dataset).</td>
+<td>Factor</td>
+</tr>
+<tr class="even">
+<td>age</td>
+<td>Competitor’s age at the time of competition.</td>
+<td>Numeric</td>
+</tr>
+<tr class="odd">
+<td>height</td>
+<td>Competitor’s height in centimeters.</td>
+<td>Numeric</td>
+</tr>
+<tr class="even">
+<td>weight</td>
+<td>Competitor’s weight in kilograms.</td>
+<td>Numeric</td>
+</tr>
+<tr class="odd">
+<td>countryOfOriginName</td>
+<td>Competitor’s country of origin</td>
+<td>Factor</td>
+</tr>
+<tr class="even">
+<td>year</td>
+<td>Year that competitor participated in competition.</td>
+<td>Factor</td>
+</tr>
+<tr class="odd">
+<td>overallScore</td>
+<td>Competitor’s overall CrossFit score.</td>
+<td>Numeric</td>
+</tr>
+<tr class="even">
+<td>overallRank</td>
+<td>Competitor’s overall CrossFit rank.</td>
+<td>Numeric</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>You will notice that I put the type of variable in a column as well. This is not necessarily the variable type currently in the dataframe, but rather, the type of variable I <em>want</em> the variable to be before I proceed to any sort of analysis. If the variable is not in the correct class I want, I will transform it to the correct class.</p>
+<p>To subset these variables, I can use the helpful <code>subset()</code> command from base R, where the first argument is the object to be subsetted, and the second argument can be used to <code>select</code> the variables I want to retain.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep only the variables I want using subset().</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>crossfit2 <span class="ot">&lt;-</span> <span class="fu">subset</span>(crossfit, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"competitorId"</span>,</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">"competitorName"</span>,</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">"gender"</span>,</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">"age"</span>,</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">"height"</span>,</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">"weight"</span>,</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">"countryOfOriginName"</span>,</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">"year"</span>,</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">"overallScore"</span>,</span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">"overallRank"</span>)</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>                    )</span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(crossfit2[, <span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>], <span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   competitorId    competitorName gender age height weight countryOfOriginName
+1          1616       Russ Greene      M  20    178     83                    
+2          1616       Russ Greene      M  21    178     83                    
+3          1685 Christopher Woods      M  29    163     82                    
+4          1690      Travis Mayer      M  23    181     93       United States
+5          1690      Travis Mayer      M  25    181     93       United States
+6          1690      Travis Mayer      M  26    181     93       United States
+7          1690      Travis Mayer      M  28    181     93       United States
+8          1690      Travis Mayer      M  29    181     93       United States
+9          1690      Travis Mayer      M  30    181     93       United States
+10         1690      Travis Mayer      M  31    181     93       United States</code></pre>
+</div>
+</div>
+</section>
+<section id="renaming" class="level3" data-number="8.6.2">
+<h3 data-number="8.6.2" class="anchored" data-anchor-id="renaming"><span class="header-section-number">8.6.2</span> (Re)Naming</h3>
+<p>Alright, that’s looking pretty good. I’ve got all the variables I want saved in a new dataframe called <code>crossfit2</code>. However, I’m not really digging some of the variable names. Some of them like <code>countryOfOriginName</code> got some weird capitalization going on, which can increase the likelihood of an error later on. Let’s make simpler names for all variables. Remember, any final variable names should be reflected in an updated codebook. This applies for any dataframe you work with, because reproducibility involves careful documentation of variable transformations and choices.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First, let's look at all variable names in our smaller dataframe.</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(crossfit2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "competitorId"        "competitorName"      "gender"             
+ [4] "age"                 "height"              "weight"             
+ [7] "countryOfOriginName" "year"                "overallScore"       
+[10] "overallRank"        </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Next, since I want to make changes to most of the names, let's create a new vector of names and replace the old ones.</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>newnames <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"id"</span>,</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>              <span class="st">"name"</span>,</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>              <span class="st">"gender"</span>,</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>              <span class="st">"age"</span>,</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>              <span class="st">"height"</span>,</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>              <span class="st">"weight"</span>,</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>              <span class="st">"country"</span>,</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>              <span class="st">"year"</span>,</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>              <span class="st">"score"</span>,</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>              <span class="st">"rank"</span>)</span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(crossfit2) <span class="ot">&lt;-</span> newnames</span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's check that it worked correctly.</span></span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(crossfit2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "id"      "name"    "gender"  "age"     "height"  "weight"  "country"
+ [8] "year"    "score"   "rank"   </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If we wanted to change a few variable names instead of writing out a whole vector, we can use the rename() function from the dplyr package. In this function the first argument is the new name, then an equals sign, and finally the old name.</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>crossfit2 <span class="ot">&lt;-</span> crossfit2 <span class="sc">%&gt;%</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">score_overall =</span> score) <span class="sc">%&gt;%</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">rank_overall =</span> rank)</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(crossfit2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "id"            "name"          "gender"        "age"          
+ [5] "height"        "weight"        "country"       "year"         
+ [9] "score_overall" "rank_overall" </code></pre>
+</div>
+</div>
+<p>Alright, so we now how to modify variable names. But what about <strong>variable labels</strong>? These are brief descriptions of each variable that are helpful to have in a dataframe to facilitate reproducibility. Even if you have a codebook, having variable labels can be useful for quick reference, and to know which variables are relevant to one’s analyses. This can be accomplished easily using the <code>expss</code> package’s <code>apply_labels()</code> function. The function takes the dataframe as the first argument, followed by a list of variables equal to their variable labels in quotes. Note: if the variable name contains spaces, then you should put it in quotes, or R won’t recognize it as a variable name in this function.</p>
+<p>Let’s go ahead and add some variable labels to these variables. We can then either <code>View()</code> the dataframe to see the variable labels, or use the <code>str()</code> function to have a quick look.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(expss)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's add variable labels to all the variables.</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>crossfit2 <span class="ot">&lt;-</span> <span class="fu">apply_labels</span>(crossfit2,</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">id =</span> <span class="st">"Participant's unique identification number"</span>,</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>                          <span class="at">name =</span> <span class="st">"Participant's full name"</span>,</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>                          <span class="at">gender =</span> <span class="st">"Participant's gender"</span>,</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>                          <span class="at">age =</span> <span class="st">"Participant's age at time of competition"</span>,</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>                          <span class="at">height =</span> <span class="st">"Participant's height (in centimeters)"</span>,</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>                          <span class="at">weight =</span> <span class="st">"Participant's weight (in kilograms)"</span>,</span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>                          <span class="at">country =</span> <span class="st">"Participant's country of origin"</span>,</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">year =</span> <span class="st">"Participant's year of competition"</span>,</span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>                          <span class="at">score_overall =</span> <span class="st">"Participant's total CrossFit Games Score"</span>,</span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>                          <span class="at">rank_overall =</span> <span class="st">"Participant's overall CrossFit rank"</span></span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>                          )</span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(crossfit2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   1714 obs. of  10 variables:
+ $ id           :Class 'labelled' int  1616 1616 1685 1690 1690 1690 1690 1690 1690 1690 ...
+   .. .. LABEL: Participant's unique identification number 
+ $ name         :Class 'labelled' chr  "Russ Greene" "Russ Greene" "Christopher Woods" "Travis Mayer" ...
+   .. .. LABEL: Participant's full name 
+ $ gender       :Class 'labelled' chr  "M" "M" "M" "M" ...
+   .. .. LABEL: Participant's gender 
+ $ age          :Class 'labelled' int  20 21 29 23 25 26 28 29 30 31 ...
+   .. .. LABEL: Participant's age at time of competition 
+ $ height       :Class 'labelled' num  178 178 163 181 181 181 181 181 181 181 ...
+   .. .. LABEL: Participant's height (in centimeters) 
+ $ weight       :Class 'labelled' num  83 83 82 93 93 93 93 93 93 93 ...
+   .. .. LABEL: Participant's weight (in kilograms) 
+ $ country      :Class 'labelled' chr  "" "" "" "United States" ...
+   .. .. LABEL: Participant's country of origin 
+ $ year         :Class 'labelled' int  2007 2008 2008 2014 2016 2017 2019 2020 2021 2022 ...
+   .. .. LABEL: Participant's year of competition 
+ $ score_overall:Class 'labelled' int  232 21 19 483 702 674 368 0 822 685 ...
+   .. .. LABEL: Participant's total CrossFit Games Score 
+ $ rank_overall :Class 'labelled' int  11 53 32 29 10 12 12 19 12 18 ...
+   .. .. LABEL: Participant's overall CrossFit rank </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's say we only want to add variable labels for one variable. Then we can use the var_lab() function. </span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="fu">var_lab</span>(crossfit2<span class="sc">$</span>score_overall) <span class="ot">&lt;-</span> <span class="st">"Total CrossFit Games score"</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="fu">var_lab</span>(crossfit2<span class="sc">$</span>score_overall)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Total CrossFit Games score"</code></pre>
+</div>
+</div>
+</section>
+<section id="transformation-creation" class="level3" data-number="8.6.3">
+<h3 data-number="8.6.3" class="anchored" data-anchor-id="transformation-creation"><span class="header-section-number">8.6.3</span> Transformation &amp; Creation</h3>
+<p>Now that we know how to rename and subset the variables we want, what about transforming an old variable into a new one? Say that we wanted to derive a new height variable (in feet) from our existing height variable (in centimeters). From a quick Google search, I learn that to convert from centimeters to feet involves dividing the centimeters by 30.48.</p>
+<p>Similarly, let’s also derive a new weight variable (in pounds) from our existing weight variable (in kilograms). Once again, a quick Google search tells me that to convert from kilograms to pounds involves dividing the kilograms by 0.45359237.</p>
+<p>We can easily derive one variable from another in this fashion using the <code>mutate()</code> function from the <code>dplyr</code> package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert centimeters to feet in a new variable called height_feet.</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>crossfit2 <span class="ot">&lt;-</span> crossfit2 <span class="sc">%&gt;%</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">height_feet =</span> height <span class="sc">/</span> <span class="fl">30.48</span>) </span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's look at these two variables side-by-side.</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(crossfit2[, <span class="fu">c</span>(<span class="st">"height"</span>, <span class="st">"height_feet"</span>)], <span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   height height_feet
+1     178    5.839895
+2     178    5.839895
+3     163    5.347769
+4     181    5.938320
+5     181    5.938320
+6     181    5.938320
+7     181    5.938320
+8     181    5.938320
+9     181    5.938320
+10    181    5.938320</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ok, it looks good generally. But, I'm not liking the many decimal places in the height_feet variable. In everyday parlance, we usually refer to someone as, for example, "five foot eight" and not "five foot eight point 39895". So let's use the round() function to shorten this variable to one decimal place.</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>crossfit2<span class="sc">$</span>height_feet <span class="ot">&lt;-</span> <span class="fu">round</span>(crossfit2<span class="sc">$</span>height_feet, <span class="at">digits =</span> <span class="dv">1</span>)</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's see if it worked.</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(crossfit2[, <span class="fu">c</span>(<span class="st">"height"</span>, <span class="st">"height_feet"</span>)], <span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   height height_feet
+1     178         5.8
+2     178         5.8
+3     163         5.3
+4     181         5.9
+5     181         5.9
+6     181         5.9
+7     181         5.9
+8     181         5.9
+9     181         5.9
+10    181         5.9</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Great, now let's do the same with the new variable weight_lbs.</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>crossfit2 <span class="ot">&lt;-</span> crossfit2 <span class="sc">%&gt;%</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">weight_lbs =</span> weight <span class="sc">/</span> <span class="fl">0.45359237</span>)</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's check out the variables side-by-side.</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(crossfit2[, <span class="fu">c</span>(<span class="st">"weight"</span>, <span class="st">"weight_lbs"</span>)], <span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   weight weight_lbs
+1      83   182.9837
+2      83   182.9837
+3      82   180.7791
+4      93   205.0299
+5      93   205.0299
+6      93   205.0299
+7      93   205.0299
+8      93   205.0299
+9      93   205.0299
+10     93   205.0299</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's round this to the nearest unit, and see if it works.</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>crossfit2<span class="sc">$</span>weight_lbs <span class="ot">&lt;-</span> <span class="fu">round</span>(crossfit2<span class="sc">$</span>weight_lbs, <span class="at">digits =</span> <span class="dv">0</span>)</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(crossfit2[, <span class="fu">c</span>(<span class="st">"weight"</span>, <span class="st">"weight_lbs"</span>)], <span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   weight weight_lbs
+1      83        183
+2      83        183
+3      82        181
+4      93        205
+5      93        205
+6      93        205
+7      93        205
+8      93        205
+9      93        205
+10     93        205</code></pre>
+</div>
+</div>
+<p>Before we can summarize the data with some descriptive analyses, we need to make sure the the variable classes match those in <a href="#tbl-crossfit">Table&nbsp;<span>8.1</span></a>. To quickly look at all the variable types in the dataframe, we can use the <code>str()</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(crossfit2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   1714 obs. of  12 variables:
+ $ id           :Class 'labelled' int  1616 1616 1685 1690 1690 1690 1690 1690 1690 1690 ...
+   .. .. LABEL: Participant's unique identification number 
+ $ name         :Class 'labelled' chr  "Russ Greene" "Russ Greene" "Christopher Woods" "Travis Mayer" ...
+   .. .. LABEL: Participant's full name 
+ $ gender       :Class 'labelled' chr  "M" "M" "M" "M" ...
+   .. .. LABEL: Participant's gender 
+ $ age          :Class 'labelled' int  20 21 29 23 25 26 28 29 30 31 ...
+   .. .. LABEL: Participant's age at time of competition 
+ $ height       :Class 'labelled' num  178 178 163 181 181 181 181 181 181 181 ...
+   .. .. LABEL: Participant's height (in centimeters) 
+ $ weight       :Class 'labelled' num  83 83 82 93 93 93 93 93 93 93 ...
+   .. .. LABEL: Participant's weight (in kilograms) 
+ $ country      :Class 'labelled' chr  "" "" "" "United States" ...
+   .. .. LABEL: Participant's country of origin 
+ $ year         :Class 'labelled' int  2007 2008 2008 2014 2016 2017 2019 2020 2021 2022 ...
+   .. .. LABEL: Participant's year of competition 
+ $ score_overall:Class 'labelled' int  232 21 19 483 702 674 368 0 822 685 ...
+   .. .. LABEL: Total CrossFit Games score 
+ $ rank_overall :Class 'labelled' int  11 53 32 29 10 12 12 19 12 18 ...
+   .. .. LABEL: Participant's overall CrossFit rank 
+ $ height_feet  :Class 'labelled' num  5.8 5.8 5.3 5.9 5.9 5.9 5.9 5.9 5.9 5.9 ...
+   .. .. LABEL: Participant's height (in centimeters) 
+ $ weight_lbs   :Class 'labelled' num  183 183 181 205 205 205 205 205 205 205 ...
+   .. .. LABEL: Participant's weight (in kilograms) </code></pre>
+</div>
+</div>
+<p>We can see that though some variables are in the correct class (e.g.&nbsp;year, score_overall, etc.), others are not (e.g.&nbsp;id, name, gender, and country). These variables are currently stored as strings (or characters), whereas we want them to be factors. This is why people often add the argument <code>stringsAsFactors = TRUE</code> to the <code>read.csv()</code> function, which automatically converts character variables to factor, which is the appropriate class for categorical variables. However, even if you invoke this argument, there will still be some variables that are misclassed. Most commonly, ID variables are often classes as integers, whereas they should really be factors, since they are discrete identifiers.</p>
+<p>For now, let’s convert all the misclassed variables in the dataframe to factor using two methods: 1) a simple but inefficient approach, and 2) a slightly more complex but more efficient approach.<br>
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First, let's use the simple approach.</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>crossfit2<span class="sc">$</span>id <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(crossfit2<span class="sc">$</span>id)</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="co"># You can always use this approach with each variable one-by-one. But let's use a more efficient approach.</span></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>catvars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"name"</span>, <span class="st">"gender"</span>, <span class="st">"country"</span>)</span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>crossfit2 <span class="ot">&lt;-</span> crossfit2 <span class="sc">%&gt;%</span></span>
+<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(catvars, as.factor)</span>
+<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a>         )</span>
+<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's check if it worked</span></span>
+<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(crossfit2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   1714 obs. of  12 variables:
+ $ id           : Factor w/ 953 levels "1616","1685",..: 1 1 2 3 3 3 3 3 3 3 ...
+ $ name         : Factor w/ 975 levels "Aaron Finley",..: 820 820 200 931 931 931 931 931 931 931 ...
+ $ gender       : Factor w/ 2 levels "F","M": 2 2 2 2 2 2 2 2 2 2 ...
+ $ age          :Class 'labelled' int  20 21 29 23 25 26 28 29 30 31 ...
+   .. .. LABEL: Participant's age at time of competition 
+ $ height       :Class 'labelled' num  178 178 163 181 181 181 181 181 181 181 ...
+   .. .. LABEL: Participant's height (in centimeters) 
+ $ weight       :Class 'labelled' num  83 83 82 93 93 93 93 93 93 93 ...
+   .. .. LABEL: Participant's weight (in kilograms) 
+ $ country      : Factor w/ 116 levels "","Afghanistan",..: 1 1 1 112 112 112 112 112 112 112 ...
+ $ year         :Class 'labelled' int  2007 2008 2008 2014 2016 2017 2019 2020 2021 2022 ...
+   .. .. LABEL: Participant's year of competition 
+ $ score_overall:Class 'labelled' int  232 21 19 483 702 674 368 0 822 685 ...
+   .. .. LABEL: Total CrossFit Games score 
+ $ rank_overall :Class 'labelled' int  11 53 32 29 10 12 12 19 12 18 ...
+   .. .. LABEL: Participant's overall CrossFit rank 
+ $ height_feet  :Class 'labelled' num  5.8 5.8 5.3 5.9 5.9 5.9 5.9 5.9 5.9 5.9 ...
+   .. .. LABEL: Participant's height (in centimeters) 
+ $ weight_lbs   :Class 'labelled' num  183 183 181 205 205 205 205 205 205 205 ...
+   .. .. LABEL: Participant's weight (in kilograms) </code></pre>
+</div>
+</div>
+<p>We can see that the four variables are now correctly classed as factor. Notice that the more efficient approach involves the <code>mutate()</code>, <code>across()</code>, and <code>as.factor()</code> functions. We’ve already seen <code>mutate()</code>function, but note that the <code>across()</code> function allows us to carry out an operation across multiple columns. We created a vector called <code>catvars</code> of column names we want to manipulate, and passed that into the <code>across()</code> and <code>mutate()</code> functions. Finally, the <code>as.factor()</code> function is used without parentheses in order to re-class the variables to factor. Similarly, you can convert variables to numeric using the <code>as.numeric()</code> function, and convert to character using the <code>as.character()</code> function.</p>
+</section>
+</section>
+<section id="saving-your-cleaned-dataframe" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="saving-your-cleaned-dataframe"><span class="header-section-number">8.7</span> Saving Your Cleaned Dataframe</h2>
+<section id="as-an-r-data-file" class="level3" data-number="8.7.1">
+<h3 data-number="8.7.1" class="anchored" data-anchor-id="as-an-r-data-file"><span class="header-section-number">8.7.1</span> As an R Data File</h3>
+<p>Once you’re satisfied that the data are clean and ready for analysis, you can save the cleaned dataframe (or any object) as as an R Data file (.Rdata) or an RDS file (.RDS). R Data files can store multiple objects, while RDS files can only store a single R object. I tend to prefer R Data files as I can use them to store and load multiple objects at once. The <code>save()</code> function takes the R object names you want to save as the first <span class="math inline">n</span> arguments, followed by the <code>file =</code>argument in which you specify a file name (and path) for saved object(s) in quotes and with the <code>.Rdata</code> file extension. To retrieve the object, simply use the <code>load()</code> function with the object name in quotes.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(crossfit2, <span class="at">file =</span> <span class="st">"crossfitdf.Rdata"</span>)</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"crossfitdf.Rdata"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="as-an-excel-or-csv-file" class="level3" data-number="8.7.2">
+<h3 data-number="8.7.2" class="anchored" data-anchor-id="as-an-excel-or-csv-file"><span class="header-section-number">8.7.2</span> As an Excel or CSV File</h3>
+<p>R data files are native to R, and you might want to save your dataframe in other formats. Perhaps, you want to save your data frame in Excel format (.xlsx). This can be done using the <code>writexl</code> package, and the <code>write_xlsx()</code> function where the first argument is the R object you want to save, and the second argument is the name (and path) of the Excel file with the .xlsx file extension.</p>
+<p>To export to CSV format, you can use the built-in <code>write.csv()</code> function, where the first argument is the R object name, and the second is the file name (and path). I also recommend a third argument <code>row.names = FALSE</code> which gets rid of the row numbering which you already have when you open a spreadsheet.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To export to Excel format, use the writexl package.</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(writexl)</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write_xlsx</span>(crossfit2, <span class="st">"crossfitdf.xlsx"</span>)</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a><span class="co"># To export to csv, use the write.csv() function.</span></span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(crossfit2, <span class="st">"crossfitdf.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="as-a-stata-spss-or-sas-file" class="level3" data-number="8.7.3">
+<h3 data-number="8.7.3" class="anchored" data-anchor-id="as-a-stata-spss-or-sas-file"><span class="header-section-number">8.7.3</span> As a Stata, SPSS, or SAS File</h3>
+<p>If you want to export to SAS, SPSS, or SAS formats, we can use the <code>haven</code> package. For SAS, you can use the <code>write_xpt()</code> function. For Stata, you can use the <code>write_dta()</code> function. For SPSS, you can use the <code>write_sav()</code> function. The first argument of each is the R object to be saved, and the second argument is the name of the file (and path) with the appropriate file extension.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Export to SAS format</span></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write_xpt</span>(crossfit2, <span class="st">"crossfitdf.xpt"</span>)</span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Export to Stata format</span></span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a><span class="fu">write_dta</span>(crossfit2, <span class="st">"crossfitdf.dta"</span>)</span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Export to SPSS format</span></span>
+<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a><span class="fu">write_dta</span>(crossfit2, <span class="st">"crossfitdf.sav"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="as-a-text-file" class="level3" data-number="8.7.4">
+<h3 data-number="8.7.4" class="anchored" data-anchor-id="as-a-text-file"><span class="header-section-number">8.7.4</span> As a Text File</h3>
+<p>The <code>write.table()</code> function can be used to export your dataframe to a text file. As with the other functions, the first argument is the R object to be exported, and the second is the name (and path) with the appropriate file extension. I recommend using a separator for readability using the <code>sep =</code>argument. Common choices for separator are commas <code>sep = ","</code> or tabs <code>sep = "\t"</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Export to text file</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(crossfit2, <span class="st">"crossfitdf.txt"</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="images/manx2.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="sec-cleanex" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="sec-cleanex"><span class="header-section-number">8.8</span> Exercises</h2>
+<p>As always, it’s a good idea to attempt these while the material is still fresh. You can find the answers in <a href="appdataclean.html"><span>Appendix&nbsp;E</span></a>.</p>
+<p>Let’s create a dataframe with the following code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>indianfood <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Boondi"</span>,</span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"Gajar ka halwa"</span>,</span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"Ghevar"</span>,</span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"Kalakand"</span>,</span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"Misti Doi"</span>,</span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"Aloo tikki"</span>,</span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"Chicken tikka masala"</span>),</span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a>                         <span class="at">ingredients =</span> <span class="fu">c</span>(<span class="st">"Maida flour, yogurt, oil, sugar"</span>,</span>
+<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">"Carots, milk, sugar, ghee, cashews, raisins"</span>,</span>
+<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">"Flour, ghee, kewra, milk, clarified butter, sugar, almonds, pistachio, saffron, green cardimom"</span>,</span>
+<span id="cb61-11"><a href="#cb61-11" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">"Milk, cottage cheese, sugar"</span>,</span>
+<span id="cb61-12"><a href="#cb61-12" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">"Milk, jaggery"</span>,</span>
+<span id="cb61-13"><a href="#cb61-13" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">"Rice flour, potatoe, bread crumbs, garam masalaaaa, salt"</span>,</span>
+<span id="cb61-14"><a href="#cb61-14" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">"Naan bread, tomato sauce, skinless chicken breasts, heavy cream, garam masala"</span>),</span>
+<span id="cb61-15"><a href="#cb61-15" aria-hidden="true" tabindex="-1"></a>                         <span class="at">prep_time =</span> <span class="fu">c</span>(<span class="dv">45</span>,</span>
+<span id="cb61-16"><a href="#cb61-16" aria-hidden="true" tabindex="-1"></a>                                       <span class="dv">15</span>,</span>
+<span id="cb61-17"><a href="#cb61-17" aria-hidden="true" tabindex="-1"></a>                                       <span class="dv">15</span>,</span>
+<span id="cb61-18"><a href="#cb61-18" aria-hidden="true" tabindex="-1"></a>                                       <span class="dv">20</span>,</span>
+<span id="cb61-19"><a href="#cb61-19" aria-hidden="true" tabindex="-1"></a>                                       <span class="dv">480</span>,</span>
+<span id="cb61-20"><a href="#cb61-20" aria-hidden="true" tabindex="-1"></a>                                       <span class="dv">5</span>,</span>
+<span id="cb61-21"><a href="#cb61-21" aria-hidden="true" tabindex="-1"></a>                                       <span class="dv">15020240</span>),</span>
+<span id="cb61-22"><a href="#cb61-22" aria-hidden="true" tabindex="-1"></a>                         <span class="at">state =</span> <span class="fu">c</span>(<span class="st">"West Bengal"</span>,</span>
+<span id="cb61-23"><a href="#cb61-23" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"Punjab"</span>,</span>
+<span id="cb61-24"><a href="#cb61-24" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"Rajasthan"</span>,</span>
+<span id="cb61-25"><a href="#cb61-25" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"West Bengal"</span>,</span>
+<span id="cb61-26"><a href="#cb61-26" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"West Bengal"</span>,</span>
+<span id="cb61-27"><a href="#cb61-27" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"Punjab"</span>,</span>
+<span id="cb61-28"><a href="#cb61-28" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"Punjab"</span>)</span>
+<span id="cb61-29"><a href="#cb61-29" aria-hidden="true" tabindex="-1"></a>                         )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Next, let’s fix some errors and make some changes!</p>
+<ol type="1">
+<li><p>First, let’s create some more descriptive variable names. Change the existing variables names to <em>Name, Ingredients, Preparation Time (mins), and Origin (state)</em>. Then, print the names of the dataframe.</p></li>
+<li><p>Next, having read through the ingredients, we can see various typos that should be fixed. Go ahead and fix the spelling mistakes (typos) you see in the <code>Ingredients</code> column. <em>Hint: there are four spelling mistakes in the</em> <code>Ingredients</code> <em>column, and we are using standard American English for spelling.</em></p></li>
+<li><p>I see that the ingredients list has the terms “cottage cheese”, “clarified butter”, and “naan bread.” Substitute <em>paneer</em> for “cottage cheese” and remove “clarified butter” since there is already ‘ghee’ in the same row, which is pretty much the same thing. Also, remove ‘bread’ from “Naan bread”, since that is unnecessary. Then print the <code>Ingredients</code> column.</p></li>
+<li><p>Let’s check the class of the <code>Origin (state)</code> variable. If it is not already in factor class, go ahead and convert it to factor. Make sure to save the new factor-classed variable back in the dataset. Then, check the class of the variable again to make sure it is factor.</p></li>
+<li><p>Next, let’s add some variable labels to each variable. The variable labels can say whatever you think might be helpful. In general, think of some description that will provide context if you are looking at these data for the first time. Then, do something to check if it worked. <em>Hint: you’ve seen two ways to do this.</em></p></li>
+<li><p>Finally, let’s have a look at the <code>Preparation Time (mins)</code> variable to detect any outliers. Print the range of values and produce a histogram of this variable. Are any values seemingly outliers from the histogram?</p></li>
+<li><p>If you detected an outlier in the previous question (and I hope that you did!), explain your decision as to remove it or retain it in the dataframe. If you choose to remove the outlier value, replace it with a more plausible value derived from a quick Google search. Then, print the variable.</p></li>
+<li><p>Finally, save your cleaned <code>indianfood</code> dataframe as an R data file as well as a CSV file using the file name of your choice.</p></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./datajoin.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Merging (Joining) and Reshaping Data</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./dataexp.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Exploration with <code>dplyr</code></span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Research Transparency, Reproducibility, and Basic Data Analysis in R! - 15&nbsp; Common Problems that Hamper Reproducibility</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./replication6.html" rel="next">
+<link href="./replication4.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./replication5.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Common Problems that Hamper Reproducibility</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Research Transparency, Reproducibility, and Basic Data Analysis in R!</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing R and RStudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./getstarted.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Accustomed to R Studio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./datatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./stringscomps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Strings &amp; Comparisons</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataimport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Importing Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./datajoin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Merging (Joining) and Reshaping Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Cleaning</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataexp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Exploration with <code>dplyr</code></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataviz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Visualization with base R and <code>ggplot2</code></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">A Very Brief History of Replication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mertonian Norms and Counter-Norms</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Some Statistical Preliminaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Crises of Replication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication5.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Common Problems that Hamper Reproducibility</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./replication6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Potential Solutions &amp; the Way Forward</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appintroex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="intro.html#sec-introex"><span>Section&nbsp;3.8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appdatatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="datatypes.html#sec-dtex"><span>Section&nbsp;4.7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appstringcomp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="stringscomps.html#sec-sboex"><span>Section&nbsp;5.3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appdatajoin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="datajoin.html#sec-joinex"><span>Section&nbsp;7.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appdataclean.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="cleaning.html#sec-cleanex"><span>Section&nbsp;8.8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./apptidyex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Answers for </span></span></a><a href="dataexp.html#sec-tidyex"><span>Section&nbsp;9.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appkahneman.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Kahneman’s Open Letter to Priming Researchers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#summary-of-some-common-problems" id="toc-summary-of-some-common-problems" class="nav-link active" data-scroll-target="#summary-of-some-common-problems"><span class="header-section-number">15.1</span> Summary of Some Common Problems</a></li>
+  <li><a href="#harking" id="toc-harking" class="nav-link" data-scroll-target="#harking"><span class="header-section-number">15.2</span> HARKing</a></li>
+  <li><a href="#publication-bias-the-file-drawer-problem" id="toc-publication-bias-the-file-drawer-problem" class="nav-link" data-scroll-target="#publication-bias-the-file-drawer-problem"><span class="header-section-number">15.3</span> Publication Bias &amp; the File Drawer Problem</a></li>
+  <li><a href="#cognitive-biases" id="toc-cognitive-biases" class="nav-link" data-scroll-target="#cognitive-biases"><span class="header-section-number">15.4</span> Cognitive Biases</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-rep5" class="quarto-section-identifier"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Common Problems that Hamper Reproducibility</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="summary-of-some-common-problems" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="summary-of-some-common-problems"><span class="header-section-number">15.1</span> Summary of Some Common Problems</h2>
+<p>We’ve now seen the issues stemming from crises of reproducibility across multiple academic fields. Before we can discuss potential solutions to the many problems, let’s take stock of some common problems that hamper reproducibility in <a href="#fig-rdofs">Figure&nbsp;<span>15.1</span></a>.</p>
+<div id="fig-rdofs" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Images/rdofs.png" class="img-fluid figure-img" width="646"></p>
+<figcaption class="figure-caption">Figure&nbsp;15.1: Figure taken from the report of the symposium, ‘Reproducibility and reliability of biomedical research’, organised by the Academy of Medical Sciences, BBSRC, MRC and Wellcome Trust in April 2015. Full report <a href="https://acmedsci.ac.uk/policy/policy-projects/reproducibility-and-reliability-of-biomedical-research">here</a>.</figcaption>
+</figure>
+</div>
+<p>Notice how the issues are arranged in a circle. This is not a coincidence, as such researcher degrees of freedom are present at all steps in the research cycle. Consider the image in <a href="#fig-hark">Figure&nbsp;<span>15.2</span></a>, which comes from a 2017 paper in <em>Nature</em>.<span class="citation" data-cites="munafo_manifesto_2017"><sup><a href="references.html#ref-munafo_manifesto_2017" role="doc-biblioref">1</a></sup></span></p>
+<div id="fig-hark" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Images/hark.png" class="img-fluid figure-img" width="719"></p>
+<figcaption class="figure-caption">Figure&nbsp;15.2: Researcher degrees of freedom can happen at any stage of the research process.</figcaption>
+</figure>
+</div>
+</section>
+<section id="harking" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="harking"><span class="header-section-number">15.2</span> HARKing</h2>
+<p>Besides illustrating the many possibilities for researcher degrees of freedom to introduce bias into the research process, <a href="#fig-hark">Figure&nbsp;<span>15.2</span></a> it also points to the pernicious problem of <strong>HARKing</strong> (Hypothesizing After Results are Known),<span class="citation" data-cites="kerr_harking_1998"><sup><a href="references.html#ref-kerr_harking_1998" role="doc-biblioref">2</a></sup></span> which is tantamount to circular reasoning. In practical terms, this process often looks like this:</p>
+<ol type="1">
+<li><p>The researcher conducts a hypothesis test based on a hunch <span class="math inline">H</span>.</p></li>
+<li><p>They don’t find what they expect, but find something statistically significant <span class="math inline">U</span>.</p></li>
+<li><p>The researcher writes up the results as <span class="math inline">H = U</span>using the same data.</p></li>
+</ol>
+<p>You may wonder, what’s the big deal? If you found something unexpected and interesting, isn’t that the point of science? To be clear, if the researcher starts with a hunch <span class="math inline">H</span> and finds something unexpected and statistically significant <span class="math inline">U</span>, it’s absolutely OK and even a good idea to explore <span class="math inline">U</span> in a new study with different data. In fact, some suggest that this form of transparent HARKing (also known as THARKing) in which authors present new hypotheses derived from the data in the Discussion section of an article can be beneficial for knowledge creation.<span class="citation" data-cites="hollenbeck_harking_2017"><sup><a href="references.html#ref-hollenbeck_harking_2017" role="doc-biblioref">3</a></sup></span> I agree with this position, as transparently stating your thoughts on potential new hypotheses can generate new ideas for future research, and also clearly bounds the discussion in an exploratory sense. But using the same data for <span class="math inline">H</span> and <span class="math inline">U</span> and pretending like <span class="math inline">H</span> never existed is a problem.</p>
+<p>For one, if hypotheses that are falsified are never reported, that distorts the evidence base for what hypotheses are supported and which hypotheses are not supported. Imagine 10 different researchers all investigate the same hypothesis <span class="math inline">H</span>, and find that the hypothesis is not supported by the data, but don’t report it, then other researchers may continue to pursue <span class="math inline">H</span>. This is a waste of resources. Instead, if all researchers reported that <span class="math inline">H</span> is not supported by their data, this tells us that <span class="math inline">H</span> might not be the right avenue to pursue.</p>
+<p>Additionally, if the unexpected hypothesis <span class="math inline">U</span> is reported as the <em>a priori</em> hypothesis, this reduces reproducibility as <span class="math inline">U</span> may be unique to the sample, and not generalizable. It may represent a false positive or false negative. This is especially bad if the researcher is cherry-picking their results to support unexpected finding <span class="math inline">U</span> because it is a straight-forward distortion of their findings. Reporting only statistically significant results and concealing non-significant results leads to a distortion in the evidence base and potentially wastes resources, as described above.</p>
+<p>There are always chance variations in effect size due to sample size, the underlying odds in the effect being true before the study is even conducted, the composition of the sample, the variation in population effects, and more. Therefore, reporting <span class="math inline">U</span> as <span class="math inline">H</span> can be a case of a researcher being fooled by randomness, and reporting spurious effects as real ones.</p>
+<p><img src="Images/hark2.png" class="img-fluid"></p>
+<p>It’s also worth noting that authors have since noting some variants of HARKing, which are shown in <a href="#tbl-harkvars">Table&nbsp;<span>15.1</span></a>.<span class="citation" data-cites="lishner_harking_2021"><sup><a href="references.html#ref-lishner_harking_2021" role="doc-biblioref">4</a></sup></span></p>
+<div id="tbl-harkvars" class="anchored">
+<table class="table">
+<caption>Table&nbsp;15.1: Variations of HARKing.</caption>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 66%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Acronym</th>
+<th>Full Form</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CHARKing</td>
+<td>Constructing Hypotheses After Results are Known</td>
+<td>This is like the description of HARKing above. Creating hypotheses after the fact and presenting them as having been constructed <em>a priori</em>.</td>
+</tr>
+<tr class="even">
+<td>RHARKing</td>
+<td>Retrieving Hypotheses After Results are Known</td>
+<td>Let’s say the researchers had previously proposed some hypotheses but then dropped them. After the fact, they might revive those hypotheses and present them as having been known <em>a priori</em>.</td>
+</tr>
+<tr class="odd">
+<td>SHARKing</td>
+<td>Suppressing Hypotheses After Results are Known</td>
+<td>Not reporting <em>a priori</em> hypotheses that were not supported by the results. This could also be not reporting <em>a priori</em> hypotheses supported by results just because the researchers didn’t like these hypotheses.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A key problem of all variations of HARKing is that they can lead to theories that are <em>overfit</em> by the results.<span class="citation" data-cites="lishner_harking_2021"><sup><a href="references.html#ref-lishner_harking_2021" role="doc-biblioref">4</a></sup></span> This means that the theories can become too bound up in the results of individual sample results, and thus are less useful at more general explanations of a phenomenon when applied to other samples and contexts.</p>
+</section>
+<section id="publication-bias-the-file-drawer-problem" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="publication-bias-the-file-drawer-problem"><span class="header-section-number">15.3</span> Publication Bias &amp; the File Drawer Problem</h2>
+<p><img src="Images/filedrawer.png" class="img-fluid"></p>
+<p>You may be wondering what motivates researcher degrees of freedom such as HARKing? One important consideration is the incentives that researchers have for engaging in researcher degrees of freedom. A key incentive is to be able to publish one’s results. In a perfect world perhaps, all results would have an equal opportunity to be published regardless of statistical significance. Unfortunately, this is not the case.</p>
+<p>Studies with statistically significant results are more likely to be written up and published than studies with non-statistically significant results (i.e.&nbsp;<em>null</em> results as they are often called).<span class="citation" data-cites="moller_testing_2001"><sup><a href="references.html#ref-moller_testing_2001" role="doc-biblioref">5</a></sup></span> <span class="citation" data-cites="mlinaric_dealing_2017"><sup><a href="references.html#ref-mlinaric_dealing_2017" role="doc-biblioref">6</a></sup></span><span class="citation" data-cites="franco_publication_2014"><sup><a href="references.html#ref-franco_publication_2014" role="doc-biblioref">7</a></sup></span> <span class="citation" data-cites="thornton_publication_2000"><sup><a href="references.html#ref-thornton_publication_2000" role="doc-biblioref">8</a></sup></span> Publication bias can be defined as <em>An editorial predilection for publishing particular findings, e.g., positive results, which leads to the failure of authors to submit negative findings for publication</em>.<span class="citation" data-cites="porta_dictionary_2014"><sup><a href="references.html#ref-porta_dictionary_2014" role="doc-biblioref">9</a></sup></span> The editors of journals want to publish ground-breaking research so that the prestige, relevance, and citation frequency for their journal is increased. Sadly, null or negative results are not as attractive to publish than statistically significant results, despite being as important for providing a more complete picture of the evidence base for a given phenomenon. This can lead to substantial distortions of the evidence base.</p>
+<p>Consider, for example, the findings of a 2021 meta-analytic study published in the prestigious journal <em>Proceedings of the National Academy of Sciences</em> which suggested that nudge interventions (light-touch behavioral interventions which sway an individual toward a particular choice without restricting their ability to make a different choice) have an average effect size of <span class="math inline">d= 0.43</span>.<span class="citation" data-cites="mertens_effectiveness_2022"><sup><a href="references.html#ref-mertens_effectiveness_2022" role="doc-biblioref">10</a></sup></span> This is a pretty large effect in the social science literature! It’s also a remarkable headline-worthy finding. However, even meta-analyses can be prone to publication bias, because any evidence syntheses is only as good as the evidence it synthesizes. Thus, when another research team applied a novel technique to account for publication bias, they found that the average effect size of nudge interventions dropped to about <span class="math inline">d = 0.04 - 0.11</span>, which the authors concluded was suggestive of no evidence of such interventions.<span class="citation" data-cites="maier_no_2022"><sup><a href="references.html#ref-maier_no_2022" role="doc-biblioref">11</a></sup></span> While the final word on nudge interventions is far from being written, this back-and-forth shows how the severity of publication bias can lead to drastically different estimates of overall effect.</p>
+<p>Publication bias thus naturally leads researchers to suppress null or non-statistically significant findings. Many researchers don’t even write up their null result studies, and simply abandon them forever. This is known as the <strong>file drawer problem</strong>, where null results are relegated to a virtual or actual file drawer, never to see the light of day.<span class="citation" data-cites="rosenthal_file_1979"><sup><a href="references.html#ref-rosenthal_file_1979" role="doc-biblioref">12</a></sup></span> The extreme case of the problem is that 5% of studies that have false positives (Type I errors) are published in journals, and 95% of studies with non-statistically significant results are relegated to the file drawer.<span class="citation" data-cites="rosenthal_file_1979"><sup><a href="references.html#ref-rosenthal_file_1979" role="doc-biblioref">12</a></sup></span> However, consider that p-hacking increases the likelihood of false positives in the literature as well.</p>
+<p>When examining the problem empirically based on studies supported by a National Science Foundation program, a group of authors found some troubling results,<span class="citation" data-cites="franco_publication_2014"><sup><a href="references.html#ref-franco_publication_2014" role="doc-biblioref">7</a></sup></span> seen in <a href="#fig-filed">Figure&nbsp;<span>15.3</span></a>.</p>
+<div id="fig-filed" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/filedrawerfranco.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;15.3: Publication bias results in fewer results seeing the light of day!</figcaption>
+</figure>
+</div>
+<p>Publication bias is such an extensive problem (and having been recognized in the literature for over 40 years), that researchers are continually developing new methods to detect publication bias in evidence syntheses.<span class="citation" data-cites="shi_trim-and-fill_2019"><sup><a href="references.html#ref-shi_trim-and-fill_2019" role="doc-biblioref">13</a></sup></span> <span class="citation" data-cites="maier_robust_2023"><sup><a href="references.html#ref-maier_robust_2023" role="doc-biblioref">14</a></sup></span><span class="citation" data-cites="rodgers_evaluating_2021"><sup><a href="references.html#ref-rodgers_evaluating_2021" role="doc-biblioref">15</a></sup></span> Of course, there are other potential solutions to the problem which we’ll discuss in the next chapter, but suffice it to say, we must always be cognizant of publication bias when evaluating a body of evidence.</p>
+</section>
+<section id="cognitive-biases" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="cognitive-biases"><span class="header-section-number">15.4</span> Cognitive Biases</h2>
+<p><img src="Images/biasbrain.png" class="img-fluid" width="526"></p>
+<p>You might be thinking at this point, <em>Why do researchers engage in researcher degrees of freedom if they know the consequences to the evidence base?</em> That’s just the thing. They may willfully engage in unethical research practices, but they just as well be fooled by various cognitive biases to which we can all fall prey. For one, researchers have a strong incentive to publish papers, as their tenure and promotion is often heavily dependent on their publication output (hence the phrase <em>Publish or Perish</em>). Then given that journals are more likely to publish studies with statistically significant findings, researchers have a stake in the results of their quantitative research. Additionally, the salaries of researchers in many fields is also partly (and sometimes entirely) contingent on acquiring research funding, where a strong publication record is expected.</p>
+<p>These conditions work synergistically with our inherent cognitive biases. For one, consider <strong>confirmation bias</strong>, or our tendency to look for evidence and conduct research in a way that aligns with our existing beliefs and hypotheses.<span class="citation" data-cites="nickerson_confirmation_1998"><sup><a href="references.html#ref-nickerson_confirmation_1998" role="doc-biblioref">16</a></sup></span> In essence, confirmation bias pushes us to find what we want to find, rather than what is actually there. Though the term <em>confirmation bias</em> is relatively new, the phenomenon has been observed in research for quite some time. Consider this quote from 1869 by journalist Charles Mackay:</p>
+<blockquote class="blockquote">
+<p><em>When men wish to construct or support a theory, how they torture facts into their service!</em><span class="citation" data-cites="mackay_memoirs_1869"><sup><a href="references.html#ref-mackay_memoirs_1869" role="doc-biblioref">17</a></sup></span></p>
+</blockquote>
+<p>We should be clear that confirmation bias need not be a conscious, malicious choice, but rather a subconscious motive which can affect even the most principled open scientists. A key consideration is that a research question differs from a hypothesis.<span class="citation" data-cites="pusztai_reproducibility_2013"><sup><a href="references.html#ref-pusztai_reproducibility_2013" role="doc-biblioref">18</a></sup></span> The differences lies in how variables within a study are measured and the relationships between them postulated by hypotheses. Think of the research question as the big picture investigation of the phenomenon, and the hypotheses as being specific relationships of interest. If a researcher conducts a study and does not find evidence consistent with their hypothesis, a natural question would be if they constructed (or <em>operationalized</em>) their conceptual constructs in the right way. They may ask, <em>Is this a problem with the implementation, measurement, or underlying theory?</em> This is a valid question, and there are often no clear answers. However, there are solutions we will discuss in the next chapter that can mitigate biases such as this.</p>
+<p>Similar to confirmation bias is <strong>hindsight bias</strong>, or the tendency to make a prediction after the fact (a <em>postdiction</em>) where a person thinks they knew it all along.<span class="citation" data-cites="fischhoff_hindsight_1975"><sup><a href="references.html#ref-fischhoff_hindsight_1975" role="doc-biblioref">19</a></sup></span> For example, a researcher makes some vague prediction in their mind before conducting a study, conducts the study, and then selects one of many outcomes as something they predicted all along. This leads to overconfidence in the obtained results, and conflates prediction with postdiction.<span class="citation" data-cites="nosek_preregistration_2018"><sup><a href="references.html#ref-nosek_preregistration_2018" role="doc-biblioref">20</a></sup></span> This can go hand-in-hand with HARKing, whereby the researcher creates hypotheses after obtaining results, and espouses the view that they knew this would happen all along.</p>
+<p>Another important cognitive bias which influences reproducibility and research transparency is <strong>apophenia</strong>, or the human tendency to see patterns in randomness. A common example of this is seeing a face among a collection of inanimate objects, or seeing animal shapes in clouds. Consider the image in <a href="#fig-mars">Figure&nbsp;<span>15.4</span></a>.</p>
+<div id="fig-mars" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/marsface.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;15.4: The “Face on Mars” (left) photographed in 1976 by the NASA Viking 1 orbiter. On the right is the same image taken in 2001 by the NASA Mars Global Surveyor. <em>Source: NASA/JPL.</em></figcaption>
+</figure>
+</div>
+<p>The image shows the same mesa on Mars - one captured in 1976 (on the left) and another captured in 2001 (on the right). The picture on the right has an image resolution 10 times higher than the image on the left. However, when NASA released the image on the left to the public in 1976, they thought the apparent ‘face,’ resembling an ancient Egyptian planet, would drum up public interest. What they didn’t realize is that it led to a lot of speculation about ancient civilizations on Mars, and conspiracy theories that NASA was hiding the facts.<span class="citation" data-cites="nasa_science_unmasking_2001"><sup><a href="references.html#ref-nasa_science_unmasking_2001" role="doc-biblioref">21</a></sup></span> Even after the 2001 image was released, it didn’t satisfy everyone. Some still believed that this ‘face’ is evidence of a civilization on Mars. This reflects a natural tendency to see patterns where there are none.</p>
+<p>When applied to research, apophenia can lead researchers to infer meaningful patterns based on noisy (or meaningless) data. For instance, running many hypothesis tests increases the likelihood of observing a false-positive, which researchers may perceive as a valid finding. Then, one or more cognitive biases can result in hypotheses and theories based on noise and spurious findings.</p>
+<p>Have you ever heard the expression, <em>Correlation does not necessarily equal causation</em>? This is because just because two things are statistically related or similar does not mean that there is any meaningful relationship between them. However, our tendency toward apophenia can lead us to conclude a meaningful correlation when there isn’t one. Consider the image in <a href="#fig-spurcorr">Figure&nbsp;<span>15.5</span></a> from the website <em>Spurious Correlations</em> created by Tyler Vigen. The image shows a remarkably strong (and by chance) correlation between the number of letters in the winning word of the Scripps National Spelling Bee and the number of people killed by venomous spiders each year.</p>
+<div id="fig-spurcorr" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/corrspur.jpeg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;15.5: Apophenia leads us to infer patterns within random noise. <em>Credit: Tylervigen.com.</em></figcaption>
+</figure>
+</div>
+<p>In sum, we should be mindful of the many cognitive biases that can shape our conduct of research. While the situation may seem hopeless, know that there is hope! In the next chapter, we’ll discuss many advances in Open Science that can help mitigate these biases in the conduct of research.</p>
+
+
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-munafo_manifesto_2017" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Munafò MR, Nosek BA, Bishop DVM, et al. A manifesto for reproducible science. <em>Nature Human Behaviour</em>. 2017;1(1):1-9. doi:<a href="https://doi.org/10.1038/s41562-016-0021">10.1038/s41562-016-0021</a></div>
+</div>
+<div id="ref-kerr_harking_1998" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Kerr NL. <span>HARKing</span>: <span>Hypothesizing</span> after the results are known. <em>Personality and social psychology review</em>. 1998;2(3):196-217.</div>
+</div>
+<div id="ref-hollenbeck_harking_2017" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Hollenbeck JR, Wright PM. Harking, sharking, and tharking: <span>Making</span> the case for post hoc analysis of scientific data. <em>Journal of Management</em>. 2017;43(1):5-18.</div>
+</div>
+<div id="ref-lishner_harking_2021" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Lishner DA. <span>HARKing</span>: <span>Conceptualizations</span>, harms, and two fundamental remedies. <em>Journal of Theoretical and Philosophical Psychology</em>. 2021;41(4):248.</div>
+</div>
+<div id="ref-moller_testing_2001" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Møller AP, Jennions MD. Testing and adjusting for publication bias. <em>Trends in Ecology &amp; Evolution</em>. 2001;16(10):580-586. doi:<a href="https://doi.org/10.1016/S0169-5347(01)02235-2">10.1016/S0169-5347(01)02235-2</a></div>
+</div>
+<div id="ref-mlinaric_dealing_2017" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Mlinarić A, Horvat M, Šupak Smolčić V. Dealing with the positive publication bias: <span>Why</span> you should really publish your negative results. <em>Biochemia Medica</em>. 2017;27(3):447-452. doi:<a href="https://doi.org/10.11613/BM.2017.030201">10.11613/BM.2017.030201</a></div>
+</div>
+<div id="ref-franco_publication_2014" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Franco A, Malhotra N, Simonovits G. Publication bias in the social sciences: <span>Unlocking</span> the file drawer. <em>Science</em>. 2014;345(6203):1502-1505.</div>
+</div>
+<div id="ref-thornton_publication_2000" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Thornton A, Lee P. Publication bias in meta-analysis: Its causes and consequences. <em>Journal of Clinical Epidemiology</em>. 2000;53(2):207-216. doi:<a href="https://doi.org/10.1016/S0895-4356(99)00161-4">10.1016/S0895-4356(99)00161-4</a></div>
+</div>
+<div id="ref-porta_dictionary_2014" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Porta M. <em>A Dictionary of Epidemiology</em>. Oxford university press; 2014.</div>
+</div>
+<div id="ref-mertens_effectiveness_2022" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Mertens S, Herberz M, Hahnel UJJ, Brosch T. The effectiveness of nudging: <span>A</span> meta-analysis of choice architecture interventions across behavioral domains. <em>Proceedings of the National Academy of Sciences</em>. 2022;119(1):e2107346118. doi:<a href="https://doi.org/10.1073/pnas.2107346118">10.1073/pnas.2107346118</a></div>
+</div>
+<div id="ref-maier_no_2022" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Maier M, Bartoš F, Stanley TD, Shanks DR, Harris AJL, Wagenmakers EJ. No evidence for nudging after adjusting for publication bias. <em>Proceedings of the National Academy of Sciences</em>. 2022;119(31):e2200300119. doi:<a href="https://doi.org/10.1073/pnas.2200300119">10.1073/pnas.2200300119</a></div>
+</div>
+<div id="ref-rosenthal_file_1979" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Rosenthal R. The file drawer problem and tolerance for null results. <em>Psychological Bulletin</em>. 1979;86(3):638-641. doi:<a href="https://doi.org/10.1037/0033-2909.86.3.638">10.1037/0033-2909.86.3.638</a></div>
+</div>
+<div id="ref-shi_trim-and-fill_2019" class="csl-entry" role="listitem">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">Shi L, Lin L. The trim-and-fill method for publication bias: Practical guidelines and recommendations based on a large database of meta-analyses. <em>Medicine</em>. 2019;98(23):e15987. doi:<a href="https://doi.org/10.1097/MD.0000000000015987">10.1097/MD.0000000000015987</a></div>
+</div>
+<div id="ref-maier_robust_2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">Maier M, Bartoš F, Wagenmakers EJ. Robust <span>Bayesian</span> meta-analysis: <span>Addressing</span> publication bias with model-averaging. <em>Psychological Methods</em>. 2023;28(1):107-122. doi:<a href="https://doi.org/10.1037/met0000405">10.1037/met0000405</a></div>
+</div>
+<div id="ref-rodgers_evaluating_2021" class="csl-entry" role="listitem">
+<div class="csl-left-margin">15. </div><div class="csl-right-inline">Rodgers MA, Pustejovsky JE. Evaluating meta-analytic methods to detect selective reporting in the presence of dependent effect sizes. <em>Psychological methods</em>. 2021;26(2):141.</div>
+</div>
+<div id="ref-nickerson_confirmation_1998" class="csl-entry" role="listitem">
+<div class="csl-left-margin">16. </div><div class="csl-right-inline">Nickerson RS. Confirmation bias: <span>A</span> ubiquitous phenomenon in many guises. <em>Review of general psychology</em>. 1998;2(2):175-220.</div>
+</div>
+<div id="ref-mackay_memoirs_1869" class="csl-entry" role="listitem">
+<div class="csl-left-margin">17. </div><div class="csl-right-inline">Mackay C. <em>Memoirs of Extraordinary Popular Delusions and the Madness of Crowds</em>. George Routledge; sons; 1869.</div>
+</div>
+<div id="ref-pusztai_reproducibility_2013" class="csl-entry" role="listitem">
+<div class="csl-left-margin">18. </div><div class="csl-right-inline">Pusztai L, Hatzis C, Andre F. Reproducibility of research and preclinical validation: Problems and solutions. <em>Nature Reviews Clinical Oncology</em>. 2013;10(12):720-724.</div>
+</div>
+<div id="ref-fischhoff_hindsight_1975" class="csl-entry" role="listitem">
+<div class="csl-left-margin">19. </div><div class="csl-right-inline">Fischhoff B. Hindsight is not equal to foresight: <span>The</span> effect of outcome knowledge on judgment under uncertainty. <em>Journal of Experimental Psychology: Human perception and performance</em>. 1975;1(3):288.</div>
+</div>
+<div id="ref-nosek_preregistration_2018" class="csl-entry" role="listitem">
+<div class="csl-left-margin">20. </div><div class="csl-right-inline">Nosek BA, Lindsay DS. Preregistration becoming the norm in psychological science. <em>APS Observer</em>. 2018;31.</div>
+</div>
+<div id="ref-nasa_science_unmasking_2001" class="csl-entry" role="listitem">
+<div class="csl-left-margin">21. </div><div class="csl-right-inline">NASA Science. Unmasking the <span>Face</span> on <span>Mars</span> <span></span> <span>Science</span> <span>Mission</span> <span>Directorate</span>. <em>Unmasking the Face on Mars</em>. Published online May 2001. Accessed August 29, 2023. <a href="https://science.nasa.gov/science-news/science-at-nasa/2001/ast24may_1">https://science.nasa.gov/science-news/science-at-nasa/2001/ast24may_1</a></div>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./replication4.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Crises of Replication</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./replication6.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Potential Solutions &amp; the Way Forward</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
