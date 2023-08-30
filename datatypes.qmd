@@ -367,9 +367,9 @@ stuff <- list(catbreed = "manx",
 
 ```
 
-Once you `View()` the list, it will show you the contents as in @fig-stufflist.
+Once you `View()` the list, it will show you the contents as in @fig-listels.
 
-![](/Images/stufflist.png){#fig-stufflist}
+![A View() of a list shows all the elements.](/Images/stufflist.png){#fig-listels}
 
 You can see that our list has a string ("Manx"), a dataframe (mtcars), a number (Euler), a logical vector (logical), and another list with three elements of its own (random). Lists are so flexible!
 
