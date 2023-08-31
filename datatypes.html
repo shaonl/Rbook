@@ -615,7 +615,7 @@ div.csl-indent {
 <figcaption class="figure-caption">Figure&nbsp;4.3: The colored arrows illustrate how vector recycling works when multiplying two vectors of unequal length.</figcaption>
 </figure>
 </div>
-<p>As we see from the colored arrows in <a href="#fig-vecrec">Figure&nbsp;<span>4.3</span></a>, the elements of the shorter vector <code>d1</code> we recycled when we multiplied both vectors.</p>
+<p>As we see from the colored arrows in <a href="#fig-vecrec">Figure&nbsp;<span>4.3</span></a>, the elements of the shorter vector <code>d1</code> were recycled when multiplied by vector <code>c1</code>.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1045,7 +1045,7 @@ Row 3        4        7       43</code></pre>
 <section id="factors" class="level2" data-number="4.6">
 <h2 data-number="4.6" class="anchored" data-anchor-id="factors"><span class="header-section-number">4.6</span> Factors</h2>
 <p>Factors are data structures used to store categorical variables. Categorical variables have a fixed set of possible values. Factors are <em>not</em> vectors. They have their own unique class, and can be ordered if we have an ordered categorical variable (i.e.&nbsp;a categorical variable with a logical and explicit order, such as finishes in a race that correspond to ‘first’, ‘second’, ‘third’, etc.).</p>
-<p>For example, let’s say we have a categorical variable related to the temperature of cooked meat called <code>done</code> which has five possible values (or <em>levels</em>) - <em>rare</em>, <em>medium rare</em>, <em>medium</em>, <em>medium well</em>, and <em>well done</em>. Often, we are faced with a character vector which we want to convert to factor. This can be accomplished with the <code>factor()</code> function, in which the first argument is the variable or vector to be converted. You can always use the <code>class()</code> function to check if you converted the vector or variable to the correct class.</p>
+<p>For example, let’s say we have a categorical variable related to the temperature of cooked meat called <code>done</code> which has five possible values (or <em>levels</em>) - <em>rare</em>, <em>medium rare</em>, <em>medium</em>, <em>medium well</em>, and <em>well done</em>. Often, we are faced with a character vector which we want to convert to factor. This can be accomplished with the <code>factor()</code> function, in which the first argument is the variable or vector to be converted. We can always use the <code>class()</code> function to check if we converted the vector or variable to the correct class.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's create the done variable with five levels.</span></span>
 <span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>done <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"rare"</span>, <span class="st">"medium rare"</span>, <span class="st">"medium"</span>, <span class="st">"medium well"</span>, <span class="st">"well done"</span>)</span>
