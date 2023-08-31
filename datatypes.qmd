@@ -200,7 +200,7 @@ Let's see how that worked visually in @fig-vecrec.
 
 ![The colored arrows illustrate how vector recycling works when multiplying two vectors of unequal length.](/Images/vecrec.png){#fig-vecrec}
 
-As we see from the colored arrows in @fig-vecrec, the elements of the shorter vector `d1` we recycled when we multiplied both vectors.
+As we see from the colored arrows in @fig-vecrec, the elements of the shorter vector `d1` were recycled when multiplied by vector `c1`.
 
 ::: callout-caution
 ## Don't Just Keep Reading!
@@ -506,7 +506,7 @@ print(array1)
 
 Factors are data structures used to store categorical variables. Categorical variables have a fixed set of possible values. Factors are *not* vectors. They have their own unique class, and can be ordered if we have an ordered categorical variable (i.e. a categorical variable with a logical and explicit order, such as finishes in a race that correspond to 'first', 'second', 'third', etc.).
 
-For example, let's say we have a categorical variable related to the temperature of cooked meat called `done` which has five possible values (or *levels*) - *rare*, *medium rare*, *medium*, *medium well*, and *well done*. Often, we are faced with a character vector which we want to convert to factor. This can be accomplished with the `factor()` function, in which the first argument is the variable or vector to be converted. You can always use the `class()` function to check if you converted the vector or variable to the correct class.
+For example, let's say we have a categorical variable related to the temperature of cooked meat called `done` which has five possible values (or *levels*) - *rare*, *medium rare*, *medium*, *medium well*, and *well done*. Often, we are faced with a character vector which we want to convert to factor. This can be accomplished with the `factor()` function, in which the first argument is the variable or vector to be converted. We can always use the `class()` function to check if we converted the vector or variable to the correct class.
 
 ```{r}
 # Let's create the done variable with five levels.
