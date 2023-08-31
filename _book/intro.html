@@ -367,7 +367,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="https://art.djnavarro.net/gallery/bound/"><img src=".\Images/aRt.jpg" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">This art was made in R by Danielle Navarro. That's right, you can even make art in R. Click on the image if you want to see more of her work.</figcaption>
+<figcaption class="figure-caption">This art was made in R by Danielle Navarro. That’s right, you can even make art in R. Click on the image if you want to see more of her work.</figcaption>
 </figure>
 </div>
 <p>You might have heard of other programs for data analysis, and might be wondering which of these are open-source (meaning free!), and which are proprietary. I list some of the most common statistics programs, and whether they are open source or not in <a href="#tbl-statsprogs">Table&nbsp;<span>3.1</span></a>.</p>
@@ -579,7 +579,7 @@ Keyboard Shortcuts
 </section>
 <section id="functions" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="functions"><span class="header-section-number">3.4</span> Functions</h2>
-<p>A <strong>function</strong> is a block of code that runs only when it is <em>called</em>. Calling a function just means you are giving the computer a single instruction to do a particular thing. In R, every function comprise a word followed immediately by parentheses <code>function()</code>. We often have information we want to pass to a function, and these are called <strong>arguments.</strong> Essentially, the function does the thing we want, and the arguments specify how we want them done, or what information we want the function to use.</p>
+<p>A <strong>function</strong> is a block of code that runs only when it is <em>called</em>. Calling a function just means you are giving the computer a single instruction to do a particular thing. In R, every function comprises a verb followed immediately by parentheses, as in <code>function()</code>. We often have information we want to pass to a function, and these are called <strong>arguments.</strong> Essentially, the function does the thing we want, and the arguments specify how we want them done, or what information we want the function to use.</p>
 <p>Let’s try using the simple <code>print()</code> function to display the phrase “Hello World.”</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Hello, World!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -598,40 +598,48 @@ Why “Hello, World!”?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Did you know that writing code to print “Hello World” is a programming tradition? It’s often the first thing a student learns to write in a programming language, and comes to us from the 1970s in Bell Laboratories. Learn more <a href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program">here</a>.</p>
+<p>Did you know that writing code to print “Hello World” is a programming tradition? It’s often the first thing a student learns to write in a programming language, and comes to us from Bell Laboratories in the 1970s. Learn more <a href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program">here</a>.</p>
 </div>
 </div>
 <p>Besides using functions to accomplish various tasks, we can also easily create our own functions in R. Creating your own function is often a way to automate a series of tasks to streamline your work. We will tackle this issue later. For now, it will be sufficient to be familiar with the terms <em>function</em>, <em>argument</em>, and <em>call</em>.</p>
 </section>
 <section id="r-packages" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="r-packages"><span class="header-section-number">3.5</span> R Packages</h2>
-<p>Packages are user-written contributions which extend the functionality of R. They typically comprise a set of functions, code, documentation, and occasionally some datasets as well. Packages are stored in R as a ‘library’. They only have to installed once, but must be loaded each time you intend to use them. Typically, we only have need for a few packages at a time.</p>
+<p>Packages are user-written contributions which extend the functionality of R. They typically comprise a set of functions, code, documentation, and occasionally some datasets as well. Packages are stored in R as a <em>library</em>. They only have to installed once, but must be loaded each time you intend to use them. Typically, we only need to use a few packages at a time.</p>
 <p>Installing a package typically involves communicating with CRAN, and is easily accomplished using the <code>install.packages()</code> function in which the name of the package you want to install should be placed in the parentheses with quotation marks <code>" "</code>. Go ahead now and give it a shot with the <code>tidyverse</code> package (or set of packages rather) using the following code.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>If the installation was successful, you should see a message that mentions the package has been successfully unpacked and located somewhere on your computer like this:</p>
-<p><img src=".\Images/rpackageinstall.png" class="img-fluid"></p>
-<p>See how it says that the downloaded package is located on my computer? This type of message indicates that there were no problems with the installation. Now, if we want to use this package, it must be explicitly called using the <code>library()</code> function. This is ideally done in a dedicated section called “Load Libraries” or something similar.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries --------------------------</span></span>
+<p><img src=".\Images/rpackageinstall.png" width="686" height="158"></p>
+<p>See how it says that the downloaded package is located on my computer? This type of message indicates that there were no problems with the installation. Now, if we want to use this package, it must be explicitly called using the <code>library()</code> function, where the argument is the package name without quotation marks. This is ideally done in a dedicated section called “Load Libraries” or something similar.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load Libraries ---------------------------------</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now you know how to install and load packages from CRAN. This is what you will mostly do in R, as CRAN packages are all tested and meet its quality standards. To update a package, I find the easiest, cleanest approach is to go to your Output Pane in the bottom right of the screen, go to the Packages tab, and then hit the Update button.</p>
+</div>
+<p>Now you know how to install and load packages from CRAN! This is what you will mostly do in R when installing packages, as CRAN packages are all tested and meet certain quality quality standards. To update a package, I find the easiest, cleanest approach is to go to your Output Pane in the bottom right of the screen, go to the Packages tab, and then hit the Update button.</p>
 <p><img src=".\Images/r packages.png" class="img-fluid"></p>
 <p>That will bring up a menu which gives you several relevant pieces of information:</p>
 <ul>
-<li>Which package(s) have an update available.</li>
-<li>What version of the package you have installed vs what version is available.</li>
-<li>What changes the update is making under ‘NEWS’.</li>
+<li>Which package(s) has(ve) an update available.</li>
+<li>What version of the package you have installed compared with what version is available.</li>
+<li>What changes the update is making under <em>NEWS</em>.</li>
 </ul>
 <p><img src=".\Images/rupdate.png" class="img-fluid"></p>
-<p>Maybe you don’t want to sit through the updates of EVERY package for which an update is available. This menu allows you to pick and choose the packages you want to update, and then click “Install Updates.” If you have a specific package you want to update and want to do it quickly, you can use the <code>install.packages()</code> function with the package name to be updated in quotes.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"bayesplot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Finally, say you want to just have all your packages up to date, and have some time to let R do its thing while you get a coffee, you can just type:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">update.packages</span>(<span class="at">ask=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Maybe you don’t want to sit through the updates of EVERY package for which an update is available. This menu allows you to pick and choose the packages you want to update, and then click <em>Install Updates</em>. If you have a specific package you want to update and want to do it quickly, you can use the <code>install.packages()</code> function with the package name to be updated in quotes.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"bayesplot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Finally, say you want to just update all your packages, and have some time to let R do its thing while you get a coffee, you can just type:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">update.packages</span>(<span class="at">ask=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>This will update every package for which an update is available, and the <code>ask=FALSE</code> argument suppresses a prompt from appearing before every package update.</p>
-<p>Finally, you may be wondering which packages are essential to install and have ready to go. Typically, you know which packages to use based on a particular task you want to accomplish. Thus, I wouldn’t worry about this for now. Any R script file using packages will always have those listed in the file, and thus you will typically know what packages to install and load.</p>
+<p>Finally, you may be wondering which packages are essential to install and have ready to go. Typically, you know which packages to use based on a particular task you want to accomplish. Any R script file using packages will always have those listed in the file, and thus you will typically know what packages to install and load.</p>
 </section>
 <section id="assignments" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="assignments"><span class="header-section-number">3.6</span> Assignments</h2>
-<p>In R, everything is an <strong>object.</strong> An object is just some data that you have stored. It can be a number, a dataset, a function, or anything else. For example, let’s say we want to perform the following calculations:</p>
+<p>In R, data are stored as <strong>objects.</strong> An object is just some data that you have stored. It can be a number, a dataset, a function, or anything else. For example, let’s say we want to perform the following calculations:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>((<span class="fu">sqrt</span>(<span class="dv">81</span>) <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="dv">9</span>)) <span class="sc">/</span> <span class="fu">log</span>(<span class="fl">3.6</span>)) <span class="sc">+</span> <span class="dv">6</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>((<span class="fu">sqrt</span>(<span class="dv">81</span>) <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="dv">9</span>)) <span class="sc">/</span> <span class="fu">log</span>(<span class="fl">3.6</span>)) <span class="sc">-</span> <span class="dv">12</span></span>
@@ -639,23 +647,27 @@ Why “Hello, World!”?
 </div>
 <p>We may not want to keep writing <code>((sqrt(81) * sqrt(9)) / log(3.6))</code> as it’s cumbersome to work with and to look at. We can streamline the process by assigning <code>((sqrt(81) * sqrt(9)) / log(3.6))</code> to a simple name of our choice. Let’s say we assign it to an object called <code>quantity1</code>, the resulting computation would be much easier to write. We can do this by using the assignment operator <code>&lt;-</code> which is comprised of the symbol for <em>less than</em> followed immediately by a minus sign <code>-</code>. So, the code incorporating assignment of the quantity to an object called <code>quantity1</code> would look like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>quantity1 <span class="ot">&lt;-</span> ((<span class="fu">sqrt</span>(<span class="dv">81</span>) <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="dv">9</span>)) <span class="sc">/</span> <span class="fu">log</span>(<span class="fl">3.6</span>)) </span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>quantity1 <span class="sc">+</span> <span class="dv">6</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>quantity1 <span class="sc">-</span> <span class="dv">12</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>quantity1 <span class="sc">*</span> (<span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First, we assign the value to an object called quantity1.</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>quantity1 <span class="ot">&lt;-</span> ((<span class="fu">sqrt</span>(<span class="dv">81</span>) <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="dv">9</span>)) <span class="sc">/</span> <span class="fu">log</span>(<span class="fl">3.6</span>)) </span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Then, we can use quantity one in our calculations.</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>quantity1 <span class="sc">+</span> <span class="dv">6</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>quantity1 <span class="sc">-</span> <span class="dv">12</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>quantity1 <span class="sc">*</span> (<span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>As you’ll notice, the name of the object always comes first, then the assignment operator <code>&lt;-</code>, and finally the value we are assigning to the object.</p>
 <p>You can also assign text to an object if you enclose the text in quotes <code>" "</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>myfavorite <span class="ot">&lt;-</span> <span class="st">"Cat"</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>myfavorite</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assigning the value Cat to an object called myfavorite.</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>myfavorite <span class="ot">&lt;-</span> <span class="st">"Cat"</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calling the object directly is the same as calling print(object). It prints the value.</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>myfavorite</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Cat"</code></pre>
 </div>
 </div>
-<p>Here, I assigned the value <code>"Cat"</code> to an object called <code>myfavorite</code>. I then called that object, and this printed its value.</p>
-<p>One you assign a value to an object, it will show up in your Environments Pane on the top-right of your screen. This allows you to keep track of all the objects you have created in your R session, along with their values.</p>
+<p>Here, I assigned the value <code>"Cat"</code> to an object called <code>myfavorite</code>. I then called that object, and this printed its value. Once you assign a value to an object, it will show up in your Environments Pane on the top-right of your screen. This allows you to keep track of all the objects you have created in your R session, along with their values.</p>
 <p><img src=".\Images/robjects.png" class="img-fluid"></p>
 <p>You can also assign the same value to multiple variables using multiple assignment operators <code>&lt;- &lt;- &lt;-</code>. For example, if I want to assign the value <code>male</code> to three names, this is what that would look like.</p>
 <div class="cell">
@@ -686,7 +698,7 @@ You can’t name an object just anything!
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>There are some words in R that are reserved for particular tasks. These <strong>Reserved Words</strong> cannot be used to name an object. So, don’t ever use these words alone to name an object.</p>
+<p>There are some words in R that are reserved for particular tasks. These <strong>Reserved Words</strong> cannot be used to name an object unless you modify them somehow (e.g.&nbsp;naming an object <code>break1</code> instead of <code>break</code>). So, don’t ever use these words alone to name an object.</p>
 <table class="table">
 <tbody>
 <tr class="odd">
@@ -724,13 +736,13 @@ You can’t name an object just anything!
 </section>
 <section id="help" class="level2" data-number="3.7">
 <h2 data-number="3.7" class="anchored" data-anchor-id="help"><span class="header-section-number">3.7</span> Help</h2>
-<p>If you ever need to know how a function works, such as what arguments it take, you can easily see documentation for it by adding a question mark <code>?</code> before the function name. For example, if you can’t remember what the <code>rm()</code> function does, or what arguments it takes, you can write <code>?rm</code> and see the documentation for it. For more complex problems or troubleshooting, you can and should become familiar with Googling the issue, and then seeing the best answer on Stack Overflow in particular. Stack Overflow is one the best places to get answers for troublesome R code. You should also note that everyone, and I mean absolutely, everyone Googles code issues at some point or another. This is because coding and data science are dynamic fields, and things are often changing. It’s sensible to keep up with how people are solving particular problems by seeing what people are saying on Stack Overflow or other fora.</p>
+<p>If you ever need to know how a function works, such as what arguments it takes, you can easily see documentation for it by adding a question mark <code>?</code> before the function name. For example, if you can’t remember what the <code>rm()</code> function does, or what arguments it takes, you can write <code>?rm</code> and see the documentation for it. For more complex problems or troubleshooting, you can and should become familiar with Googling the issue, and then seeing the best answer on <a href="https://stackoverflow.com">Stack Overflow</a> in particular. Stack Overflow is one the best places to get answers for R code questions. You should also note that everyone, and I mean absolutely, everyone Googles code issues at some point or another. This is because coding and data science are dynamic fields, and things are often changing. It’s sensible to keep up with how people are solving particular problems by seeing what people are saying on Stack Overflow or other fora.</p>
 </section>
 <section id="sec-introex" class="level2" data-number="3.8">
 <h2 data-number="3.8" class="anchored" data-anchor-id="sec-introex"><span class="header-section-number">3.8</span> Exercises</h2>
 <p>It’s a good idea to attempt these right away after reading this section while the content is fresh. You can find the answers in <a href="appintroex.html"><span>Appendix&nbsp;A</span></a>.</p>
 <ol type="1">
-<li><p>Calculate <span class="math inline">89+9/(4*5)^2</span> and assign the value to the object <code>solution1</code>. Then print <code>solution1</code>.</p></li>
+<li><p>Calculate <span class="math inline">(89 + 9) / (4*5)^2</span> and assign the value to the object <code>solution1</code>. Then print <code>solution1</code>.</p></li>
 <li><p>What is the difference between R and R Studio?</p></li>
 <li><p>How do you add a comment to a Script file?</p></li>
 <li><p>What are packages in R, and how do you install them?</p></li>

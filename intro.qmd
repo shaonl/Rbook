@@ -16,7 +16,7 @@ They created a mailing list to discuss all things R in 1994, which quickly becam
 
 Today, R is a thriving language that receives regular updates by the R Core Team, and boasts about 19,657 user-contributed packages on [CRAN](https://cran.r-project.org/web/packages/index.html). **R is free, flexible, powerful, and awesome.**
 
-[![This art was made in R by Danielle Navarro. That\'s right, you can even make art in R. Click on the image if you want to see more of her work.](/Images/aRt.jpg)](https://art.djnavarro.net/gallery/bound/)
+[![This art was made in R by Danielle Navarro. That's right, you can even make art in R. Click on the image if you want to see more of her work.](/Images/aRt.jpg)](https://art.djnavarro.net/gallery/bound/)
 
 You might have heard of other programs for data analysis, and might be wondering which of these are open-source (meaning free!), and which are proprietary. I list some of the most common statistics programs, and whether they are open source or not in @tbl-statsprogs.
 
@@ -120,7 +120,7 @@ It can be very useful to know keyboard shortcuts for common tasks. You may want 
 
 ## Functions
 
-A **function** is a block of code that runs only when it is *called*. Calling a function just means you are giving the computer a single instruction to do a particular thing. In R, every function comprise a word followed immediately by parentheses `function()`. We often have information we want to pass to a function, and these are called **arguments.** Essentially, the function does the thing we want, and the arguments specify how we want them done, or what information we want the function to use.
+A **function** is a block of code that runs only when it is *called*. Calling a function just means you are giving the computer a single instruction to do a particular thing. In R, every function comprises a verb followed immediately by parentheses, as in `function()`. We often have information we want to pass to a function, and these are called **arguments.** Essentially, the function does the thing we want, and the arguments specify how we want them done, or what information we want the function to use.
 
 Let's try using the simple `print()` function to display the phrase "Hello World."
 
@@ -133,63 +133,65 @@ Here we called the `print()` function and passed it the argument `"Hello World!"
 ::: callout-note
 ## Why "Hello, World!"?
 
-Did you know that writing code to print "Hello World" is a programming tradition? It's often the first thing a student learns to write in a programming language, and comes to us from the 1970s in Bell Laboratories. Learn more [here](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program).
+Did you know that writing code to print "Hello World" is a programming tradition? It's often the first thing a student learns to write in a programming language, and comes to us from Bell Laboratories in the 1970s. Learn more [here](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program).
 :::
 
 Besides using functions to accomplish various tasks, we can also easily create our own functions in R. Creating your own function is often a way to automate a series of tasks to streamline your work. We will tackle this issue later. For now, it will be sufficient to be familiar with the terms *function*, *argument*, and *call*.
 
 ## R Packages
 
-Packages are user-written contributions which extend the functionality of R. They typically comprise a set of functions, code, documentation, and occasionally some datasets as well. Packages are stored in R as a 'library'. They only have to installed once, but must be loaded each time you intend to use them. Typically, we only have need for a few packages at a time.
+Packages are user-written contributions which extend the functionality of R. They typically comprise a set of functions, code, documentation, and occasionally some datasets as well. Packages are stored in R as a *library*. They only have to installed once, but must be loaded each time you intend to use them. Typically, we only need to use a few packages at a time.
 
 Installing a package typically involves communicating with CRAN, and is easily accomplished using the `install.packages()` function in which the name of the package you want to install should be placed in the parentheses with quotation marks `" "`. Go ahead now and give it a shot with the `tidyverse` package (or set of packages rather) using the following code.
 
-``` r
+```{r, warning = FALSE, message = FALSE, eval = FALSE}
 install.packages("tidyverse")
 ```
 
 If the installation was successful, you should see a message that mentions the package has been successfully unpacked and located somewhere on your computer like this:
 
-![](/Images/rpackageinstall.png)
+![](/Images/rpackageinstall.png){width="686" height="158"}
 
-See how it says that the downloaded package is located on my computer? This type of message indicates that there were no problems with the installation. Now, if we want to use this package, it must be explicitly called using the `library()` function. This is ideally done in a dedicated section called "Load Libraries" or something similar.
+See how it says that the downloaded package is located on my computer? This type of message indicates that there were no problems with the installation. Now, if we want to use this package, it must be explicitly called using the `library()` function, where the argument is the package name without quotation marks. This is ideally done in a dedicated section called "Load Libraries" or something similar.
 
-``` r
-# Load libraries --------------------------
+```{r, warning = FALSE, message = FALSE, eval = FALSE}
+
+# Load Libraries ---------------------------------
 library(tidyverse)
 ```
 
-Now you know how to install and load packages from CRAN. This is what you will mostly do in R, as CRAN packages are all tested and meet its quality standards. To update a package, I find the easiest, cleanest approach is to go to your Output Pane in the bottom right of the screen, go to the Packages tab, and then hit the Update button.
+Now you know how to install and load packages from CRAN! This is what you will mostly do in R when installing packages, as CRAN packages are all tested and meet certain quality quality standards. To update a package, I find the easiest, cleanest approach is to go to your Output Pane in the bottom right of the screen, go to the Packages tab, and then hit the Update button.
 
 ![](/Images/r%20packages.png)
 
 That will bring up a menu which gives you several relevant pieces of information:
 
--   Which package(s) have an update available.
--   What version of the package you have installed vs what version is available.
--   What changes the update is making under 'NEWS'.
+-   Which package(s) has(ve) an update available.
+-   What version of the package you have installed compared with what version is available.
+-   What changes the update is making under *NEWS*.
 
 ![](/Images/rupdate.png)
 
-Maybe you don't want to sit through the updates of EVERY package for which an update is available. This menu allows you to pick and choose the packages you want to update, and then click "Install Updates." If you have a specific package you want to update and want to do it quickly, you can use the `install.packages()` function with the package name to be updated in quotes.
+Maybe you don't want to sit through the updates of EVERY package for which an update is available. This menu allows you to pick and choose the packages you want to update, and then click *Install Updates*. If you have a specific package you want to update and want to do it quickly, you can use the `install.packages()` function with the package name to be updated in quotes.
 
-``` r
+```{r, warning = FALSE, message = FALSE, eval = FALSE}
 install.packages("bayesplot")
+
 ```
 
-Finally, say you want to just have all your packages up to date, and have some time to let R do its thing while you get a coffee, you can just type:
+Finally, say you want to just update all your packages, and have some time to let R do its thing while you get a coffee, you can just type:
 
-``` r
+```{r, warning = FALSE, message = FALSE, eval = FALSE}
 update.packages(ask=FALSE)
 ```
 
 This will update every package for which an update is available, and the `ask=FALSE` argument suppresses a prompt from appearing before every package update.
 
-Finally, you may be wondering which packages are essential to install and have ready to go. Typically, you know which packages to use based on a particular task you want to accomplish. Thus, I wouldn't worry about this for now. Any R script file using packages will always have those listed in the file, and thus you will typically know what packages to install and load.
+Finally, you may be wondering which packages are essential to install and have ready to go. Typically, you know which packages to use based on a particular task you want to accomplish. Any R script file using packages will always have those listed in the file, and thus you will typically know what packages to install and load.
 
 ## Assignments
 
-In R, everything is an **object.** An object is just some data that you have stored. It can be a number, a dataset, a function, or anything else. For example, let's say we want to perform the following calculations:
+In R, data are stored as **objects.** An object is just some data that you have stored. It can be a number, a dataset, a function, or anything else. For example, let's say we want to perform the following calculations:
 
 ```{r, eval=FALSE}
 ((sqrt(81) * sqrt(9)) / log(3.6)) + 6
@@ -200,8 +202,11 @@ In R, everything is an **object.** An object is just some data that you have sto
 We may not want to keep writing `((sqrt(81) * sqrt(9)) / log(3.6))` as it's cumbersome to work with and to look at. We can streamline the process by assigning `((sqrt(81) * sqrt(9)) / log(3.6))` to a simple name of our choice. Let's say we assign it to an object called `quantity1`, the resulting computation would be much easier to write. We can do this by using the assignment operator `<-` which is comprised of the symbol for *less than* followed immediately by a minus sign `-`. So, the code incorporating assignment of the quantity to an object called `quantity1` would look like this:
 
 ```{r, eval=FALSE}
+
+# First, we assign the value to an object called quantity1.
 quantity1 <- ((sqrt(81) * sqrt(9)) / log(3.6)) 
 
+# Then, we can use quantity one in our calculations.
 quantity1 + 6
 quantity1 - 12
 quantity1 * (2/3)
@@ -213,13 +218,15 @@ As you'll notice, the name of the object always comes first, then the assignment
 You can also assign text to an object if you enclose the text in quotes `" "`.
 
 ```{r}
+
+# Assigning the value Cat to an object called myfavorite.
 myfavorite <- "Cat"
+
+# Calling the object directly is the same as calling print(object). It prints the value.
 myfavorite
 ```
 
-Here, I assigned the value `"Cat"` to an object called `myfavorite`. I then called that object, and this printed its value.
-
-One you assign a value to an object, it will show up in your Environments Pane on the top-right of your screen. This allows you to keep track of all the objects you have created in your R session, along with their values.
+Here, I assigned the value `"Cat"` to an object called `myfavorite`. I then called that object, and this printed its value. Once you assign a value to an object, it will show up in your Environments Pane on the top-right of your screen. This allows you to keep track of all the objects you have created in your R session, along with their values.
 
 ![](/Images/robjects.png)
 
@@ -239,7 +246,7 @@ If you want to remove an object from your environment, you can use the `rm()` fu
 ::: callout-warning
 ## You can't name an object just anything!
 
-There are some words in R that are reserved for particular tasks. These **Reserved Words** cannot be used to name an object. So, don't ever use these words alone to name an object.
+There are some words in R that are reserved for particular tasks. These **Reserved Words** cannot be used to name an object unless you modify them somehow (e.g. naming an object `break1` instead of `break`). So, don't ever use these words alone to name an object.
 
 |          |        |
 |----------|--------|
@@ -254,13 +261,13 @@ There are some words in R that are reserved for particular tasks. These **Reserv
 
 ## Help
 
-If you ever need to know how a function works, such as what arguments it take, you can easily see documentation for it by adding a question mark `?` before the function name. For example, if you can't remember what the `rm()` function does, or what arguments it takes, you can write `?rm` and see the documentation for it. For more complex problems or troubleshooting, you can and should become familiar with Googling the issue, and then seeing the best answer on Stack Overflow in particular. Stack Overflow is one the best places to get answers for troublesome R code. You should also note that everyone, and I mean absolutely, everyone Googles code issues at some point or another. This is because coding and data science are dynamic fields, and things are often changing. It's sensible to keep up with how people are solving particular problems by seeing what people are saying on Stack Overflow or other fora.
+If you ever need to know how a function works, such as what arguments it takes, you can easily see documentation for it by adding a question mark `?` before the function name. For example, if you can't remember what the `rm()` function does, or what arguments it takes, you can write `?rm` and see the documentation for it. For more complex problems or troubleshooting, you can and should become familiar with Googling the issue, and then seeing the best answer on [Stack Overflow](https://stackoverflow.com) in particular. Stack Overflow is one the best places to get answers for R code questions. You should also note that everyone, and I mean absolutely, everyone Googles code issues at some point or another. This is because coding and data science are dynamic fields, and things are often changing. It's sensible to keep up with how people are solving particular problems by seeing what people are saying on Stack Overflow or other fora.
 
 ## Exercises {#sec-introex}
 
 It's a good idea to attempt these right away after reading this section while the content is fresh. You can find the answers in @sec-appendixa.
 
-1.  Calculate $89+9/(4*5)^2$ and assign the value to the object `solution1`. Then print `solution1`.
+1.  Calculate $(89 + 9) / (4*5)^2$ and assign the value to the object `solution1`. Then print `solution1`.
 
 2.  What is the difference between R and R Studio?
 

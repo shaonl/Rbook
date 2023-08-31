@@ -1,9 +1,11 @@
 # Answers for @sec-introex {#sec-appendixa}
 
-1.  Calculate $89+9/(4*5)^2$ and assign the value to the object `solution1`. Then print `solution1`.
+1.  Calculate $(89 + 9) / (4*5)^2$ and assign the value to the object `solution1`. Then print `solution1`.
 
-```{r, eval=FALSE }
-solution1 <- (89+9)/(4*5)^2 
+```{r}
+
+solution1 <- (89 + 9) / (4 * 5)^2 
+
 print(solution1)
 ```
 

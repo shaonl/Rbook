@@ -1,8 +1,8 @@
 # Data Types {#sec-dts}
 
-Before we can dive into data management and cleaning, we need to know what types of data can be stored in R. There are five main types of objects that one can use to store data in R. These are summarized in @fig-dts.
+Before we can dive into data management and cleaning, we need to know what types of data can be stored in R. There are five main types of objects to store data in R. These are summarized in @fig-dts.
 
-![Five types of data in R. Adapted from Grolemund (2014). @grolemund_hands-programming_2014](/Images/datatypes.png){#fig-dts}
+![Five types of data storage objects in R. Adapted from Grolemund (2014). @grolemund_hands-programming_2014](/Images/datatypes.png){#fig-dts}
 
 What do we mean by different types of data? Well, data can be many things - text, images, video, recordings, numbers, etc. For our purposes, data will comprise numbers and text. Within these two broad classes, there are five main types of objects used to store data in R, as shown in @fig-dts. Let's break each of these down with an emphasis on vectors and dataframes, since we will work with these types most often.
 
@@ -12,14 +12,14 @@ What do we mean by different types of data? Well, data can be many things - text
 
 A **vector** is a sequence of data elements of the same type. In R, there are two types of vectors - **atomic vectors** and **lists**. Within the category of atomic vectors, there are six types:
 
--   **Logical** (TRUE, FALSE, NA)
--   **Integer** (a type of numeric vector containing only integers)
--   **Double** (a type of numeric vector which is the default storage type for numbers in R; represents floating point numbers which can't always be precisely represented by fixed memory)
--   **Character** (a vector of *strings*, which are pieces of text. Each string is surrounded by quotes `" "`.)
--   **Complex** (a vector of elements that include complex numbers)
--   **Raw** (a vector containing a 'raw' sequence of bytes; very unusual data type)
+-   **Logical** (TRUE, FALSE, NA).
+-   **Integer** (a type of numeric vector containing only integers).
+-   **Double** (a type of numeric vector which is the default storage type for numbers in R; represents floating point numbers which can't always be precisely represented by fixed memory).
+-   **Character** (a vector of *strings*, which are pieces of text. Each string is surrounded by quotes `" "`).
+-   **Complex** (a vector of elements that include complex numbers).
+-   **Raw** (a vector containing a 'raw' sequence of bytes; very unusual data type).
 
-You should note that Doubles and Integers are both numeric vectors, but Doubles are far more common data structures that we typically deal with in social science research. Doubles are quite flexible in that they can be written in decimal, scientific, or hexadecimal form. They also have three unique values: `Inf` (Infinity), `-Inf` (Negative Infinity), and `NaN` (not a number). In practical usage, if you get a value corresponding to any of these three values, something has probably gone wrong. For instance, let's see what happens when you try to divide certain values by 0 (which is, of course, undefined):
+You should note that Doubles and Integers are both numeric vectors, but Doubles are far more common data structures that we typically deal with in social science research. Doubles are quite flexible in that they can be written in decimal, scientific, or hexadecimal form. They also have three unique values: `Inf` (Infinity), `-Inf` (Negative Infinity), and `NaN` (not a number). In practical usage, if you get a value corresponding to any of these three values, something has probably gone wrong! For instance, let's see what happens when you try to divide certain values by 0 (which is, of course, undefined):
 
 ```{r 0}
 54/0  
@@ -31,20 +31,31 @@ You should note that Doubles and Integers are both numeric vectors, but Doubles 
 
 Integers cannot contain fractional values (i.e. no decimals), and are written like Doubles but are followed by an `L` as in `2L, 3L` and so on. Generally, we won't have to worry about these since we will usually be working with Doubles, Logical, or Character vectors.
 
-The most common vectors we will deal with are Logical, Double, and Character vectors. Atomic vectors contain elements of the same type. You can always check the type of vector with the `typeof()` or `class()` commands. Additionally, you can see the number of elements in a given vector with the `length()` command.
+Atomic vectors contain elements of the same type. You can always check the type of vector with the `typeof()` or `class()` commands. Additionally, you can see the number of elements in a given vector with the `length()` command.
 
 ### Creating Vectors
 
-As mentioned, vectors can comprise strings (pieces of text), integers, or logical values. While they can also comprise a sequence of bytes and complex numbers, we will not discuss these as they are less relevant for our purposes. Let's start with creating a numeric vector, which can be an integer or double (it doesn't matter for our purposes). The most common way to create a vector is to use the concatenate or combine `c()` function with values in parentheses separated by commas. To create a character vector, you need to surround each element of the vector in quotes `" "` separated by commas. The `paste()` function can also be useful in combining vectors.
+As mentioned, vectors can comprise strings (pieces of text), integers, or logical values. While they can also comprise a sequence of bytes and complex numbers, we will not discuss these as they are less relevant for our purposes. Let's start with creating a numeric vector, which can be an integer or double. The most common way to create a vector is to use the **concatenate** or **combine** function `c()` with values in parentheses separated by commas. To create a character vector, you need to surround each element of the vector in quotes `" "` separated by commas. The `paste()` function can also be useful in combining vectors.
 
-You can also create a vector comprising a sequence of numbers using the colon `:`.
+You can also create a vector comprising a sequence of integers using a colon `:` between numbers. For instance, a vector containing integers from 30 to 35 assigned to an object `obj1` would look like this:
+
+```{r}
+
+# Create a vector comprising sequential integers from 30 to 35.
+obj1 <- 30:35
+
+# Print the values
+obj1
+```
+
+Let's create some more vectors and see how they look.
 
 ```{r}
 # Create two numeric vectors.
 a <- c(1, 2, 3, 4)
 b <- c(5, 6, 7, 8)
 
-# You can do the same thing with a colon instead.
+# You can do the same thing with a colon instead since the numbers are sequential.
 a <- c(1:4)
 b <- c(5:8)
 
@@ -58,6 +69,7 @@ e <- c("Soundgarden", "Pearl Jam")
 
 # Create a new vector f that combines vectors d and e.
 f <- c(d,e)
+print(f)
 
 # Create three character vectors.
 g <- "Four score and seven years ago our fathers brought forth on this continent,"
@@ -71,22 +83,24 @@ print(j)
 
 ### Extracting Elements from a Vector
 
-To extract an element from a vector, we use square brackets `[]` after the vector name, and write the position of the element(s) we want to extract. We can extract multiple elements by using the concatenate or combine `c()` function, such as `vector1[c(1,4,5)]`. To extract elements in a sequential range, we can use colon `:` between positions, such as `vector1[c(1:5)]`.
+To extract an element from a vector, we use square brackets `[]` after the vector name, and write the position of the element(s) we want to extract. We can extract multiple elements by using the concatenate or combine `c()` function. For instance, if you wanted to extract elements 1, 4, and 5 from a vector called `vector1`, it would look like this: `vector1[c(1,4,5)]`. To extract elements in a sequential range, we can use colon `:` between positions, such as `vector1[c(1:5)]`.
 
 Let's try an example with a visual summary. First, let's create a character vector called `catbreeds` with the values `"American Bobtail"`, `"Abyssinian"`, `"Burmese"`, `"Himalayan"`, and `"Manx"`. We will create the vector with our trusty concatenate or combine `c()` function. Remember that if you have strings, or pieces of text, these are surrounded by quotes `" "`. You don't need quotes if you are creating any of the other vectors mentioned.
 
 ```{r}
+
 # I like one string per line to keep things organized and neat.
 catbreeds <- c("American Bobtail",
                "Abyssinian",
                "Burmese",
                "Himalayan",
                "Manx")
-# Now I write the name of the vector to see its elements.
+
+# Now I call the vector to see all its elements.
 catbreeds
 ```
 
-Ok, so now we have a nice character vector called `catbreeds` where the different strings (or pieces of text) correspond to different cat breeds. Now, how do we extract or print different elements of the vector? This is summarized in @fig-catvec.
+Now we have a nice character vector called `catbreeds` where the different strings (or pieces of text) correspond to different cat breeds. Now, how do we extract or print different elements of the vector? This is summarized in @fig-catvec.
 
 ![Retrieving different elements of a vector by position number.](/Images/catbreeds.png){#fig-catvec}
 
@@ -121,6 +135,7 @@ print(vectorbeta)
 # This code says take all the integers less than 0 in vectoralpha and assign 
 # the values to a new vector called vectorgamma. 
 vectorgamma <- vectoralpha[vectoralpha < 0] 
+
 print(vectorgamma)
 ```
 
@@ -146,7 +161,7 @@ mean(vectoralpha)
 median(vectoralpha)
 ```
 
-You can also perform arithmetic operations on vectors. Let's create a couple of vectors and illustrate the four basic arithmetic operations. Each operation is performed element by element. This means that if both vectors are the same length (same number of elements), the operation will be conducted on the first element of both vectors, then the second element of both vectors, and so on. For example, in vectors a1 and b1 below, addition would involve the following steps: 1 + 2, 3 + 1, and 6 + 4 since these number comprise the first, second, and third elements of each vector, respectively.
+You can also perform arithmetic operations on vectors. Let's create a couple of vectors and illustrate the four basic arithmetic operations. Each operation is performed element-by-element. This means that if both vectors are the same length (same number of elements), the operation will be conducted on the first element of both vectors, then the second element of both vectors, and so on. For example, in vectors `a1` and `b1` below, addition would involve the following steps: 1 + 2, 3 + 1, and 6 + 4 since these number comprise the first, second, and third elements of each vector, respectively.
 
 ```{r}
 # Create two vectors. 
@@ -166,6 +181,27 @@ a1 * b1
 a1 / b1
 ```
 
+What happens if the vectors are of different lengths? In such cases, R employs a process called **Vector Recycling** which takes the elements of the shorter vector and repeats them with elements of the longer vector. R will also give you a warning message to alert you to the different vectors lengths. Let's look at an example.
+
+```{r}
+# Create a vector of length 4.
+c1 <- c(1, 2, 3, 4)
+
+# Create another vector of length 2.
+d1 <- c(1, 2)
+
+# Let's look at vector recycling in action when we multiply the vectors.
+e1 <- c1 * d1
+
+e1
+```
+
+Let's see how that worked visually in @fig-vecrec.
+
+![The colored arrows illustrate how vector recycling works when multiplying two vectors of unequal length.](/Images/vecrec.png){#fig-vecrec}
+
+As we see from the colored arrows in @fig-vecrec, the elements of the shorter vector `d1` we recycled when we multiplied both vectors.
+
 ::: callout-caution
 ## Don't Just Keep Reading!
 
@@ -176,35 +212,40 @@ Try creating your own vector and extracting the elements. Once you feel like you
 
 ## Matrices {#sec-mats}
 
-A **matrix** is a two-dimensional vector (i.e. rows and columns.) All columns in matrix should have the same type (e.g. logical, character, numeric) and same length. This means that matrices are *homogeneous* data structures in that all elements must be of the same type.
+A **matrix** is a two-dimensional vector (i.e. rows and columns.) Matrices are *homogeneous* data structures in that all elements must be of the same type (e.g. logical, character, numeric) and same length.
 
 You can create a matrix from vectors using the `rbind()` function to combine rows of data, and using the `cbind()` function to combine columns of data.
 
-```{r matrix, eval=T}
-# row bind 
+```{r matrix}
+# Let's create three vectors of the same type (numeric) and length (3). 
 
 a <- c(.94, .92, .95) 
 b <- c(.25, .56, .82) 
 c <- c(.65, .45, .37) 
+
+# Then, let's combine the vectors with the rbind() function to combine rows.
 d <- rbind(a, b, c) 
 
-print(d)  
+# Let's combine the vectors with the cbind() function to combine columns.
+e <- cbind(a, b, c) 
 
-# column bind  
-e <- c(34.5, 23.6) 
-f <- c(22.3, 13.2) 
-g <- cbind(e,f) 
+# Now let's print both combined vectors to compare them.
+print(d)
+print(e)
 
-print(g)
 ```
 
-You can also create a matrix using the `matrix()` function in which the main arguments are the data vector, the number of rows, and the number of columns. Here is a simple matrix with the numbers 1:9 spread over three rows and three columns:
+You can also create a matrix using the `matrix()` function in which the main arguments are the data vector, the number of rows, and the number of columns. Here is a simple matrix with the numbers `1:9` spread over three rows and three columns:
 
 ```{r matrix2}
 matrix(1:9, nrow = 3, ncol = 3)
 ```
 
-You can also change the names of the rows and columns of the matrix using the `rownames()` and `colnames()` functions. Let's try using the `matrix()` function to input a correlation matrix into R. A correlation matrix is a type of matrix which displays correlation coefficients between variables. Essentially, it shows you the strength of a relationship between pairs of variables ranging from -1 to 1. There are many types of correlation coefficients, but typically Pearson's $r$ is used. When you look at a correlation matrix, you will notice that 1s are on the diagonal, because a variable is always perfectly correlated with itself. The upper triangle (above the diagonal) is a mirror image of the bottom triangle (below the diagonal), so you only need to focus on one. Personally, I like focusing on the lower triangle, but it doesn't much matter.
+Do you see the difference between vector `d` and vector `e`? In combined vector `d`, each of the constituent vectors forms a single row. In combined vector `e`, each of the constituent vectors forms a single column.
+
+You can also change the names of the rows and columns of the matrix using the `rownames()` and `colnames()` functions. Let's try using the `matrix()` function to input a **correlation matrix** into R. A correlation matrix is a type of matrix which displays correlation coefficients between variables. A correlation coefficient is a measure of the strength of a linear relationship between two variables on a scale from -1 to 1. A value of 1 indicates a perfect positive correlation, and a value of -1 indicates a perfect negative correlation. A value of 0 indicates no correlation at all between the variables.
+
+There are many types of correlation coefficients, but typically Pearson's $r$ is used. When you look at a correlation matrix, you will notice that 1s are on the diagonal, because a variable is always perfectly positively correlated with itself. The upper triangle (above the diagonal) is a mirror image of the bottom triangle (below the diagonal), so you only need to focus on one. Personally, I like focusing on the lower triangle, but it doesn't matter.
 
 Imagine a study on exam performance and study habits with the following variables:
 
@@ -216,7 +257,7 @@ Imagine a study on exam performance and study habits with the following variable
 
 Now let us examine the correlation matrix of the variables of this hypothetical study illustrated in @fig-cormat1.
 
-![A correlation matrix - correlations between variables are on either side of the 1s on the diagonal.](/Images/corrmat.jpg){#fig-cormat1}
+![A correlation matrix - correlations between variables are on either side of the 1s on the diagonal.](/Images/corrmat.jpg){#fig-cormat1 width="621"}
 
 It looks like there is a strong correlation ($r = 0.82$) between hours spent studying and exam score, which makes sense. We also have smaller correlations between IQ and exam score $(r = 0.33)$ and school rating and exam score $(r = 0.23)$. All other correlations with exam score are negligible. Let's now input this correlation matrix into R.
 
@@ -250,13 +291,13 @@ rownames(corrmat1) <- c("Hours studying",
 print(corrmat1) 
 ```
 
-To retrieve an element of a matrix, write the matrix name, followed by square brackets in which the first argument is the row and the second is the column that you want. For example, if we want to retrieve the correlation between `"Hours spent studying"` and `"Exam Score"`, we can write the matrix name `corrmat1` followed by row 2 and column 1:
+To retrieve an element of a matrix, write the matrix name, followed by square brackets in which the first argument is the row and the second is the column that you want. For example, if we want to retrieve the correlation between `Exam Score` and `Hours spent studying`, we can write the matrix name `corrmat1` followed by (row) 2 and (column) 1:
 
 ```{r cormat2}
 corrmat1[2,1]
 ```
 
-This retrieves the appropriate correlation of 0.82. Finally, let's say you want to see the values for an entire column or an entire row. In this case, simply leave the row or column argument blank:
+This retrieves the corresponding correlation of 0.82. Finally, let's say you want to see the values for an entire column or an entire row. In this case, simply leave the row or column argument blank, but don't forget the comma `,`:
 
 ```{r cormat3}
 # See the values for column 3 only 
@@ -270,9 +311,15 @@ corrmat1[4, ]
 
 ## Dataframes
 
-A dataframe is the most common type of data structure we typically deal with in social science. It is a two-dimensional labelled list of vectors, and can have columns of multiple data types. A dataframe's vectors must be of the same length, which gives dataframes a rectangular structure. A dataframe has `rownames()` and `colnames()` just like matrices and lists. The variable names in a dataframe also must be different from one another, meaning that the two variables cannot have the exact same name.
+A dataframe is the most common type of data structure we typically deal with in the social sciences. It is a two-dimensional labelled list of vectors, and can have columns of multiple data types. A dataframe's vectors must be of the same length, which gives dataframes a rectangular structure. A dataframe has `rownames()` and `colnames()` just like matrices and lists. The variable names in a dataframe must be different from one another, meaning that the **two variables cannot have the exact same name**.
 
-If you want to explore R's built-in dataframes to test out functions and analyses, you can run the `data()` command to see a list of dataframes. Let's go ahead and use the built-in dataframe `mtcars` by assigning it to an object called `df1` (dataframe 1). Then, let's look at the dataframe. If you want to have a very quick preview of the first six rows of the dataframe, invoke the `head()` function, and similarly the last six rows of the dataframe can be previewed using the `tail()` function. In both cases, the name of the dataframe should be inside the parentheses.
+If you want to explore R's built-in dataframes to test out functions and analyses, you can run the `data()` command to see a list of dataframes.
+
+```{r}
+data()
+```
+
+Let's go ahead and use the built-in dataframe `mtcars` by assigning it to an object called `df1` (dataframe 1). Then, let's look at the dataframe. If you want to have a very quick preview of the first six rows of the dataframe, call the `head()` function with the name of the dataframe as the argument, and similarly the last six rows of the dataframe can be previewed using the `tail()` function with the name of the dataframe as the argument.
 
 The `head()` and `tail()` functions are useful when you have a very large dataset and cannot feasibly examine the whole thing. However, I find the `View()` function far more useful. This actually pulls up the entire dataframe in a separate tab.
 
@@ -296,9 +343,16 @@ You can also click the little dataframe icon next to the dataframe in your Envir
 
 Whether you use the `View()` function or click the little icon, R will open another tab with the dataframe, and will look something like this:
 
-![](/Images/df1big.png)
+![](/Images/df1big.png){width="649"}
 
-If we want to know the dimensions of the dataframe (imagine it's huge and we can't easily `View()` the whole dataset), as well as the structure of the dataset, we can use the functions: `nrow()` (to see the number of rows), `ncol()` (to see the number of columns), and `str()` (see the structure of the dataframe).
+If we want to know the dimensions of the dataframe (i.e., the number of rows and columns), we can run the `dim()` function with the name of the dataframe as the argument. This will produce two values - the first indicates the number of rows, and the second indicates the number of columns.
+
+```{r}
+# See the dimensions (number of rows and columns) of a dataframe with dim().
+dim(df1)
+```
+
+If we just wanted to see the number of rows, we can do so using the `nrow()` function. Similarly, we can see the number of columns using the `ncol()` function.
 
 ```{r}
 # See the number of rows in a dataframe  
@@ -306,14 +360,16 @@ nrow(df1)
 
 # See the number of columns in a dataframe  
 ncol(df1)    
+```
 
+Another very useful function is `str()` gives you a quick overview of the type of variables and some of their values in the dataframe. You can get this information using the `View()` function, which I tend to prefer, but if you want to quickly examine the structure of multiple dataframes, for instance, you can use the `str()` function.
+
+```{r}
 # See the structure of the dataframe  
 str(df1) 
 ```
 
-Note that the `str()` function gives you a quick overview of the type of variables and some of their values in the dataframe. You can get this information using the `View()` function, which I tend to prefer, but if you want to quickly examine the structure of multiple dataframes, for instance, you can use the `str()` function.
-
-Notice how the dataframe comprises rows and columns, where the rows are names of cars and the columns are different attributes of those cars, such as miles per gallon, number of cylinders, displacement weight, and others. To retrieve a particular column in the dataframe, use the dollar sign `$` operator after the name of the dataframe, followed by the column name. For instance, if you want to know the mean miles per gallon across all the cars, we can use the `mean()` function in the following manner:
+Notice how the dataframe comprises rows and columns, where the rows are names of cars and the columns are different attributes of those cars, such as miles per gallon, number of cylinders, displacement weight, and others. To retrieve a particular column in the dataframe, use the dollar sign operator `$` after the name of the dataframe, followed by the column name. For instance, if you want to know the mean miles per gallon across all the cars, we can use the `mean()` function in the following manner:
 
 ```{r df3}
 # Get the mean of the mpg variable in the df1 dataframe.
@@ -322,7 +378,7 @@ mean(df1$mpg)
 
 From the `mean()` function used above, we see that across all the cars in the dataframe, the average fuel efficiency is about 20 miles per gallon.
 
-In general, you will use the format `dfname$variable` to access or refer to any specific variable or column of a dataframe. You can also add a new variable to the dataframe using the same format. For example, if we wanted to add a new column to our dataset `df1` in which we take the existing column `qsec` (the number of seconds it takes the car to travel one-fourth of a mile) and multiply this by four, to get an estimate of how long it takes the car to travel one mile, we can accomplish by with the following code.
+In general, you will use the format `dfname$variable` to access or refer to any specific variable or column of a dataframe. You can also add a new variable to the dataframe using the same format. For example, if we wanted to add a new column to our dataset `df1` in which we take the existing column `qsec` (the number of seconds it takes the car to travel one-fourth of a mile) and multiply this by four, to get an estimate of how long it takes the car to travel one mile, we can accomplish this with the following code.
 
 ```{r}
 # Create new variable in df1 called qsec2 which takes the existing variable
@@ -351,10 +407,10 @@ summary(df1[c('mpg','wt', 'qsec')])
 
 While dataframes can contain data of different types (*heterogeneous data)*, lists are even more flexible at doing this. A list is like a collection of different things that don't have to play by the rules of a dataframe. Recall that though dataframes can contain heterogeneous data, the elements of a dataframe are subject to a few restrictions such as a) they have to be a labelled list of vectors, b) they have to be the same length, and c) the variables must not have the exact same name.
 
-List elements don't have such restrictions, and you can think of them as collections stuff. For example, you can put the contents of a function, a dataframe, a piece of text, numbers, etc. Let's look at an example of a list called `stuff`. We will create this list using the `list()` function and assigning a bunch of random stuff to it. You can even put lists in a list! That's pretty meta. You can then `View()` the list to examine its contents.
+List elements don't have such restrictions, and you can think of them as collections of different stuff. For example, you can put the contents of a function, a dataframe, a piece of text, numbers, etc in a list. Let's look at an example of a list called `stuff`. We will create this list using the `list()` function and assigning a bunch of random stuff to it. You can even put lists in a list! That's pretty meta! You can then `View()` the list to examine its contents.
 
 ```{r}
-# Create a list called stuff comprising various random things.
+# Create a list called stuff comprising various random things, including another list.
 stuff <- list(catbreed = "manx", 
               data = mtcars, 
               Euler = 2.71828, 
@@ -369,11 +425,11 @@ stuff <- list(catbreed = "manx",
 
 Once you `View()` the list, it will show you the contents as in @fig-listels.
 
-![A View() of a list shows all the elements.](/Images/stufflist.png){#fig-listels}
+![Running the View() function on a list shows all the elements.](/Images/stufflist.png){#fig-listels}
 
-You can see that our list has a string ("Manx"), a dataframe (mtcars), a number (Euler), a logical vector (logical), and another list with three elements of its own (random). Lists are so flexible!
+You can see that our list has a string ("Manx"), a dataframe (mtcars), a number (Euler), a logical vector (logical), and another list with three elements of its own (`random`). Lists are so flexible!
 
-You can very easily extract elements of a list with the dollar sign `$` operator if you know the name of the element, or using double square brackets `[[ ]]` if you know the position of the element. You can also use single square brackets `[ ]` which will give you a little more information than double square brackets, such as the name of the element.
+You can extract elements of a list with the dollar sign operator `$` if you know the name of the element, or using double square brackets `[[ ]]` if you know the position of the element. You can also use single square brackets `[ ]` which will give you a little more information than double square brackets, such as the name of the element.
 
 ```{r}
 # Extract elements of a list by name using dollar sign operator.
@@ -386,13 +442,13 @@ stuff[[3]]
 stuff[3]
 ```
 
-As you see, using single brackets `[ ]` to extract an element from a list gives you the element name `Euler` as well as the value, as opposed to only the value provided by the double square brackets `[[ ]]`. In general, if you have a collection of stuff, create a list for easy reference.
+As you see, using single brackets `[ ]` to extract an element from a list gives you the element name `Euler` as well as the value `2.71828`, as opposed to only the value `2.71828` provided by the double square brackets `[[ ]]`. In general, if you have a collection of stuff, create a list for easy reference.
 
 ![](/Images/manx2.png){width="200"}
 
 ## Arrays
 
-Though we will not work with Arrays in this course, it may be worthwhile to know a thing or two about them. Recall that matrices and dataframes are two-dimensional data structures. An array goes beyond two dimensions, and can hold n-dimensional data, but the data have to be of the same type. I think arrays are easiest to understand when thinking about a collection of multiple matrices.
+Though we will not work with Arrays much, it is worthwhile to know a thing or two about them. Recall that matrices and dataframes are two-dimensional data structures. An array goes beyond two dimensions, and can hold n-dimensional data, but the data have to be of the same type. I think arrays are easiest to understand when thinking about a collection of multiple matrices.
 
 For example, let's say we have two vectors of different lengths. One vector has three elements, while the other has six elements.
 
@@ -402,18 +458,18 @@ vector1 <- c(1,3,4)
 vector2 <- c(32, 4, 7, 19, 23, 43)
 ```
 
-Now, let's create an array where we first create a matrix of three rows and three columns based on our vectors, and then duplicate this matrix four times. We can accomplish this using the `array()` function where the first argument will comprise our vectors, and the argument `dim` (or dimension) takes the row numbers, column numbers, and number of matrices we want. So if we want three rows, three columns, and four matrices, the values would be `dim = c(3,3,4)`.
+Now, let's create an array where we first create a matrix of three rows and three columns based on our vectors, and then duplicate this matrix four times. We can accomplish this using the `array()` function where the first argument will comprise our vectors, and the argument `dim` (or dimension) takes the row numbers, column numbers, and number of matrices we want. So if we want three rows, three columns, and four matrices, the values would be `dim = c(3, 3, 4)`.
 
 ```{r}
 # Use previous vectors to create array of four 3x3 matrices. 
 array1 <- array(c(vector1, vector2),
-                dim = c(3,3,4)
+                dim = c(3, 3, 4)
                 )
 
 print(array1)
 ```
 
-See how we now have four versions of the matrix we requested based on our two vectors? If we want to name our rows, columns and matrices, we can create vectors for those and then feed them into the `dimnames` (dimension names) argument of `array()`. The `dimnames` argument only takes lists, so we'll stick our name vectors into a list.
+See how we now have four versions of the matrix we requested based on our two vectors? If we want to name our rows, columns and matrices, we can create vectors for those and then feed them into the `dimnames` (dimension names) argument of `array()`. The `dimnames` argument only takes lists, so we'll assign our name vectors to a list.
 
 ```{r}
 # Create row names.
@@ -446,16 +502,13 @@ print(array1)
 
 ```
 
-While more could be said about arrays, we will end here since we really don't need to worry about them in this course.
-
 ## Factors
 
-Factors are data structures used to store categorical variables in R. Categorical variables have a fixed set of possible values. Factors are *not* vectors, so they're a pretty unique class. They have their own unique class, and can be ordered if we have an ordered categorical variable (i.e. a categorical variable with a logical and explicit order, such as finishes in a race that correspond to 'first', 'second', etc.).
+Factors are data structures used to store categorical variables. Categorical variables have a fixed set of possible values. Factors are *not* vectors. They have their own unique class, and can be ordered if we have an ordered categorical variable (i.e. a categorical variable with a logical and explicit order, such as finishes in a race that correspond to 'first', 'second', 'third', etc.).
 
-For example, let's say we have a categorical variable related to the temperature of cooked meat called `done` which has five possible values (or *levels*) - *rare*, *medium rare*, *medium*, *medium well*, and *well done*. Often, we are faced with a character vector which we want to convert to factor, which can be accomplished with the `factor()` function, in which the first argument is the variable or vector to be converted. Remember, you can always use the `class()` function to check if you converted the vector or variable to the correct class.
+For example, let's say we have a categorical variable related to the temperature of cooked meat called `done` which has five possible values (or *levels*) - *rare*, *medium rare*, *medium*, *medium well*, and *well done*. Often, we are faced with a character vector which we want to convert to factor. This can be accomplished with the `factor()` function, in which the first argument is the variable or vector to be converted. You can always use the `class()` function to check if you converted the vector or variable to the correct class.
 
 ```{r}
-
 # Let's create the done variable with five levels.
 done <- c("rare", "medium rare", "medium", "medium well", "well done")
 
@@ -468,14 +521,14 @@ done2 <- factor(done)
 class(done2)
 ```
 
-If we want to look at the levels in our factor variable, we can simply put the variable or vector name in parentheses within the `levels()` function. If we don't like the order in which the levels are sorted, we can reorder them by inputting a vector of strings corresponding to the order we want as the second argument of the `factor()` function.
+If we want to look at the levels in our factor variable, we can simply put the variable or vector name in parentheses within the `levels()` function. If we don't like the order in which the levels are sorted, we can reorder them by inputting a vector of strings corresponding to the order we want, as the second argument of the `factor()` function.
 
 ```{r}
 
 # Let's examine the levels of our factor variable.
 levels(done2)
 
-# That's not the right order! Let's reorder the levels so they go in ascending order to temperature.
+# That's not the right order! Let's reorder the levels so they go in ascending order of temperature.
 
 donelevels <- c("rare", "medium rare", "medium", "medium well", "well done")
 
@@ -485,10 +538,9 @@ done2 <- factor(done2, levels = donelevels)
 levels(done2)
 ```
 
-Factor levels like these have a natural order to them. In this case, the natural order is governed by increasing temperature of the meat. So we might want to properly cast them as ordered factors using the `ordered` argument in factor, which takes a logical value (i.e. `TRUE` if you want it ordered and `FALSE` if you don't).
+Factor levels like these have a natural order to them. In this case, the natural order is governed by increasing temperature of the meat. So we might want to properly cast them as an ordered factor variable using the `ordered` argument in `factor()`, which takes a logical value (i.e. `TRUE` if you want it ordered and `FALSE` if you don't).
 
 ```{r}
-
 # Let's create an ordered factor variable and check that it worked.
 done3 <- factor(done2,
                 levels = donelevels,
@@ -496,11 +548,11 @@ done3 <- factor(done2,
 
 class(done3)
 
-# We can also check that the levels are correctly ordered with the levels() function. We can also use the print() function, which even illustrates the order of the levels.
+# We can also check that the levels are correctly ordered with the levels() function. We can also use the print() function, which illustrates the order of the levels.
 print(done3)
 ```
 
-Now, let's say we want to change the levels of our factor variable. Perhaps, I want the factor levels to reflect my personal meat temperature preference of *medium rare* or not. So I'll code *medium rare* as `Delicious` and everything else as `Gross`. We can use the `recode()` function from the `dplyr` package to accomplish this (more on `dplyr` later in @sec-dataexp).
+Now, let's say we want to change the levels of our factor variable. Perhaps, I want the factor levels to reflect my personal preference for meat temperature, which is *medium rare*. So I'll code *medium rare* as `Delicious` and everything else as `Gross`. We can use the `recode()` function from the `dplyr` package to accomplish this (more on `dplyr` later in @sec-dataexp).
 
 ```{r, message = FALSE, warning = FALSE}
 

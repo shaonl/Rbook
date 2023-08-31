@@ -338,11 +338,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <ol type="1">
-<li>Calculate <span class="math inline">89+9/(4*5)^2</span> and assign the value to the object <code>solution1</code>. Then print <code>solution1</code>.</li>
+<li>Calculate <span class="math inline">(89 + 9) / (4*5)^2</span> and assign the value to the object <code>solution1</code>. Then print <code>solution1</code>.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>solution1 <span class="ot">&lt;-</span> (<span class="dv">89</span><span class="sc">+</span><span class="dv">9</span>)<span class="sc">/</span>(<span class="dv">4</span><span class="sc">*</span><span class="dv">5</span>)<span class="sc">^</span><span class="dv">2</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(solution1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>solution1 <span class="ot">&lt;-</span> (<span class="dv">89</span> <span class="sc">+</span> <span class="dv">9</span>) <span class="sc">/</span> (<span class="dv">4</span> <span class="sc">*</span> <span class="dv">5</span>)<span class="sc">^</span><span class="dv">2</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(solution1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.245</code></pre>
+</div>
 </div>
 <ol start="2" type="1">
 <li>What is the difference between R and R Studio?</li>
@@ -352,11 +356,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>How do you add a comment to a Script file?</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Just add a hash/pound sign to the left. </span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="do">#### You can add more hashes for aesthetic purposes ####</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Multi-line comments require a hash </span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># starting on the left of each line.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Just add a hash/pound sign to the left. </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="do">#### You can add more hashes for aesthetic purposes ####</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Multi-line comments require a hash </span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># starting on the left of each line.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="4" type="1">
 <li>What are packages in R, and how do you install them?</li>
@@ -367,8 +371,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Install and load the package <code>rstudioapi</code>.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rstudioapi"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstudioapi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rstudioapi"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstudioapi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="6" type="1">
 <li>How do you modify the appearance of R Studio?</li>
@@ -378,14 +382,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Assign the value of <code>365</code> to an object called <code>year</code>. Then, create another object called <code>months</code> and assign it the value <code>year * 0.032854884083862</code>.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>year <span class="ot">&lt;-</span> <span class="dv">365</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>month <span class="ot">&lt;-</span> year <span class="sc">*</span> <span class="fl">0.032854884083862</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>year <span class="ot">&lt;-</span> <span class="dv">365</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>month <span class="ot">&lt;-</span> year <span class="sc">*</span> <span class="fl">0.032854884083862</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="8" type="1">
 <li>Create three variables named <code>Cowboys</code>, <code>Giants</code>, and <code>Commanders</code> and assign them all the value <code>"Inferior Team"</code> using multiple assignment operators.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Cowboys <span class="ot">&lt;-</span> Giants <span class="ot">&lt;-</span> Commanders <span class="ot">&lt;-</span> <span class="st">"Inferior Team"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Cowboys <span class="ot">&lt;-</span> Giants <span class="ot">&lt;-</span> Commanders <span class="ot">&lt;-</span> <span class="st">"Inferior Team"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
